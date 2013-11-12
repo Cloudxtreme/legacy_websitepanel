@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/user-guide/configuring-custom-error-pages by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:56:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Configuring Custom Error Pages - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="User Guide" href="../rss9ee6?containerid=135" />
+
+<link rel="alternate" type="application/rss+xml" title="User Guide - Comments" href="../rss5623?commentedoncontainer=135" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt; <a href="index.html">User Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Configuring Custom Error Pages</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="configuring-custom-error-pages-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>“Custom Errors” tab of web site properties allows you to customize HTTP error messages that are sent to clients when web server errors occur. It is possible to use generic default HTTP 1.1 errors, detailed custom error files that IIS provides, or create your own custom error files. <p><a href="../Media/WindowsLiveWriter/ConfiguringCustomErrorPages_D764/image_2.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/ConfiguringCustomErrorPages_D764/image_thumb.png" width="434" height="223"></a>  <p>To add a new custom error click “Add Custom Error” button. Specify error code and optional sub-code, select handler type and then type URL or path of custom error page. Error code is a number between 200 and 900; the most popular ones are: 404 – page not found, 401 – unauthorized and 403 – forbidden. To the full list of HTTP error codes type “http error codes” in search engine. <p>If you select “File” for Handler type you should provide a path to error page file relative to web site root. For example, if 404.htm error page is located in the root of web site type “\404.htm” in Error content field. If you select “Redirect” you have to provide absolute URL to destination page, for example http://www.site.com/error.aspx. Finally, if you select “Execute URL” then you have to provide URL of custom error page relative to the web site root, for example “/error.aspx”. <p>After you’ve added or modified custom errors click “Update” button to update web site settings.
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn93af.html?ReturnUrl=%2Fuser-guide%2Fconfiguring-custom-error-pages">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/user-guide/configuring-custom-error-pages by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:56:47 GMT -->
+</html>

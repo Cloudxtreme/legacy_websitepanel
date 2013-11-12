@@ -1,0 +1,181 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/hosted-exchange-solution-installation-tasks by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:59:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Hosted Exchange Solution Installation Tasks - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module" href="../rss68ec?containerid=101" />
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module - Comments" href="../rssba67?commentedoncontainer=101" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Exchange 2007/2010 Modules</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Hosted Exchange Solution Installation Tasks</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="hosted-exchange-solution-installation-tasks-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p><a name="Section1"></a></p>
+<h2>WSP Server account requirements</h2>
+<p>Requirements for WSP Server application pool identity you choose when deploying WSP Server with WSP Configuration Studio are the same as for <a href="deploying-hosted-organizations-module.html">WSP Server where Hosted Organizations module will be deployed</a>. They are: membership in "Domain Admins" and "Exchange Organization Administrators"&nbsp; (for Exchange 2007) or "Organization Management"&nbsp; (for Exchange 2010) groups and "IIS_WPG" ("IIS_IUSRS" for Windows Server 2008) and "Administrators" local groups.</p>
+<p>Please do not forget to restart WebsitePanel Server pool and web site after you added WSP Server account to appropriate groups and check pool identity and web site anonymous assess. Or you can simple run iisreset on this server if it is not in production.&nbsp;</p>
+<p><a name="Section2"></a></p>
+<h2>Setting up "Active Directory Settings"</h2>
+<p>Requirements for "Active Directory Settings" for all WSP Servers where Hosted Exchange module will be deployed are the same as for <a href="deploying-hosted-organizations-module.html">WSP Server where Hosted Organizations module will be deployed</a>.</p>
+<p><img src="../Media/Images/dnp_hosted_exchange_solution_installation_tasks/adsettings.png" alt="ADsettings.png" width="462" height="254" /></p>
+<p><a name="Section3"></a></p>
+<h2>Setting up Exchange Services</h2>
+<ul>
+<li>Define main WSP Exchange service. </li>
+</ul>
+<p>WSP works with distributed Exchange deployment, i.e. each Exchange 2007/2010 server role (Mailbox, Client Access, Hub Transport) can be deployed on its own separate server.&nbsp; If Exchange 2007 or 2010 roles are installed on different servers you should install WSP Server on each Exchange 2007 or 2010 server (except Edge Transport server).</p>
+<p>The main Exchange service in WSP Exchange solution is on server with Mailbox role or some another server with Exchange Administrative tools which manages mailbox server (or Clustered Mailbox Server, in case of Exchange 2007, or Database Availability Group, in case of Exchange 2010) remotely. Both Hub Transport and Client Access services are satellite (slave) to this service in WSP. You can find this server and appropriate components on Visio diagram that should be created on pre-deployment stage.&nbsp;</p>
+<p>You should note that this main WSP Exchange service is target for all configuration settings. Settings in WSP Exchange services on Hub Transport and Client Access servers does not make difference, the only condition is that WSP Servers on all Hub Transport and Client Access servers should also run under domain accounts, with appropriate groups membership, and Active Directory settings in WSP on Hub Transport and Client Access servers should be the same as on WSP Server with main WSP Exchange service.</p>
+<p>When you will be <a href="../administrator-guide/setting-up-virtual-servers.html">setting up Virtual Server</a> you will need to add only main WSP Exchange service. You <strong>should not</strong> add Exchange 2007 or 2010 services for Hub Transport and Client Access servers to WSP Virtual Server, as they will be managed by main WSP Exchange service.</p>
+<ul>
+<li>Add "Exchange 2007" or "Exchange 2010" services to all WSP Servers where Hosted Exchange modules will be deployed. </li>
+<li>Add "System" service to at least one server. If you are going to create mixed Web/Exchange Hosting Plans - add "System" service to WSP Server that will host websites. In case of pure Exchange environment - use any server. Mailbox server is good candidate. Currently, WSP Exchange module uses only few features of "OS" service, however "OS" service is required. </li>
+<li>Ensure that "Hosted Organizations" module is deployed on one of the WSP Servers. </li>
+</ul>
+<p><img src="../Media/Images/dnp_hosted_exchange_solution_installation_tasks/image003.png" alt="image003.png" width="447" height="275" /></p>
+<p>On main WSP Exchange service service specify service settings:</p>
+<ul>
+<li>Storage Group Name ("Hosted Exchange Storage Group" by default). Applicable only to Exchange 2007 module, no such settings in Exchange 2010 module. </li>
+<li>Mailbox Database Name ("Hosted Exchange Database" by default). Please note that when WSP creates Storage Group and Database automatically only on Exchange 2007. WSP Exchange 2010 module does not create Mailbox Database so you should enter name of existing database in this field.&nbsp; </li>
+<li>Keep Deleted Items (14 days by default). </li>
+<li>Keep Deleted Mailboxes (30 days by default). </li>
+<li>Clustered Mailbox Server (empty by default). Applicable only to Exchange 2007 module, no such settings in Exchange 2010 module. Enter Clustered Mailbox Server name here. </li>
+<li>Public Folder Server. You can set separate mailbox server with PF database for OAB creation. In case you manage Mailbox server locally and have no separate PF server - leave this field empty. In case you manage alone mailbox server or Clustered Mailbox Server (Exchange 2007) or Database Availability Group (Exchange 2010) remotely - set some mailbox server name which host PF database there. </li>
+<li>OAB Server. You can set separate mailbox server for OAB generation. In case you manage Exchange Mailbox server locally and have no separate OAB server - leave this field empty. In case you manage alone mailbox server or Clustered Mailbox Server (Exchange 2007) or Database Availability Group (Exchange 2010) remotely - set some mailbox server name there. </li>
+<li>Hub Transport Service ("&lt;Located on the same server&gt;" by default). If Hub Transport Service is installed on the separate server, select an appropriate value from the drop-down list. Add all Hub Transport Services there. </li>
+<li>Client Access Service ("&lt;Located on the same server&gt;" by default). If Client Access Service is installed on the separate server, select an appropriate value from the drop-down list. Add all Client Access Services there. </li>
+<li>Set "Setup Instruction Variables" or skip this step - it can be made later, this is not critical for core functionality. </li>
+<li>Adjust service DNS Zone Records (this is also not critical for core functionality and can be skipped initially). Manually specify IP address for "smtp" A record. It can be IP address of Internet-faced NIC of your Client Access server, or Edge Transport Server, or third party incoming SMTP spam/virus filtering relay. Or it can be Internet-faced NIC of your NAT/firewall which use publishing/port mapping to direct SMTP traffic to appropriate internal SMTP server. </li>
+</ul>
+<p>Also this record can be renamed from "smtp" to "mx" or "mail" or anything else, according to your preferences.</p>
+<p>Add "autodiscover" or "owa" CNAME record if required. Read more about them in <a href="deploying-client-connectivity-automation.html">Deploying client connectivity automation</a></p>
+<p><img src="../Media/Images/dnp_hosted_exchange_solution_installation_tasks/10.png" alt="10.png" width="463" height="232" /></p>
+<p><a name="Section4"></a></p>
+<h2>Creating Virtual Server</h2>
+<p>It is strongly recommended to use <strong>Virtual Servers, but not Servers for Hosting plans</strong>. This greatly increases scalability and help you avoid many problems during adding services or resources to existing customers</p>
+<ul>
+<li>Select main WSP Exchange service. Do not add Exchange service from Hub Transport and Client Access servers. It is very important to select Exchange service only from main WSP Exchange service. </li>
+<li>Select System (OS) service from any server. Mailbox server is good candidate.<strong> If you are going to create mixed Web/Exchange hosting Virtual Server and Hosting plan - use "OS" service only from Web server, not Exchange Mailbox server!</strong> </li>
+<li>Select "Hosted Organizations" service from server where you deployed it. </li>
+<li>Optionally select "DNS" service from appropriate server if you use WSP-managed DNS server. This service is not mandatory. </li>
+</ul>
+<p><a name="Section5"></a></p>
+<h2><img src="../Media/Images/dnp_hosted_exchange_solution_installation_tasks/image008.png" alt="image008.png" width="699" height="590" /></h2>
+<h2>Setting Exchange Mailbox Password Policy</h2>
+<p>Go to Account home &gt; Policies &gt; Hosted Organization Policy. The policy allows specifying Exchange mailbox password strength. We recommend have minimal password strength at least as defined on the picture below:</p>
+<p><img src="../Media/Images/dnp_hosted_exchange_solution_installation_tasks/12.png"/></p>
+<p>Also please do not forget to set Minimum length longer that in Default Domain Policy or equal.</p>
+<p><a name="Section6"></a></p>
+<h2>Creating Hosting Plan</h2>
+<p>Create new Hosting Plan. Notes:</p>
+<ul>
+<li>
+<p>For pure Exchange hosting only "Domains", "Sub-Domains" and "Disk space, MB" should be filled mandatory under "System" section.</p>
+</li>
+<li>
+<p>Number of sub-domains should not be less than number of Hosted Organizations because WSP treats every temporary domain (created with every new Exchange organization) as sub-domain.</p>
+</li>
+<li>
+<p>Number of domains should not be less than number of Hosted Organizations multiplied by number of Domains per organization.</p>
+</li>
+</ul>
+<p><img src="../Media/Images/dnp_hosted_exchange_solution_installation_tasks/image010.png" alt="image010.png" width="714" height="325" /></p>
+<ul>
+<li>
+<p>Number or "Mailboxes per Organization" under "Hosted Exchange" may not be the same as number of "Users per Organization" under "Hosted Organizations", depending on your or your customers business needs.&nbsp;</p>
+</li>
+</ul>
+<p><img src="../Media/Images/dnp_hosted_exchange_solution_installation_tasks/image013.png" alt="image013.png" width="708" height="529" /></p>
+<p><strong>Now you are ready for creating new Hosting Spaces based on this Hosting Plan and then try to create first Hosted Organization and mailbox!</strong></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn67a2.html?ReturnUrl=%2Fexchange-2007-2010-module%2Fhosted-exchange-solution-installation-tasks">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/hosted-exchange-solution-installation-tasks by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:59:23 GMT -->
+</html>

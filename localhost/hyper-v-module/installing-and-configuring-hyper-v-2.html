@@ -1,0 +1,124 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/Hyper-v-module/installing-and-configuring-hyper-v by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:11:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Installing and Configuring Hyper-V - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Hyper-V Module" href="../rssfd8d?containerid=109" />
+
+<link rel="alternate" type="application/rss+xml" title="Hyper-V Module - Comments" href="../rssc5a8?commentedoncontainer=109" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index-2.html">Hyper-V Module</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Installing and Configuring Hyper-V</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="installing-and-configuring-hyper-v-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h2>Enabling Remote Management</h2>
+<p>If you plan to manage from WSP remote (where WSP Server is not installed or cannot be installed on virtualization server) Windows Server 2008 Server Core with Hyper-V role or Hyper-V Server 2008 then you may use &ldquo;HVRemote&rdquo; tool to correctly setup Hyper-V remote management: <a href="http://code.msdn.microsoft.com/HVRemote">http://code.msdn.microsoft.com/HVRemote</a></p>
+<p>Please look at required configuration steps (see below):</p>
+<ul>
+<li>Hyper-V hosts and &ldquo;Management Server&rdquo; should be joined to the same domain.</li>
+<li>Hyper-V hosts are managed from a single WSP Server installed on &ldquo;Management Server&rdquo;.</li>
+<li>WSP Server is not installed on Hyper-V server</li>
+<li>WSPServer account must be a member of "Domain Admins" AD group and local "Administrators" groups on all controlled Hyper-V hosts</li>
+<li>One more important thing is that you have to enable firewall rules on the Hyper-V host server for WMI (see below):</li>
+</ul>
+<blockquote>
+<p><em>netsh advfirewall firewall set rule group="Windows Management Instrumentation (WMI)" new enable=yes</em></p>
+</blockquote>
+<p>Do not copy-paste the commands from this page or another help sources into your server core console, because copy-pasted commands will give you an error message: &ldquo;Group cannot be specified along with other identification conditions&rdquo;.</p>
+<p>For deepest understanding, how to configure the Hyper-V role for remote management on a full and Server Core installation of Windows Server 2008, please read this article <a href="http://technet.microsoft.com/en-us/library/cc794756(WS.10).aspx">http://technet.microsoft.com/en-us/library/cc794756(WS.10).aspx</a>.</p>
+<h2>Checking Windows Updates</h2>
+<p>Please make sure you have the following KB950050 update installed on the Virtualization server:</p>
+<p><a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=F3AB3D4B-63C8-4424-A738-BADED34D24ED&amp;displaylang=en">http://www.microsoft.com/downloads/details.aspx?FamilyId=F3AB3D4B-63C8-4424-A738-BADED34D24ED&amp;displaylang=en</a></p>
+<p>You could see the list of installed Windows updates here: Control Panel -&gt; Programs and Features -&gt; Installed updates.</p>
+<p>More info about KB950050 update: <a href="http://support.microsoft.com/kb/950050">http://support.microsoft.com/kb/950050</a></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn6395.html?ReturnUrl=%2FHyper-v-module%2Finstalling-and-configuring-hyper-v">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/Hyper-v-module/installing-and-configuring-hyper-v by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:11:49 GMT -->
+</html>

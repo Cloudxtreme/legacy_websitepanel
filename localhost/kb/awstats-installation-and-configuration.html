@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/awstats-installation-and-configuration by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:07:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>AWStats Installation and Configuration - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>AWStats Installation and Configuration</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="awstats-installation-and-configuration-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h3>Configuring AWStats</h3> <p>The goal of this section is to show how to:</p> <ol> <li>make AWStats showing up with <a href="http://stats.customerdomain.com/">http://stats.customerdomain.com/</a> and  <li>secure access to AWStats domain statistics </li></ol> <p>Yes, default AWStats service properties page in WSP puts "<a href="http://stats.[domain_name/">http://stats.[domain_name/</a>]" URL pattern for viewing statistics, but this doesn't mean AWStats will be automatically responding on this URL. There are at least two possible ways available to make AWStats responding on each <a href="http://stats.customerdomain.com/">http://stats.customerdomain.com/</a> URL. Both methods depend on whether you have a free dedicated IP address for AWStats or not.</p> <p><a name="Section2"></a></p> <h2>AWStats on dedicated IP</h2> <p>1. Install AWStats to a separate IIS web site.</p> <p>2. Bind AWStats web site to some dedicated IP. In IIS manager for AWStats web site you should add required IP and port (80 by default) on "Web Site" tab -&gt; "Web Site Identification" region -&gt; "Advanced..." dialog.</p> <p>3. In WSP on AWStats service properties page in "DNS Records" section add a new "stats" (or any other custom name) "A" record with AWStats dedicated IP in "data" field.</p> <p>Now every customer DNS zone will have that "stats" "A" record and requesting <a href="http://stats.customerdomain.com/">http://stats.customerdomain.com/</a> in the browser would opening AWStats web site.</p> <p><a name="Section3"></a></p> <h2>AWStats on a shared IP</h2> <p>1. In this case AWStats can be installed in any location, say in "AWStats" virtual directory of "Default Web Site".</p> <p>2. "Stats" "A" DNS record can be also defined to point to any IP address listening by "Default Web Site" (by default it is listening all server IP addresses). But if you have "*" "A" record defined in WEB service you may leave without "stats" record, because all requests with unknown host headers (server bindings) will be served by "Default Web Site".</p> <p>In both dedicated and shared IP scenarios the next step is redirecting incoming <a href="http://stats.domain.com/">http://stats.domain.com/</a> requests to <a href="http://<awstats_location>/cgi-bin/awstats.pl?config=domain.com">http://%3cawstats_location%3e/cgi-bin/awstats.pl?config=domain.com</a>. In order to do this you can use this simple ASP.NET script:</p> <div class="csharpcode"> <div class="csharpcode"><pre class="alt">&lt;script runat=<span class="str">"server"</span> language=<span class="str">"C#"</span>&gt; </pre><pre> <span class="kwrd">void</span> Page_Load() </pre><pre class="alt"> { </pre><pre>  Hashtable redirects = <span class="kwrd">new</span> Hashtable(); </pre><pre class="alt">&nbsp;</pre><pre>  <span class="rem">// the text you want to display when the specified sub-domain was not found </span></pre><pre class="alt">  <span class="kwrd">string</span> missingText = <span class="str">"&lt;h2&gt;There is no subdomain here.&lt;/h2&gt;"</span>; </pre><pre>&nbsp;</pre><pre class="alt">  <span class="rem">// Define redirects list. </span></pre><pre>  <span class="rem">// HOW TO add redirects: </span></pre><pre class="alt">  <span class="rem">// </span></pre><pre>  <span class="rem">// redirects[&lt;sub-domain name&gt;] = new SubDomainRedirect( </span></pre><pre class="alt">  <span class="rem">//  &lt;page title&gt;, </span></pre><pre>  <span class="rem">//  &lt;page URL&gt; - you may use [domain] variable in the URL which will be subsituted, </span></pre><pre class="alt">  <span class="rem">//  &lt;true - open URL in the frame; false - perform redirect to the URL&gt;); </span></pre><pre>  <span class="rem">// </span></pre><pre class="alt">  <span class="rem">////////////////////////////////////////////////////// </span></pre><pre>   </pre><pre class="alt">  redirects[<span class="str">"stats"</span>] = <span class="kwrd">new</span> SubDomainRedirect( </pre><pre>   <span class="str">"Statistics Server"</span>, </pre><pre class="alt">   <span class="str">"http://awstats.myserver.com/cgi-bin/awstats.pl?config=[domain]"</span>, </pre><pre>   <span class="kwrd">true</span>); </pre><pre class="alt">    </pre><pre>  redirects[<span class="str">"mysql"</span>] = <span class="kwrd">new</span> SubDomainRedirect( </pre><pre class="alt">   <span class="str">"PHP MyAdmin"</span>, </pre><pre>   <span class="str">"http://mysql.myserver.com"</span>, </pre><pre class="alt">   <span class="kwrd">true</span>); </pre><pre>    </pre><pre class="alt">  <span class="rem">// process redirects </span></pre><pre>  <span class="kwrd">string</span> domain = Request.Url.Host; </pre><pre class="alt">&nbsp;</pre><pre>  <span class="kwrd">int</span> dotIdx = domain.IndexOf(<span class="str">"."</span>); </pre><pre class="alt">  <span class="kwrd">string</span> subDomain = (dotIdx != -1) ? domain.Substring(0, dotIdx).ToLower() : <span class="kwrd">null</span>; </pre><pre>&nbsp;</pre><pre class="alt">  <span class="kwrd">if</span> (subDomain == <span class="kwrd">null</span>) </pre><pre>  { </pre><pre class="alt">   <span class="rem">// show missing text </span></pre><pre>   RenderMissingText(domain, missingText); </pre><pre class="alt">  } </pre><pre>  <span class="kwrd">else</span> <span class="kwrd">if</span> (redirects[subDomain] == <span class="kwrd">null</span>) </pre><pre class="alt">  { </pre><pre>   <span class="rem">// show missing text </span></pre><pre class="alt">   RenderMissingText(domain, missingText); </pre><pre>  } </pre><pre class="alt">  <span class="kwrd">else</span> </pre><pre>  { </pre><pre class="alt">   SubDomainRedirect redirect = (SubDomainRedirect)redirects[subDomain]; </pre><pre>&nbsp;</pre><pre class="alt">   <span class="rem">// subsitute domain </span></pre><pre>   redirect.Url = redirect.Url.Replace(<span class="str">"[domain]"</span>, domain.Substring(dotIdx+1)); </pre><pre class="alt">&nbsp;</pre><pre>   <span class="kwrd">if</span>(!redirect.Framed) </pre><pre class="alt">    Response.Redirect(redirect.Url, <span class="kwrd">true</span>); </pre><pre>&nbsp;</pre><pre class="alt">   <span class="kwrd">string</span> title = (redirect.Title != <span class="str">""</span>) ? redirect.Title : domain; </pre><pre>&nbsp;</pre><pre class="alt">   <span class="rem">// show frames </span></pre><pre>   RenderFrames(title, redirect.Url); </pre><pre class="alt">  } </pre><pre> } </pre><pre class="alt">  </pre><pre> <span class="kwrd">private</span> <span class="kwrd">void</span> RenderMissingText(<span class="kwrd">string</span> title, <span class="kwrd">string</span> missingText) </pre><pre class="alt"> { </pre><pre>  Response.Write(String.Format(<span class="str">@"&lt;html&gt; </pre><pre class="alt">    &lt;head&gt;&lt;title&gt;{0}&lt;/title&gt; </pre><pre>    &lt;body&gt; </pre><pre class="alt">     {1} </pre><pre>    &lt;/body&gt; </pre><pre class="alt">    &lt;/html&gt;"</span>, title, missingText)); </pre><pre> } </pre><pre class="alt">&nbsp;</pre><pre> <span class="kwrd">private</span> <span class="kwrd">void</span> RenderFrames(<span class="kwrd">string</span> title, <span class="kwrd">string</span> url) </pre><pre class="alt"> { </pre><pre>  Response.Write(String.Format(<span class="str">@"&lt;html&gt; </pre><pre class="alt">    &lt;head&gt;&lt;title&gt;{0}&lt;/title&gt; </pre><pre>    &lt;frameset rows="</span><span class="str">"1,*"</span><span class="str">" border="</span><span class="str">"0"</span><span class="str">"&gt; </pre><pre class="alt">    &lt;frame src="</span><span class="str">" mce_src="</span><span class="str">"#"</span><span class="str">"&gt; </pre><pre>    &lt;frame src="</span><span class="str">" mce_src="</span><span class="str">"{1}"</span><span class="str">"&gt;&lt;/frame&gt; </pre><pre class="alt">    &lt;/frameset&gt; </pre><pre>    &lt;/html&gt;"</span>, title, url)); </pre><pre class="alt"> } </pre><pre>&nbsp;</pre><pre class="alt"> <span class="kwrd">public</span> <span class="kwrd">class</span> SubDomainRedirect </pre><pre> { </pre><pre class="alt">  <span class="kwrd">public</span> <span class="kwrd">string</span> Url; </pre><pre>  <span class="kwrd">public</span> <span class="kwrd">string</span> Title; </pre><pre class="alt">  <span class="kwrd">public</span> <span class="kwrd">bool</span> Framed; </pre><pre>&nbsp;</pre><pre class="alt">  <span class="kwrd">public</span> SubDomainRedirect(<span class="kwrd">string</span> title, <span class="kwrd">string</span> url, <span class="kwrd">bool</span> framed) </pre><pre>  { </pre><pre class="alt">   <span class="kwrd">this</span>.Title = title; </pre><pre>   <span class="kwrd">this</span>.Url = url; </pre><pre class="alt">   <span class="kwrd">this</span>.Framed = framed; </pre><pre>  } </pre><pre class="alt"> } </pre><pre>&lt;/script&gt;</pre></div>
+<style type="text/css">.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: consolas, "Courier New", courier, monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+</style>
+<!-- .csharpcode, .csharpcode pre {  font-size: small;  color: black;  font-family: consolas, "Courier New", courier, monospace;  background-color: #ffffff;  /*white-space: pre;*/ } .csharpcode pre { margin: 0em; } .csharpcode .rem { color: #008000; } .csharpcode .kwrd { color: #0000ff; } .csharpcode .str { color: #006080; } .csharpcode .op { color: #0000c0; } .csharpcode .preproc { color: #cc6633; } .csharpcode .asp { background-color: #ffff00; } .csharpcode .html { color: #800000; } .csharpcode .attr { color: #ff0000; } .csharpcode .alt  {  background-color: #f4f4f4;  width: 100%;  margin: 0em; } .csharpcode .lnum { color: #606060; } --></div><!-- .csharpcode, .csharpcode pre {  font-size: small;  color: black;  font-family: consolas, "Courier New", courier, monospace;  background-color: #ffffff;  /*white-space: pre;*/ } .csharpcode pre { margin: 0em; } .csharpcode .rem { color: #008000; } .csharpcode .kwrd { color: #0000ff; } .csharpcode .str { color: #006080; } .csharpcode .op { color: #0000c0; } .csharpcode .preproc { color: #cc6633; } .csharpcode .asp { background-color: #ffff00; } .csharpcode .html { color: #800000; } .csharpcode .attr { color: #ff0000; } .csharpcode .alt  {  background-color: #f4f4f4;  width: 100%;  margin: 0em; } .csharpcode .lnum { color: #606060; } --><!-- .csharpcode, .csharpcode pre {  font-size: small;  color: black;  font-family: consolas, "Courier New", courier, monospace;  background-color: #ffffff;  /*white-space: pre;*/ } .csharpcode pre { margin: 0em; } .csharpcode .rem { color: #008000; } .csharpcode .kwrd { color: #0000ff; } .csharpcode .str { color: #006080; } .csharpcode .op { color: #0000c0; } .csharpcode .preproc { color: #cc6633; } .csharpcode .asp { background-color: #ffff00; } .csharpcode .html { color: #800000; } .csharpcode .attr { color: #ff0000; } .csharpcode .alt  {  background-color: #f4f4f4;  width: 100%;  margin: 0em; } .csharpcode .lnum { color: #606060; } -->
+<p>Just create "Default.aspx" page, copy-paste the code and place it to "c:\inetpub\wwwroot" folder for shared IP case and to the root folder of AWStats web site for dedicated IP case.</p>
+<p>NOTE: If you use AWStats Viewer solution (<a href="how-to-secure-awstats.html">How to Secure AWStats</a>) you don't need this page.</p>
+<p><a name="Section4"></a></p>
+<h2>Securing AWStats</h2>
+<p>AWStats is not secure solution by design and everybody on the Internet can view customer statistics by accessing <a href="http://stats.customerdomain.com/.">http://stats.customerdomain.com/.</a></p>
+<p>How to install and configure a simple ASP.NET application (as well as its binaries and sources) to secure AWStats please refer to this article: <a href="how-to-secure-awstats.html">How to Secure AWStats</a>.</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn6c79.html?ReturnUrl=%2Fkb%2Fawstats-installation-and-configuration">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/awstats-installation-and-configuration by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:07:03 GMT -->
+</html>

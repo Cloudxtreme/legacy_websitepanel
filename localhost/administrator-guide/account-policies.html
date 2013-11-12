@@ -1,0 +1,158 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/administrator-guide/account-policies by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:49:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Account Policies - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide" href="../rssa280?containerid=13" />
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide - Comments" href="../rss3e15?commentedoncontainer=13" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt; <a href="index.html">Administrator Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Account Policies</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="account-policies-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>Account Policies are account-level settings. Account policies specify such settings as web site default folders and settings, web, FTP, mail account allowed symbols and passwords complexity.</p>
+<p>Account policies can be overridden on nested reseller levels. If they are not overridden host account policies will be used in this case.</p>
+<p>To edit account policies login under reseller account ("serveradmin" can act as reseller too) and click "Policies" on the right-side "Settings" toolbox:</p>
+<p><img src="../Media/WindowsLiveWriter/AccountPolicies_CB8C/image%5b4%5d.png" alt="" /></p>
+<p>The following screen will appear:</p>
+<p><img src="../Media/WindowsLiveWriter/AccountPolicies_CB8C/image%5b9%5d.png" alt="" /></p>
+<p><a name="Section1"></a></p>
+<h2>Host or Overridden Settings</h2>
+<p><img src="../Media/Images/account_policies/host_over_settings.png" border="1" alt="host_over_settings.png" width="202" height="72" /></p>
+<p>There is a selector at the top of all settings forms. If "Use Host Settings" is selected then all form elements are disabled and your account will use the settings/policies defined on the upper host level. If you want to override host settings/policies you should select "Override Host Settings" option.</p>
+<p><a name="Section2"></a></p>
+<h2>Editing Policies</h2>
+<p><a name="Section3"></a></p>
+<h3>Common Policy Elements</h3>
+<p>Below are described common elements that occur on many policies.</p>
+<p><a name="Section4"></a></p>
+<h4>Username Policy</h4>
+<p>Allows to specify the set of allowed symbols that can be used by customer in identifier (username, database name, etc.) as well as its minimum and maximum lengths, prefixes and suffixes.</p>
+<p><img src="../Media/Images/account_policies/username_policy.png" border="1" alt="username_policy.png" width="345" height="205" /></p>
+<ul>
+<li><strong>Enable Policy</strong> - if the checkbox is set policy is enforced for the identifier; otherwise policy is not applied.</li>
+<li><strong>Allowed Symbols</strong> - the set of allowed symbols can be defined in this field. *, a-z, A-Z, 0-9, ., _ symbols are already allowed. Symbols in this field should be specified without spaces or other separators.</li>
+<li><strong>Minimum length</strong> - the minimum required length of the identifier.</li>
+<li><strong>Maximum length</strong> - the maximum required length of the identifier including prefix and suffix.</li>
+<li><strong>Prefix</strong> - the value that will be placed before identifier. It can be just a constant string such as "ftp_" or "reseller1_" or substitution variable such as [USER_NAME] or [USER_ID].</li>
+<li><strong>Suffix</strong> - the value that will be placed after identifier. It can be just a constant string such as "_web" or substitution variable such as [USER_NAME] or [USER_ID].</li>
+</ul>
+<p><a name="Section5"></a></p>
+<h4>Password Policy</h4>
+<p>Allows to enforce password complexity requirements.</p>
+<p><img src="../Media/Images/account_policies/password_policy.png" border="1" alt="password_policy.PNG" width="255" height="203" /></p>
+<ul>
+<li><strong>Enable Policy</strong> - if the checkbox is set policy is enforced for the password; otherwise policy is not applied.</li>
+<li><strong>Minimum length</strong> - the minimum required password length.</li>
+<li><strong>Maximum length</strong> - the maximum password length.</li>
+<li><strong>Uppercase letters</strong> - the minimum number of uppercase letters in the password. </li>
+<li><strong>Numbers</strong> - the minimum number of numbers (0-9) in the password.</li>
+<li><strong>Non-alphanumeric symbols</strong> - the minimum number of symbols (e.g. $, #, &amp;, etc.) in the password. </li>
+</ul>
+<p><a name="Section6"></a></p>
+<h3>Policies Explained</h3>
+<ul>
+<li><a href="WebsitePanel-policy.html">WebsitePanel Policy</a></li>
+<li><a href="Web-Policy.html">Web Policy</a></li>
+<li><a href="FTP-policy.html">FTP Policy</a></li>
+<li><a href="MAIL-policy.html">MAIL Policy</a></li>
+<li><a href="MS-SQL-policy.html">MS SQL Policy</a></li>
+<li><a href="MySQL-policy.html">MySQL Policy</a></li>
+<li><a href="SharePoint-policy.html">SharePoint Policy</a></li>
+<li><a href="Operating-System-policy.html">Operating System Policy</a></li>
+<li><a href="hosted-organization-policy.html">Hosted Organization Policy</a></li>
+<li><a href="exchange-hosting-mode-policy.html">Exchange Hosting Mode Policy</a></li>
+<li><a href="virtual-private-servers-policy.html">Virtual Private Servers Policy</a></li>
+</ul>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn1347.html?ReturnUrl=%2Fadministrator-guide%2Faccount-policies">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/administrator-guide/account-policies by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:49:18 GMT -->
+</html>

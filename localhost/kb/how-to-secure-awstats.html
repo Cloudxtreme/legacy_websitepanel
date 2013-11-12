@@ -1,0 +1,168 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/how-to-secure-awstats by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:04:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>How to secure AWStats - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>How to secure AWStats</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="how-to-secure-awstats-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p><strong>AWStats.Viewer</strong> is a tool that allows to secure access to AWStats CGI script. AWStats Viewer comes with a full source code and it is a good example of how 3rd party program can be integrated with WebsitePanel Enterprise Server.<br>AWStats Viewer comes with "WebsitePanelAuthenticationProvider" and "ConfigFileAuthenticationProvider" pre-compiled providers. Other user authentication mechanisms can be added by means of implementing custom AuthenticationProvider classes.  <p><a name="Section1"></a> <h2>System Requirements</h2> <ul> <li> <p>Internet Information Services 6.0 </p> <li> <p>AWStats 6.x installed and configured </p> <li> <p>Microsoft.NET Framework 2.0 </p></li></ul><a name="Section2"></a> <h2>Installation and Setup</h2> <p>1. Download AWStats.Viewer 2.0.1 distribution from SourceForge: <a title="http://sourceforge.net/projects/websitepanel/files/Releases/WebsitePanel/" href="http://sourceforge.net/projects/websitepanel/files/Releases/WebsitePanel/">http://sourceforge.net/projects/websitepanel/files/Releases/WebsitePanel/</a>. It is located in Tools folder for each WSP release. <p>2. Unpack the contents of "build" folder to "wwwroot" folder of AWStats installation so, "default.aspx" page and "bin" folder of the application are located right inside of "wwwroot" folder. For instance, if you have AWStats instaled in "c:\AWStats" folder and path to its "wwwroot" is "c:\AWStats\wwwroot" then the path to "default.aspx" will be "c:\AWStats\wwwroot\default.aspx"  <p>3. Open IIS Manager snap-in and open properties window for AWStats web site (or virtual directory).  <p>4. On "ASP.NET" tab select "2.0.50727" version of the .NET Framework and on "Home Directory" (or "Virtual Directory") tab specify correct Application Pool for ASP.NET 2.0 applications (different from DefaultAppPool). Click "OK" button to save changes.  <p>5. Open application "web.config" and specify correct application settings (elements inside of "&lt;appSettings&gt;" element):  <p>AWStats.URL&nbsp; - URL to "awstats.pl" Perl script. It may be an absolute or relative URL.<br>AWStats.Username - Username of Windows account used to login when Windows Integrated Security is enabled. If awstats.pl is available for anonymous visitors and doesn't require Windows authentication you may leave this setting blank.<br>AWStats.Password - Password for the account above.<br>AWStats.AuthenticationProvider - Full-quialified name of the type (class inherited from Smbsaas.AWStats.Viewer.AuthenticationProvider) performing authentication of the user.  <p><a name="Section3"></a> <h2>Authentication Providers</h2> <p>AWStats Viewer comes with 2 pre-compiled providers:  <p><a name="Section4"></a> <h3>1. "WebsitePanelAuthenticationProvider" provider</h3> <p><strong>Description:</strong> <p>Provider allows to authenticate users against usernames/passwords of the WSP Enterprise Server.<br><strong>Qualified name:</strong> <p>"Smbsaas.AWStats.Viewer.WebsitePanelAuthenticationProvider, AWStats.Viewer"<br><strong>Settings:</strong> <p>"AWStats.WebsitePanelAuthenticationProvider.EnterpriseServer" - URL to WSP Enterprise Server, for example "<a href="../EnterpriseServer.html">http://localhost/EnterpriseServer</a>"  <p>In the web.config file, when you put the address of your Enterprise server, make sure you put the port number if your are not using the default of 80.  <p>Example:  <div class="csharpcode"><pre class="alt">&lt;add key=<span class="str">"AWStats.DotNetPanelAuthenticationProvider.EnterpriseServer"</span> <span class="kwrd">value</span>=<span class="str">"http://1.2.3.4:9002"</span>/&gt;</pre></div>
+<style type="text/css">.csharpcode, .csharpcode pre
+{
+ font-size: small;
+ color: black;
+ font-family: consolas, "Courier New", courier, monospace;
+ background-color: #ffffff;
+ /*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+ background-color: #f4f4f4;
+ width: 100%;
+ margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+</style>
+
+<p><a name="Section5"></a>
+<h3>2. "ConfigFileAuthenticationProvider" provider</h3>
+<p><strong>Description:</strong>
+<p>Provider allows to authenticate users against usernames/passwords stored in the awstats.&lt;some-site&gt;.conf file of the corresponding domain. 
+<p>Provider looks for the following configuration setting in the appropriate .conf file: 
+<p>SiteUsers=user1=psw1;user2=psw2;... 
+<p>where "user1=psw1;user2=psw2" are user/password pairs of users granted to access the statistics of this domain. 
+<p><strong>Qualified name:</strong>
+<p>"Smbsaas.AWStats.Viewer.ConfigFileAuthenticationProvider, AWStats.Viewer"<br><strong>Settings:</strong>
+<p>"AWStats.ConfigFileAuthenticationProvider.DataFolder" - path to the folder where domain awstats.&lt;some-site&gt;.conf files are stored. It may be a relative path with a "~" at the beginning and&nbsp; an absolute path on the disk. 
+<p><a name="Section6"></a>
+<h2>Securing AWStats</h2>
+<p>As soon as all requests to "awstats.pl" Perl script will be passing through AWStats.Viewer application<br>you should deny direct access to "awstats.pl" script. 
+<p>We suggest two possible methods of securing "awstats.pl": 
+<p>1. Disable "Anonymous Access" and Enable "Windows Integrated Security". 
+<p>To do this open IIS Manager snap-in and open properties window for "awstats.pl" file. 
+<p>On "File Security" tab click "Edit..." button in "Authentication and Access control" group. 
+<p>Uncheck "Enable Anonymous Access" checkbox and check "Windows Integrated Security" one. 
+<p>Click "OK" button to save changes.<br>After disabling anonymous access opening "awstats.pl" right in the browser window will ask for Windows account credentials. You should provide the credentials of anonymous account under which AWStats web site (or virtual directory) is running.<br>If your "awstats.pl" script is not available for anonymous visitors you should specify "AWStats.Username" and "AWStats.Password" settings (see above) in web.config of the application. 
+<p>2. Grant access to "awstats.pl" from local IP addresses only. 
+<p>To do this open IIS Manager snap-in and open properties window for "awstats.pl" file. 
+<p>On "File Security" tab click "Edit..." button in "IP address and domain name restrictions" group. 
+<p>Check "Denied access" radio button and add "127.0.0.1" (or other local IP) to the list of granted IP addresses. 
+<p><a name="Section7"></a>
+<h2>Autologin Mode</h2>
+<p>AWStats.Viewer supports autologin mode which is very suitable when integrated with WSP. 
+<p>To use autologin mode you should provide domain, username and password in the request URL as following: 
+<p>http://stats-web-site.com/default.aspx?domain=&lt;domain&gt;&amp;username=&lt;username&gt;&amp;password=&lt;password&gt; 
+<p>where: 
+<p>default.aspx - default page of AWStats.Viewer 
+<p>&lt;domain&gt; - domain for which you want to browse the statistics 
+<p>&lt;username&gt; - user name 
+<p>&lt;password&gt; - password 
+<p><a name="Section8"></a>
+<h2>Release Notes</h2>
+<p>1. To open and work with "awstats.csproj" project you need Microsoft Visual Studio.NET 2005 and installed "Web Application Projects" add-on (<a href="http://msdn.microsoft.com/asp.net/reference/infrastructure/wap/default.aspx">http://msdn.microsoft.com/asp.net/reference/infrastructure/wap/default.aspx</a>) 
+
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn3577.html?ReturnUrl=%2Fkb%2Fhow-to-secure-awstats">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/how-to-secure-awstats by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:04:03 GMT -->
+</html>

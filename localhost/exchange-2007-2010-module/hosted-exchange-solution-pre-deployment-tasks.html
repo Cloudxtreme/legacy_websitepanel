@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/hosted-exchange-solution-pre-deployment-tasks by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:59:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Hosted Exchange Solution Pre-Deployment Tasks - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module" href="../rss68ec?containerid=101" />
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module - Comments" href="../rssba67?commentedoncontainer=101" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Exchange 2007/2010 Modules</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Hosted Exchange Solution Pre-Deployment Tasks</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="hosted-exchange-solution-pre-deployment-tasks-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h2>Deploying Hosted Organizations module</h2> <p><a href="deploying-hosted-organizations-module.html">Run steps described in this article</a></p> <p><a name="Section2"></a></p> <h2>Modifying Address Lists Containers</h2><strong>Please use ADSI Edit carefully. The best practice is to make full backup of AD (DC System State) before using ADSI Edit.</strong> <ul> <li> <p>Open ADSI Edit. </p> <li> <p>Connect to Configuration naming context. </p> <li> <p>Navigate to Services &gt; Microsoft Exchange &gt; Your Organization &gt; Address Lists Container</p> <li>Remove the Anonymous Logon, Everyone and Authenticated Users accounts for the following containers: </li></ul> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - CN= All Address Lists container <blockquote> <p>&nbsp;&nbsp; - The sub containers All Contacts, All Groups, All Rooms, All Users and Public Folders</p></blockquote> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - CN=All Global Address Lists container <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - The sub container CN=Default Global Address List <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - CN= Offline Address Lists container <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - The sub container CN=Default Offline Address Book  <p>To be able to remove the accounts you will need to disable permissions inheritance (uncheck "Include inheritable permissions from this object's parent" in Security &gt; Advanced tab) and copy existing permissions for CN= All Address Lists, CN=All Global Address Lists and CN= Offline Address Lists containers. <strong></strong><strong> <p><strong>Please do not change parent object (Address Lists Container) permissions!</strong> <p></strong><a name="Section3"></a> <h2>Basic Exchange system checks</h2> <ul> <li>Check that Send and Receive Connectors settings allow you to send and receive e-mail to/from outside.  <li>Check that Default Address Policy exists and applied. We do not recommend using additional E-mail Address Policies on WSP environment. Although WSP Exchange solution will work with Exchange environment where more than one E-mail Address Policy exists – this could lead to some issues when performing some changes, migrations, etc. So the best practice is to have only “Default Policy” created be Exchange Setup and do not change it.&nbsp; <li>Check Public Folders (Default Public Folders database exist). Note that Public Folder Database will not be automatically installed if you chose No (do not support Outlook 2003 or earlier clients) in Client settings page when first Exchange Mailbox Server was installed. In this case you should create new Storage Group with Public Folder Database in it manually. </li></ul> <ul></ul>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn894d.html?ReturnUrl=%2Fexchange-2007-2010-module%2Fhosted-exchange-solution-pre-deployment-tasks">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/hosted-exchange-solution-pre-deployment-tasks by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:59:16 GMT -->
+</html>

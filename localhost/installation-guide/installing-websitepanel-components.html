@@ -1,0 +1,198 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/installation-guide/installing-websitepanel-components by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:44:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Installing WebsitePanel Components One-by-One - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Installation Guide" href="../rss1e35?containerid=110" />
+
+<link rel="alternate" type="application/rss+xml" title="Installation Guide - Comments" href="../rssaaeb?commentedoncontainer=110" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Installation Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Installing WebsitePanel Components One-by-One</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <h2>WebsitePanel Enterprise Server</h2>
+<p>To install WSP Enterprise Server open WSPI, click "View Available Components" button and then "Install" link over "WebsitePanel Enterprise Server" row:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_4.png" alt="" width="501" height="376" /></p>
+<p>Click "Next" button to proceed to WSP ES installation wizard.</p>
+<p>WSPI will check for minimum system requirements and if they are met "Next" button will be enabled:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_8.png" alt="" /></p>
+<p>Click "Next" button to switch to the next wizard step:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_16.png" alt="" /></p>
+<p>Specify folder on server hard drive to install WSP ES files and click "Next" button to go to the next step.</p>
+<p>Specify WSP ES web site settings. If you are not going to expose Enterprise Server to external clients (3rd-party applications consuming ES web services) and WSP Portal will be installed on the same server we recommend keeping 127.0.0.1 as a web site IP address and default 9002 TCP port; otherwise you could select different IP address (from internal or external network pools) and TCP port for ES web site.</p>
+<p>Click "Next" button to go to the next wizard step:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_14.png" alt="" /></p>
+<p>"Security Settings" step allows you to specify the name of user account that will be used as ES web site anonymous identity (IIS 6 only) and ES application pool identity (IIS 6 and IIS 7). There is an auto-generated password for this account already specified in "Password" field. It's GUID and strong enough to be discovered. Change password value if only you are going to manually modify web site or application pool settings later after ES installation. If you are installing WSP Enterprise Server in Active Directory environment you have an option to "Create Active Directory account"; otherwise local Windows account (SAM database) will be created.</p>
+<p>WSP Enterprise Server application pool must be run under "weak" user account. By default WSPI creates an account which is a member of "IIS_WPG" (on IIS 6) or "IIS_IUSRS" (on IIS 7) group only.</p>
+<p>For WSP Enterprise Server we recommend creating "local" account for tightened security.</p>
+<p>Click "Next" to go to "Database Settings" wizard step:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_18.png" alt="" /></p>
+<p>Specify SQL Server 2005 or 2008 instance name in "SQL Server" field. For default SQL Server Express edition installation you could type "(local)\SQLEXPRESS", select authentication mode and specify database name.</p>
+<p>Please note that these database settings will be used during WSP upgrades, so make sure they could be used to access SQL Server over time.</p>
+<p>Click "Next" button to go to "Administrator Password" step:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_22.png" alt="" /></p>
+<p>Specify password that will be assigned to "serveradmin" account. You use top-level "serveradmin" account to configure WebsitePanel installation and create resellers/customers.</p>
+<p>Default "serveradmin" password pre-filled on this dialog is "serveradmin" (without quotes).<br />We strongly recommend to replace default "serveradmin" password with your own strong one.</p>
+<p>Click "Next" button to start the installation of WSP Enterprise Server.</p>
+<p>After ES setup is complete you will see the following dialog:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_24.png" alt="" /></p>
+<p>You could click ES URL and open it in the web browser to make sure it was properly installed:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_26.png" alt="" /></p>
+<h2>WebsitePanel Portal</h2>
+<p>To install WSP Portal open WSPI, click "View Available Components" button and then "Install" link over "WebsitePanel Portal" row:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_28.png" alt="" width="501" height="376" /></p>
+<p>WSPI will check for minimum system requirements and if they are met "Next" button will be enabled:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_34.png" alt="" /></p>
+<p>On the &ldquo;Choose Install Location&rdquo; step specify folder on server hard drive to install WSP Portal files and click "Next" button to go to the next step.</p>
+<p>Specify WSP Portal web site settings. The URL shown on this page will be used to access your control panel. If you have a free IP address assigned to the server then we recommend to dedicate it for control panel and specify "80" for the port; otherwise in the case selected IP is shared by several web sites we recommend you to leave default IP address and 9001 port.</p>
+<p>Make sure the custom port selected for this web site (9001 in our case) is allowed on server Firewall.</p>
+<p>Click "Next" button to go to the next wizard step:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_36.png" alt="" /></p>
+<p>"Security Settings" step allows you to specify the name of user account that will be used as WSP Portal web site anonymous identity and WSP Portal application pool identity.</p>
+<p>WSP Portal application pool must be run under "weak" user account. By default WSPI creates an account which is a member of "IIS_WPG" (on IIS 6) or "IIS_IUSRS" (on IIS 7) group only.</p>
+<p>For WSP Portal we recommend creating "local" account for tightened security.</p>
+<p>Click "Next" button to go to the next step:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_38.png" alt="" /></p>
+<p>On this step you have to specify URL to WSP Enterprise Server application. For default WSP ES installation it's http://127.0.0.1:9002. To make sure WSP ES is accessible from the server where you are installing WSP Portal you could open its URL in the web browser.</p>
+<p>Click "Next" button to start WSP Portal installation.</p>
+<p>After WSP Portal setup is complete you could see the dialog with installation log:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_40.png" alt="" /></p>
+<p>You could click Portal URL and open it in the web browser to make sure it was properly installed:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_42.png" alt="" width="565" height="356" /></p>
+<p>Try signing in under "serveradmin" (with appropriate password set during Enterprise Server installation) to make sure account home page could be accessed.</p>
+<h2>WebsitePanel Server</h2>
+<p>To install WSP Server open WSPI, click "View Available Components" button and then "Install" link over "WebsitePanel Server" row:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_44.png" alt="" width="565" height="424" /></p>
+<p>WSPI will check for minimum system requirements and if they are met "Next" button will be enabled:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_46.png" alt="" /></p>
+<p>Specify folder on server hard drive to install WSP Server files and click "Next" button to go to the next step.</p>
+<p>Specify WSP Server web site settings. If you are installing WSP Server on the same server with WSP Enterprise Server we recommend keeping 127.0.0.1 as a web site IP address and default 9003 TCP port; otherwise you could select different IP address (from internal or external network pools) and TCP port for Server web site.</p>
+<p>Click "Next" button to go to the next wizard step:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_48.png" alt="" /></p>
+<p>"Security Settings" step allows you to specify the name of user account that will be used as WSP Server web site anonymous identity and ES application pool identity. There is an auto-generated password for this account already specified in "Password" field. It's GUID and strong enough to be discovered. Change password value if only you are going to manually modify web site or application pool settings later after Server installation. If you are going to control Active Directory from WebsitePanel and installing WSP Server in Active Directory environment you have an option to "Create Active Directory account"; otherwise local Windows account (SAM database) will be created.</p>
+<p>WSP Server application pool runs under "strong" user account with administrative privileges. By default, WSPI creates account which is a member of local "Administrators" security group (for local mode) or "Domain Admins" security group (for AD mode).</p>
+<p>Click "Next" button to finish WSP Server installation. After Server setup is complete you will see the following dialog with installation log:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_50.png" alt="" /></p>
+<p>You could click Server URL and open it in the web browser to make sure it was properly installed:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_52.png" alt="" /></p>
+<h2>Troubleshooting Installation Issues</h2>
+<h3>Could not start WebsitePanel Installer on Windows 2008</h3>
+<p>This might be due to enabled User Account Control (UAC). As a solution you could disable UAC or run WSPI in "elevated" mode by right clicking its shortcut and selecting "Run as Administrator".</p>
+<h3>Viewing WebsitePanel Installer Error Log</h3>
+<p>To view WSPI application log click "Application Settings" node in the left navigation menu and then click "View System Log" button:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/image_54.png" alt="" width="537" height="403" /></p>
+<p>WSPI log will be opened in Notepad.</p>
+<h3>"Unable to generate a temporary class" or "Root element is missing" error message while opening WSP Portal</h3>
+<p>This error is related to Windows Server 2003 platform. This error means that IIS_WPG group doesn't have Read and List Folder Contents permissions on C:\Windows\Temp folder on the server where WSP Portal is running. Just add IIS_WPG group with Read and List Folder Contents permissions on the mentioned folder on the WSP Portal server.</p>
+<p>Please note that you should grant permissions to the domain IIS_WPG group if WSP Portal is running on domain controller or local IIS_WPG group in other cases.</p>
+<p>Also note that it is good practice to grant those permissions to IIS_WPG on C:\Windows\Temp folder (or another folder in case of non-standard Environment Variables settings) on all servers running any WSP component.</p>
+<h3>Web App Gallery cannot install ASP.NET applications with SQL Server database</h3>
+<p>Open SQL Server service settings in control panel and change security mode to "SQL Server Authentication". Specify "sa" username and its password and click "Update" button to save changes.</p>
+<h3>WebsitePanel cannot create MailEnable mailbox on Windows 2003 x64 or Windows 2008 x64 editions</h3>
+<p>MailEnable and Merak mail server software are 32-bit applications providing COM API to WebsitePanel. If WSP Server component works in 64-bit mode it cannot instantiate 32-bit COM objects.</p>
+<p>To solve this issue you have to switch ASP.NET on the machine where WSP Server is installed to 32-bit mode.</p>
+<h3>Switching ASP.NET to 32-bit mode on Windows 2003 x64</h3>
+<p>To switch IIS 6 and ASP.NET into 32-bit mode open command line:</p>
+<p>Start -&gt; Run... -&gt; cmd</p>
+<p>Then switch to c:\Inetpub\AdminScripts folder:</p>
+<p>cd c:\Inetpub\AdminScripts</p>
+<p>and run the following command:</p>
+<p>cscript.exe adsutil.vbs set W3SVC/AppPools/Enable32BitAppOnWin64 "1"</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/clip_image002_2.png" alt="" /></p>
+<p>To enable ASP.NET on IIS in command line interface switch to C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727 folder and run aspnet_regiis program with &ldquo;i&rdquo; switch:</p>
+<p>cd C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727</p>
+<p>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727&gt;aspnet_regiis -i</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/clip_image004_2.png" alt="" /></p>
+<p>Now as ASP.NET is enabled for IIS you should go to Internet Information Services (IIS) Manager and allow &ldquo;ASP.NET v2.0.50727 (32-bit)&rdquo; extension in &ldquo;Web Service Extensions&rdquo; section:</p>
+<p><img src="../Media/WindowsLiveWriter/InstallingWebsitePanelComponentsOnebyOne_C06E/clip_image006_2.png" alt="" /></p>
+<p>You could find more information regarding this topic in the following Microsoft KB:<br /><a href="http://support.microsoft.com/default.aspx/kb/894435">http://support.microsoft.com/default.aspx/kb/894435</a></p>
+<h3>Switching ASP.NET to 32-bit mode on Windows 2008 x64</h3>
+<p>To switch WSP Server application to 32-bit mode open IIS manager.</p>
+<p>Click "Application Pools" in the left navigation menu and then open "Advanced Settings" dialog of "WebsitePanel Server Pool".</p>
+<p>Set "Enable 32-bit Applications" to "True" and click "OK" button to save changes.</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnce19.html?ReturnUrl=%2Finstallation-guide%2Finstalling-websitepanel-components">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/installation-guide/installing-websitepanel-components by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:45:25 GMT -->
+</html>

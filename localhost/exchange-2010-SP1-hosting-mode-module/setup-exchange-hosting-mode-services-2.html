@@ -1,0 +1,131 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/exchange-2010-sp1-hosting-mode-module/setup-exchange-hosting-mode-services by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Setup Exchange Hosting Mode Services - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2010 SP1 Hosting Mode Module" href="../rsse423?containerid=99" />
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2010 SP1 Hosting Mode Module - Comments" href="../rssbb9d?commentedoncontainer=99" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Exchange Hosting Mode Module</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Setup Exchange Hosting Mode Services</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="setup-exchange-hosting-mode-services-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h2>Step 1: Add New Server</h2>
+<p>In order to control Exchange 2010, &ldquo;WebsitePanel Server&rdquo; agent must be installed on the machine with Exchange &ldquo;Client Access Server&rdquo; (CAS) role. WebsitePanel Server application pool identity (&ldquo;WSServer&rdquo; by default) must be Active Directory account which is a member of &ldquo;Enterprise Admins&rdquo; group.</p>
+<p>Login as Server Admin, go to Configuration &ndash; Servers and <a href="../administrator-guide/setting-up-remote-servers.html">create a new Server</a>.</p>
+<h2>Step 2: Create Services</h2>
+<p>On the Server, add service for each of Exchange Service Plan under Exchange Hosting Mode Service Group:</p>
+<p><a href="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_14.png"><img style="display: inline; border: 0px;" title="image" src="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_thumb_6.png" border="0" alt="image" width="539" height="206" /></a>&nbsp;</p>
+<p>For the Name field, use meaningful name like [Program ID,Offer ID]. To find out Program ID and Offer ID access your CAS server and see Service Plans here:<br />&lt;Exchange Installation Path&gt;/Exchange Server/V14/ClientAccess/ServicePlans<br />There is a number of SERVICEPLAN files, and they all are listed in ServicePlanHostingRemap.csv.</p>
+<p><a href="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_2.png"><img style="display: inline; border-width: 0px;" title="image" src="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_thumb.png" border="0" alt="image" width="527" height="295" /></a></p>
+<p>In the example shown on screenshot above, you would need to create 3 Services with the following Program ID and Offer ID:<br />HostingSample,2<br />HostingSample,3<br />HostingSample,4</p>
+<p>Details for Service &ldquo;HostingSample,2&rdquo;:</p>
+<p><a href="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_16.png"><img style="display: inline; border: 0px;" title="image" src="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_thumb_7.png" border="0" alt="image" width="478" height="495" /></a>&nbsp;</p>
+<p>Note: Domain Templates settings can be overridden be reseller on User Space Home -&gt; Settings -&gt; Exchange Hosting Mode:</p>
+<p><a href="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_4.png"><img style="display: inline; border-width: 0px;" title="image" src="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_thumb_1.png" border="0" alt="image" width="476" height="178" /></a></p>
+<p>After creating services for all Service Plans the server will look like this:</p>
+<p><a href="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_6.png"><img style="display: inline; border-width: 0px;" title="image" src="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_thumb_2.png" border="0" alt="image" width="483" height="322" /></a></p>
+<h2>Step 3: Create Virtual Servers</h2>
+<p>For each of the services created, create a Virtual Server.</p>
+<p>Go to Configuration -&gt; Virtual Servers and Click &ldquo;Add Virtual Server&rdquo;.</p>
+<p>Give Virtual Server meaningful name (for example the same name of for the Service that will be added to this virtual server):</p>
+<p><a href="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_8.png"><img style="display: inline; border-width: 0px;" title="image" src="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_thumb_3.png" border="0" alt="image" width="507" height="218" /></a></p>
+<p>Click &ldquo;Add Server&rdquo;. On the Edit Virtual Server screen click &ldquo;Add Services&rdquo;.</p>
+<p>On Add Virtual Server Services screen select OS Service (in the example below it&rsquo;s Windows Server 2008) and Service for the Service Plan (in this example it&rsquo;s HostingSample,2). OS Service should be setup in advance and may be on the same or on different physical server.</p>
+<p><a href="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_10.png"><img style="display: inline; border-width: 0px;" title="image" src="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_thumb_4.png" border="0" alt="image" width="489" height="335" /></a></p>
+<p>Click &ldquo;Add Selected&rdquo; button.</p>
+<p>Repeat these steps for each Service Plan. In the end there will be a set of Virtual Servers like this one:</p>
+<p><a href="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_12.png"><img style="display: inline; border-width: 0px;" title="image" src="../Media/WindowsLiveWriter/SetupExchangeHostingModeServices_E3AF/image_thumb_5.png" border="0" alt="image" width="624" height="193" /></a></p>
+<p>Now all services are set up and admin or reseller may create Hosting Plans in WebsitePanel.</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn05b1.html?ReturnUrl=%2Fexchange-2010-sp1-hosting-mode-module%2Fsetup-exchange-hosting-mode-services">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/exchange-2010-sp1-hosting-mode-module/setup-exchange-hosting-mode-services by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:34 GMT -->
+</html>

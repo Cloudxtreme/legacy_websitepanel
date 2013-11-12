@@ -1,0 +1,131 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/installing-php-4-and-php-5-as-isapi-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>ISAPI olarak PHP 4 ve PHP 5 Kurma - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>ISAPI olarak PHP 4 ve PHP 5 Kurma</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="installing-php-4-and-php-5-as-isapi.html">en-US</a></li></ul>
+    </div>
+</div>
+<p style="line-height: 150%; margin-bottom: 0pt;"><span style="line-height: 150%; font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><a href="http://www.websitepanel.net/documentation"><span style="color: #000000;" color="#000000">Belgeler</span></a> &gt;<a href="http://www.websitepanel.net/kb/index"><span style="color: #000000;" color="#000000">Bilgi Bankası</span></a><o:p></o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt; mso-outline-level: 1;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 17pt; mso-font-kerning: 18.0pt;" lang="TR">ISAPI olarak PHP 4 ve PHP 5 Kurma<o:p></o:p></span></p>
+<p style="line-height: 150%; text-indent: -0.25in; margin: 0in 0in 0pt 0.5in; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">1.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">Kurulumları C:\php4 ve c:\php5 &ouml;ğelerine &ccedil;ıkarın <o:p></o:p></span></p>
+<p style="line-height: 150%; text-indent: -0.25in; margin: 0in 0in 0pt 0.5in; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">2.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">php.ini-dist dosyasının adını her iki dizinde php.ini olarak değiştirin <o:p></o:p></span></p>
+<p style="line-height: 150%; text-indent: -0.25in; margin: 0in 0in 0pt 0.5in; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">3.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">NETWORK SERVICE ve WSPWebUsers i&ccedil;in şu dosyalarda Okuma ve Y&uuml;r&uuml;tme izinleri ayarlayın: <br />C:\php4\php4ts.dll<o:p></o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt 0.25in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">C:\php4\sapi\php4isapi.dll<o:p></o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt 0.25in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">C:\php4\php.ini<o:p></o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt 0.25in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">C:\php5\php5ts.dll<o:p></o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt 0.25in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">C:\php5\php5isapi.dll<o:p></o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt 0.25in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">C:\php5\php.ini <o:p></o:p></span></p>
+<p style="line-height: 150%; text-indent: -0.25in; margin: 0in 0in 0pt 0.5in; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">4.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">Kayıt defterine yeni anahtarları ekleyin:<o:p></o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt 0.25in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">HKEY_LOCAL_MACHINE\SOFTWARE\PHP <o:p></o:p></span></p>
+<p style="line-height: 150%; text-indent: -0.25in; margin: 0in 0in 0pt 0.5in; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">5.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"iniFilePath" dizi değerini "C:\php4\" değeri ile ekleyin - bu dizinde PHP 4 i&ccedil;in php.ini olmalıdır <o:p></o:p></span></p>
+<p style="line-height: 150%; text-indent: -0.25in; margin: 0in 0in 0pt 0.5in; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">6.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">HKEY_LOCAL_MACHINE\SOFTWARE\PHP\5.2 alt anahtarını ekleyin <o:p></o:p></span></p>
+<p style="line-height: 150%; text-indent: -0.25in; margin: 0in 0in 0pt 0.5in; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">7.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"iniFilePath" dizi değerini "C:\php5\" değeri ile ekleyin - bu dizinde PHP 5 i&ccedil;in php.ini olmalıdır <o:p></o:p></span></p>
+<p style="line-height: 150%; text-indent: -0.25in; margin: 0in 0in 0pt 0.5in; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">8.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">&ouml;nceki iletide anlatılan şekilde Web Hizmeti Uzantılarını IIS'ye ekleyin <o:p></o:p></span></p>
+<p style="line-height: 150%; text-indent: -0.25in; margin: 0in 0in 0pt 0.5in; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">9.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">WebsitePanel uygulamasında PHP 4.x Y&uuml;r&uuml;t&uuml;lebilir Dosya Yolu şu şekilde olmalıdır:<o:p></o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt 0.25in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">C:\php4\sapi\php4isapi.dll <o:p></o:p></span></p>
+<p style="line-height: 150%; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l1 level1 lfo1; tab-stops: list .25in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">10.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp; </span></span></span><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">WebsitePanel uygulamasında PHP 5.x Y&uuml;r&uuml;t&uuml;lebilir Dosya Yolu şu şekilde olmalıdır:<br />C:\php5\php5isapi.dll <o:p></o:p></span></p>
+<p style="line-height: 150%; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l1 level1 lfo1; tab-stops: list .25in;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">11.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp; </span></span></span><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">IIS'yi yeniden başlatın ve PHP kurulumunuzu yeniden başlatın.<o:p></o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">MySQL varsayılan olarak etkinleştirilmiş değildir, bu nedenle php_mysql.dll DLL dosyası php.ini i&ccedil;inde etkinleştirilmelidir. Ayrıca PHP i&ccedil;in MySQL istemci kitaplığına erişim gereklidir. libmysql.dll adlı bir dosya Windows PHP dağıtımında bulunur ve PHP'nin MySQL ile iletişim kurabilmesi i&ccedil;in bu dosya Windows sistemleri PATH uygulamasında bulunmalıdır. <o:p></o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">Bu konuda daha fazla bilgi almak i&ccedil;in "PHP dizinini Windows'da PATH uygulamasına nasıl eklerim" başlıklı SSS &ouml;ğesine bakın. <o:p></o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><a href="http://www.php.net/manual/en/faq.installation.php#faq.installation.addtopath"><span style="color: #000000;" color="#000000">http://www.php.net/manual/en/faq.installation.php#faq.installation.addtopath</span></a> <o:p></o:p></span></p>
+<p style="line-height: 150%; margin: 0in 0in 0pt;" class="MsoNormal"><span style="line-height: 150%; font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">PHP uzantısının (php_mysql.dll gibi) etkinleştirilmesi ile birlikte PHP dizini extension_dir değeri, PHP uzantılarının bulunduğu dizine ayarlanmalıdır. Manuel Windows Kurulum Talimatlarına da bakın. PHP 5 i&ccedil;in &ouml;rnek extension_dir değeri c:\php\ext şeklindedir <o:p></o:p></span></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnd7a7.html?ReturnUrl=%2Fkb%2Finstalling-php-4-and-php-5-as-isapi-tr-TR">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/installing-php-4-and-php-5-as-isapi-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:23 GMT -->
+</html>

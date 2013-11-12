@@ -1,0 +1,162 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/iis-6.0-web-server-installation-and-configuration-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>IIS 6.0 Web Server Kurulum ve Yapılandırma - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>IIS 6.0 Web Server Kurulum ve Yapılandırma</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="iis-6.html">en-US</a></li></ul>
+    </div>
+</div>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><a href="http://www.websitepanel.net/documentation"><span style="color: black;">Belgeler</span></a> &gt;<a href="http://www.websitepanel.net/kb/index"><span style="color: black;">Bilgi Bankası</span></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 1;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 17pt; mso-font-kerning: 18.0pt;" lang="TR">IIS 6.0 Web Server Kurulum ve Yapılandırma<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">Internet Bilgi Hizmetlerini Kurma<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">IIS dağıtımından en az bir Web Sunucusu kurulmalıdır, &ccedil;&uuml;nk&uuml; t&uuml;m WebsitePanel uygulamaları ASP.NET web uygulamalarıdır ve &ccedil;alışmaları i&ccedil;in IIS gereklidir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Internet Bilgi Hizmetleri bileşenlerini kurmak i&ccedil;in: <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<ul style="margin-top: 0in;" type="disc">
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Denetim Masası -&gt; Program Ekle/Kaldır" &ouml;ğesini a&ccedil;ın <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Windows Bileşeni Ekle/Kaldır" d&uuml;ğmesini tıklatın <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Uygulama Sunucusu" onay kutusunu işaretleyin<o:p></o:p></span></li>
+</ul>
+<p style="line-height: normal; margin: 0in 0.25in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<ul style="margin-top: 0in;" type="disc">
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Ayrıntılar..." d&uuml;ğmesini tıklatın <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"ASP.NET" onay kutusunun işaretlenmiş olduğundan emin olun.<o:p></o:p></span></li>
+</ul>
+<p style="line-height: normal; margin: 0in 0.25in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<ul style="margin-top: 0in;" type="disc">
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Internet Bilgi Hizmetleri (IIS)" onay kutusunu işaretleyin ve "Ayrıntılar..." d&uuml;ğmesini tıklatın. <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Ortak Dosyalar" &ouml;ğesinin se&ccedil;ilmiş olduğundan emin olun.<o:p></o:p></span></li>
+</ul>
+<p style="line-height: normal; margin: 0in 0.25in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<ul style="margin-top: 0in;" type="disc">
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">Eğer Microsoft FTP Sunucusu kullanmayı planlıyorsanız, "Dosya Aktarım Protokol&uuml; (FTP) Hizmeti" onay kutusunu işaretleyin. <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">M&uuml;şterinizin FrontPage Sunucu Uzantılarını (FPSE) kullanmasına izin vermeyi planlıyorsanız, "FrontPage 2002 Sunucu Uzantıları" onay kutusunun işaretlendiğinden emin olun. <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Internet Bilgi Hizmetleri Y&ouml;neticisi" onay kutusunu işaretleyin. MMC eklentisi aracılığıyla IIS y&ouml;netimine izin verecektir. <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">M&uuml;şterilerinizin komut dosyaları aracılığıyla e-posta mesajı g&ouml;ndermesine izin vermeyi planlıyorsanız, "SMTP Hizmeti" onay kutusunu işaretleyin. <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"World Wide Web Hizmeti" onay kutusunu işaretleyin ve "Ayrıntılar..." d&uuml;ğmesini tıklatın.<o:p></o:p></span></li>
+</ul>
+<p style="line-height: normal; margin: 0in 0.25in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<ul style="margin-top: 0in;" type="disc">
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">M&uuml;şterilerinizin ASP 3.0 uygulamasını &ccedil;alıştırmasına izin vermeyi planlıyorsanız, "Aktif Sunucu Sayfaları" onay kutusunu işaretleyin. Not: ASP 3.0, WebsitePanel uygulamasının &ccedil;alışması i&ccedil;in zorunlu değildir. <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">ASP 3.0 sayfalarının &ccedil;oğunda kod par&ccedil;alarını i&ccedil;eren "Sunucu Tarafı İ&ccedil;erir" &ouml;ğesi bulunur; bu nedenle bu onay kutusu işaretlenebilir. <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"World Wide Web Hizmeti" onay kutusunu işaretleyin. <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l1 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Tamam" d&uuml;ğmesini tıklatın ve k&ouml;k listeye d&ouml;n&uuml;n.<o:p></o:p></span></li>
+</ul>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section2"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">IIS Web Hizmetlerini Yapılandırma<o:p></o:p></span></p>
+<ul style="margin-top: 0in;" type="disc">
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Internet Bilgi Hizmetleri (IIS) Y&ouml;neticisi" eklentisini a&ccedil;ın ("Başlat -&gt; Y&ouml;netim Ara&ccedil;ları -&gt; Internet Bilgi Hizmetleri (IIS) Y&ouml;neticisi" &ouml;ğesini tıklatın). <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Web Hizmeti Uzantıları" d&uuml;ğ&uuml;m&uuml;n&uuml; tıklatın ve en azından "ASP.NET v1.1.4322" &ouml;ğesinin "İzin Verilir" olduğundan emin olun. Aynı zamanda "Aktif Sunucu Sayfaları", "FrontPage Sunucu Uzantıları 2002" ve "Sunucu Tarafı İ&ccedil;erir" &ouml;ğeleri de işaretlenir<o:p></o:p></span></li>
+</ul>
+<p style="line-height: normal; margin: 0in 0.25in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<ul style="margin-top: 0in;" type="disc">
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Web Siteleri" d&uuml;ğ&uuml;m&uuml;n&uuml; sağ tıklatın ve "&Ouml;zellikler" &ouml;ğesini se&ccedil;in. Bu iletişim kutusu, yeni oluşturulan web siteleri i&ccedil;in varsayılan olarak uygulanacak &ouml;zelliklerin belirlenmesini m&uuml;mk&uuml;n kılar. Bunlar daha sonra web sitelerine &ouml;zel olarak değiştirilebilir<o:p></o:p></span></li>
+</ul>
+<p style="line-height: normal; margin: 0in 0.25in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<ul style="margin-top: 0in;" type="disc">
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Kaydetmeyi etkinleştir" onay kutusunu işaretleyin ve "W3C Genişletilmiş Kayıt Dosyası Bi&ccedil;imi" &ouml;ğesinin se&ccedil;ili olduğundan emin olun. Web sunucusunda kaydın etkinleştirilmesi, WebsitePanel uygulamasında ayrıntılı Web bant genişliği istatistiklerini ve AWStats gelişmiş web istatistiklerini sağlar. <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"&Ouml;zellikler..." d&uuml;ğmesini tıklatın.<o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Genel" ayarları se&ccedil;iminin yukarıdaki resimdeki gibi olduğundan emin olun. <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Gelişmiş" sekmesini tıklatın<br style="mso-special-character: line-break;" /><br style="mso-special-character: line-break;" /><o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">T&uuml;m onay kutularını işaretleyin. Sonu&ccedil; olarak oluşturulan kayıtların toplam boyutu artacak, ancak daha ayrıntılı ve gelişmiş raporlar sağlanacaktır. <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">Ayarları kaydetmek ve iletişim kutusunu kapatmak i&ccedil;in "Tamam" &ouml;ğesini tıklatın. <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">"Web Sitesi &Ouml;zellikleri" iletişim kutusunda "Belgeler" sekmesini tıklatarak ilave varsayılan belge belirleyebilir veya bunları değiştirebilirsiniz. Eğer PHP barındırma sağlamayı planlıyorsanız, listenin "index.php", "index.html" ve diğer belgelerle genişletilmesi mantıklıdır. <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0.25in 0pt 0in; color: black; mso-list: l0 level1 lfo2; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">Yaptığınız değişiklikleri kaydetmek i&ccedil;in "Tamam" &ouml;ğesini tıklatın ve "Web Siteleri &Ouml;zellikleri" iletişim kutusunu kapatın.<o:p></o:p></span></li>
+</ul>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn1525.html?ReturnUrl=%2Fkb%2Fiis-6.0-web-server-installation-and-configuration-tr-TR">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/iis-6.0-web-server-installation-and-configuration-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:26 GMT -->
+</html>

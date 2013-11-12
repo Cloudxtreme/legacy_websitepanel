@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/sharepoint-module/troubleshooting by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Troubleshooting - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="SharePoint Module" href="../rss267a?containerid=134" />
+
+<link rel="alternate" type="application/rss+xml" title="SharePoint Module - Comments" href="../rss5ffb?commentedoncontainer=134" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">SharePoint Module</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Troubleshooting</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="troubleshooting-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h2>Basic troubleshooting</h2> <p>1. Make sure all WebsitePanel applications (WSP Portal, WSP Enterprise Server and WSP Servers) are of the same version.  <p>2. Make sure all WSP applications have been upgraded to the latest WSP release.  <p>3. Make sure you are able to open all WebsitePanel applications (WSP Portal, WSP Enterprise Server and WSP Servers) URLs in web browser.  <p>4. Make sure WSP Servers are able to manage systems where they deployed. For this, for example, from the panel open Windows Services (Configuration &gt; Servers &gt; Server name &gt; Windows Services).  <p>5. Those error messages can contain useful information for troubleshooting:  <p>&nbsp;&nbsp; a. Error message (if exists) with stack trace from WebsitePanel Audit Log (Serveradmin account home page -&gt; Audit Log).  <p>&nbsp;&nbsp; b. Errors and warnings from WebsitePanel event log in the Windows Event Viewer (on Exchange mailbox server or server which manage mailbox server remotely/on SharePoint Server with WSP SharePoint module deployed/on CRM Server with WSP CRM module deployed).  <p>To increase level of WebsitePanel event log you need to go to C:\WebsitePanel\Server (or another directory if you install WSP components to non-default paths) end edit web.config file with notepad. Find &lt;add name="Log" value="1"/&gt; and set value to 3. After this please check that WebsitePanel event log is set to "Override events as needed".  <p>*Please note: The most important is first error or warning appeared in this log during error reproduction.  <p><a name="Section2"></a> <h2>Error 0x80005000 while create site collection</h2> <p>It as AD access error.  <p>1. Please check WSP Server account permissions on local computer, AD and SharePoint root web application.  <p>2. Please check that WSP Server on your SharePoint Server is in "AD mode"  <p><a name="Section3"></a> <h2>Common problems with SharePoint search</h2> <p>1. NTLM authentication is not set on root application level.  <p>2. If site was created as SSL or not. In case you open site created as SSL as http - search will not work, and vice versa (issue from your next question)  <p>3. In case of SSL - WSS server need to trust CA that issue SSL cert.  <p>4. In case of SSL - site collection URL should be correct and no SSL warnings should appear when you open site collection. In WSP Hosted SharePoint solution, where wildcard certificate used for root Web Application it should be like this - <a href="https://customer.hosterdomain.com/">https://customer.hosterdomain.com</a> where&nbsp; *.hosterdomain.com is wildcard certificate used for root Web Application.  <p>5. Ensure that root Web Application is bounded to "all unassigned" or at least correct internal IP address and WSS server itself resolve its name to correct local address. For example in case WSS server is WSS01 and its internal address is 10.0.0.1, when you try to ping WSS01 from WSS01 box it should resolve to 10.0.0.1 and root Web Application should be bounded to bounded to "all unassigned" or at least 10.0.0.1.  <p>6. In case WSS server is located behind NAT - search service try to use Site Collection name that resolved to one of external NAT's address. A lot of NATs can not handle this and do not forward IP packet to internal WSS IP. I suspect you have exactly this issue. You can try to fix your NAT or edit local hosts file on WSS server like:  <p>10.1.1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; team.customer.com <p>Or  <p>10.1.1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; customer.hosterdomain.com <p>7. Good test is try to open SharePoint site collection from SharePoint server itself. In case you can open it, but can not login - please check this <a href="http://support.microsoft.com/kb/896861/en-us">http://support.microsoft.com/kb/896861/en-us</a> Microsoft article.</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnbe4e.html?ReturnUrl=%2Fsharepoint-module%2Ftroubleshooting">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/sharepoint-module/troubleshooting by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:40 GMT -->
+</html>

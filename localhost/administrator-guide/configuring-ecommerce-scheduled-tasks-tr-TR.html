@@ -1,0 +1,141 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/administrator-guide/configuring-ecommerce-scheduled-tasks-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Ecommerce Planlı G&#246;revlerini Yapılandırma - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide" href="../rssa280?containerid=13" />
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide - Comments" href="../rss3e15?commentedoncontainer=13" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt; <a href="index.html">Administrator Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Ecommerce Planlı G&#246;revlerini Yapılandırma</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="configuring-ecommerce-scheduled-tasks.html">en-US</a></li></ul>
+    </div>
+</div>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><a href="http://www.websitepanel.net/documentation"><span style="color: black;">Belgeler</span></a> &gt; <a href="http://www.websitepanel.net/administrator-guide/index"><span style="color: black;">Y&ouml;netici Kılavuzu</span></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 1;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 17pt; mso-font-kerning: 18.0pt;" lang="TR">Ecommerce Planlı G&ouml;revlerini Yapılandırma<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Ecommerce mod&uuml;l otomasyonu, ilgili barındırma alanı (yani serveradmin veya alt yetkili satıcının alanı) i&ccedil;in ge&ccedil;erli olan <a href="http://www.websitepanel.net/administrator-guide/scheduled-tasks"><span style="color: black;">5 planlı g&ouml;revle </span></a>g&ouml;r&uuml;nt&uuml;lenebilir. Bu g&ouml;revler: &Ouml;denmiş Faturaları Etkinleştir, Zamanı Ge&ccedil;miş Faturaları İptal Et, Fatura Oluştur, &Ouml;deme Kuyruğunu &Ccedil;alıştır ve Zamanı Ge&ccedil;miş Faturaları Askıya Al. G&ouml;rd&uuml;ğ&uuml;n&uuml;z gibi g&ouml;revlerin adları a&ccedil;ıklayıcıdır, ancak ecommerce y&uuml;zeyinizin daha pratik ve uygun şekilde &ccedil;alışmasını sağlamak i&ccedil;in bazı uyarılar dikkate alınmalıdır.<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Planlı G&ouml;revlere erişmek i&ccedil;in aşağıdakileri ger&ccedil;ekleştirin:<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 30.8pt; mso-list: l0 level1 lfo1;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">1.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Hesap men&uuml;s&uuml;nde <b>Alanlar</b> &ouml;ğesini se&ccedil;in. <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 30.8pt; mso-list: l0 level1 lfo1;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">2.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Sistem</span></b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"> alanını se&ccedil;in. (Bir yetkili satıcı i&ccedil;in yapılandırma durumunda s&ouml;z konusu yetkili satıcının alanını se&ccedil;in.) <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 30.8pt; mso-list: l0 level1 lfo1;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">3.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Barındırma Alanı men&uuml;s&uuml;nden <b>Planlı G&ouml;revler</b> &ouml;ğesini se&ccedil;in.<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 4;" class="MsoNormal"><a name="Section1"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 10.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 4;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 10.5pt;" lang="TR">&Ouml;denmiş Faturaları Etkinleştirme Planlı G&ouml;revi<a name="Activate_Paid_Invoices"></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Bu g&ouml;rev, ilgili hizmetleri etkinleştirmek, ertelemek veya yenilemek i&ccedil;in &ouml;denmiş faturalara g&ouml;re ecommerce y&uuml;zeyini sorgular. Tek dikkate alınması gereken uyarı bu g&ouml;rev i&ccedil;in tavsiye edilen plandır: bu g&ouml;revi Aralık modunda 15 veya 20 dakika boyunca &ccedil;alıştırmanızı tavsiye ediyoruz, ancak belirtilen aralık barındırma iş gereksinimlerinize g&ouml;re değişir.<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 4;" class="MsoNormal"><a name="Section2"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 10.5pt;" lang="TR">Zamanı Ge&ccedil;miş Faturaları İptal Etme Planlı G&ouml;revi<a name="Cancel_Overdue_Invoices"></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Bu g&ouml;rev, ilgili hizmetleri İptal Edilmiş duruma getirmek i&ccedil;in zamanı ge&ccedil;miş faturalara g&ouml;re ecommerce y&uuml;zeyini sorgular. Bu g&ouml;revi planlamadan &ouml;nce dikkate almanız gereken bazı uyarılar bulunmaktadır: Hizmet İptal Eşik ayarının değeri (Ecommerce Ayarları -&gt; D&ouml;viz Kuru/Fatura Bi&ccedil;imi/SSL/Otomasyon Sayfası'nda bulunabilir) ve Fatura Yetkisiz D&ouml;nemi ayarının değeri (&ouml;ncekiyle aynı sayfada bulunabilir). Fatura iptal tarihi, aşağıdaki form&uuml;l&uuml; kullanarak hesaplanır: Fatura Zaman Aşımı Tarihi + Hizmet İptal Eşiği = Fatura İptal Tarihi. Bu g&ouml;rev i&ccedil;in tavsiye edilen plan, G&uuml;nl&uuml;k moddadır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">&Ouml;rneğin: 11/12/2006 + 3 g&uuml;n = 14/12/2006<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Dolayısıyla yukarıdaki &ouml;rnekte son tarihi 11/12/2006 olan t&uuml;m faturalar iptal edilir (14/12/2006) ve ilgili bildirim e-posta ile g&ouml;nderilir.<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 4;" class="MsoNormal"><a name="Section3"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 10.5pt;" lang="TR">Fatura Oluşturma Planlı G&ouml;revi<a name="Generate_Invoices_Task"></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Hizmetlere g&ouml;re ecommerce y&uuml;zeyini sorgulayan bu g&ouml;rev, ilgili faturaları oluşturmak i&ccedil;in sona ermek &uuml;zeredir. Bu g&ouml;revi planlamadan &ouml;nce dikkate almanız gereken bazı uyarılar bulunmaktadır: Hizmet Fatura Eşik ayarının değeri (Ecommerce Ayarları -&gt; D&ouml;viz Kuru/Fatura Bi&ccedil;imi/SSL/Otomasyon Sayfası'nda bulunabilir) ve G&uuml;nl&uuml;k planlama modu. Hizmet son tarihi, aşağıdaki form&uuml;l&uuml; kullanarak hesaplar: Hizmet Son Tarihi - Hizmet Fatura Eşiği = Hizmeti Faturalandırma Tarihi. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">&Ouml;rneğin: 11/12/2006 - 7 g&uuml;n = 04/12/2006<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Dolayısıyla yukarıdaki &ouml;rnekte son tarihi 11/12/2006 olan t&uuml;m m&uuml;şteri hizmetleri faturalandırılır (04/12/2006) ve ilgili bildirim e-posta ile g&ouml;nderilir.<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 4;" class="MsoNormal"><a name="Section4"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 10.5pt;" lang="TR">&Ouml;deme Kuyruğu &Ccedil;alıştırma Planlı G&ouml;revi<a name="Run_Payment_Queue"></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Bu g&ouml;rev ecommerce y&uuml;zeyini &ouml;denmemiş ve ge&ccedil;erli faturalara g&ouml;re sorgulayarak m&uuml;şterinin kredi kartı &ouml;deme bilgileri varsa (kredi kartı &uuml;zerinden kontrol sırasında sonradan depolanır) yapılandırılmış Kredi Kartı sağlayıcısı &uuml;zerinden otomatik olarak karşılık gelen &ouml;demeyi g&ouml;nderir.&nbsp; Tek dikkate alınması gereken uyarı bu g&ouml;rev i&ccedil;in tavsiye edilen plandır: bu g&ouml;revi G&uuml;nl&uuml;k modda &ccedil;alıştırmanızı tavsiye ediyoruz, ancak belirtilen plan modu barındırma iş gereksinimlerinize g&ouml;re değişir.<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 4;" class="MsoNormal"><a name="Section5"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 10.5pt;" lang="TR">Zamanı Ge&ccedil;miş Faturaları Askıya Alma Planlı G&ouml;revi<a name="Suspend_Overdue_Invoices"></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Bu g&ouml;rev, ilgili hizmetleri Askıya Alma durumuna getirmek i&ccedil;in zamanı ge&ccedil;miş faturalara g&ouml;re ecommerce y&uuml;zeyini sorgular. Bu g&ouml;revi planlamadan &ouml;nce dikkate almanız gereken bazı uyarılar bulunmaktadır: Fatura Yetkisiz S&uuml;resi ayarının değeri (Ecommerce Ayarları -&gt; D&ouml;viz Kuru/Fatura Bi&ccedil;imi/SSL/Otomasyon Sayfası'nda bulunabilir) ve G&uuml;nl&uuml;k planlama modu. Fatura zaman aşımı tarihi, aşağıdaki form&uuml;l&uuml; kullanarak hesaplanır: Maks Fatura &Ouml;ğesi Son Tarihi + Fatura Yetkisiz D&ouml;nemi = Fatura Zaman Aşımı Tarihi. Bu g&ouml;rev i&ccedil;in tavsiye edilen plan, G&uuml;nl&uuml;k moddadır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">&Ouml;rneğin: 11/12/2006 06:52:00 (Maks Fatura &Ouml;ğesi Son Tarihi) + 3 g&uuml;n = 14/12/2006 18:52:00<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Dolayısıyla yukarıdaki &ouml;rnekte son tarihi ve saati 14/12/2006 06:52:00 olan t&uuml;m faturalar askıya alınır (14/12/2006 18:52:00) ve ilgili bildirim e-posta ile g&ouml;nderilir.<o:p></o:p></span></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn6f23.html?ReturnUrl=%2Fadministrator-guide%2Fconfiguring-ecommerce-scheduled-tasks-tr-TR">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/administrator-guide/configuring-ecommerce-scheduled-tasks-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:31 GMT -->
+</html>

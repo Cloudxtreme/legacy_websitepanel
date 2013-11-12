@@ -1,0 +1,272 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/developer-guide/adding-custom-pages-into-wsp-portal by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:57:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Adding Custom Pages into WSP Portal - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Developer Guide" href="../rss9a6a?containerid=94" />
+
+<link rel="alternate" type="application/rss+xml" title="Developer Guide - Comments" href="../rssfab3?commentedoncontainer=94" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Developer Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Adding Custom Pages into WSP Portal</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="adding-custom-pages-into-wsp-portal-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>WSP Portal has a great possibility to add new custom pages. It may be a user-defined page with some support instructions or page containing the links to company web site or help desk system.</p> <p>In order to add new custom page you should do the following:</p> <ol> <li> <p>Open "App_Data\WebsitePanel_Pages.config" file for editing in any suitable text editor, e.g. notepad.</p> <p>Please store modified file in the safe place before any WSP upgrade. After upgrade merge your file with an updated one.</p> <p>You can see all WSP pages defined in &lt;Page&gt; elements. To create a navigation hierarchy &lt;Page&gt; elements can be nested within each other with the help of containing &lt;Pages&gt; element.</p> <li> <p>Add a new &lt;Page&gt; element. If you want to add a page to the root menu you should add new &lt;Page&gt; element in the root &lt;Pages&gt; node; otherwise find the required "parent" &lt;Page&gt; element and add your page there.</p> <p>Page element has the following attributes:</p> <ul> <li> <p><strong>name</strong> - page identifier. It should be unique across all "*_Pages.config" documents and should not contain spaces.</p> <li> <p><strong>roles</strong> - comma-delimited list of WSP roles that can access this page. Allowed role identifiers:</p> <ul> <li> <p>Administrators - WSP administrators</p> <li> <p>Resellers - WSP resellers</p> <li> <p>Users - WSP users</p> <li> <p>? - all unauthenticated (anonymous) users</p> <li> <p>* - all authenticated and unauthenticated users</p></li></ul> <li> <p><strong>enabled</strong> - if <strong>false</strong> the corresponding page menu item is displayed in WSP navigation menu but it can not be clicked (you can't navigate to this page). Default value is <strong>true</strong>.</p> <li> <p><strong>hidden</strong> - if <strong>true</strong> the corresponding page is hidden in WSP navigation menu, but still you can navigate to this page by its direct URL, e.g. <a href="http://cp.mysite.com/default.aspx?pid=MyHiddenPage">http://cp.mysite.com/default.aspx?pid=MyHiddenPage</a>. Default value is <strong>false</strong>.</p> <li> <p><strong>skin</strong> - the name of skin user control to use for this page. Skin user controls are placed in "App_Skins\&lt;Theme&gt;" folder where &lt;Theme&gt; is the name of currently selected visual theme. Skins define the number and names of content placeholders used to place page modules. If this attribute is omitted the default skin defined in &lt;PortalSkin&gt; element of "App_Data\SiteSettings.config" file will be used.</p> <li> <p><strong>url</strong> - redirection URL. If this attribute is specified page menu item will be rendered as a redirection link and all contents of &lt;Page&gt; element will be omitted.</p></li></ul> <p>In order to show human-readable name of the page in the navigation menu instead of its identifier you should add both page name and page title into "App_GlobalResources\WebsitePanel_Pages.ascx.resx" as following:</p> <div class="csharpcode"><pre class="alt">PageName.<span class="kwrd">&lt;</span><span class="html">page_name</span><span class="kwrd">&gt;</span> = Page Name</pre><pre>PageTitle.<span class="kwrd">&lt;</span><span class="html">page_name</span><span class="kwrd">&gt;</span> = Page Title</pre></div>
+<style type="text/css">.csharpcode, .csharpcode pre
+{
+ font-size: small;
+ color: black;
+ font-family: consolas, "Courier New", courier, monospace;
+ background-color: #ffffff;
+ /*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+ background-color: #f4f4f4;
+ width: 100%;
+ margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+</style>
+<!-- .csharpcode, .csharpcode pre {  font-size: small;  color: black;  font-family: consolas, "Courier New", courier, monospace;  background-color: #ffffff;  /*white-space: pre;*/ } .csharpcode pre { margin: 0em; } .csharpcode .rem { color: #008000; } .csharpcode .kwrd { color: #0000ff; } .csharpcode .str { color: #006080; } .csharpcode .op { color: #0000c0; } .csharpcode .preproc { color: #cc6633; } .csharpcode .asp { background-color: #ffff00; } .csharpcode .html { color: #800000; } .csharpcode .attr { color: #ff0000; } .csharpcode .alt  {  background-color: #f4f4f4;  width: 100%;  margin: 0em; } .csharpcode .lnum { color: #606060; } -->
+<p>where &lt;page_name&gt; is page identifier.</p>
+<li>
+<p>Add &lt;Content&gt; element under created &lt;Page&gt; element.</p>
+<p>&lt;Content&gt; element acts as a placeholder for &lt;Module&gt; elements and it has the following attributes:</p>
+<ul>
+<li>
+<p><strong>id</strong> - content pane identifier. This should be the ID of one of the content placeholder controls defined in skin user control. In the most WSP skins the following content panes are defined:</p>
+<ul>
+<li>
+<p>LeftPane - left column</p>
+<li>
+<p>ContentPane - center column</p>
+<li>
+<p>RightPane - right column</p></li></ul></li></ul>
+<li>
+<p>Add required &lt;Module&gt; elements into &lt;Content&gt; element.</p>
+<p>&lt;Module&gt; element describes a part of the page located at the specified pane (placeholder),&nbsp; wired by specified container and displaying pre-defined WSP module.</p>
+<p>&lt;Module&gt; element has the following attributes:</p>
+<ul>
+<li>
+<p><strong>moduleDefinitionID</strong> - the ID of module definition. Module definition is a set of user controls and is described in "App_Data\DotNetPanel_Modules.config" file. You may select to place any pre-defined WSP module by specifying its respective ID. If you want to place an arbitrary Text/HTML please refer to this page: <a href="adding-custom-content-modules-into-wsp-portal-pages.html">Adding Custom Content Modules into WSP Portal Pages</a></p>
+<li>
+<p><strong>title</strong> - module title (if supported by module container). If module title should be localized you should add its localized value to "App_GlobalResources\WebsitePanel_Modules.ascx.resx" file.</p>
+<li>
+<p><strong>container</strong> - the name of container user control to use for this module. Container user controls are placed in "App_Container\&lt;Theme&gt;" folder where &lt;Theme&gt; is the name of currently selected visual theme. Containers define the "border" around the module content, they contain placeholders for module icon, title and content. If this attribute is omitted the default container defined in &lt;PortalContainer&gt; element of "App_Data\SiteSettings.config" file will be used. If you don't want to outline the module with the container you may specify "clear.ascx" container.</p></li></ul>
+<li>
+<p>Save "WebsitePanel_Pages.xml" file and exit from text editor.</p>
+<li>
+<p>If you want to place an arbitrary Text/HTML module please refer to this page: <a href="adding-custom-content-modules-into-wsp-portal-pages.html">Adding Custom Content Modules into WSP Portal Pages</a>.</p>
+<p><a name="Section1"></a></p></li></ol>
+<h2>Examples</h2>
+<p><a name="Section2"></a></p>
+<h3>New "About Us" page below existing "Home" root menu element</h3>
+<div class="csharpcode"><pre class="alt">...</pre><pre>&nbsp;</pre><pre class="alt"><span class="kwrd">&lt;</span><span class="html">Page</span> <span class="attr">name</span><span class="kwrd">="Home"</span> <span class="attr">roles</span><span class="kwrd">="Administrator,Reseller,User"</span> <span class="attr">skin</span><span class="kwrd">="Browse3.ascx"</span><span class="kwrd">&gt;</span></pre><pre>   <span class="kwrd">&lt;</span><span class="html">Content</span> <span class="attr">id</span><span class="kwrd">="LeftPane"</span><span class="kwrd">&gt;</span></pre><pre class="alt">      ...</pre><pre>   <span class="kwrd">&lt;/</span><span class="html">Content</span><span class="kwrd">&gt;</span></pre><pre class="alt">   <span class="kwrd">&lt;</span><span class="html">Content</span> <span class="attr">id</span><span class="kwrd">="ContentPane"</span><span class="kwrd">&gt;</span></pre><pre>      ...</pre><pre class="alt">   <span class="kwrd">&lt;/</span><span class="html">Content</span><span class="kwrd">&gt;</span></pre><pre>   <span class="kwrd">&lt;</span><span class="html">Content</span> <span class="attr">id</span><span class="kwrd">="RightPane"</span><span class="kwrd">&gt;</span></pre><pre class="alt">      ...</pre><pre>   <span class="kwrd">&lt;/</span><span class="html">Content</span><span class="kwrd">&gt;</span></pre><pre class="alt">&nbsp;</pre><pre>   <span class="kwrd">&lt;</span><span class="html">Pages</span><span class="kwrd">&gt;</span></pre><pre class="alt">      <span class="kwrd">&lt;</span><span class="html">Page</span> <span class="attr">name</span><span class="kwrd">="AboutUs"</span> <span class="attr">roles</span><span class="kwrd">="Administrator,Reseller,User"</span> <span class="attr">skin</span><span class="kwrd">="Browse3.ascx"</span><span class="kwrd">&gt;</span></pre><pre>         <span class="kwrd">&lt;</span><span class="html">Content</span> <span class="attr">id</span><span class="kwrd">="ContentPane"</span><span class="kwrd">&gt;</span></pre><pre class="alt">            <span class="kwrd">&lt;</span><span class="html">Module</span> ...<span class="kwrd">&gt;</span></pre><pre>               ...</pre><pre class="alt">            <span class="kwrd">&lt;/</span><span class="html">Module</span><span class="kwrd">&gt;</span></pre><pre>            ...</pre><pre class="alt">         <span class="kwrd">&lt;/</span><span class="html">Content</span><span class="kwrd">&gt;</span></pre><pre>      <span class="kwrd">&lt;/</span><span class="html">Page</span><span class="kwrd">&gt;</span></pre><pre class="alt">   <span class="kwrd">&lt;/</span><span class="html">Pages</span><span class="kwrd">&gt;</span></pre><pre><span class="kwrd">&lt;/</span><span class="html">Page</span><span class="kwrd">&gt;</span></pre><pre class="alt">&nbsp;</pre><pre>... </pre></div>
+<style type="text/css">.csharpcode, .csharpcode pre
+{
+ font-size: small;
+ color: black;
+ font-family: consolas, "Courier New", courier, monospace;
+ background-color: #ffffff;
+ /*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+ background-color: #f4f4f4;
+ width: 100%;
+ margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+</style>
+
+<style type="text/css">.csharpcode, .csharpcode pre
+{
+ font-size: small;
+ color: black;
+ font-family: consolas, "Courier New", courier, monospace;
+ background-color: #ffffff;
+ /*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+ background-color: #f4f4f4;
+ width: 100%;
+ margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+</style>
+<!-- .csharpcode, .csharpcode pre {  font-size: small;  color: black;  font-family: consolas, "Courier New", courier, monospace;  background-color: #ffffff;  /*white-space: pre;*/ } .csharpcode pre { margin: 0em; } .csharpcode .rem { color: #008000; } .csharpcode .kwrd { color: #0000ff; } .csharpcode .str { color: #006080; } .csharpcode .op { color: #0000c0; } .csharpcode .preproc { color: #cc6633; } .csharpcode .asp { background-color: #ffff00; } .csharpcode .html { color: #800000; } .csharpcode .attr { color: #ff0000; } .csharpcode .alt  {  background-color: #f4f4f4;  width: 100%;  margin: 0em; } .csharpcode .lnum { color: #606060; } --><!-- .csharpcode, .csharpcode pre {  font-size: small;  color: black;  font-family: consolas, "Courier New", courier, monospace;  background-color: #ffffff;  /*white-space: pre;*/ } .csharpcode pre { margin: 0em; } .csharpcode .rem { color: #008000; } .csharpcode .kwrd { color: #0000ff; } .csharpcode .str { color: #006080; } .csharpcode .op { color: #0000c0; } .csharpcode .preproc { color: #cc6633; } .csharpcode .asp { background-color: #ffff00; } .csharpcode .html { color: #800000; } .csharpcode .attr { color: #ff0000; } .csharpcode .alt  {  background-color: #f4f4f4;  width: 100%;  margin: 0em; } .csharpcode .lnum { color: #606060; } -->
+<p><a name="Section3"></a></p>
+<h3>New root "Support" menu element and new "Help Desk" page below it</h3>
+<div class="csharpcode"><pre class="alt"><span class="kwrd">&lt;</span><span class="html">Pages</span><span class="kwrd">&gt;</span></pre><pre>&nbsp;</pre><pre class="alt">...</pre><pre>&nbsp;</pre><pre class="alt"><span class="kwrd">&lt;</span><span class="html">Page</span> <span class="attr">name</span><span class="kwrd">="Support"</span> <span class="attr">roles</span><span class="kwrd">="Administrator,Reseller,User"</span> <span class="attr">enabled</span><span class="kwrd">="false"</span><span class="kwrd">&gt;</span></pre><pre>   <span class="kwrd">&lt;</span><span class="html">Pages</span><span class="kwrd">&gt;</span></pre><pre class="alt">      <span class="kwrd">&lt;</span><span class="html">Page</span> <span class="attr">name</span><span class="kwrd">="HelpDesk"</span> <span class="attr">roles</span><span class="kwrd">="Administrator,Reseller,User"</span><span class="kwrd">&gt;</span></pre><pre>         <span class="kwrd">&lt;</span><span class="html">Content</span> <span class="attr">id</span><span class="kwrd">="ContentPane"</span><span class="kwrd">&gt;</span></pre><pre class="alt">            <span class="kwrd">&lt;</span><span class="html">Module</span> <span class="attr">moduleDefinitionID</span><span class="kwrd">="TextHTML"</span> <span class="attr">title</span><span class="kwrd">="HelpDesk"</span><span class="kwrd">&gt;</span></pre><pre>              <span class="kwrd">&lt;</span><span class="html">ModuleData</span><span class="kwrd">&gt;</span></pre><pre class="alt">                <span class="kwrd">&lt;</span><span class="html">Content</span> <span class="attr">template</span><span class="kwrd">="true"</span><span class="kwrd">&gt;</span></pre><pre>                  <span class="kwrd">&lt;!</span>[CDATA[<span class="kwrd">&lt;</span><span class="html">div</span> <span class="attr">class</span><span class="kwrd">="Normal"</span><span class="kwrd">&gt;</span>Hello #user.FirstName#! You can use the following url to access Help Desk application: </pre><pre class="alt">                     <span class="kwrd">&lt;</span><span class="html">a</span> <span class="attr">href</span>=<span class="attr">http:</span>//<span class="attr">support</span>.<span class="attr">company</span>.<span class="attr">com</span><span class="kwrd">&gt;</span>Help Desk System<span class="kwrd">&lt;/</span><span class="html">a</span><span class="kwrd">&gt;</span></pre><pre>                  <span class="kwrd">&lt;/</span><span class="html">div</span><span class="kwrd">&gt;</span>]]<span class="kwrd">&gt;</span></pre><pre class="alt">                <span class="kwrd">&lt;/</span><span class="html">Content</span><span class="kwrd">&gt;</span></pre><pre>              <span class="kwrd">&lt;/</span><span class="html">ModuleData</span><span class="kwrd">&gt;</span></pre><pre class="alt">            <span class="kwrd">&lt;/</span><span class="html">Module</span><span class="kwrd">&gt;</span></pre><pre>         <span class="kwrd">&lt;/</span><span class="html">Content</span><span class="kwrd">&gt;</span></pre><pre class="alt">      <span class="kwrd">&lt;/</span><span class="html">Page</span><span class="kwrd">&gt;</span></pre><pre>   <span class="kwrd">&lt;/</span><span class="html">Pages</span><span class="kwrd">&gt;</span></pre><pre class="alt"><span class="kwrd">&lt;/</span><span class="html">Page</span><span class="kwrd">&gt;</span></pre><pre>&nbsp;</pre><pre class="alt">...</pre><pre>&nbsp;</pre><pre class="alt"><span class="kwrd">&lt;/</span><span class="html">Pages</span><span class="kwrd">&gt;</span> </pre></div>
+<style type="text/css">.csharpcode, .csharpcode pre
+{
+ font-size: small;
+ color: black;
+ font-family: consolas, "Courier New", courier, monospace;
+ background-color: #ffffff;
+ /*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+ background-color: #f4f4f4;
+ width: 100%;
+ margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+</style>
+
+<h3>New root menu item redirecting to WebsitePanel.net</h3>
+<div class="csharpcode"><pre><p>&nbsp;<div class="csharpcode"><pre class="alt"><span class="kwrd">&lt;</span><span class="html">Pages</span><span class="kwrd">&gt;</span></pre><pre>&nbsp;</pre><pre class="alt">...</pre><pre>&nbsp;</pre><pre class="alt"><span class="kwrd">&lt;</span><span class="html">Page</span> <span class="attr">name</span><span class="kwrd">="GoToWebsitePanel"</span> <span class="attr">roles</span><span class="kwrd">="Administrator,Reseller,User"</span> <span class="attr">url</span><span class="kwrd">=<a href="http://www.websitepanel.net/">http://www.websitepanel.net</a></span><span class="kwrd">&gt;</span></pre><pre><span class="kwrd">&lt;/</span><span class="html">Page</span><span class="kwrd">&gt;</span></pre><pre class="alt">&nbsp;</pre><pre>...</pre><pre class="alt">&nbsp;</pre><pre><span class="kwrd">&lt;/</span><span class="html">Pages</span><span class="kwrd">&gt;</span> </pre></div><style type="text/css">.csharpcode, .csharpcode pre
+{
+ font-size: small;
+ color: black;
+ font-family: consolas, "Courier New", courier, monospace;
+ background-color: #ffffff;
+ /*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+ background-color: #f4f4f4;
+ width: 100%;
+ margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+</style><p>&nbsp;</p></pre></div>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnd7e1.html?ReturnUrl=%2Fdeveloper-guide%2Fadding-custom-pages-into-wsp-portal">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/developer-guide/adding-custom-pages-into-wsp-portal by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:57:49 GMT -->
+</html>

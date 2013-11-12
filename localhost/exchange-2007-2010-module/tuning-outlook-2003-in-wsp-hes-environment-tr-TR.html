@@ -1,0 +1,125 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/tuning-outlook-2003-in-wsp-hes-environment-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>WSP HES ortamında Outlook 2003&#39;&#252; ayarlama - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module" href="../rss68ec?containerid=101" />
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module - Comments" href="../rssba67?commentedoncontainer=101" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Exchange 2007/2010 Modules</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>WSP HES ortamında Outlook 2003&#39;&#252; ayarlama</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="tuning-outlook-2003-in-wsp-hes-environment-2.html">en-US</a></li></ul>
+    </div>
+</div>
+<h1 style="margin: 0in 0in 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 17pt;" lang="TR">WSP HES ortamında Outlook 2003'&uuml; ayarlama<o:p></o:p></span></h1>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Outlook 2003, Autodiscover'ı desteklememektedir. Bu nedenle Outlook 2003 kurulumunu basitleştirmenin en iyi y&ouml;ntemi, Outlook Profile (PRF) dosyası oluşturmaktır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Outlook Profile (PRF) dosyaları hakkında daha fazla bilgi i&ccedil;in, bkz. <a href="http://technet2.microsoft.com/Office/en-us/library/71b4efb2-539a-49eb-935e-3222aed9f6a21033.mspx?mfr=true"><span style="color: black;">http://technet2.microsoft.com/Office/en-us/library/71b4efb2-539a-49eb-935e-3222aed9f6a21033.mspx?mfr=true</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Bunu araştıracak vakit ya da isteğiniz yoksa <a href="http://www.websitepanel.net/Media/Default/Files/Sample.PRF"><span style="color: black;">hazırladığımız &ouml;rnek PRF dosyasını y&uuml;kleyin ve aşağıdaki talimatları uygulayın</span></a>: <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Sağlayıcıya &ouml;zg&uuml; şablon oluşturmak i&ccedil;in &ndash; <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l1 level1 lfo1;"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Not defterinde a&ccedil;ın <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l1 level1 lfo1;"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Aşağıdakileri bir kez değiştirin: <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">- ProfileName=Hoster_name Exchange Hosting &ndash; sağlayıcıyı temsil edecek bir şey <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l0 level1 lfo2;"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Aşağıdakileri iki kez değiştirin: <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">- HomeServer=exch01.provider.local &ndash; Posta Kutusu sunucusunun dahili adı <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">- RPCProxyServer=exchange.provider.com &ndash; harici İstemci Erişim Sunucusu URL adresi <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Son kullanıcıya &ouml;zg&uuml; şablon oluşturmak i&ccedil;in &ndash; <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l0 level1 lfo2;"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Not defterinde a&ccedil;ın <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l0 level1 lfo2;"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Aşağıdakileri iki kez değiştirin: <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">- MailboxName= <a href="mailto:user@customer_domain.com"><span style="color: black;">user@customer_domain.com</span></a> &ndash; son kullanıcı birincil e-posta adresi <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Bu dosyayı son kullanıcı makinesinde &ccedil;alıştırın. Outlook 2007 ile birlikte kullanılması durumunda (bazı nedenlerle Autodiscover'ı kullanamayabilirsiniz) sadece &ccedil;alıştırmayın aynı zamanda prf dosyasına uygun yolla outlook.exe /importprf'yi &ccedil;alıştırın. Bunu outlook.exe'nin bulunduğu konumdan &ccedil;alıştırın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Outlook istemci makinesinde PRF dosyası &ccedil;alıştırmadan &ouml;nce kapatılmalıdır. M&uuml;şterilerinize G&ouml;rev Y&ouml;neticisindeki Outlook.exe işlemine bakarak bunu kontrol etmelerini s&ouml;yleyin. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">prf dosyasını y&uuml;klemek i&ccedil;in kullanıcı bağlantılarını g&ouml;ndermek i&ccedil;in Posta Kutusu Kurulum Talimatlarını kullanabilirsiniz. <o:p></o:p></span></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn48de.html?ReturnUrl=%2Fexchange-2007-2010-module%2Ftuning-outlook-2003-in-wsp-hes-environment-tr-TR">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/tuning-outlook-2003-in-wsp-hes-environment-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:37 GMT -->
+</html>

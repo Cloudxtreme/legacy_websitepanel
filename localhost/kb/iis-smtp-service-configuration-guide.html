@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/iis-smtp-service-configuration-guide by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:06:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>IIS SMTP Service Configuration Guide - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>IIS SMTP Service Configuration Guide</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="iis-smtp-service-configuration-guide-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p><a name="Section1"></a> <h2>Configuring IIS SMTP Service</h2> <p>In "Internet Information Services (IIS) Manager" snap-in right-click "Default SMTP Virtual Server" and select "Properties".  <ul> <li>Specify logging settings similar to Web and FTP ones described above.<br><img src="../Media/Images/iis_20smtp_20service_20configuration_20guide/image003.png" width="303" height="336"> <li>If you have SMTP service of the mail server listening on the same IP address you can change the 25 port to some other, say 26. On "General" tab click "Advanced..." button and change the Port from 25 to 26; otherwise, Microsoft SMTP service will be conflicting with SMTP service of the mail server.  <li>Other option is changing not the port, but listening IP address. This case you can leave SMTP service on 25 port and it will not be conflicting with other SMTP service provided it works on different IP.<br><img src="../Media/Images/iis_20smtp_20service_20configuration_20guide/image005.png" width="304" height="248"> <li>Click "Access" tab<br><img src="../Media/Images/iis_20smtp_20service_20configuration_20guide/image007.png" width="304" height="337"> <li>Click "Connection..." button and specify that only the host with 127.0.0.1 IP address (localhost) can connect to the SMTP service.<br><img src="../Media/Images/iis_20smtp_20service_20configuration_20guide/image009.png" width="305" height="239"> <li>Click "OK" button to save your changes and close the dialog.  <li>Click "Relay..." button and specify that only the host with 127.0.0.1 IP addresses may relay through this SMTP server.<br><img src="../Media/Images/iis_20smtp_20service_20configuration_20guide/image011.png" width="305" height="297"> <li>Click "OK" button to save your changes and close the dialog.  <li>Click "OK" button again to save SMTP service properties and close the dialog.</li></ul>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnd8cb.html?ReturnUrl=%2Fkb%2Fiis-smtp-service-configuration-guide">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/iis-smtp-service-configuration-guide by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:06:47 GMT -->
+</html>

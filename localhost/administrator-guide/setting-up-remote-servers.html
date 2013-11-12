@@ -1,0 +1,186 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/administrator-guide/setting-up-remote-servers by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:47:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Setting up Remote Servers - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide" href="../rssa280?containerid=13" />
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide - Comments" href="../rss3e15?commentedoncontainer=13" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt; <a href="index.html">Administrator Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Setting up Remote Servers</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="setting-up-remote-servers-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>In order to allow WebsitePanel to manage system resources on some server it should be registered with WebsitePanel first.</p>
+<p><a name="Section1"></a></p>
+<h2>What is Server?</h2>
+<p>"Server" in WebsitePanel can be considered as an instance of WebsitePanel Server application installed on controlled machine. Also, server is a physical box with corresponding IP addresses and installed applications (services) that will be available to your customers.</p>
+<p>In order to control the server through WebsitePanel "Server" application should be installed and configured there.</p>
+<p>You can find more about WebsitePanel architecture in <a href="../installation-guide/how-does-websitepanel-work.html">How&nbsp;WebsitePanel Works</a> article.</p>
+<p><a name="Section2"></a></p>
+<h2>Changing Server Password</h2>
+<p>You should specify server access password during the installation of WebsitePanel Server application. This password is used to access Server application on the controlled server and should be specified when registering a new controlled server in WebsitePanel.</p>
+<p>However, if you've accidentally forgotten the server password or want to change it to something more secure you can use "WSP.Server.Config.exe" tool located in "bin" folder of WebsitePanel Server application ("c:\WebsitePanel\Server\bin" by default).</p>
+<p><a name="Section3"></a></p>
+<h2>Registering New Server</h2>
+<p>In order to see the list of remote servers sign in under "serveradmin" account and go to "Configuration -&gt; Servers" page.</p>
+<p><img src="../Media/WindowsLiveWriter/SettingupRemoteServers_E21E/image_4.png" alt="" width="605" height="380" /></p>
+<p>To register new remote server click "Add Server" button. "Add Server" page will be displayed:</p>
+<p><img src="../Media/WindowsLiveWriter/SettingupRemoteServers_E21E/image_6.png" alt="" width="608" height="340" /></p>
+<p>Fill form fields as following:</p>
+<ul>
+<li>
+<p><strong>Server name</strong> - display name of the controlled server visible in WebsitePanel. It doesn't mean the name of computer, it's just an arbitrary name describing the purpose of controlled server, e.g. "Server 1", "Mail Server 1", "Web Server 3".</p>
+</li>
+<li>
+<p><strong>Server URL</strong> - URL of WSP Server application installed on remote server, e.g. <a href="http://34.32.0.10/Server">http://34.32.0.10/Server</a></p>
+</li>
+<li>
+<p><strong>Server Access Password</strong> - server access password specified during WSP Server installation or changed in "WSP.Server.Config.exe" tool.</p>
+</li>
+<li>
+<p><strong>Confirm Password</strong> - server access password confirmation.</p>
+</li>
+</ul>
+<p>Click "Add" button to register the server. During this step remote WSP Server application will be contacted and if all entered data is correct the following screen will appear:</p>
+<p><img src="../Media/WindowsLiveWriter/SettingupRemoteServers_E21E/image_10.png" alt="" /></p>
+<p>In case you've specified wrong server URL or incorrect password or server license has expired/blocked you'll see a corresponding message.</p>
+<p>On "Server Properties" page you can see the following sections to control different server aspects:</p>
+<ul>
+<li>"Connection Settings" section - allows to change the URL to Server application on the controlled server (e.g. in case it was moved to other location) and specify a new password to access the server. </li>
+<li>"Active Directory Settings" section - allows specifying whether all server service user account and groups are created in Active Directory or as local accounts. </li>
+<li>"Instant Alias" section - allows to specify an "instant alias" on the server-level. </li>
+<li>"Services" tab - allows managing the list of installed services (applications) and their corresponding settings. Those services will be provided to hosting customers as hosting resources. </li>
+<li>"IP Addresses" tab - allows managing the list of IP address assigned to this server. </li>
+<li>"Global DNS Records" tab - allows managing server-level DNS records. </li>
+<li>"Terminal Connections" link - allows view/manage active terminal connections. </li>
+<li>"Windows Services" link - allows view/manage Windows services. </li>
+<li>"Processes" link - allows to view/manage system processes running on the server. </li>
+<li>"Reboot" link - allows rebooting the server.</li>
+</ul>
+<p><a name="Section4"></a></p>
+<h2>Active Directory Integration</h2>
+<p>Several server services providers like Microsoft Windows 2003, IIS 6.0, MS FTP require creating user accounts and groups. For example, for Microsoft Windows 2003 provider it is "System Users and Groups" that can be used in SharePoint Services, SQL Server Reporting Services for authentication; for IIS 6.0 it is web site anonymous and FrontPage accounts. Those user accounts and groups can be created by providers in two locations:</p>
+<ul>
+<li>Local users and groups </li>
+<li>Active Directory organizational units</li>
+</ul>
+<p>If the controlled server is a member of Active Directory domain it can be configured to create users and groups there.</p>
+<p>Active Directory integration can be configured on server level only, i.e. you can specify "local" mode for one service (say IIS 6.0) and "AD" mode for another (say "FTP").</p>
+<p><img src="../Media/WindowsLiveWriter/SettingupRemoteServers_E21E/image_12.png" alt="" width="516" height="304" /></p>
+<p>In "Active Directory Settings" section specify the following settings:</p>
+<ul>
+<li>Security mode - specify whether accounts will be created locally or in Active Directory. </li>
+<li>Authentication method - select AD authentication method that will be used by WSP to access Active Directory. </li>
+<li>Root domain - specify the root domain in the forest where accounts will be created. The domain should be specified in the form "sub.domain.com". </li>
+<li>Username, password - credentials of the system account that has right to manage Active Directory (usually it is a member of "Domain Administrators").</li>
+</ul>
+<p><a name="Section5"></a></p>
+<h2>Adding IP Addresses</h2>
+<p>This section allows to specify the list of IP addresses assigned to the controlled server. These IP address will be needed when configuring server services.</p>
+<p><img src="../Media/WindowsLiveWriter/SettingupRemoteServers_E21E/image_14.png" alt="" width="510" height="384" /></p>
+<p>In order to register new IP address click "Add IP Address" button.</p>
+<p>Fill form data as following:</p>
+<ul>
+<li>IP Address - external (or public) IP address visible outside the network. <strong><em>External part of IP address is used when creating DNS zone records.</em></strong> </li>
+<li>NAT Address - internal (or private) IP address inside the network corresponding to the external one. If you don't have NAT-based network you may leave this field blank and specify on external IP. <strong><em>Internal part of IP address is used when creating web site host headers, mail domain IP binding, etc.</em></strong> </li>
+<li>To - this field allows you to add a whole range of IP addresses starting from External IP and ending with "To" inclusive. When internal IP is specified it will be also incremented (or decremented) when adding a range. </li>
+<li>Server assigned - the server to which the given IP address is assigned. </li>
+<li>User assigned - the user to which the given IP address is assigned. When adding "common" IP addresses you may leave this field as "Empty", but when adding specific IP address that will be used a static IP for some customer web site you should select his user account. </li>
+<li>Comments - arbitrary comments that would help to distinguish one IP address from another in the list.</li>
+</ul>
+<p>Click "Update" button to apply your changes.</p>
+<p><a name="Section6"></a></p>
+<h2>How Many Server IP Addresses Should I Have?</h2>
+<p>We recommend you having at least two IP addresses for each server. Usually such services like DNS and Mail operate more stable when configured to use more than one IP address (primary and secondary DNS zones should resolve to different IP addresses and backup mail exchanger (additional MX record in DNS) should be setup for better mail system availability).</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn9fcd.html?ReturnUrl=%2Fadministrator-guide%2Fsetting-up-remote-servers">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/administrator-guide/setting-up-remote-servers by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:47:58 GMT -->
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/Administrator-Guide/Changing-Account-Mail-Templates by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:11:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Changing Account Mail Templates - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide" href="../rssa280?containerid=13" />
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide - Comments" href="../rss3e15?commentedoncontainer=13" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt; <a href="index.html">Administrator Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Changing Account Mail Templates</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="changing-account-mail-templates-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>Mail templates are specified on user account level. They will be applied to all underlying reseller accounts unless explicitly overridden by reseller.</p>
+<p>The following templates can be customized in WSP:</p>
+<ul>
+<li><a href="user-account-summary-letter-2.html">User Account Summary Letter</a> </li>
+<li><a href="hosting-space-summary-letter-2.html">Hosting Space Summary Letter</a> </li>
+<li><a href="password-reminder-letter-2.html">Password Reminder Letter</a> </li>
+<li>Exchange Mailbox Setup Letter </li>
+<li>Organization User Summary Letter </li>
+<li><a href="../exchange-2007-2010-module/enterprise-solution-reports-configuration.html">Enterprise Solutions Report</a> </li>
+<li><a href="exchange-hosting-mode-organization-summary-letter-2.html">Exchange Hosting Mode Organization Summary Letter</a> </li>
+<li><a href="vps-summary-letter-2.html">VPS Summary Letter</a> </li>
+</ul>
+<h2>Common Template Engine Notes</h2>
+<ul>
+<li>
+<p>WSP uses Ader Template engine syntax to render all system templates. Please see this page for more information about template engine library and its complete syntax: <a href="http://www.adersoftware.com/index.cfm?page=templateEngine2">http://www.adersoftware.com/index.cfm?page=templateEngine2</a></p>
+</li>
+<li>
+<p>If you need to render # (sharp) symbol, for example HTML color value, it should be written as ## (double sharp), because # is reserved symbol in template engine.</p>
+</li>
+<li>
+<p>All template engine processing tags ("ad:if", "ad:foreach", etc.) should be well-formed:</p>
+<ul>
+<li>
+<p>Have closing tag for each corresponding opening tag</p>
+</li>
+<li>
+<p>All tag attributes should be surrounded with double quotes.</p>
+</li>
+<li>
+<p>All tag names should be written in lower case.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Example templates</h2>
+<p>You can download example templates <a href="http://www.websitepanel.net/Files/WebsitePanel-MailTemplates.zip">here</a> and complete/customize them for your&nbsp; environment.</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn7fde-2.html?ReturnUrl=%2FAdministrator-Guide%2FChanging-Account-Mail-Templates">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/Administrator-Guide/Changing-Account-Mail-Templates by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:11:17 GMT -->
+</html>

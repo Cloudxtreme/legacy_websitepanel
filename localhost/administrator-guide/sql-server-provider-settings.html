@@ -1,0 +1,119 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/administrator-guide/sql-server-provider-settings by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:08:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>SQL Server 2000/2005/2008 Provider Settings - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide" href="../rssa280?containerid=13" />
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide - Comments" href="../rss3e15?commentedoncontainer=13" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt; <a href="index.html">Administrator Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>SQL Server 2000/2005/2008 Provider Settings</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <p><img src="../Media/WindowsLiveWriter/SQLServerProviderSettings_C06C/image_4.png" alt="" /></p>
+<p>Please note if you are registering remote SQL server which is not on the same box with WSP Server application your customers will not be able to do backups and restores of their databases.</p>
+<ul>
+<li>
+<p><strong>Internal Address</strong> - Specify SQL Server instance to be controlled. If Server application is installed on the same box with SQL Server you can use just "(local)" for SQL Server Standard edition and higher and "(local)\sqlexpress" for SQL Server 2005 Express. You can also specify IP address here.</p>
+</li>
+<li>
+<p><strong>External Address</strong> - Specify IP address to access this SQL server instance from outside. This IP address will be used by Web Applications Installer (in the connection strings) and can be shown in hosting space summary information.</p>
+</li>
+<li>
+<p><strong>Connection</strong> - Select security mode or the way how WSP will connect to SQL Server to manage its databases and logins. If the SQL Server instance is installed locally you may use "Trusted connection" as "WebsitePanelServer" account under which Server web application pool is working is a member of "Administrators" group; otherwise select "SQL" connection type and specify username and password of SQL account with administrative privileges.</p>
+</li>
+<li>
+<p><strong>Databases Location</strong> - Select the location for newly created databases. If you select "Default" location all database .MDF and .LDF files will be stored in "Data" folder of SQL Server ("c:\Program Files\Microsoft SQL Server\MSSQL\Data" folder by default). If you select "Custom" location you can specify the path to the folder where all database files will be stored.</p>
+</li>
+<li>
+<p><strong>Database Collation</strong> - if may specify the collation of new databases. This option may be useful when non-standard culture-specific collation was set as server default collation. If nothing is selected in this field new databases will be created with server default collation specified during SQL Server installation.</p>
+</li>
+</ul>
+<h2>DNS Records</h2>
+<p>Verify/change SQL Server DNS record and its data (IP address). This DNS "A" record will be added to all created DNS customer zones and it allows customer to access SQL Server by using not only IP address, but the domain name too (e.g. sql.mydomain.com).</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnb7c9.html?ReturnUrl=%2Fadministrator-guide%2Fsql-server-provider-settings">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/administrator-guide/sql-server-provider-settings by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:08:40 GMT -->
+</html>

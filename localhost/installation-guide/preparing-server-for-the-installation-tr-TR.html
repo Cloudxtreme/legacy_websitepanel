@@ -1,0 +1,122 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/installation-guide/preparing-server-for-the-installation-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:07:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>WebsitePanel Bileşenlerinin Kurulumu i&#231;in Sunucuyu Hazırlama - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Installation Guide" href="../rss1e35?containerid=110" />
+
+<link rel="alternate" type="application/rss+xml" title="Installation Guide - Comments" href="../rssaaeb?commentedoncontainer=110" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Installation Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>WebsitePanel Bileşenlerinin Kurulumu i&#231;in Sunucuyu Hazırlama</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="preparing-server-for-the-installation.html">en-US</a></li></ul>
+    </div>
+</div>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><a href="http://www.websitepanel.net/documentation"><span style="color: black; text-decoration: none; text-underline: none;">Belgeler</span></a> &gt;<a href="http://www.websitepanel.net/installation-guide/index"><span style="color: black; text-decoration: none; text-underline: none;">Kurulum Kılavuzu</span></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 1;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 17pt; mso-font-kerning: 18.0pt;" lang="TR">WebsitePanel Bileşenlerinin Kurulumu i&ccedil;in Sunucuyu Hazırlama<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">&Ccedil;oklu<a href="http://www.websitepanel.net/installation-guide/how-does-websitepanel-work"><span style="color: black; text-decoration: none; text-underline: none;"> Sunucu Kurulumu</span></a></span><span style="font-family: 'Times New Roman','serif';" lang="TR"><span style="font-size: small;" size="3"> </span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">s&ouml;z konusu olduğunda WebsitePanel bileşenlerini sunucularınıza tek tek kurmanız gerekir. <a href="http://www.websitepanel.net/installation-guide/websitepanel-installation-with-web-platform-installer"><span style="color: black; text-decoration: none; text-underline: none;">Microsoft Web Platform Installer</span></a> kullanarak ger&ccedil;ekleştirilebilecek WebsitePanel Bağımsız Kurulumundan farklı olarak WebsitePanel bileşenlerinin <a href="http://www.websitepanel.net/installation-guide/websitepanel-installer"><span style="color: black; text-decoration: none; text-underline: none;">WebsitePanel Kurulum Aracı</span></a> ile kurulması ve sunucuların kurulum &ouml;ncesinde d&uuml;zg&uuml;n şekilde yapılandırılması gerekir. Yapılandırma işlemi, Windows Server 2003 ve Windows Server 2008 i&ccedil;in farklıdır. Sunucuları kurulum i&ccedil;in hazırlamanın en kolay yolu, Microsoft Web Platform Installer'ı (Web PI) kullanmaktır. Web PI, aşağıdaki &uuml;r&uuml;nleri kolay bir şekilde kurmanızı ve yapılandırmanızı sağlar:<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28pt; mso-list: l0 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 10pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Internet Information Services<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28pt; mso-list: l0 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 10pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">.NET Framework 2.0<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28pt; mso-list: l0 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 10pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">.NET Framework 3.5 SP1<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28pt; mso-list: l0 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 10pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">SQL Management Studio ile Express SQL Server 2008<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28pt; mso-list: l0 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 10pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">PHP 5.x<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28pt; mso-list: l0 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 10pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Ek kitaplıklar ve programlar<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Hangi &uuml;r&uuml;nlerin kurulacağı hakkında daha fazla bilgi i&ccedil;in aşağıdaki makalelere başvurun:<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><a href="http://www.websitepanel.net/installation-guide/preparing-windows-server-2003"><span style="color: black; text-decoration: none; text-underline: none;">Windows Server 2003'&uuml; WebsitePanel Kurulumu i&ccedil;in hazırlayın</span></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><a href="http://www.websitepanel.net/installation-guide/preparing-windows-server-2008"><span style="color: black; text-decoration: none; text-underline: none;">Windows Server 2008'i WebsitePanel Kurulumu i&ccedil;in hazırlayın</span></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><a name="test"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Web PI'yi aşağıdaki konumdan y&uuml;kleyebilirsiniz:<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><a href="http://www.microsoft.com/web/downloads/platform.aspx" target="_blank"><span style="color: black; text-decoration: none; text-underline: none;">http://www.microsoft.com/web/downloads/platform.aspx</span></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></b></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Not</span></b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"> Windows Server 2003'te kurulum işlemi .NET Framework 2.0 kurmak i&ccedil;in izninizi isteyebilir. Bu kuruluma izin verme se&ccedil;eneğini se&ccedil;in.<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnc602.html?ReturnUrl=%2Finstallation-guide%2Fpreparing-server-for-the-installation-tr-TR">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/installation-guide/preparing-server-for-the-installation-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:07:15 GMT -->
+</html>

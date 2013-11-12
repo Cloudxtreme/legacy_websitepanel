@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/smarterstats-3.x-installation-and-configuration by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:06:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>SmarterStats 3.x Installation and Configuration - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>SmarterStats 3.x Installation and Configuration</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="smarterstats-4.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>By default, SmarterStats will install a basic web server that allows you to start using SmarterStats immediately after installation. However, it is recommended that you move SmarterStats to a more robust and secure web server, such as Microsoft's Internet Information Server (IIS). To configure SmarterStats to run under IIS 5.0 or higher, follow the step-by-step instructions below.  <p>This section explains how to setup SmarterStats as its own IIS site (recommended method). If you wish to run SmarterStats as a virtual directory under an existing IIS site, <a href="http://help.smartertools.com/SmarterStats/v3/Topics/SystemAdmin/Installation/ConvertingToIISVirt.aspx">click here</a>.  <p><em>Note: This topic assumes that you are familiar with IIS and how it works. SmarterTools recommends that you use the web server included with SmarterStats if you do not feel comfortable using IIS.</em> <p><em>Note: Several steps that were necessary under previous versions of SmarterStats are no longer necessary, and thus have been removed from this topic.</em> <p><a name="Section1"></a> <h2>Install IIS (if necessary)</h2> <p>Click on Start -&gt; Control Panel -&gt; Add Remove Programs  <p>Click on Add / Remove Windows Components.  <p>Check the box for Internet Information Services (IIS).  <p>Complete the Wizard and wait for the installation to complete.  <p>If Microsoft.Net mappings are not correct (for example, if you install IIS after Microsoft.Net), run the following at the command prompt (replace "\Windows\" with "\WinNT\" for Windows 2000 installations):  <ul> <li>c:  <li>cd \Windows\Microsoft.Net\Framework\v1.1.4322  <li>aspnet_regiis -i </li></ul> <p><a name="Section2"></a> <h2>Disable the SmarterStats Web Server</h2> <p>While not absolutely necessary, this step will improve security on your server and is highly encouraged.  <p>These steps will stop and disable the Web Server included with SmarterStats. They will also have the side-effect of disabling the shortcut to SmarterStats on your desktop until you update it with the new URL for SmarterStats.  <p>Click on Start -&gt; Program Files -&gt; SmarterTools -&gt; SmarterStats -&gt; Configure SmarterStats Web Server  <p>Click on the Stop button  <p>Change the Startup Mode to Disabled and click on the Apply button  <p>Click on the Close button  <p><a name="Section3"></a> <h2>Add SmarterStats to IIS</h2> <p>Click on Start -&gt; Control Panel -&gt; Administrative Tools -&gt; Internet Information Services (IIS)  <p>Right-click on the web sites tree on the left of the page and choose New -&gt; Web Site  <p>When asked for a description, enter SmarterStats  <p>Choose the IP address to use for web interface. If this IP address is shared with another web site, you will need to use a different port or Host Headers. For more information about using Host Headers, refer to the IIS documentation.  <p>For Path, use "C:\Program Files\SmarterTools\SmarterStats\MRS" (or use the location in which you installed SmarterStats).  <p>Leave the "Allow anonymous access to this web site" box checked.  <p>When asked what permissions to grant, choose only Read and Run Scripts.  <p>Finish the wizard  <p><a name="Section4"></a> <h2>Verify IIS Settings</h2> <p>If you are using Windows 2003, verify that the ASP.NET v1.1.4322 Web Service Extension is set to Allowed in IIS.&nbsp; If you do not see ASP.NET under Web Service Extensions, ensure that ASP.NET is enabled in the Application Server.&nbsp; (Control Panel -&gt; Add / Remove Programs -&gt; Windows Components -&gt; Application Server -&gt; Details)  <p>In IIS, right-click on the Config directory for the SmarterStats site and choose properties. Uncheck the Read flag and click on OK. If asked, choose to apply the change to child objects as well.  <p>Ensure that the default document for the site is Default.aspx (under the Documents tab)  <p><a name="Section5"></a> <h2>Update DNS</h2> <p>If any domains are already setup with pointers to SmarterStats, make sure to update their DNS records to point to the new IP address.  <p><a name="Section6"></a> <h2>Test the Site</h2> <p>Open up a web browser, and type in the IP address of the site you just added. </p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn54b9.html?ReturnUrl=%2Fkb%2Fsmarterstats-3.x-installation-and-configuration">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/smarterstats-3.x-installation-and-configuration by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:07:01 GMT -->
+</html>

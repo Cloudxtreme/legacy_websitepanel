@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/enterprise-solution-reports-configuration by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:59:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Enterprise Solution Reports configuration - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module" href="../rss68ec?containerid=101" />
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module - Comments" href="../rssba67?commentedoncontainer=101" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Exchange 2007/2010 Modules</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Enterprise Solution Reports configuration</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="enterprise-solution-reports-configuration-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>Before starting with configuration of "Enterprise Solution Report" scheduled task please ensure that from the panel under "Configuration -&gt; System Settings" page you've configured correct SMTP server settings to allow WSP send e-mail messages.  <p>For additional information please read following articles: <a href="../administrator-guide/setting-up-system-settings.html">Setting Up System Settings</a> and <a href="tuning-smtp-relay-for-sending-summary-letters-in-wsp-hes-environment.html">Tuning SMTP relay for sending summary letters in WSP HES environment</a>. <p>1. Configuration of "Enterprise Solution Report" template.  <p> 1.1. Login to the panel under Serveradmin or Peer user account  <p> 1.2. From the Panel home page &gt; Mail Templates (on right bottom)  <p><img src="../Media/Images/enterprise_solution_reports_configuration/image003.png"/> <p> 1.3. Open and configure "Enterprise Solution Report" template and fill all required information. Message body can be any you want. The only condition - it should not be empty.  <p><img src="../Media/Images/enterprise_solution_reports_configuration/image002.jpg" /> <p>2. Configuration of "Enterprise Solution Report" scheduled task.  <p> 2.1. From the Panel home page &gt; System&gt; Open Scheduled tasks  <p><img alt="image005.png" src="../Media/Images/enterprise_solution_reports_configuration/image005.png" width="286" height="29"> <p> 2.2. Add "Enterprise Solution Report" scheduled task.  <p> 2.3. Fill e-mail address. It's a person who will receive these scheduled reports.  <p> 2.4. Specify which of the reports you want to receive. By default checked all and you'll receive all reports (Exchange Report, SharePoint Report, CRM Report, and Organization Report).  <p><img src="../Media/Images/enterprise_solution_reports_configuration/image001.png"/> <p>Please Note: Better to schedule those reports to run every day for not to miss situation like, for example, when someone enable MAPI in the beginning of the month (after you run scheduled report) and disable in the end (before you run next report). Those people may cheat both you and MS.  <p>Now you can receive the scheduled "Enterprise Solution Report" reports. The received e-mail message will contain attached ".CSV" file(s):  <p><img src="../Media/Images/enterprise_solution_reports_configuration/image017.jpg" /> <p>In our example body contain the "Attached are Enterprise Solution Reports", but from the report template you can set something you like (see 1.3.).  <p>Please note: It should not be empty. It should be like an "Attached are Enterprise Solution Reports".  <p>There is example of "exchange.csv" file:  <p><img src="../Media/Images/enterprise_solution_reports_configuration/image018.jpg" /> <p>We decided to use "csv" format because it is most simple and raw format and can be imported to virtually any database or accounting/billing program based on Access, DBF, MS SQL, MySQL, etc. So fill free to use those files with your accounting/billing databases and programs. </p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnecfd.html?ReturnUrl=%2Fexchange-2007-2010-module%2Fenterprise-solution-reports-configuration">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/enterprise-solution-reports-configuration by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:00:04 GMT -->
+</html>

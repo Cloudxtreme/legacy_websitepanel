@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/CRM-module/wsp-hosted-crm-solution-installation-tasks by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:01:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>WSP Hosted CRM Solution Installation Tasks - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="CRM Module" href="../rssacfa?containerid=93" />
+
+<link rel="alternate" type="application/rss+xml" title="CRM Module - Comments" href="../rss7286?commentedoncontainer=93" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">CRM Module</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>WSP Hosted CRM Solution Installation Tasks</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="wsp-hosted-crm-solution-installation-tasks-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h2>WSP Server account requirements</h2> <p>WSP Server account for WSP Server Web site anonymous access and WSP Server application pool identity must be the domain account. Add this account to PrivUserGroup created by CRM setup and to local Administrators group on SQL server. In case this account is already added to Domain Admins group (for example for Hosted Organizations) - there is no need to add it to local Administrators group on SQL server.  <p><a name="Section2"></a> <h2>Setting up "Active Directory Settings"</h2> <p>Requirements for "Active Directory Settings" for all WSP Servers where Hosted CRM module will be deployed are the same as for <a href="../exchange-2007-2010-module/deploying-hosted-organizations-module.html">WSP Server where Hosted Organizations module will be deployed</a>.  <p><img alt="ADsettings.png" src="../Media/Images/dnp_hosted_crm_solution_installation_tasks/adsettings.png" width="462" height="254">  <p><a name="Section3"></a> <h2>Setting up Hosted CRM Service</h2> <p>Add External IP to server. It should be public IP address of AppServer that hosts CRM Web Site. If NAT-based infrastructure is used, add external IP of NAT server on which CRM Web Site will be published. This will be used for creating DNS records for client's CRM Sites. Please add this address even you are not going to manage DNS with WSP.  <p><img alt="image005.png" src="../Media/Images/dnp_hosted_crm_solution_installation_tasks/image005.png" width="459" height="82">  <p>Ensure that "OS" service is deployed at least on one WSP server. If you are going to create Virtual Server and Hosting plan mixed with classic Web hosting - add "OS" service from WSP Server that will host websites. In case of pure CRM or mixed WSS/Exchange/CRM environment - use any server. Your customers may use their Hosting Space folders for WSS Site collection's backup. Also future Exchange mailbox backup and CRM organizations backup features will use Hosting Space folders too. So choose "Hosting Spaces Folder" path carefully (it should have enough free space, for example - point to physical disk where data files, not programs are located).  <p>Ensure that "Hosted Organizations" module is deployed on one of the WSP Servers.  <p>On "Hosted CRM " service specify service settings (most of them can be taken from CRM setup XML file used for CRM deployment previously):  <p><strong>SQL Server.</strong> CRM SQL back-end server host name. Can be copied from "SqlServer" tag from setup XML file.  <p><strong>Reporting URL.</strong> CRM SQL back-end server Reporting Services URL. Can be copied from "Reporting URL" tag from setup XML file.  <p><strong>IFD Web Application Root Domain.</strong> Can be copied from "webapplicationrootdomain" tag from setup XML file. Or you can run IFD Deployment Tool and copy it from there.  <p><strong>IFD Root Domain Scheme.</strong> Can be copied from "rootdomainscheme" tag from setup XML file. HTTPS is strongly recommended. Or you can run IFD Deployment Tool and copy it from there.  <p><strong>CRM Website IP.</strong> Select server IP from drop-down. It should be External IP address of AppServer that host CRM Web Site external clients will connect to.  <p><strong>CRM Website port.</strong> Fill this field only in case you use non standard (not 80 or 443) ports for HTTP or HTTPS for CRM Web Site.  <p><strong>AD Application Root Domain.</strong> Run IFD Deployment tool and copy “AD App Root Domain”  <p><em>Note that “AD Domain Scheme” must be set to HTTP, not HTTPS in IFD settings, otherwise WSP CRM user management may not work. This will not affect security because it will not be opened to outside in correct IFD deployment.</em>  <p><img alt="image007.jpg" src="../Media/Images/dnp_hosted_crm_solution_installation_tasks/image007.png" width="430" height="419">  <p><a name="Section4"></a> <h2>Creating Virtual Server</h2> <p>It is strongly recommended to use Virtual Servers, but not Servers for Hosting plans. This greatly increases flexibility and helps you avoid problems during adding services or resources to existing customers  <p>Select "Hosted CRM" server as target server. <br>Select "Hosted Organizations" service from server where you deployed it. <br>Select "OS" service from any server. If you are going to create Virtual Server and Hosting plan mixed with classic Web hosting - use "OS" service only from Web server. <br>Optionally select"Exchange 2007" services from Exchange 2007 server with Mailbox role in case (more likely) you are going to use Hosted CRM and Exchange in one Hosting Plan or add Exchange features to customers later with Add-Ons.<br>Optionally select other services like "Hosted SharePoint" or "Web" if you are going to use Hosted CRM and other services in one Hosting Plan or add other services to customers later with Add-Ons.<br>Optionally select "DNS" service from appropriate server if you use WSP-managed DNS server.This service is optional  <p><img alt="image009.png" src="../Media/Images/dnp_hosted_crm_solution_installation_tasks/image009.png" width="691" height="533">  <p><a name="Section5"></a> <h2>Creating Hosting Plan</h2> <p>In case you are creating mixed CRM/Exchange Hosting Plan, create plan according to <a href="../exchange-2007-2010-module/hosted-exchange-solution-installation-tasks.html">this document</a> and then add "Hosted CRM" option.  <p>In case you are creating pure CRM Hosting Plan, create plan according to <a href="../exchange-2007-2010-module/hosted-exchange-solution-installation-tasks.html">this document</a>, just do not add "Exchange 2007" option and add "Hosted CRM" option.  <p><a name="Section6"></a> <h2>Creating CRM Organization</h2> <p>Here we assume that the following steps have been already done after creating Hosting Plan: <br>- WSP User created by hosting provider <br>- Hosting Space (based on previously created Hosting Plan) for this WSP User is created by hosting provider<br>- Hosted Organization inside this Hosting Space is created by hosting provider or by hosting customer <br>- At least one user (future CRM Organization administrator) is created in Hosted Organization by hosting provider or by hosting customer <br>Here are steps hosting customers have to do to create CRM Organization: <br>- Go to Hosted Organizations &gt; Customer's organization &gt; CRM &gt; CRM organization<br>- Choose Administrator for CRM organization from existing organization's users list<br>- Choose appropriate Currency and Collation<br>- Press "Create" button. <br><img alt="image011.png" src="../Media/Images/dnp_hosted_crm_solution_installation_tasks/image011.png" width="797" height="292"><br>- Try to open CRM Organization portal in browser. Use administrator's primary e-mail (UPN) as username. </p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn33e0.html?ReturnUrl=%2FCRM-module%2Fwsp-hosted-crm-solution-installation-tasks">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/CRM-module/wsp-hosted-crm-solution-installation-tasks by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:01:36 GMT -->
+</html>

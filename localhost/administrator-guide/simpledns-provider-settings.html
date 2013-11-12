@@ -1,0 +1,112 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/administrator-guide/simpledns-provider-settings by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:08:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>SimpleDNS Provider Settings - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide" href="../rssa280?containerid=13" />
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide - Comments" href="../rss3e15?commentedoncontainer=13" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt; <a href="index.html">Administrator Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>SimpleDNS Provider Settings</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <p><img src="../Media/Images/simpledns_20provider_20settings/simpledns_svc.png" alt="" width="513" height="565" /></p>
+<p>DNS service is the most important part of the entire system. Its correct configuration will avoid many problems in the future.</p>
+<ul>
+<li><strong>Listening IP Addresses</strong> - specify the list of IP addresses listening by DNS service. This list of IP addresses will be used when creating secondary DNS zones as a list of master DNS servers. If you are not planning to use secondary DNS service, this list can be left empty. If you are configuring a secondary DNS service the list of listening IP addresses will be used in allowed zone transfers of primary zone. </li>
+<li><strong>Allow Zone Transfers</strong> - in this field you may explicitly define the list of secondary servers IP address which are allowed for zone transfers from this primary service. If you are configuring secondary service this list may be left blank. </li>
+<li>Admin Console URL - the URL to SimpleDNS HTTP management interface. By default it is http://127.0.0.1:8053. </li>
+<li><strong>SOA Responsible Person</strong> - you can specify the e-mail of SOA responsible person for DNS zones. [DOMAIN_NAME] variable can be used and will be substituted with DNS zone name. Recommended value for this field is hostmaster.[DOMAIN_NAME]. </li>
+<li><strong>Refresh Interval</strong> - Specify refresh interval for DNS zones. It determines how often secondary DNS servers should check if changes are made to the zone. The recommended value is 1 hour. </li>
+<li><strong>Retry interval</strong> - Specify retry interval for DNS zones. This interval determines how often secondary DNS server should retry checking if changes are made - if the first refresh fails. The recommended value is 10 minutes. </li>
+<li><strong>Expire Limit</strong> - Specify expire limit for DNS zones. This time determines how long the zone will be valid after a refresh. Secondary servers will discard the zone if no refresh could be made within this interval. The recommended value is 2 weeks. </li>
+<li><strong>Minimum TTL</strong> - Specify minimum TTL (time to live) for DNS zones. This is the time specifying the amount of time other DNS servers and applications are allowed to cache zone records. The recommended value is 1 dasy. </li>
+<li><strong>Secondary DNS Services</strong> - the list of secondary DNS services. When a new primary DNS zone is creating (and the current service is considering as a primary one) corresponding secondary zone will be created on each of those services. </li>
+<li><strong>Name Servers</strong> - Specify the list of custom name servers. We recommend you having at least two name servers specified listening two different IP addresses. For example: ns1.myproviderdomain.com and ns2.myproviderdomain.com. <em>Please note WSP does not create name server automatically and you should configure them manually.</em></li>
+</ul>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn9829.html?ReturnUrl=%2Fadministrator-guide%2Fsimpledns-provider-settings">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/administrator-guide/simpledns-provider-settings by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:08:46 GMT -->
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/ics-bind-dns-server-installation-and-configuration by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:06:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>ICS BIND DNS Server Installation and Configuration - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>ICS BIND DNS Server Installation and Configuration</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="ics-bind-dns-server-installation-and-configuration-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>1. Please download and unzip BIND9.x.zip installation package <a href="http://www.isc.org/index.pl?/sw/bind/index.php">http://www.isc.org/index.pl?/sw/bind/index.php</a> <p>2. Create "BIND" folder on your system or other drive C:\BIND  <p>3. Run "BINDInstall.exe" installation package  <p>Please note: (copied from C:\BIND\dns\bin\readme1st.txt)<br>The installer will prompt you for an account name. <br>The default name is "named", and blank password for that account. It will also check for the existence<br>of that account. If it does not exist is will create it with only the privileges required to run BIND. If the account does exist it will check that it has only the one privilege required: "Log on as a service". If it has too many privileges it will prompt you if you want to continue. <br>For additional information how to configure BIND DNS Server please open C:\BIND\dns\bin\readme1st.txt or <a href="http://www.isc.org/index.pl?/sw/bind/index.php">http://www.isc.org/index.pl?/sw/bind/index.php</a> <p>4. Specify installation directory. Account name and password required for running BIND Server&nbsp;&nbsp; <p><img src="../Media/Images/ics_20bind_20dns_20server_20installation_20and_20configuration/1.png" width="165" height="262"> <p>For example "Bind_ServiceAccount" ISC BIND Service Account  <p>5. Press install button  <p><img src="../Media/Images/ics_20bind_20dns_20server_20installation_20and_20configuration/2.png"> <p>6. Create BIND Configuration File:  <p>Under "c:\BIND\dns\etc\" folder please create blank "named.conf" configuration file  <p><img src="../Media/Images/ics_20bind_20dns_20server_20installation_20and_20configuration/3.png" width="352" height="281"> <p>7. Create BIND .Key File  <p>From the command line:  <p>&gt;&gt;cd C:\BIND\dns\bin  <p>&gt;&gt; rndc-confgen -a  <p><img src="../Media/Images/ics_20bind_20dns_20server_20installation_20and_20configuration/5.png" width="425" height="212"> <p>Please note: (copied from C:\BIND\dns\bin\readme1st.txt) <br>Which will create a rndc.key file in the dns/etc directory. This will allow you to run rndc without an explicit rndc.conf file or key and control entry in named.conf file  <p>8. Start "ISC BIND" service  <p><img src="../Media/Images/ics_20bind_20dns_20server_20installation_20and_20configuration/6.png" width="501" height="253"> <p>9. Check membership and permission for ISC BIND Service Account  <p>By default Bind Service Account will be a member of "Domain Users" or "Users" group.  <p>Please note: (Some information was copied from C:\BIND\dns\bin\readme1st.txt) <br>After please check that the account has full access to C:\BIND folder where located the pid file, any files that are maintained either for slave zones or for master zones supporting dynamic updates.  <p>10. Create the "Zones" folder where BIND DNS Server will be stored all information about added zones "C:\BIND\dns\zones"  <p>11. BIND Configuration in the WSP Control Panel  <p>From the panel In the "BindDNS" Service configuration:  <p>11.1. Change Zone File Name Template to show full path to zones file, e.g. "C:\BIND\dns\zones\db.[domain_name].txt" <p>11.2. Created file C:\BIND\dns\bin\zonereload.bat with&nbsp; "c:/BIND/dns/bin/rndc.exe reload" command inside it. This file set at "Bind Reload Batch" in WSP and also scheduled to run every 10 minutes in Windows Task Scheduler. <p>12. For additional information how to configure BIND DNS Server please open C:\BIND\dns\bin\readme1st.txt or <a href="http://www.isc.org/index.pl?/sw/bind/index.php">http://www.isc.org/index.pl?/sw/bind/index.php</a>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn3281.html?ReturnUrl=%2Fkb%2Fics-bind-dns-server-installation-and-configuration">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/ics-bind-dns-server-installation-and-configuration by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:06:59 GMT -->
+</html>

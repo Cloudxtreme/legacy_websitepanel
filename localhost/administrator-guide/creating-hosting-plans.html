@@ -1,0 +1,190 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/administrator-guide/creating-hosting-plans by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:48:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Creating Hosting Plans - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide" href="../rssa280?containerid=13" />
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide - Comments" href="../rss3e15?commentedoncontainer=13" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt; <a href="index.html">Administrator Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Creating Hosting Plans</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="creating-hosting-plans-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h2>What is Hosting Plan?</h2>
+<p>Hosting plan is a set of hosting resources and their corresponding quotas. Hosting resources here are set of services located on a single server of several servers (combined into one entity by mean of &ldquo;<a href="setting-up-virtual-servers.html">virtual server</a>&rdquo;). Hosting plan is used as a template for creating customer hosting spaces.</p>
+<p><a name="Section2"></a></p>
+<h2>Creating Hosting Plan</h2>
+<p>To view the list of hosting plans of some reseller click "Hosting Plans" item on the left User Account Menu. The following screen will appear:</p>
+<p><img src="../Media/WindowsLiveWriter/CreatingHostingPlans_C69F/image_2.png" alt="" /></p>
+<p>To add a new hosting plan click "Add Hosting Plan" button. You'll be redirected on "Hosting Plan Details" screen shown below:</p>
+<p><img src="../Media/WindowsLiveWriter/CreatingHostingPlans_C69F/image_4.png" alt="" /></p>
+<p><a name="Section3"></a></p>
+<h3>General Settings</h3>
+<p><a name="Section4"></a></p>
+<h4>Name and Description</h4>
+<p>Specify the name and description of hosting plan and set its availability (visibility) to customers.</p>
+<p><a name="Section5"></a></p>
+<h4>Plan Target</h4>
+<p>Plan target is the place where corresponding hosting space will be created. When editing hosting plan under administrator account ("serveradmin") only servers (both physical and virtual) can be selected as a target. When editing hosting plan under reseller account a hosting space only can be selected as a target.</p>
+<p><a name="Section7"></a></p>
+<h3>Quotas</h3>
+<p>Enable required resource groups and specify their allowed quotas.</p>
+<p>Check resource groups for which disk space and bandwidth should be calculated.</p>
+<p>Some resources may be disabled if corresponding service does not exist on the selected target server or hosting space. For example if "System" resource is disabled that means you don't have "OS" service in the target server or "System" resource enabled in the parent hosting space.</p>
+<p><a name="Section8"></a></p>
+<h4>System Resource</h4>
+<p><img src="../Media/WindowsLiveWriter/CreatingHostingPlans_C69F/image_8.png" alt="" /></p>
+<p>Tick "System" resource if you want to allow created hosting spaces work with files.</p>
+<p>Please note, some other resources like WEB or FTP are dependent on "System" resource, so if it's not enabled you will not be able to create web sites or FTP accounts in the created hosting space under this hosting plan.</p>
+<p>Specify allowed "disk space" and "bandwidth/month" quotas.</p>
+<p>Sometimes it's undesirable to allow customers accessing files within the space. In this case you can disable "File Manager" option and it will be hidden from their spaces.</p>
+<p><a name="Section9"></a></p>
+<h4>Web Sites Resource</h4>
+<p><img src="../Media/WindowsLiveWriter/CreatingHostingPlans_C69F/image_10.png" alt="" /></p>
+<p>Tick "Web Sites" resource if you want to allow customers to create web sites.</p>
+<p>Specify the maximum number of allowed web sites, number of allowed shared SSL folders (virtual directories).</p>
+<p>Check/uncheck other web resource options.</p>
+<p><a name="Section10"></a></p>
+<h4>FTP Resource</h4>
+<p><img src="../Media/WindowsLiveWriter/CreatingHostingPlans_C69F/image_12.png" alt="" /></p>
+<p>Tick "FTP" resource if you want to allow customers to create FTP accounts.</p>
+<p>Specify the maximum number of allowed FTP accounts.</p>
+<p><a name="Section11"></a></p>
+<h4>Mail Resource</h4>
+<p><img src="../Media/WindowsLiveWriter/CreatingHostingPlans_C69F/image_14.png" alt="" /></p>
+<p>Tick "Mail" resource if you want to allow customers to create mail accounts, forwardings, groups and lists.</p>
+<p>Specify the maximum number of mail accounts, forwardings, groups and lists.</p>
+<p>Also, you may limit the number of allowed recipients for mail groups and lists.</p>
+<p>"Max Mailbox Size" quota allows to limit mail account size growth. Please note, not all mail servers support this feature.</p>
+<p><a name="Section12"></a></p>
+<h4>SQL Server 2000, 2005 and 2008 Resources</h4>
+<p><img src="../Media/WindowsLiveWriter/CreatingHostingPlans_C69F/image_16.png" alt="" /></p>
+<p>Tick "SQL Server x" resource if you want to allow customers to create SQL Server databases and user accounts.</p>
+<p>Specify the maximum number of allowed databases and database user accounts.</p>
+<p>Allow/disallow database backups, restores and truncates.</p>
+<p>Database truncate is a service feature that truncates database log file (.LDF), thus decreasing the overall size of disk space occupied by database.</p>
+<p>If "Max Database Size" quota is limited SQL Server database will be created with the specified limited size growth (if set to "unlimited" databases are created with "unrestricted growth" option).</p>
+<p><a name="Section13"></a></p>
+<h4>MySQL 4 and 5 Resources</h4>
+<p>[screenshot]</p>
+<p>Tick "MySQL x" resource if you want to allow customers to create MySQL databases and user accounts.</p>
+<p>Specify the maximum number of allowed databases and database user accounts.</p>
+<p>Allow/disallow database backups.</p>
+<p><a name="Section14"></a></p>
+<h4>SharePoint Resource</h4>
+<p><img src="../Media/Images/creating_20hosting_20plans/hp_sharepoint.png" alt="" /></p>
+<p>Tick "SharePoint" resource if you want to allow customers to create SharePoint Services 2.0 web sites, user accounts and groups.</p>
+<p>SharePoint resource is dependent on "System", "Web" and "SQL Server x" resources, so they also should be enabled if you are going to host SharePoint portals.</p>
+<p>Specify the maximum number of SharePoint sites, users and groups that can be created in derived hosting space.</p>
+<p><a name="Section15"></a></p>
+<h4>DNS Resource</h4>
+<p><img src="../Media/Images/creating_20hosting_20plans/hp_dns.png" alt="" /></p>
+<p>Tick "DNS" resource if you want WSP to create corresponding DNS zone for each new domain.</p>
+<p>Please note, if DNS resource is disabled you will still be able to add domains into WSP, but corresponding DNS zones will not be created.</p>
+<p>You may enable/disable DNS editor. However, even if DNS editor was disabled, administrators still have an access to it.</p>
+<p><a name="Section16"></a></p>
+<h4>Statistics Resource</h4>
+<p><img src="../Media/Images/creating_20hosting_20plans/hp_stats.png" alt="" /></p>
+<p>Tick "Statistics" resource if you want to allow customers to create advanced statistics sites (AWStats, SmarterStats, etc.).</p>
+<p>Specify the maximum number of allowed statistics sites.</p>
+<h4>Other Resources - TBD</h4>
+<p>Hosted Exchange</p>
+<p>Hosted Organizations</p>
+<p>Exchange Hosting Mode</p>
+<p>Hosted SharePoint</p>
+<p>Hosted CRM</p>
+<p>Virtual Private Servers</p>
+<p>BlackBerry</p>
+<p>Office Communications Server</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnd61a.html?ReturnUrl=%2Fadministrator-guide%2Fcreating-hosting-plans">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/administrator-guide/creating-hosting-plans by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:48:36 GMT -->
+</html>

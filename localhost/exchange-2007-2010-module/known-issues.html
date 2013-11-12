@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/known-issues by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:00:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Known issues - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module" href="../rss68ec?containerid=101" />
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module - Comments" href="../rssba67?commentedoncontainer=101" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Exchange 2007/2010 Modules</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Known issues</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="known-issues-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h2>Requirement to use single Virtual Server</h2> <p>Domains can not be shared between Hosting Spaces.&nbsp; So in case you need to use one domain both for Exchange and Web hosting - use one Hosting Space for it.  <p>For this mixed Hosting Space you need either create Hosting plan that contained all needed services or use Hosting plan + Hosting Add-ons.  <p>For this mixed Hosting plan or&nbsp; "Hosting plan + Hosting Add-ons" combination you should use parent Virtual Server that contain all needed services.  <p>Use OS components from Web server in this Virtual Server, not from Exchange, even&nbsp; your basic Hosting Plan does not contain Web services (but Web hosting Add-ons will be created).  <p><a name="Section2"></a> <h2>Billing issues </h2> <p>Max mailbox size, MB - is maximum size can be set with panel. Also it defines default limits. In case you create add-on with additional Max mailbox size, MB space - it will increase default limits for new organizations, but for existing orgs default limits will not be changed - only possibility to increase them will appear.  <p>To address this issue <a href="enterprise-solution-reports-configuration.html">Enterprise Solutions Reports</a> was implemented. With reports it is possible to bill customers by fact usage.  <p>Also use can use "Storage Settings" menu to set default mailbox limit for Hosted Organization. Also you can reset limits for all mailboxes in Hosted Organization with "Storage Settings" menu. Limit set with "Storage Settings" menu can be less than maximum mailbox size allowed for this Hosted Organization in Hosting Space and define some "basic" limits that will be used for most existing and new mailboxes in organization, and in case some mailbox require bigger limit - it will be needed to increase it separately with WSP. Then use reports to bill this customer by fact usage.  <p>Currently, in case you add add-on with mailbox feature (for example MAPI access) - this feature become enabled for all mailboxes. To address this issue (and to help our customers be more SPLA-compatible and HMC-competitive) To address this issue <a href="enterprise-solution-reports-configuration.html">Enterprise Solutions Reports</a> was implemented. With reports it is possible to bill customers by fact usage.  <p><a name="Section3"></a> <h2>Backup strategy</h2> <p>Backup feature included in WSP works with classic webhosting only. You should backup such complex things as Exchange and AD with specialized third party backup software, such as Symantec (former VERITAS) Backup Exec or something. Also you should backup Enterprise Server database.&nbsp; <p>For more flexible backup we will create command line (shell) utility that will be able to backup and restore defined parts of Enterprise Server metabase, for example different Organizations in WSP. So you will be able to integrate this utility to third party backup software jobs. For example Symantec (former VERITAS) Backup Exec allows it.  <p>We not plan to integrate backup of AD accounts, OUs, Exchange Databases to WSP currently and therefore we advise to backup it with special third party backup software. <h2>Ability to create Public Folders for not only post items </h2> <p>WSP Exchange 2007 and Exchange 2010 modules work with Exchange public folders from the first release. However there is some issues here. Our option is to concentrate all provisioning tasks in panel. However at the moment panel can only create Public Folders for post items, but not for Calendars, Tasks, Notes, etc. It is because of EMS restrictions. As a workaround we advise our customers to make some end users (who really need it) "Publishing Authors" for their organization's root public folder. Thus they can create needed subfolders with Outlook.  <p>To add publishing Author permission to organization's root public folder you may run this command:  <p><em>Add-PublicFolderClientPermission \org01 -User user@org01.com -AccessRights "PublishingAuthor" </em> <p>Note that to create organization's root public folder you need to created (and then delete if needed) at least one Public Folder with WSP. <h2>Exchange 2010 SP1 without /hosting switch GAL access issue</h2> <p>Please refer to <a href="http://social.msdn.microsoft.com/Forums/en-US/wspentsupport/thread/f4db8636-a3a3-4c1c-93dd-82390f9d1d8f">this post</a> for the issue description and workaround for it.</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn04d8.html?ReturnUrl=%2Fexchange-2007-2010-module%2Fknown-issues">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/known-issues by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:00:08 GMT -->
+</html>

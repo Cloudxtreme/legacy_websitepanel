@@ -1,0 +1,131 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/administrator-guide/smarterstats-provider-settings by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:08:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>SmarterStats Provider Settings - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide" href="../rssa280?containerid=13" />
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide - Comments" href="../rss3e15?commentedoncontainer=13" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt; <a href="index.html">Administrator Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>SmarterStats Provider Settings</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <p><img src="../Media/Images/smarterstats_20provider_20settings/smarterstats_svc.png" alt="" width="534" height="590" /></p>
+<ul>
+<li><strong>SmarterStats Web Services URL</strong> - Specify the URL to SmarterStats web services. This URL is the URL of SmarterStats web interface + "/services" path. </li>
+<li><strong>Admin Username</strong> and <strong>Admin Password</strong> - Specify SmarterStats administrator username and password to access SmarterStats web services. </li>
+<li><strong>SmarterStats Server</strong> - Select SmarterStats statistics server where statistics sites will be created. If the list of servers is empty verify/change web services URL, username and password, then save service properties and open service properties page again. </li>
+<li><strong>Log Format</strong> - Select log format to be parsed. We recommend setup w3c extended log format for your web sites as it is most popular logs format on Windows systems. </li>
+<li><strong>Log Wildcard</strong> - Specify the wildcard for log files to be analyzed by SmarterStats. </li>
+<li><strong>Delete Web Site Logs After</strong> - Specify "Delete Web Site Logs after" field value which means SmarterStats will be deleting (purging) web site raw logs older than the specified number of days. </li>
+<li><strong>Smarter Logs Location</strong> - Specify the location for parsed internal SmarterStats logs. </li>
+<li><strong>Delete Smarter Logs After</strong> - Specify "Delete SmarterStats Logs" field value which means SmarterStats will be deleting his own internal parsed logs older than the specified number of days. </li>
+<li><strong>Log Import Time Zone</strong> - Specify the default time zone for raw web site log files. </li>
+</ul>
+<p><a name="Section1"></a></p>
+<h2>Statistics Help URL</h2>
+<p>Specify URL for viewing statistics by your customers. This URL will be shown to your customers in the list of statistics sites.</p>
+<p>To allow autologin you can specify the following "Statistics URL" on SS service properties page:</p>
+<p><a href="http://127.0.0.1:9999/Login.aspx?txtSiteID=[site_id]&amp;txtUser=[username]&amp;txtPass=[password]&amp;shortcutLink=autologin">http://127.0.0.1:9999/Login.aspx?txtSiteID=[site_id]&amp;txtUser=[username]&amp;txtPass=[password]&amp;shortcutLink=autologin</a></p>
+<p>Change SS URL to other applicable.</p>
+<p>The following variables are supported in "Statistics URL":</p>
+<ul>
+<li>
+<p><strong>[domain_name]</strong> - name of the statistics web site (domain)</p>
+</li>
+<li>
+<p><strong>[site_id]</strong> - numeric ID of SS site or name of statistics web site</p>
+</li>
+<li>
+<p><strong>[username]</strong> - for SS it is the username of the first user in the list, for AWStats it is WSP username of SS site owner</p>
+</li>
+<li>
+<p><strong>[password]</strong> - password of the user above</p>
+</li>
+</ul>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOna763.html?ReturnUrl=%2Fadministrator-guide%2Fsmarterstats-provider-settings">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/administrator-guide/smarterstats-provider-settings by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:08:50 GMT -->
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/SharePoint-module/configuring-outgoing-and-incoming-e-mail by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:01:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Configuring Outgoing and Incoming e-mail - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="SharePoint Module" href="../rss267a?containerid=134" />
+
+<link rel="alternate" type="application/rss+xml" title="SharePoint Module - Comments" href="../rss5ffb?commentedoncontainer=134" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">SharePoint Module</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Configuring Outgoing and Incoming e-mail</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="configuring-outgoing-and-incoming-e-mail-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>This task is not directly connected to WSP and WSP is not aware of those settings. It can be deployed in different way. Here is our vision on this point. Hope it may be helpful.&nbsp;</p>
+<p><strong>Outgoing mail:</strong></p>
+<p>We advise to set internal Exchange server IP (more - IP of connector you create for sending WSP summary letters) as "Outbound SMTP server" in Central Administration &gt; Administrator Tasks &gt; Outgoing E-Mail Settings menu. Then allow relay for SharePoint server. You can allow relay by simple editing of receive connector you create for sending WSP summary letters.</p>
+<p><strong>Incoming mail:</strong></p>
+<p>It is quite more complex and tricky. Please first read this:</p>
+<p><a href="http://technet.microsoft.com/en-us/library/cc287879(TechNet.10).aspx">http://technet.microsoft.com/en-us/library/cc287879(TechNet.10).aspx</a></p>
+<p><a href="http://office.microsoft.com/en-us/help/HA100823061033.aspx">http://office.microsoft.com/en-us/help/HA100823061033.aspx</a></p>
+<p>Download and read "How to configure Email Enabled Lists in Moss2007 RTM using Exchange 2007" from <a href="http://www.combined-knowledge.com/Downloads 2007.htm">http://www.combined-knowledge.com/Downloads%202007.htm</a></p>
+<p>Main idea:</p>
+<p>You deploy IIS SMTP on WSS server. Do not open or publish this SMTP (TCP 25) in internet</p>
+<p>You decide what SMTP domain will be used for creating SharePoint incoming email addresses. For example - sharepoint.hosterdomain.com</p>
+<p>You set incoming email settings in Central Administration &gt; Administrator Tasks &gt; Incoming E-Mail Settings (without enabling Directory Management Service!!!) with IP of your Exchange Inbound connector</p>
+<p>You configure your Exchange server to accept mail for sharepoint.hosterdomain.com and forward to IP of IIS SMTP service deployed on WSS server.</p>
+<p>WSP tips. You instruct your user to add SharePoint addresses as contacts; then create mailbox in their domain and make redirection from that mailbox to created contact.</p>
+<p>For example:</p>
+<ol>
+<li>
+<p>Customer1 creates SharePoint list <a href="mailto:customer1-WSSlist1@sharepoint.hosterdomain.com">mailto:customer1-WSSlist1@sharepoint.hosterdomain.com%20</a></p>
+</li>
+<li>
+<p>Customer1 creates contact <a href="mailto:customer1-WSSlist1@sharepoint.hosterdomain.com">mailto:customer1-WSSlist1@sharepoint.hosterdomain.com%20</a></p>
+</li>
+<li>
+<p>Customer1 creates mailbox<a href="mailto: WSSlist1@customer1.se">mailto:%20WSSlist1@customer1.se</a></p>
+</li>
+<li>
+<p>Customer1 sets redirection from mailbox <a href="mailto:euro2008@customer1.se">mailto:euro2008@customer1.se</a> to contact <a href="mailto:customer1-euro2008@sharepoint.hosterdomain.com">mailto:customer1-euro2008@sharepoint.hosterdomain.com%20</a></p>
+</li>
+</ol>
+<p>Note that customer will pay for mailbox (according to SPLA) but this list will looks pretty for customer's recipients. Or customer can omit 2-4 or 3-4 steps.</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn42b5.html?ReturnUrl=%2FSharePoint-module%2Fconfiguring-outgoing-and-incoming-e-mail">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/SharePoint-module/configuring-outgoing-and-incoming-e-mail by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:01:27 GMT -->
+</html>

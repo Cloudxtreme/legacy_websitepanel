@@ -1,0 +1,226 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/exchange-2010-SP1-hosting-mode-module/migration-to-exchange-2010-sp1-hosting-mode by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:59:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Migration to Exchange 2010 SP1 Hosting Mode - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2010 SP1 Hosting Mode Module" href="../rsse423?containerid=99" />
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2010 SP1 Hosting Mode Module - Comments" href="../rssbb9d?commentedoncontainer=99" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Exchange Hosting Mode Module</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Migration to Exchange 2010 SP1 Hosting Mode</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="migration-to-exchange-2010-sp1-hosting-mode-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h3>Terms</h3>
+<ul>
+<li><strong>Source system</strong>. Existing Exchange 2007/2010 <span style="text-decoration: underline;">RTM</span> system managed by DNP/WSP Hosted Exchange module.</li>
+<li><strong>Destination system</strong>. New Exchange 2010 SP1 <span style="text-decoration: underline;">Hosting Mode</span> system managed by WSP <span style="text-decoration: underline;">Exchange 2010 SP1 Hosting Mode</span> module.</li>
+<li><strong>Target organization</strong>. Organization you are migrating.</li>
+</ul>
+<h3>Assumptions</h3>
+<ul>
+<li>All domains that belong to target organization on source system are also added for the same organization on destination system.</li>
+<li>All steps below provided as example and should be tested and modified for every specific environment. </li>
+<li>Every hosting provider who decide to migrate should create own migration scenario based on information provided here and double-check it in lab environment.</li>
+</ul>
+<h3>Communication&nbsp;to users</h3>
+<ul>
+<li>Inform users about time when they should not create new mailboxes and time when you will change DNS records actual mailbox movement scheduled. </li>
+</ul>
+<h3>Exporting mailboxes list</h3>
+<p>On source system:</p>
+<ul>
+<li>Go to EMC &gt; Recipient configuration &gt; Mailbox. Then View &gt; Add/Remove Columns and set only Display Name, Primary SMTP Address, Name, Custom Attribute 1.</li>
+<li>Right click on EMC &gt; Recipient configuration &gt; Mailbox and press Export List. Choose csv format. And name for export file, say AllMailboxes.csv</li>
+<li>Edit AllMailboxes.csv in Excel the following way: 
+<ul>
+<li>Remove all rows except rows with Custom Attribute 1 set to target organization ID</li>
+<li>Remove Custom Attribute 1 column. As a result you should get list of all mailboxes from target organization with Display Name, Name and Primary SMTP Address.</li>
+<li>Save it as new file with name reflecting target organization, say TargetOrgMailboxes.csv.</li>
+<li>Open it in notepad and change spaces field names to underscore : Display Name" to Display_Name,"Primary SMTP Address" to Primary_SMTP_Address.</li>
+<li>If you have room mailboxes &ndash; create separate list with rooms and delete them from mailboxes list. </li>
+</ul>
+</li>
+</ul>
+<p>Note: You may want to migrate organization&rsquo;s mailboxes with small groups, group by group. In this case your file should contain only those small group mailboxes. Note that in this case to part of users may be connected to new system and part to old system. See &ldquo;Option 1. Use Internal Relay Domains feature&rdquo; subsection in &ldquo;Changing DNS MX records&rdquo; section to accomplish this scenario.</p>
+<h3>Importing mailboxes list</h3>
+<p>On destination system:</p>
+<ul>
+<li>Re-create target organization with WSP. Right down its name (Organization name in WSP), in our example &ndash; TargetOrganization.</li>
+<li>Add all needed domains to newly created organization.</li>
+<li>Copy TargetOrgMailboxes.csv to destination system</li>
+<li>Open EMS and navigate to folder where TargetOrgMailboxes.csv located (use simple cd command). Type the following. 
+<ul>
+<li>$Password=Read-Host &ldquo;Enter Password&rdquo; -AsSecureString </li>
+<li>Enter password &ndash; it will be temporary password for all mailboxes in target organization</li>
+<li>Import-CSV TargetOrgMailboxes.csv | ForEach {New-Mailbox -Name $_.name -userPrincipalName $_.Primary_SMTP_Address -DisplayName $_.Display_Name -Organization TargetOrg -Password $Password}</li>
+<li>Note that you should change &ldquo;TargetOrg&rdquo; to your organization name.</li>
+</ul>
+</li>
+</ul>
+<h3>Exporting and importing rooms, distribution lists and contacts</h3>
+<ul>
+<li>Repeat the same for rooms of you have room mailboxes. Difference is that you have not to enter password for rooms. Here is EMC command:<br />Import-CSV TargetOrgRooms.csv | ForEach {New-Mailbox -room -Name $_.name -userPrincipalName $_.Primary_SMTP_Address -DisplayName $_.Display_Name -Organization TargetOrg }</li>
+<li>Repeat the same for Distribution groups. Here us EMC command:<br />Import-CSV TargetOrgGroups.csv | ForEach {New-DistributionGroup -Name $_.name -PrimarySmtpAddress $_.Primary_SMTP_Address -Organization TargetOrg -ManagedBy <a href="mailto:admin@company.net">admin@company.net</a>}<br />Note the following important difference:<br /><a href="mailto:admin@company.net">admin@company.net</a> UPN of organization&rsquo;s administrator. You may want to change it to different users for different groups with modifying csv file or later after creation, with Exchange control panel.</li>
+<li>You need to manually add users to newly created groups with Exchange control panel.</li>
+<li>Repeat the same for contacts. Here us EMC command:<br />Import-CSV TargetOrgContacts.csv | ForEach {New-MailContact -Name $_.name -PrimarySmtpAddress $_.External_E-mail_Address -Organization TargetOrg}<br />Note the following important difference:<br />Instead of Primary SMTP Address column use External Address column</li>
+</ul>
+<h3>Export mailbox data to PST files</h3>
+<p>On source system:</p>
+<ul>
+<li>For both Exchange 2007 and Exchange 2010 systems simplest but most time expensive way is connect to every organization's mailbox with Outlook and export it to pst file. For this you will be needed to reset passwords on all organization&rsquo;s mailboxes.</li>
+<li>Optionally you can use EMC cmdlets: 
+<ul>
+<li>For Exchange 2007 - <a href="http://technet.microsoft.com/en-us/library/bb266964(EXCHG.80).aspx">http://technet.microsoft.com/en-us/library/bb266964(EXCHG.80).aspx</a></li>
+<li>For Exchange 2010 - <a href="http://technet.microsoft.com/en-us/library/ee633479.aspx">http://technet.microsoft.com/en-us/library/ee633479.aspx</a></li>
+</ul>
+</li>
+</ul>
+<h3>Import mailbox data from PST files</h3>
+<p>On destination system:</p>
+<ul>
+<li>For both Exchange 2007 and Exchange 2010 systems simplest but most time expensive way is connect to every organization's mailbox with Outlook and import it to pst file. You will not be needed to reset password on mailboxes on destination system as it was already set in &ldquo;Importing mailboxes list&rdquo; step. Note that you should connect with appropriate language version of Outlook to form correct language-specific folder names. Alternatively you can connect (or have your customers to connect) with OWA using appropriate default language in Internet Explorer (just to set correct folders names) and then continue import with any Outlook version.</li>
+<li>Optionally you can use EMC cmdlets: 
+<ul>
+<li>For Exchange 2007 - <a href="http://technet.microsoft.com/en-us/library/bb691363(EXCHG.80).aspx">http://technet.microsoft.com/en-us/library/bb691363(EXCHG.80).aspx</a></li>
+<li>For Exchange 2010 - <a href="http://technet.microsoft.com/en-us/library/ee633479.aspx">http://technet.microsoft.com/en-us/library/ee633479.aspx</a></li>
+</ul>
+</li>
+</ul>
+<h3>Public Folders</h3>
+<p>Public folders are not supported in Exchange SP1 Hosting Mode. In case your customers use Public Folders, you may implement the following temporary solution.</p>
+<ul>
+<li>On source system: Import Public Folders using Outlook.</li>
+<li>On Destination system. 
+<ul>
+<li>Create new mailbox in target organization</li>
+<li>Change it&rsquo;s permissions to allow other organization users to access it</li>
+<li>Import data from public folders to this mailbox.</li>
+<li>Inform users that it is temporary solution and provide them with new way to share data, such as SharePoint.</li>
+</ul>
+</li>
+</ul>
+<h3>Possible issue with addressing</h3>
+<p>When moving mailbox content from one AD forest to completely another AD forest, you (most probably will meet issue) that users cannot reply to internal (from internal Exchange user) messages sent before migration. Also in case you open old message from internal user in Outlook and double-click sender&rsquo;s name you will not be able to see sender&rsquo;s data from AD. This issue is described here - here <a href="http://support.microsoft.com/kb/555197/en-us">http://support.microsoft.com/kb/555197/en-us</a>. To resolve this, do the following:</p>
+<ul>
+<li>On source system: Get legacyExchangeDN attribute for every migrated user. You can get it with ADSIEdit or import woth cvsde utility.</li>
+<li>On destination system. For every migrated user create custom X500 address and fill it with appropriate exported legacyExchangeDN data for this user.</li>
+</ul>
+<h3>Change of DNS MX records</h3>
+<p>Choose options to avoid problems connected to delayed DNS change propagation.</p>
+<ul>
+<li>Option 1. Use Internal Relay Domains feature. This option provide you with ability to change DNS MX records, wait until they propagated and move users one-by-one or by small groups. 
+<ul>
+<li>On destination system: Set organization's domains as Internal Relay Domains according to this <a href="http://technet.microsoft.com/en-us/library/bb124423.aspx">http://technet.microsoft.com/en-us/library/bb124423.aspx</a> article and create connector for messages to non-existing recipients in organization's domains to be forwarded to source system.</li>
+<li>Test that mail sent to destination system, to non-existing recipients in organization's domains successfully forwarded to source Exchange system. For this send test mail to recipient whose mailbox is on old Exchange system to new Exchange system with telnet. Read this <a href="http://technet.microsoft.com/en-us/library/bb123686.aspx">http://technet.microsoft.com/en-us/library/bb123686.aspx</a> article about how to use telnet to test SMTP communication </li>
+<li>After successful test change DNS MX record for organization's domains to destination Exchange system. </li>
+<li>Migrate users according to steps mentioned before and change organization's domains type back to default Accepted Domains after migration finished.</li>
+</ul>
+</li>
+<li>Option 2. Use External Relay domain. Available only in case your source system has Edge Transport server. This provide you with ability to switch mail flow to destination system immediately, without waiting for DNS propagation. 
+<ul>
+<li>Complete import and export mailboxes list tasks mentioned before.</li>
+<li>Inform users about pause in service</li>
+<li>On source system: Set organization's domains as External Relay Domains according to this <a href="http://technet.microsoft.com/en-us/library/bb124423.aspx">http://technet.microsoft.com/en-us/library/bb124423.aspx</a> article and create connector for all messages to those domains to be forwarded to destination system.</li>
+<li>Test that message sent to user in migrated organization gets to mailbox on destination system</li>
+<li>DNS MX record for organization's domains to destination Exchange system.</li>
+<li>Continue with export-import steps mentioned below.</li>
+</ul>
+</li>
+</ul>
+<h3>Change DNS Autodiscover redirection records for target organization domains</h3>
+<h3>Instruct users how to connect to new server and how to change passwords</h3>
+<h3>Ensure that users are able to connect to mailboxes on destination system</h3>
+<h3>Disable or delete users on source system</h3>
+<p>Disabling users is safer for migration. However in case it is possible that users from other organizations on source system will send mail to users from target organization, you need to delete that users from old system.</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn4a0c.html?ReturnUrl=%2Fexchange-2010-SP1-hosting-mode-module%2Fmigration-to-exchange-2010-sp1-hosting-mode">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/exchange-2010-SP1-hosting-mode-module/migration-to-exchange-2010-sp1-hosting-mode by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:59:13 GMT -->
+</html>

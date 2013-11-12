@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/migration-inside-one-existing-ad-exchange-environment by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:11:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Migration inside one existing AD/Exchange environment - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module" href="../rss68ec?containerid=101" />
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module - Comments" href="../rssba67?commentedoncontainer=101" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Exchange 2007/2010 Modules</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Migration inside one existing AD/Exchange environment</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="migration-inside-one-existing-ad-exchange-environment-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>Deployment of WSP Exchange Solution in existing AD/Exchange environment is possible. However, WSP Exchange Solution cannot automatically and immediately start working with customer organizations created before WSP Exchange Solution deployment (manually or with another provisioning system).  <p>You can immediately start creating and managing new customer organizations in WSP Exchange Solution. However, to manage previously created organizations with WSP you need to migrate them to WSP.  <p>It was developed and practically approved migration plan inside one AD/Exchange that will not affect your users very much.  <p><strong>Here is high-level description of steps for migrating one customer organization: </strong> <ul> <li>Create new customer organization in WSP for old organization, created before WSP Exchange Solution deployment. WSP will create Organizational Unit (OU) for this organization. This OU will have the same name as Organization ID and located inside root OU used by WSP Hosted Organizations module.  <li>Move this organization's users, contacts and distribution groups to new OU with Active Directory Users and Computers native tool.  <li>Move those user's mailboxes to WSP-managed mailbox database with Exchange Management Console or Exchange Management Shell.  <li>Manually set some attributes on moved mailboxes, contacts and distribution groups.  <li>Request Exchange Import Tool and run it against organization you are migrating.  <li>Backup Public Folders content for organization you are migrating to ".pst" files with Outlook.  <li>Re-create Public Folders in newly created organization with WSP.  <li>Restore Public Folders content in newly created organization from ".pst" files with Outlook </li></ul> <p>Note. Migrated users, contacts and distribution groups may preserve their old pre-Windows 2000 names and Exchange aliases. They only condition - they must be unique. Newly created uses, contacts and distribution groups will get standard (WSP style) pre-Windows 2000 names, Exchange aliases, etc. You can change those attributes to old users (set them in WSP style for unification) or you can stay them as is for easy migration.  <p><strong>Here is low-level description of steps for migrating one customer organization: </strong> <p>&nbsp;&nbsp; 1. From the panel create <strong>Customer</strong> hosted organization in Hosted Organizations.  <p>&nbsp;&nbsp; 2. Make organization "Exchange-enabled". For this create any Exchange-related object (mailbox, or distribution group, or contact, or public folder) and then delete it.  <p>&nbsp;&nbsp; 3. Move users, contacts and distribution groups to newly created OU - <strong>WSP Hosting OU</strong>\<strong>Customer</strong> with Active Directory Users and Computers tool.  <p>&nbsp;&nbsp; 4. Move user's mailbox to Mailbox database managed by WSP Exchange Solution with Exchange Management Console or Exchange Management Shell.  <p>&nbsp;&nbsp; 5. Ensure that "User logon name (pre-Windows 2000)" is the same as "Alias" both for users and distribution groups. You can do it with the Exchange Management Console manually or with scripts like those:  <p>&nbsp;&nbsp; For users:  <p><em>&nbsp;&nbsp; $user = get-mailbox </em><strong><em>User</em></strong><em><br>&nbsp;&nbsp; set-mailbox </em><strong><em>User</em></strong><em> -Alias $user.SamAccountName </em> <p>&nbsp;&nbsp; For distribution groups:  <p><em>&nbsp;&nbsp; $group =Get-DistributionGroup </em><strong><em>Group</em></strong><em><br>&nbsp;&nbsp; set-DistributionGroup </em><strong><em>Group</em></strong><em> -Alias $group.SamAccountName </em> <p>&nbsp;&nbsp; Those scripts copy "SamAccountName" (pre-Windows 2000 User logon name) attribute value to "Alias".  <p>&nbsp;&nbsp; 6. Open Active Directory Users and Computers and ensure that "Name" is the same as "User logon name (pre-Windows 2000)" both for users and distribution groups. To make them the same copy "User logon name (pre-Windows 2000)" to clipboard, right click user user in Active Directory Users and Computers, choose "rename" and paste name from clipboard. Change only "Full name" in "Rename user" dialog box opened.&nbsp;&nbsp;&nbsp; <p>&nbsp;&nbsp; 7. Set appropriate custom attributes for users, contacts and distribution groups:  <p>&nbsp;&nbsp; For users:  <p><em>&nbsp;&nbsp; Set-Mailbox -Identity ‘</em><strong><em>User</em></strong><em>'-OfflineAddressBook '</em><strong><em>Customer</em></strong><em> Offline Address Book' -CustomAttribute1 ‘</em><strong><em>Customer</em></strong><em>' -CustomAttribute3 '</em><strong><em>user@hosterdomain.local</em></strong><em>' </em> <p>&nbsp;&nbsp; For contacts:  <p><em>&nbsp;&nbsp; Set-MailContact -Identity ‘</em><strong><em>Contact</em></strong><em>' -CustomAttribute1 ‘</em><strong><em>Customer</em></strong><em>'</em> <p>&nbsp;&nbsp; For distribution groups:  <p><em>&nbsp;&nbsp; Set-DistributionGroup -Identity ‘</em><strong><em>Group</em></strong><em>' -CustomAttribute1 '</em><strong><em>Customer</em></strong><em>' -CustomAttribute3 <a href="mailto:&lsquo;group@hosterdomain.local'">‘<strong><em>group@hosterdomain.local</em></strong><em>'</em></a></em> <p>&nbsp;&nbsp; 8. Add migrated users to AD group created by WSP:  <p><em>Add-DistributionGroupMember -Identity ‘</em><strong><em>Customer</em></strong><em>' -Member ‘</em><strong><em>User</em></strong><em>' </em> <p>&nbsp;&nbsp; 9. In ADSI Edit locate ‘<strong>hosterdomain.local</strong>/<strong>WSP Hosting OU</strong>/<strong>Customer</strong>/<strong>User</strong>' account. Type in "msExchQueryBaseDN" property the distinguished name of the organization OU: OU=<strong>Customer</strong>,OU=<strong>WSP Hosting OU</strong>,DC=<strong>hosterdomain</strong>,DC=<strong>local</strong> <p>&nbsp;&nbsp;&nbsp; Note. You can copy this attributes value from sample user created by WSP in this Organization.  <p>&nbsp;&nbsp; 10. Repeat steps 2 - 8 for all users in migrated organization  <p>&nbsp;&nbsp; 11. <a href="Using-Exchange-Import-Tool-2.html">Run Exchange Import Tool</a> against organization you are migrating, with "Import users only" checkbox selected  <p>&nbsp;&nbsp; 12. Check that mailboxes became visible in WSP  <p>&nbsp;&nbsp; 13. Check that mailboxes became manageable with WSP <p>&nbsp;&nbsp; 14. Backup Public Folders content for organization you are migrating to .pst files with Outlook  <p>&nbsp;&nbsp; 15. Re-create Public Folders in newly created organization with WSP <p>&nbsp;&nbsp; 16. Restore Public Folders content in newly created organization from .pst files with Outlook  <p>All <strong>bold green</strong> are variables:  <p><strong>Customer</strong> - customer organization ID (automatically the same as OU).  <p><strong>User</strong><strong> </strong>- Exchange Alias for user/mailbox  <p><strong>Group</strong> - Exchange Alias for distribution group  <p><strong>Contact</strong> - Exchange Alias for contact  <p><strong>hosterdomain.local</strong> - internal AD domain  <p><strong>WSP Hosting OU</strong><strong> </strong>- root OU for WSP hosted organizations </p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOncb2a.html?ReturnUrl=%2Fexchange-2007-2010-module%2Fmigration-inside-one-existing-ad-exchange-environment">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/migration-inside-one-existing-ad-exchange-environment by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:11:37 GMT -->
+</html>

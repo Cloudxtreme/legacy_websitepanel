@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/administrator-guide/configuring-miscellaneous-and-automation-settings by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:10:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Configuring Miscellaneous and Automation Settings - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide" href="../rssa280?containerid=13" />
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide - Comments" href="../rss3e15?commentedoncontainer=13" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt; <a href="index.html">Administrator Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Configuring Miscellaneous and Automation Settings</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="configuring-miscellaneous-and-automation-settings-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h3>Ecommerce Settings - Currency/Invoice Format/SSL/Automation </h3> <p><a href="../Media/WindowsLiveWriter/ConfiguringMiscellaneousandAutomationSet_E9AE/image_2.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/ConfiguringMiscellaneousandAutomationSet_E9AE/image_thumb.png" width="640" height="243"></a>  <p>Please find below description for each particular field on this screen.<br><em>Base Currency</em> - the base currency for the reseller’s storefront. Current version of Ecommerce doesn't support to use multiple currencies within single storefront;<br><em>Secure Payments</em> – this option allows you to specify whether an SSL should be used for payment pages (turn this option on only if you have SSL certificate installed for this website);<br><em>Invoice Number Format</em> – here you can specify what invoice number format would you like to display when customer submit an order. <br>The following variables can be used here:<br>yyyy – resolves as full year, for example 2007;<br>yy – resolves as short year, for example 07 (2007);<br>MM – resolves as month number, for example 05;<br>dd – resolves as day number, for example 25;<br>[ID] – resolves as invoice id, for example 58;<br>Let’s consider an example invoice number format: WSP-yyyy/MM/dd # [ID] will be compiled as WSP-2007/05/25#58.<br><em>Invoice Grace Period (in days)</em> – a period in days during an invoice can left unpaid starting from the services expiration date before it will be suspended;<br>Let’s consider an example:&nbsp; we have an invoice to be created with 3 services expiring at 11/02/2007, invoice grace period is 2 days so the invoice will be suspended at 13/02/2007 (services expire date + grace period = suspension date).<br><em>Service Invoice Threshold (in days)</em> – a period in days when customer should be invoiced before his services expired;<br><em>Service Cancel Threshold (in days)</em> – a period in days when customer services should be cancelled starting from services suspend date;  <p>Once you specified all settings click “Save” button.  <p><a name="Section2"></a> <h3>Ecommerce Settings - Terms and Conditions</h3> <p><a href="../Media/WindowsLiveWriter/ConfiguringMiscellaneousandAutomationSet_E9AE/image_4.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/ConfiguringMiscellaneousandAutomationSet_E9AE/image_thumb_1.png" width="640" height="396"></a>  <p>This page allows you to edit and modify HTML template for your Terms and Conditions statement which each customer should agree when do order checkout.  <p>Once you specified statement text click “Save” button.  <p><a name="Section3"></a> <h3>Ecommerce Settings - Storefront Welcome Message</h3> <p><a href="../Media/WindowsLiveWriter/ConfiguringMiscellaneousandAutomationSet_E9AE/image_6.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/ConfiguringMiscellaneousandAutomationSet_E9AE/image_thumb_2.png" width="640" height="395"></a>  <p>This page allows you to edit storefront welcome message HTML template which displays on your storefront main page.  <p>Once you specified welcome message text click “Save” button.  
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn4ee0.html?ReturnUrl=%2Fadministrator-guide%2Fconfiguring-miscellaneous-and-automation-settings">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/administrator-guide/configuring-miscellaneous-and-automation-settings by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:10:34 GMT -->
+</html>

@@ -1,0 +1,13 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.websitepanel.net	TRUE	/wp-content/plugins	FALSE	1999999999	wordpress_5d2001c1dd4844985619408fa9218c37	+
+www.websitepanel.net	TRUE	/wp-content/plugins	FALSE	1999999999	wordpress_sec_5d2001c1dd4844985619408fa9218c37	+
+www.websitepanel.net	TRUE	/wp-admin	FALSE	1999999999	wordpress_5d2001c1dd4844985619408fa9218c37	+
+www.websitepanel.net	TRUE	/wp-admin	FALSE	1999999999	wordpress_sec_5d2001c1dd4844985619408fa9218c37	+
+localhost	TRUE	/	FALSE	1999999999	__RequestVerificationToken_Lw__	VlWvmEtHpdvgBkQLH/cDAZm317d3M2H3TiprDuOp/QvXPQYbEfnI6Y8nZam1HRDV6Lkx6ZiUtIJyFx5/RMzj7/H9o3ilP+Biz12Kl7QLCfkLL/C3bJwtz0oNTtOoHBLg+3nqujfMpEENxYEwhhArzbNYJd1gjDZsdSUn+moJZ1c=
+www.websitepanel.net	TRUE	/	FALSE	1999999999	wordpress_logged_in_5d2001c1dd4844985619408fa9218c37	+
+www.websitepanel.net	TRUE	/	FALSE	1999999999	wordpress_5d2001c1dd4844985619408fa9218c37	+
+www.websitepanel.net	TRUE	/	FALSE	1999999999	wordpress_sec_5d2001c1dd4844985619408fa9218c37	+
+www.websitepanel.net	TRUE	/	FALSE	1999999999	wordpressuser_5d2001c1dd4844985619408fa9218c37	+
+www.websitepanel.net	TRUE	/	FALSE	1999999999	wordpresspass_5d2001c1dd4844985619408fa9218c37	+
+

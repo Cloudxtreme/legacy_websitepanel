@@ -1,0 +1,216 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/administrator-guide/setting-up-server-services by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:47:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Setting Up Server Services - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide" href="../rssa280?containerid=13" />
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide - Comments" href="../rss3e15?commentedoncontainer=13" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt; <a href="index.html">Administrator Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Setting Up Server Services</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="setting-up-server-services-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>After you have added remote server in WebsitePanel you should configure its services.</p>
+<p><a name="Section1"></a></p>
+<h2>What is Service?</h2>
+<p>Think "Services" as an applications installed on remote server that should be controlled via WSP and available to end-customers. Each service is characterized by provider type (the name/version of the application it can work with) and all services are grouped into resource groups (OS, WEB, FTP, MAIL, etc.).</p>
+<p><a name="Section2"></a></p>
+<h2>Registering Server Services</h2>
+<p>In order to add server services open server details form and then expand "Services" section ("Configuration -&gt; Servers -&gt; Server details):</p>
+<p><img src="../Media/WindowsLiveWriter/SettingUpServerServices_B85D/image%5b23%5d.png" alt="" /></p>
+<p>Before registering server service its corresponding application should be installed and configured on the server.</p>
+<p>In order to register a new service click "Add" link in the corresponding resource group.</p>
+<p>The following screen will appear:</p>
+<p><img src="../Media/WindowsLiveWriter/SettingUpServerServices_B85D/image_2.png" alt="" width="536" height="204" /></p>
+<p>Specify the display name for the service and select service provider. The values in "Service provider" dropdown depend on the selected resource group. Select the provider that corresponds to the installed application.</p>
+<p>Click "Add Service" button to add the server. After that service properties screen will be displayed. Its appearance depends on service provider selected on the previous step. The following sub-sections describe server settings for all service providers:</p>
+<ul>
+<li>
+<p><strong>OS</strong></p>
+<ul>
+<li>
+<p><a href="windows-provider-settings.html">Windows Server 2003/2008</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Web</strong></p>
+<ul>
+<li>
+<p><a href="microsoft-iis-7-provider-settings.html">Microsoft IIS 7.0</a></p>
+</li>
+<li>
+<p><a href="Microsoft-IIS-6-Provider-Settings.html">Microsoft IIS 6.0</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>FTP</strong></p>
+<ul>
+<li>
+<p><a href="ms-ftp-7-provider-settings.html">MS FTP 7.0</a></p>
+</li>
+<li>
+<p><a href="ms-ftp-6-provider-settings.html">MS FTP 6.0</a></p>
+</li>
+<li>
+<p><a href="gene-6-ftp-provider-settings.html">Gene6 FTP</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Mail</strong></p>
+<ul>
+<li>
+<p><a href="smartermail-provider-settings.html">SmarterMail</a></p>
+</li>
+<li>
+<p><a href="mailenable-provider-settings.html">MailEnable</a></p>
+</li>
+<li>
+<p><a href="mdaemon-provider-settings.html">MDaemon</a></p>
+</li>
+<li>
+<p><a href="merak-provider-settings.html">Merak</a></p>
+</li>
+<li>
+<p><a href="hmailserver-provider-settings.html">hMailServer</a></p>
+</li>
+<li>
+<p><a href="ability-mail-server-provider-settings.html">Ability Mail Server</a></p>
+</li>
+<li>
+<p><a href="argomail-server-provider-settings.html">ArgoMail Server</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>SQL Server 2000/2005/2008</strong></p>
+<ul>
+<li>
+<p><a href="sql-server-provider-settings.html">SQL Server 2000/2005/2008</a></p>
+</li>
+</ul>
+</li>
+<li><strong>MySQL 4/5</strong> 
+<ul>
+<li>
+<p><a href="mysql-provider-settings.html">MySQL Server 4/5</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>DNS</strong></p>
+<ul>
+<li>
+<p><a href="ms-dns-provider-settings.html">MS DNS</a></p>
+</li>
+<li>
+<p><a href="simpledns-provider-settings.html">SimpleDNS Plus</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Statistics</strong></p>
+<ul>
+<li>
+<p><a href="smarterstats-provider-settings.html">SmarterStats</a></p>
+</li>
+<li>
+<p><a href="awstats-provider-settings.html">AWStats</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn52f2.html?ReturnUrl=%2Fadministrator-guide%2Fsetting-up-server-services">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/administrator-guide/setting-up-server-services by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:48:14 GMT -->
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/preparing-VPS-templates/replace-answer-file-with-template by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:12:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Replace Answer File with Template - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Preparing WebsitePanel VPS Templates with Windows Server 2008 " href="../rssef5c?containerid=232" />
+
+<link rel="alternate" type="application/rss+xml" title="Preparing WebsitePanel VPS Templates with Windows Server 2008  - Comments" href="../rss6db5?commentedoncontainer=232" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Preparing VPS Templates</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Replace Answer File with Template</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="replace-answer-file-with-template-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>Using “vmutils” tool that is available here [link TBD], mount copied VHD: <pre class="csharpcode">vmutils MountVHD –path “c:\VPS\Templates\Windows 2008 Standard x64.vhd”</pre>
+<p>Open “Computer Management” snap-in and expand “Disk Management” node. Bring mounted disk online (if it’s offline): 
+<p><a href="../Media/WindowsLiveWriter/ReplaceAnswerFilewithTemplate_DE11/image_2.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/ReplaceAnswerFilewithTemplate_DE11/image_thumb.png" width="454" height="107"></a> 
+<p>Alternatively, you could make the disk online and clear volume “readonly” attribute (if set) by using DiskPart utility: 
+<p>From command line: <pre class="csharpcode">C&gt; DiskPart</pre>
+<p>Display all available disks: <pre class="csharpcode">list disk</pre>
+<p>Select required disk by specifying its index: <pre class="csharpcode">select disk=&lt;N&gt;</pre>
+<p>Bring selected disk online: <pre class="csharpcode">online disk noerr</pre>
+<p>List all volumes: <pre class="csharpcode">list volume</pre>
+<p>Select volume by specifying its index or drive letter: <pre class="csharpcode">select volume=&lt;N&gt;</pre>
+<p>Clear readonly flag: <pre class="csharpcode">attributes volume clear <span class="kwrd">readonly</span> noerr</pre>
+<p>Exit from DiskPart: <pre class="csharpcode">exit</pre>
+<p>In Windows Explorer open “Windows\System32\sysprep” folder on mounted disk. 
+<p>Download “Sysprep Files for Windows Server 2008” from here [link TBD] and unpack it to some folder. 
+<p>Replace contents of “unattend.xml” file in “Windows\System32\sysprep” folder of mounted disk with “unattend-template.xml” from archive. 
+<p>You can use provided template as a starting point for your own and add any additional settings specific to your hosting company. Do not edit template in WSIM as with template instructions it is in valid XML and thus won’t be loaded by WSIM. Use Notepad or any other text editor. You could find the list of all available template variables in <a href="../hyper-v-module/index.html">WebsitePanel Hyper-V Module Setup Guide</a>. 
+<p>Also, please note that provided template does not include “ProductKey” element, so you will need to add it in order to skip “Enter product key” dialog during “specialize” pass of Windows Setup. “ProductKey” element must be inserted inside “<i>Microsoft-Windows-Shell-Setup</i>” component, for example: <pre class="csharpcode">&lt;component name=<span class="str">"Microsoft-Windows-Shell-Setup"</span> ...&gt;
+  &lt;ComputerName&gt;#vm.Hostname.ToUpper()#&lt;/ComputerName&gt;
+  &lt;RegisteredOwner&gt;#user.FirstName# #user.LastName#&lt;/RegisteredOwner&gt;
+  &lt;RegisteredOrganization&gt;#user.CompanyName#&lt;/RegisteredOrganization&gt;
+  &lt;TimeZone&gt;Eastern Standard Time&lt;/TimeZone&gt;
+  &lt;ProductKey&gt;AAAAA-BBBBB-CCCCC-DDDDD-EEEEE&lt;/ProductKey&gt;
+&lt;/component&gt;</pre>
+<style type="text/css">.csharpcode, .csharpcode pre
+{
+ font-size: small;
+ color: black;
+ font-family: consolas, "Courier New", courier, monospace;
+ background-color: #ffffff;
+ /*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+ background-color: #f4f4f4;
+ width: 100%;
+ margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+</style>
+
+<p>Alternatively, in order to test VPS template you could setup template to skip Windows Activation by omitting “ProductKey” element and inserting “<i>Microsoft-Windows-Security-Licensing-SLC-UX</i>” component into answer file: <pre class="csharpcode">&lt;settings pass=<span class="str">"specialize"</span>&gt;
+  &lt;component name=<span class="str">"Microsoft-Windows-Security-Licensing-SLC-UX"</span> <br>   processorArchitecture=<span class="str">"#architecture#"</span> publicKeyToken=<span class="str">"31bf3856ad364e35"</span> <br>   language=<span class="str">"neutral"</span> versionScope=<span class="str">"nonSxS"</span> <br>   xmlns:wcm=<span class="str"><a href="http://schemas.microsoft.com/WMIConfig/2002/State">http://schemas.microsoft.com/WMIConfig/2002/State</a></span> <br>   xmlns:xsi=<span class="str">"http://www.w3.org/2001/XMLSchema-instance"</span>&gt;
+    &lt;SkipAutoActivation&gt;<span class="kwrd">true</span>&lt;/SkipAutoActivation&gt;
+  &lt;/component&gt;
+  ...
+&lt;/settings&gt;</pre>
+<style type="text/css">.csharpcode, .csharpcode pre
+{
+ font-size: small;
+ color: black;
+ font-family: consolas, "Courier New", courier, monospace;
+ background-color: #ffffff;
+ /*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+ background-color: #f4f4f4;
+ width: 100%;
+ margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+</style>
+
+<p>Help page for “<b>ProductKey</b>” element: <a href="http://technet.microsoft.com/en-us/library/cc749389.aspx">http://technet.microsoft.com/en-us/library/cc749389.aspx</a> 
+<p>Help page for “<b>SkipAutoActivation</b>” element: <a href="http://technet.microsoft.com/en-us/library/cc749137.aspx">http://technet.microsoft.com/en-us/library/cc749137.aspx</a> 
+<p>Please note, that “ProductKey” and “SkipAutoActivation” elements should not be added both in the answer file, but only one of them: “ProductKey” if guest OS must be activated during the first run and only “SkipAutoActivation” to postpone guest OS activation. 
+<p>When deploying a new VPS WebsitePanel will mount VHD again and process this template with VPS-specific values. 
+<p>When the sysprep process is finished “unattend.xml” file won’t be deleted automatically, however it might contain sensitive information (e.g. product key) that should be hidden from user. To delete “unattend.xml” create “SetupComplete.cmd” batch file in “\Windows\Setup\Scripts” folder (create this folder if not exists) and add the following file: <pre class="csharpcode">del /F /Q %windir%\system32\sysprep\unattend.xml</pre>
+<p>You can perform any other post-setup tasks in SetupComplete.cmd, for example change names of network connections: <pre class="csharpcode">cscript %windir%\Setup\Scripts\rename-connections.vbs
+del /F /Q %windir%\Setup\Scripts\rename-connections.vbs</pre>
+<p>You can get “rename-connections.vbs” and complete SetupComplete.cmd from “Sysprep Files Pack for Windows Server 2008” on our web site. Don’t forget to add rename-connections.vbs for pre-processing in index.xml (see below). 
+<p>You can find more information about “SetupComplete.cmd” here:<br><a href="http://technet.microsoft.com/en-us/library/cc766314.aspx">http://technet.microsoft.com/en-us/library/cc766314.aspx</a> 
+<p>Unmount VHD using “vmutils” tool: <pre class="csharpcode">vmutils UnmountVHD –path “c:\VPS\Templates\Windows 2008 Standard x64.vhd”</pre>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOna855.html?ReturnUrl=%2Fpreparing-VPS-templates%2Freplace-answer-file-with-template">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/preparing-VPS-templates/replace-answer-file-with-template by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:12:31 GMT -->
+</html>

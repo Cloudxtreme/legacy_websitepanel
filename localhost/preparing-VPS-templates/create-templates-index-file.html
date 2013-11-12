@@ -1,0 +1,241 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/preparing-VPS-templates/create-templates-index-file by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:12:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Create Templates Index File - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Preparing WebsitePanel VPS Templates with Windows Server 2008 " href="../rssef5c?containerid=232" />
+
+<link rel="alternate" type="application/rss+xml" title="Preparing WebsitePanel VPS Templates with Windows Server 2008  - Comments" href="../rss6db5?commentedoncontainer=232" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Preparing VPS Templates</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Create Templates Index File</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="create-templates-index-file-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>OS Templates folder (in our example “C:\VPS\Templates”) with template .VHD files must contain “index.xml” file which contains the list of all available templates and has the following structure: <pre class="csharpcode">&lt;?xml version=<span class="str">"1.0"</span>?&gt;
+&lt;items&gt;
+  &lt;item path=<span class="str">"vhd-filename-without-extension"</span>
+        diskSize=<span class="str">"internal-vhd-size-in-GB"</span>
+        legacyNetworkAdapter=<span class="str">"true|false"</span>
+        remoteDesktop=<span class="str">"true|false"</span>&gt;
+    &lt;name&gt;template name shown <span class="kwrd">in</span> the dropdown&lt;/name&gt;
+    &lt;description&gt;template description&lt;/description&gt;
+    &lt;provisioning&gt;
+      &lt;sysprep file=<span class="str">"path-inside-vhd-1"</span>/&gt;
+      &lt;sysprep file=<span class="str">"path-inside-vhd-1"</span>/&gt;
+      ...
+      &lt;sysprep file=<span class="str">"path-inside-vhd-N"</span>/&gt;
+      &lt;vmconfig computerName=<span class="str">"true|false"</span>
+                administratorPassword=<span class="str">"true|false"</span>
+                networkAdapters=<span class="str">"true|false"</span> /&gt;
+    &lt;/provisioning&gt;
+  &lt;/item&gt;
+  &lt;item path=<span class="str">"item2"</span>&gt;
+      ... 
+  &lt;/item&gt; 
+  &lt;item path=<span class="str">"item3"</span>&gt;
+      ... 
+  &lt;/item&gt;
+  ... 
+&lt;/items&gt;</pre>
+<style type="text/css">.csharpcode, .csharpcode pre
+{
+ font-size: small;
+ color: black;
+ font-family: consolas, "Courier New", courier, monospace;
+ background-color: #ffffff;
+ /*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+ background-color: #f4f4f4;
+ width: 100%;
+ margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+</style>
+
+<ul>
+<li><em>path</em> – is the name of VHD file without .VHD extension, for example “Windows Server 2008 x64”. This attribute is mandatory. </li>
+<li><em>diskSize </em>– the internal size in gigabytes of VHD (the size the first disk volume inside VHD). This value is used during VPS creation. If “HDD” quota allocated to VPS less then specified VHD size then VPS won’t be created and error will be displayed. However, this attribute is optional and if it is not specified or equal to 0 (“zero”) disk size will not be verified during VPS creation. </li>
+<li><em>legacyNetworkAdapter</em> – specifies the type of network adapter that will be created in virtual machine: <b>synthetic</b> (for new Microsoft operating systems where “Intergration Services” exist) or <b>legacy</b> (for Microsoft operating systems prior Windows XP and non-Microsoft operating systems like Linux). If "legacyNetworkAdapter" attribute is not specified it is "synthetic" by default. </li>
+<li><em>remoteDesktop </em>– specifies whether remote desktop is enabled in guest OS and VPS could be access with Remote Desktop Web Connection (RDWC). If remoteDesktop is “true” a link with RDWC will appear on “General” tab of VPS properties. If this attribute is not specified RDWC link will be hidden by default: </li></ul>
+<p><a href="../Media/WindowsLiveWriter/CreateTemplatesIndexFile_DFC6/image_2.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/CreateTemplatesIndexFile_DFC6/image_thumb.png" width="240" height="187"></a> </p>
+<ul>
+<li><em>name</em> – display name of OS template. This is the value that will be shown in the dropdown on VPS creation wizard. </li>
+<li><em>description</em> – description of OS template. Currently it is not used. </li>
+<li><em>provisioning – optional element including provisioning options.</em><em></em> </li>
+<li><em>sysprep – allows to specify a file inside VHD that must be processed during VPS provisioning. The file may contain DNP template variables and instructions. The “file” attribute must specify relative path (without drive letter) to the file inside VHD as DNP accesses only the first VHD volume, for example “\Windows\System32\sysprep\unattend.xml”. There can be any number of “sysprep” elements to process several files.</em><em></em> </li>
+<li><em>vmconfig –</em> optional element specifying which VmConfig service modules will be executed during VPS provisioning. Using VmConfig on provisioning stage could be helpful if it is hard or even impossible to configure some settings in unattended setup answer file. For example, to configure computer name and administrator password in Windows XP template you could use answer file and network adapters could be configured with VmConfig tool (as it’s quite hard to describe their parameters in the answer file). Other hand, Windows Server 2008 and Windows Vista can be completely configured with answer file (explained in this guide), so this section could be omitted. </li>
+<ul>
+<li><em>computerName – specifies whether “Change computer name” VmConfig task must be executed during VPS provisioning or not. “true” means task will be executed;</em><em></em> </li>
+<li><em>administratorPassword – specifies whether “Change administrator password” VmConfig task must be executed during VPS provisioning or not. “true” means task will be executed;</em><em></em> </li>
+<li><em>networkAdapters – specifies whether “Setup network adapters” VmConfig task must be executed during VPS provisioning or not. “true” means task will be executed;</em><em></em> </li></ul></ul>
+<p>Sample “index.xml”: <pre class="csharpcode">&lt;?xml version=<span class="str">"1.0"</span>?&gt;
+&lt;items&gt;
+
+  &lt;!-- Windows Server 2008 --&gt;
+  &lt;item path=<span class="str">"Windows-Server-2008-STD-x64"</span>
+        diskSize=<span class="str">"10"</span>
+        remoteDesktop=<span class="str">"true"</span>&gt;
+    &lt;name&gt;Windows Server 2008 Standard 64-bit&lt;/name&gt;
+    &lt;description&gt;&lt;/description&gt;
+    &lt;provisioning&gt;
+      &lt;sysprep file=<span class="str">"\Windows\System32\sysprep\unattend.xml"</span>/&gt;
+      &lt;sysprep file=<span class="str">"\Windows\Setup\Scripts\rename-connections.vbs"</span>/&gt;
+    &lt;/provisioning&gt;
+  &lt;/item&gt;
+
+  &lt;!-- Windows Server 2003 --&gt;
+  &lt;item path=<span class="str">"Windows-Server-2003-ENT-x86"</span>
+        diskSize=<span class="str">"8"</span>
+        remoteDesktop=<span class="str">"true"</span>&gt;
+    &lt;name&gt;Windows Server 2003 Enterprise 32-bit&lt;/name&gt;
+    &lt;description&gt;&lt;/description&gt;
+    &lt;provisioning&gt;
+      &lt;sysprep file=<span class="str">"\Sysprep\sysprep.inf"</span>/&gt;
+      &lt;sysprep file=<span class="str">"\Windows\Setup\Scripts\rename-connections.vbs"</span>/&gt;
+      &lt;vmconfig networkAdapters=<span class="str">"true"</span> /&gt;
+    &lt;/provisioning&gt;
+  &lt;/item&gt;
+
+  &lt;!-- Windows XP --&gt;
+  &lt;item path=<span class="str">"Windows-XP-Home"</span>&gt;
+    &lt;name&gt;Windows XP Home Edition&lt;/name&gt;
+    &lt;description&gt;&lt;/description&gt;
+    &lt;provisioning&gt;
+      &lt;sysprep file=<span class="str">"\Sysprep\sysprep.inf"</span>/&gt;
+      &lt;vmconfig networkAdapters=<span class="str">"true"</span> /&gt;
+    &lt;/provisioning&gt;
+  &lt;/item&gt;
+
+&lt;/items&gt;</pre>
+<style type="text/css">.csharpcode, .csharpcode pre
+{
+ font-size: small;
+ color: black;
+ font-family: consolas, "Courier New", courier, monospace;
+ background-color: #ffffff;
+ /*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+ background-color: #f4f4f4;
+ width: 100%;
+ margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+</style>
+
+<p>When creating index.xml file pay attention to: 
+<ul>
+<li><em>File extension</em> that must be “.xml”. When you are creating a new .txt file in Windows it may hide known extension, so it might be confusing. </li>
+<li><em>File encoding</em>. UTF-8 is recommended to allow various national characters in template names and descriptions. You may choose encoding on “Save as...” dialog of Notepad.</li></ul>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOndaec.html?ReturnUrl=%2Fpreparing-VPS-templates%2Fcreate-templates-index-file">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/preparing-VPS-templates/create-templates-index-file by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:12:35 GMT -->
+</html>

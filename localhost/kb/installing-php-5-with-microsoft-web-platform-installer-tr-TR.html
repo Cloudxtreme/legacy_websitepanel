@@ -1,0 +1,121 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/installing-php-5-with-microsoft-web-platform-installer-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:03:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Microsoft Web Platform Installer ile PHP 5 Kurma - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Microsoft Web Platform Installer ile PHP 5 Kurma</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="installing-php-5-with-microsoft-web-platform-installer.html">en-US</a></li></ul>
+    </div>
+</div>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><a href="http://www.websitepanel.net/documentation"><span style="color: #000000;" color="#000000">Belgeler</span></a> &gt;<a href="http://www.websitepanel.net/kb/index"><span style="color: #000000;" color="#000000">Bilgi Bankası</span></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 1;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 17pt; mso-font-kerning: 18.0pt;" lang="TR">Microsoft Web Platform Installer ile PHP 5 Kurma<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">Bu makalede IIS 7.x i&ccedil;in Microsoft Web Platform Installer ile PHP5 kurulumu anlatılmaktadır <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">1. Microsoft Web Platform Installer uygulamasını <a href="http://www.microsoft.com/web/downloads/platform.aspx"><span style="color: #000000;" color="#000000">http://www.microsoft.com/web/downloads/platform.aspx adresinden y&uuml;kleyin</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">2. Başlat &gt; T&uuml;m Programlar &gt; Microsoft Web Platform Installer &ouml;ğesini a&ccedil;ın; <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">3. Web Platform &gt; PHP 5.x.x &ouml;ğesini se&ccedil;in, Kur &ouml;ğesini tıklatın, I Kabul d&uuml;ğmesini tıklatın, Bitir ve &Ccedil;ık &ouml;ğesini tıklatın; <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">PHP i&ccedil;in Windows &Ouml;n Bellek Uzantıları &ouml;ğesinin se&ccedil;ilmesi ve kurulması tavsiye edilir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">Windows &Ouml;n Bellek Uzantıları hakkında daha fazla bilgiye şuradan ulaşılabilir: <a href="http://www.iis.net/download/WinCacheForPhp"><span style="color: #000000;" color="#000000">http://www.iis.net/download/WinCacheForPhp</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">4. PHP ayarlarını daha kolay y&ouml;netebilmek i&ccedil;in, IIS i&ccedil;in <a href="http://phpmanager.codeplex.com/"><span style="color: #000000;" color="#000000">PHP Y&ouml;neticisini</span></a> <a href="http://phpmanager.codeplex.com/releases/"><span style="color: #000000;" color="#000000">http://phpmanager.codeplex.com/releases/ adresinden y&uuml;kleyebilir ve kurabilirsiniz</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">5. IIS Y&ouml;neticisini a&ccedil;ın, ana d&uuml;ğ&uuml;m&uuml; se&ccedil;in, PHP Y&ouml;neticisi arayın ve a&ccedil;ın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">6. Tavsiyeleri g&ouml;r&uuml;nt&uuml;le bağlantısını tıklatın, t&uuml;m se&ccedil;enekleri se&ccedil;in ve Tamam &ouml;ğesini tıklatın; <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">7. Yapılandırma hatası raporunu se&ccedil;in, &uuml;retim bilgisayarını se&ccedil;in, uygula &ouml;ğesini tıklatın; <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">8. L&uuml;tfen şu makaleyi okuyun: <a href="http://learn.iis.net/page.aspx/246/using-fastcgi-to-host-php-applications-on-iis-7/"><span style="color: #000000;" color="#000000">http://learn.iis.net/page.aspx/246/using-fastcgi-to-host-php-applications-on-iis-7/</span></a> ve gereken diğer &ouml;zelleştirmeleri yapın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">9. WebsitePanel Sunucusunda WebsitePanel &gt; Web Hizmeti &Ouml;zellikleri Sayfasına gidin ve PHP 5.x Y&uuml;r&uuml;t&uuml;lebilir Dosya Yolunun doğru ayarlanmış ve FastCGI uygulamasının aşağıdaki resimdeki şekilde se&ccedil;ildiğinden emin olun. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">10. NETWORK SERVICE ve WSPWebUsers i&ccedil;in PHP kurulum klas&ouml;r&uuml;nde Okuma ve Y&uuml;r&uuml;tme izinlerinin ayarlanmış olduğundan emin olun (C:\Program Files (x86)\PHP) <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">IIS i&ccedil;in PHP Y&ouml;neticisi mod&uuml;l&uuml;nde diğer PHP s&uuml;r&uuml;mlerinin değiştirilmesi veya kaydedilmesi m&uuml;mk&uuml;n değildir. <o:p></o:p></span></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnbfc9.html?ReturnUrl=%2Fkb%2Finstalling-php-5-with-microsoft-web-platform-installer-tr-TR">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/installing-php-5-with-microsoft-web-platform-installer-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:03:56 GMT -->
+</html>

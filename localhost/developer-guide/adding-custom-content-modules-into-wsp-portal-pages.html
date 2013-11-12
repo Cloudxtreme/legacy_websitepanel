@@ -1,0 +1,139 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/developer-guide/adding-custom-content-modules-into-wsp-portal-pages by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:57:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Adding Custom Content Modules into WSP Portal Pages - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Developer Guide" href="../rss9a6a?containerid=94" />
+
+<link rel="alternate" type="application/rss+xml" title="Developer Guide - Comments" href="../rssfab3?commentedoncontainer=94" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Developer Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Adding Custom Content Modules into WSP Portal Pages</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="adding-custom-content-modules-into-wsp-portal-pages-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>You have an ability to add content blocks with arbitrary static or dynamic text to any page within WSP Portal. How to add completely new pages into WSP Portal you can find in this guide: <a href="adding-custom-pages-into-wsp-portal.html">Adding Custom Pages into WSP Portal</a></p> <p>In this guide we assume that you want to add a custom content block into existing portal page (standard one or just created).</p> <p>"Text/HTML" module in WebsitePanel would allow you to place arbitrary static or dynamic text on any page.</p> <p>In order to add custom text/HTML content:</p> <ol> <li> <p>Open "App_Data\WebsitePanel_Pages.config" for editing in any suitable text editor, e.g. notepad.</p> <li> <p>Locate required &lt;Page&gt; element and add new &lt;Module&gt; element into desired &lt;Content&gt; pane:</p> <div class="csharpcode"><pre class="alt">...</pre><pre><span class="kwrd">&lt;</span><span class="html">Content</span> <span class="attr">id</span><span class="kwrd">="ContentPane"</span><span class="kwrd">&gt;</span></pre><pre class="alt">   <span class="kwrd">&lt;</span><span class="html">Module</span> <span class="attr">moduleDefinitionID</span><span class="kwrd">="TextHTML"</span> <span class="attr">title</span><span class="kwrd">="Test Text Module"</span> <span class="attr">container</span><span class="kwrd">="Clear.ascx"</span> <span class="attr">roles</span><span class="kwrd">="Administrator,Reseller"</span><span class="kwrd">&gt;</span></pre><pre>     <span class="kwrd">&lt;</span><span class="html">ModuleData</span><span class="kwrd">&gt;</span></pre><pre class="alt">       <span class="kwrd">&lt;</span><span class="html">Content</span> <span class="attr">resourcekey</span><span class="kwrd">=""</span> <span class="attr">template</span><span class="kwrd">="true"</span><span class="kwrd">&gt;</span></pre><pre>         <span class="kwrd">&lt;!</span>[CDATA[<span class="kwrd">&lt;</span><span class="html">div</span> <span class="attr">class</span><span class="kwrd">="Normal"</span><span class="kwrd">&gt;</span>Hello #user.FirstName#!<span class="kwrd">&lt;/</span><span class="html">div</span><span class="kwrd">&gt;</span>]]<span class="kwrd">&gt;</span></pre><pre class="alt">       <span class="kwrd">&lt;/</span><span class="html">Content</span><span class="kwrd">&gt;</span></pre><pre>     <span class="kwrd">&lt;/</span><span class="html">ModuleData</span><span class="kwrd">&gt;</span></pre><pre class="alt">   <span class="kwrd">&lt;/</span><span class="html">Module</span><span class="kwrd">&gt;</span></pre><pre><span class="kwrd">&lt;/</span><span class="html">Content</span><span class="kwrd">&gt;</span></pre><pre class="alt">...</pre></div>
+<style type="text/css">.csharpcode, .csharpcode pre
+{
+ font-size: small;
+ color: black;
+ font-family: consolas, "Courier New", courier, monospace;
+ background-color: #ffffff;
+ /*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+ background-color: #f4f4f4;
+ width: 100%;
+ margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+</style>
+
+<p>&lt;ModuleData&gt; element of "Text/HTML" module should contain the following allowed data:</p>
+<ul>
+<li><strong>Content</strong> element - describes the text content that should be displayed in the module. Text content should be placed inside &lt;Content&gt; element. If there are HTML tags within the content it's recommended to use CDATA section in the form &lt;![CDATA[ .... any text goes here ]]&gt;. 
+<ul>
+<li><strong>resourcekey</strong> attribute - optional attribute that allow to pull module content from WSP shared resources. If this attribute is not empty module content defined in this file will be ignored and WSP will try to lookup the content in "<strong>App_GlobalResources\WebsitePanel_SharedResources.ascx.resx</strong>" file by <strong>"ModuleContent.&lt;resourcekey_value&gt;"</strong> key. 
+<li><strong>template</strong> attribute - if <strong>true</strong> module content will be evaluated as WSP template that allow you to place dynamic content specific to current user and space. You can use the same template variables as in account and space summary information templates. Please, see this page for more info regarding template variables: <a href="../administrator-guide/Changing-Account-Mail-Templates-2.html">Changing Account Mail Templates</a>. Default value of this attribute is <strong>false</strong>. To increase Portal performance do not set this attribute to true if you are not going to use template variables inside module content. </li></ul></li></ul>
+<li>
+<p>Save "WebsitePanel_Pages.config" file and exit the editor.</p></li></ol>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnfe71.html?ReturnUrl=%2Fdeveloper-guide%2Fadding-custom-content-modules-into-wsp-portal-pages">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/developer-guide/adding-custom-content-modules-into-wsp-portal-pages by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:57:50 GMT -->
+</html>

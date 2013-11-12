@@ -1,0 +1,233 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/exchange-2010-module-deployment-and-migration-tips-and-tricks-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:11:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Exchange 2010 mod&#252;l uygulama ve ge&#231;iş ipu&#231;ları - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module" href="../rss68ec?containerid=101" />
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module - Comments" href="../rssba67?commentedoncontainer=101" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Exchange 2007/2010 Modules</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Exchange 2010 mod&#252;l uygulama ve ge&#231;iş ipu&#231;ları</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="exchange-2010-module-deployment-and-migration-tips-and-tricks.html">en-US</a></li></ul>
+    </div>
+</div>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><a href="http://www.websitepanel.net/documentation"><span style="color: #000000;" color="#000000">Belgeler</span></a> &gt;<a href="http://www.websitepanel.net/exchange-2007-2010-module/index"><span style="color: #000000;" color="#000000">Exchange 2007/2010 Mod&uuml;lleri</span></a><o:p></o:p></span></p>
+<h1 style="margin: 0in 0in 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 17pt;" lang="TR">Exchange 2010 mod&uuml;l uygulama ve ge&ccedil;iş ipu&ccedil;ları<o:p></o:p></span></h1>
+<h2 style="margin: 0in 0in 0pt;"><a name="Section1"></a><span style="font-family: 'Arial','sans-serif'; font-size: 13.5pt;" lang="TR">1. Grup adı değiştirme.<o:p></o:p></span></h2>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Exchange 2010 sunucularında WSP Sunucuları uygulama havuzu hesapları i&ccedil;in Exchange 2007 "Exchange Kurum Y&ouml;neticileri" grubu yerine Exchange 2010 "Kurum Y&ouml;netimi" AD grubunu kullanın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<h2 style="margin: 0in 0in 0pt;"><a name="Section2"></a><span style="font-family: 'Arial','sans-serif'; font-size: 13.5pt;" lang="TR">2. WSP Barındırma OU ACL.<o:p></o:p></span></h2>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Exchange 2010 uygulaması, bir&ccedil;ok yeni izin girişi AD ekler. Bu nedenle mevcut WSP y&ouml;netimli Exchange 2007 ortamınızda Exchange 2010 uyguladıktan sonra WSP Barındırma k&ouml;k OU izinlerini varsayılan değere sıfırlamanız ve daha sonra <a href="http://www.websitepanel.net/exchange-2007-2010-module/deploying-hosted-organizations-module"><span style="color: #000000;" color="#000000">bu adımı</span></a> tekrarlamanız gerekir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<h2 style="margin: 0in 0in 0pt;"><a name="Section3"></a><span style="font-family: 'Arial','sans-serif'; font-size: 13.5pt;" lang="TR">3. Adres Listeleri kapsayıcı DACL.<o:p></o:p></span></h2>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">&Ouml;nceki b&ouml;l&uuml;mde WSP Barındırma k&ouml;k OU izinlerini sıfırlama nedeniyle aynı şekilde, daha &ouml;nceden Barındırılan Exchange &Ccedil;&ouml;z&uuml;m &Ouml;n Uygulama G&ouml;revlerine g&ouml;re değiştirdiğiniz t&uuml;m Adres Listeleri kapsayıcı DACL'ı varsayılana ayarlamalısınız <a href="http://www.websitepanel.net/exchange-2007-2010-module/hosted-exchange-solution-pre-deployment-tasks"><span style="color: #000000;" color="#000000">ve bu adımları </span></a>(Adres Listeleri Kapsayıcılarını Değiştirme) tekrarlamalısınız. Aksi takdirde, bir&ccedil;ok sistem işlemi ve OAB &uuml;retimi gibi y&ouml;netim prosed&uuml;r&uuml; &ccedil;alışmayacaktır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<h2 style="margin: 0in 0in 0pt;"><a name="Section4"></a><span style="font-family: 'Arial','sans-serif'; font-size: 13.5pt;" lang="TR">4. Yeni globalAddressList2 AD &ouml;zniteliği.<o:p></o:p></span></h2>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Birinci Exchange 2010 kurumunda ilk posta kutusunu oluşturduktan ve dolayısıyla Exchange 2010'da ilk GAL'ı oluşturduktan sonra yeni globalAddressList2 &ouml;zniteliğini CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=hosterdomain,DC=com'a ekler ve bu &ccedil;oklu değerli &ouml;zniteliği yeni oluşturulan GAL DN'le doldurur. Bazı nedenlerle bu &ouml;znitelik, aynı nesnenin normalde kullanılan globalAddressList &ouml;zniteliğinden daha fazla tercih edilir (Exchange, ad işaretlemek i&ccedil;in arama yaptığında m&uuml;şterilere GAL listesi sağladığında). Bu &ouml;znitelik, mevcut GAL ayrımlı adlarla doldurulmadığı i&ccedil;in (WSP ile ilk posta kutusunu karma Exchange 2007/2010 WSP y&ouml;netimli kurumlara eklenmesi) bu, mevcut Exchange 2007 kullanıcıları i&ccedil;in "yer işareti ge&ccedil;erli değil" hatasıyla sonu&ccedil;lanır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Bu &ouml;znitelikler hakkında daha fazla bilgi, i&ccedil;in bkz. <a href="http://msdn.microsoft.com/en-us/library/cc219948(PROT.13).aspx"><span style="color: #000000;" color="#000000">http://msdn.microsoft.com/en-us/library/cc219948(PROT.13).aspx</span></a> ve <a href="http://msdn.microsoft.com/en-us/library/cc220151(PROT.13).aspx"><span style="color: #000000;" color="#000000">http://msdn.microsoft.com/en-us/library/cc220151(PROT.13).aspx</span></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">&Ccedil;&ouml;z&uuml;m, globalAddressList &ouml;zniteliğinde bulunan t&uuml;m mevcut GAL DN'leri globalAddressList2 &ouml;zniteliğine eklemektir. Bu, LDIFDE ile otomatikleştirilebilir (<a href="http://support.microsoft.com/kb/237677/en-us"><span style="color: #000000;" color="#000000">http://support.microsoft.com/kb/237677/en-us</span></a>). Aşağıda GAL DN'leri globalAddressList &ouml;zniteliğinden globalAddressList2 &ouml;zniteliğine aktarmanıza yardımcı olabilecek komutlara bir &ouml;rnek verilmektedir.<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><strong><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Bu test edilmeli ve AD daha &ouml;ncesinde yedeklenmelidir. Riski kendinize ait olmak &uuml;zere yapın.<o:p></o:p></span></strong></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">4.1 GAL DN'leri globalAddressList &ouml;zniteliğinden metin dosyasına aktarma. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">LDIFDE -d "CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=hosterdomain,DC=com" -f globalAddressList-export.txt -l globalAddressList <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">4.2 İ&ccedil;e aktarma dosyasını hazırlama. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">globalAddressList-export.txt dosyasını a&ccedil;ın, globalAddressList2-import.ldf olarak kaydedin ve <a href="http://support.microsoft.com/kb/237677/en-us"><span style="color: #000000;" color="#000000">http://support.microsoft.com/kb/237677/en-us</span></a> makalesine ve &ouml;rneğimize bakarak değiştirin. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">globalAddressList2-import.ldf i&ccedil;erik &ouml;rneği: <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">dn: CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=hosterdomain,DC=com<br />changetype: değiştir<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">değiştir: globalAddressList2<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">globalAddressList2: CN=test01 Global Address List,CN=All Global Address Lists,CN=Address Lists Container,CN=Exchange Organization,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=hosterdomain,DC=com<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">globalAddressList2: CN=test02 Global Address List,CN=All Global Address Lists,CN=Address Lists Container,CN=Exchange Organization,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=hosterdomain,DC=com<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">globalAddressList2: CN=test03 Global Address List,CN=All Global Address Lists,CN=Address Lists Container,CN=Exchange Organization,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=hosterdomain,DC=com<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><strong><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Sondaki "-" simgesi zorunludur.</span></strong><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"> <o:p></o:p></span></p>
+<p><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: TR; mso-fareast-language: TR; mso-bidi-language: AR-SA;" lang="TR"><br style="page-break-before: always;" clear="all" /></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">4.3 GAL DN'leri globalAddressList2 &ouml;zniteliğine aktarma <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">LDIFDE -i -f globalAddressList2-import.ldf <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">4.4 İ&ccedil;e aktarmanın d&uuml;zg&uuml;n olduğunu kontrol edin <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">ADSI d&uuml;zenlemeyi a&ccedil;ın, yapılandırma kapsayıcısına gidin, CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=hosterdomain,DC=com nesnesini a&ccedil;ın ve globalAddressList ve globalAddressList2 &ouml;znitelik değerlerini karşılaştırın. Bunlar aynı olmalıdır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<h2 style="margin: 0in 0in 0pt;"><a name="Section5"></a><span style="font-family: 'Arial','sans-serif'; font-size: 13.5pt;" lang="TR">5. OWA 2010, gizli nesneleri g&ouml;sterebilir. <o:p></o:p></span></h2>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">WSP, OWA istemcilerini kullanarak adres listesini kısıtlamak i&ccedil;in bu <a href="http://technet.microsoft.com/en-us/library/bb430794.aspx"><span style="color: #000000;" color="#000000">http://technet.microsoft.com/en-us/library/bb430794.aspx</span></a>'i kullanır. WSP, Barındırılan Kurumlar Biriminin &Ouml;zel Adını kullanır. Exchange 2007 ve bazı Exchange 2010 uygulamaları i&ccedil;in d&uuml;zg&uuml;n &ccedil;alışır. Ancak bazı Exchange 2010 uygulamalarında OWA (Exchange 2007 ile birlikte bulunduğu ortamlarda değil baştan uygulanan ortamlardaki deneyimimize g&ouml;re), WSP tarafından dahili ama&ccedil;larla oluşturulmuş grup gibi gizli nesneleri veya kurumda gizli olarak ayarlı başka bir posta kutusu veya DL'i (WSP veya EMS/EMS'de olmasından bağımsız olarak) g&ouml;sterir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Bu &ouml;zniteliğin kurum GAL &Ouml;zel Adına ayarlanması durumunda sorunsuz &ccedil;alışır. Bu davranışla karşılaşmanız durumunda ge&ccedil;ici &ccedil;&ouml;z&uuml;m, msExchQueryBaseDN &ouml;zniteliğini OU yerine GAL &Ouml;zel Adına manuel olarak ayarlamaktır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Uygun WSP tarafından oluşturulmuş GAL adı, Barındırılan Kurum Kimliği ile başlar. &Ouml;rneğin, kullanıcının kurum kimliği ORG01 ise OU'su ORG01'dir, Windows 2000 &ouml;ncesi adı user_org01'dir ve GAL, org01 Global Adres Listesidir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">ADModify.net'i (<a href="http://technet.microsoft.com/ru-ru/library/aa996216(EXCHG.65).aspx"><span style="color: #000000;" color="#000000">http://technet.microsoft.com/ru-ru/library/aa996216(EXCHG.65).aspx</span></a>), belirli bir OU'da (kurum) t&uuml;m posta kutuları i&ccedil;in bu &ouml;zniteliğin toplu olarak değiştirilmesi i&ccedil;in kullanabilirsiniz. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<h2 style="margin: 0in 0in 0pt;"><a name="Section6"></a><span style="font-family: 'Arial','sans-serif'; font-size: 13.5pt;" lang="TR">6. WSP Exchange 2010 sağlayıcısı arabirim ayarları.<o:p></o:p></span></h2>
+<h3 style="margin: 0in 0in 0pt;"><a name="Section7"></a><span style="font-family: 'Arial','sans-serif'; font-size: 11pt;" lang="TR">Ortak Klas&ouml;r Sunucusu. <o:p></o:p></span></h3>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">OAB oluşturma i&ccedil;in PF veritabanlı ayrı bir posta kutusu sunucusu ayarlayabilirsiniz. Exchange 2010 Posta Kutusu sunucusunu yerel olarak y&ouml;netmeniz ve ayrı bir PF sunucunuzun olmaması durumunda bu alanı boş bırakın. Sadece 2010 posta kutusu sunucusu veya Veritabanı Kullanılabilirlik Grubunu uzaktan y&ouml;netmeniz durumunda PF veritabanını orada barındıran bir posta kutusu sunucusu adı se&ccedil;in. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<h3 style="margin: 0in 0in 0pt;"><a name="Section8"></a><span style="font-family: 'Arial','sans-serif'; font-size: 11pt;" lang="TR">OAB Sunucusu. <o:p></o:p></span></h3>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">OAB &uuml;retimi i&ccedil;in ayrı bir posta kutusu sunucusu ayarlayabilirsiniz. Exchange 2010 Posta Kutusu sunucusunu yerel olarak y&ouml;netmeniz ve ayrı bir OAB sunucunuzun olmaması durumunda bu alanı boş bırakın. Sadece 2010 posta kutusu sunucusu veya Veritabanı Kullanılabilirlik Grubunu uzaktan y&ouml;netmeniz durumunda bir posta kutusu sunucusu adı se&ccedil;in. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<h3 style="margin: 0in 0in 0pt;"><a name="Section9"></a><span style="font-family: 'Arial','sans-serif'; font-size: 11pt;" lang="TR">Hub Aktarım Hizmeti ve İstemci Erişim Hizmeti. <o:p></o:p></span></h3>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">T&uuml;m HUB ve CAS sunucularında WSP Sunucusu ve WSP Exchange 2010 mod&uuml;lleri yerel olarak uygulanmalıdır (daha &ouml;nceden oluşturulan Visio şemasına uygun olarak) ve Exchange 2010 Posta Kutusunu yerel veya uzaktan y&ouml;neten ana Exchange 2010'a eklenmelidir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p><span style="font-family: 'Arial','sans-serif'; font-size: 13.5pt; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: TR; mso-fareast-language: TR; mso-bidi-language: AR-SA;" lang="TR"><br style="page-break-before: always;" clear="all" /></span></p>
+<h2 style="margin: 0in 0in 0pt;"><a name="Section10"></a><span style="font-family: 'Arial','sans-serif'; font-size: 13.5pt;" lang="TR">7. karma Exchange 2007/2010 WSP y&ouml;netimli bir ortamda Exchange 2007'de 2010'a tavsiye edilen ge&ccedil;iş yolu. <o:p></o:p></span></h2>
+<p style="line-height: normal; margin-bottom: 0pt;"><span><strong>Not. Bu talimatlar, m&uuml;şterileri hizmette kesinti olabileceği konusunda bilgilendirdiğinizi, sisteminizin yedeğini aldığınızı ve ayrıca her t&uuml;rl&uuml; değişikliği kendi başınıza geri y&uuml;kleyebileceğinizi kabul etmektedir.</strong> <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.1 Exchange 2010 hizmetini WSP'de, WSP Exchange 2007 mod&uuml;l&uuml;yle birlikte uygulayın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.2 Exchange 2010 test barındırma planıyla Test Sanal Sunucu, Barındırma Planı, WSP Kullanıcısı ve Barındırma Alanı oluşturun. Barındırılan Kurum Oluşturun. Exchange 2010 posta kutusu oluşturmayı kontrol edin. Mevcut Exchange 2007 kullanıcılarında "yer işareti ge&ccedil;ersiz" hatalarına neden olmamak i&ccedil;in bu posta kutusunu oluşturduktan hemen sonra GAL DN'leri globalAddressList2 &ouml;zniteliğine aktarmaya hazır olmanız gerekmektedir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.3 Test posta kutusu, Barındırılan Kurum, WSP Kullanıcısı ve Alanı, test Barındırma Planı ve Sanal Sunucuyu silin. Adım 1'de oluşturduğunuz Exchange 2010 hizmetini silmeyin. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.4 Kullandığınız mevcut Sanal Sunucuyu a&ccedil;ın ve mevcut Exchange 2007 hizmetini adım 1'de oluşturduğunuz ve adım 2'de test ettiğiniz Exchange 2010 hizmetiyle değiştirin. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.5 Adım 4'te değiştirdiğiniz Sanal Sunucuya dayanan mevcut Barındırma Planıyla yeni WSP Kullanıcısı ve Barındırma Alanı oluşturun. Yeni Barındırılan Kurumu bu Alanda oluşturun ve daha sonra bu kurumda yeni posta kutusu oluşturun. Exchange 2010 sunucusunda oluşturulduğundan emin olun. Adım 3'te ilk test Exchange 2010 posta kutusunu sildiğinizde globalAddressList2 &ouml;zniteliği silinebileceği ve bu adımda tekrar oluşturulacağı i&ccedil;in GAL DN'leri globalAddressList2 &ouml;zniteliğine tekrar aktarmaya hazır olmanız gerekir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.6 Mevcut kurumu taşıyın: <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.6.1 Exchange 2007 posta kutusu sunucusundan Exchange 2010 posta kutusu sunucusuna EMC veya EMS ile posta kutularını hedef Barındırılan Kurum i&ccedil;in taşıyın.<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.6.2 Exchange 2010 mod&uuml;l&uuml; ve Posta Kutusu veritabanını kullanmak i&ccedil;in hedef Barındırılan Kurumu ayarlayın: <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.6.2.1 Sanal Sunucudan kaldırılmış Exchange 2007 hizmetini a&ccedil;ın ve tarayıcı dizisinden ServiceID'yi not edin.<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.6.2.2 Sanal Sunucuya eklenmiş Exchange 2010 hizmetini a&ccedil;ın ve tarayıcı dizisinden ServiceID'yi not edin.<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.6.2.3 Hedef Barındırılan Kurumu i&ccedil;eren Barındırma Alanını a&ccedil;ın ve tarayıcı dizisinden SpaceID'yi not edin.<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.6.2.4 Hedef Barındırılan Kurumu a&ccedil;ın ve tarayıcı dizisinden itemID'yi not edin.<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.6.2.5 Exchange 2010 mod&uuml;l&uuml; ayarlarını (veya EMC) a&ccedil;ın ve hedef posta kutusu veritabanı adını not edin.<o:p></o:p></span></p>
+<p><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: TR; mso-fareast-language: TR; mso-bidi-language: AR-SA;" lang="TR"><br style="page-break-before: always;" clear="all" /></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.6.2.6 Microsoft SQL Server Management Studio'yu a&ccedil;ın ve WebsitePanel (WSPEnterpriseServer) veritabanında aşağıdaki komut satırını &ccedil;alıştırın: <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">DECLARE @Exchange2007ServiceID INT<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">DECLARE @Exchange2010ServiceID INT<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">DECLARE @SpaceID INT<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">DECLARE @OrganizationID INT<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">DECLARE @Database NVARCHAR(3000) <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Buraya ger&ccedil;ek değerleri girin<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">SET @Exchange2007ServiceID = aaa --ger&ccedil;ek Exchange 2007 serviceId değerini yazın<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">SET @Exchange2010ServiceID = bbb --ger&ccedil;ek Exchange 2010 serviceId değerini yazın<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">SET @SpaceID = ccc --ger&ccedil;ek spaceId değerini yazın<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">SET @OrganizationID = ddd --ger&ccedil;ek itemId değerini yazın<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">SET @Database = 'Mailbox Database 123456789' --ger&ccedil;ek Exchange 2010 veritabanı adını yazın<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">--<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">-- alan hizmetini g&uuml;ncelle<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">UPDATE PackageServices<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">SET ServiceID = @Exchange2010ServiceID<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">WHERE ServiceID = @Exchange2007ServiceID<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">AND PackageID = @SpaceID <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">-- kurum ayarlarını g&uuml;ncelle<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">UPDATE ServiceItemProperties<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">SET PropertyValue = @Database<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">WHERE PropertyName = 'Database'<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">AND ItemID = @OrganizationID <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">7.6.3 Hedef Barındırılan Kurumda mevcut posta kutularını y&ouml;netebildiğinizden ve ayrıca Exchange 2010 Posta Kutusu veritabanında yeni posta kutuları oluşturabildiğinizden emin olun. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<h2 style="margin: 0in 0in 0pt;"><a name="Section11"></a><span style="font-family: 'Arial','sans-serif'; font-size: 13.5pt;" lang="TR">8. Alternatif ge&ccedil;iş/birlikte bulunma yolları ve bunların sorunları. <o:p></o:p></span></h2>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Tavsiye edilen ge&ccedil;iş yolu, mevcut Exchange 2007 tabanlı kurumlarınızı y&ouml;netmeye devam ettiğinizi ve aynı zamanda bunları Exchange 2010'a (adım 6) tek tek taşıdığınızı kabul eder. T&uuml;m yeni kurumlar, Exchange 2010 tabanlı olacaktır. Ancak, t&uuml;m mevcut kurumlar adım 6'daki prosed&uuml;rler tamamlanana kadar Exchange 2007 tabanlı kalacaktır (ve bu kurumlardaki t&uuml;m yeni posta kutuları Exchange 2007 tabanlı olacaktır!). <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Yeni kurumları hem Exchange 2007 hem de 2010 tabanlı olarak oluşturmak i&ccedil;in bu ge&ccedil;iş yolunu değil mevcut Exchange 2007 tabanlı Sanal Sunucu ve Barındırma planlar setinin değişmeyeceği ve yeni Exchange 2010 tabanlı Sanal Sunucu ve Barındırma planları setinin paralel olarak oluşturulacağı birlikte bulunma yaklaşımını se&ccedil;ebilirsiniz.<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Bu durumda yeni (sadece yeni!) oluşturulan Exchange 2007 kurumlarındaki posta kutularında "yer işareti ge&ccedil;erli değil' sorunuyla karşılaşmanız muhtemeldir. Bunun nedeni Exchange 2007 GAL oluşturma prosed&uuml;r&uuml;n&uuml;n globalAddressList2 &ouml;zniteliği yeni oluşturulan kurumun GAL &ouml;zel adıyla doldurmamasıdır (sadece globalAddressList &ouml;zniteliği doldurulur). Bu nedenle yeni GAL &ouml;zel adlarını (Exchange 2007 sağlayıcısı tarafından oluşturulmuştur) globalAddressList2 &ouml;zniteliğine eklemek i&ccedil;in manuel veya otomatik bir iş akışı d&uuml;ş&uuml;nmeniz gerekebilir.<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Yeni AD forest / Exchange kurumunda Exchange 2010 uygulamaya karar vermeniz halinde bu sorunun sizi etkilemeyeceğinden emin olun. Bu durumda, ge&ccedil;iş kurumların tekrar oluşturulması ve posta kutusu i&ccedil;eriğinin i&ccedil;e-dışa aktarılmasıyla daha fazla bağlantılıdır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<h2 style="margin: 0in 0in 0pt;"><a name="Section12"></a><span style="font-family: 'Arial','sans-serif'; font-size: 13.5pt;" lang="TR">9. Ge&ccedil;iş/birlikte bulunma planlama i&ccedil;in faydalı bağlantılar. <o:p></o:p></span></h2>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><a href="http://technet.microsoft.com/en-us/library/dd638158.aspx"><span style="color: #000000;" color="#000000">http://technet.microsoft.com/en-us/library/dd638158.aspx</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><a href="http://technet.microsoft.com/en-us/library/bb124350.aspx"><span style="color: #000000;" color="#000000">http://technet.microsoft.com/en-us/library/bb124350.aspx</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><a href="http://technet.microsoft.com/en-us/library/dd351133.aspx"><span style="color: #000000;" color="#000000">http://technet.microsoft.com/en-us/library/dd351133.aspx</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><a href="http://technet.microsoft.com/en-us/library/dd346708.aspx"><span style="color: #000000;" color="#000000">http://technet.microsoft.com/en-us/library/dd346708.aspx</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><a href="http://technet.microsoft.com/en-us/library/ee332345.aspx"><span style="color: #000000;" color="#000000">http://technet.microsoft.com/en-us/library/ee332345.aspx</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><a href="http://msexchangegeek.com/2009/09/18/get-owavirtualdirectory-returns-an-iis-directory-entry-couldnt-be-created-the-error-message-is-access-is-denied/"><span style="color: #000000;" color="#000000">http://msexchangegeek.com/2009/09/18/get-owavirtualdirectory-returns-an-iis-directory-entry-couldnt-be-created-the-error-message-is-access-is-denied/</span></a><o:p></o:p></span></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn9ef2.html?ReturnUrl=%2Fexchange-2007-2010-module%2Fexchange-2010-module-deployment-and-migration-tips-and-tricks-tr-TR">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/exchange-2010-module-deployment-and-migration-tips-and-tricks-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:11:23 GMT -->
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/tuning-Outlook-2003-in-WSP-HES-environment by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:11:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Tuning Outlook 2003 in WSP HES environment - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module" href="../rss68ec?containerid=101" />
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module - Comments" href="../rssba67?commentedoncontainer=101" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Exchange 2007/2010 Modules</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Tuning Outlook 2003 in WSP HES environment</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="tuning-outlook-2003-in-wsp-hes-environment-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>Outlook 2003 does not support Autodiscover. That’s why the best way to simplify Outlook 2003 setup is create Outlook Profile (PRF) file.  <p>To read more about Outlook Profile (PRF) files take a look here <a href="http://technet2.microsoft.com/Office/en-us/library/71b4efb2-539a-49eb-935e-3222aed9f6a21033.mspx?mfr=true">http://technet2.microsoft.com/Office/en-us/library/71b4efb2-539a-49eb-935e-3222aed9f6a21033.mspx?mfr=true</a> <p>In case you have no time or desire to dig into this –&nbsp; <a href="../Media/Default/Files/Sample.prf">upload sample PRF file prepared by us</a> and follow those instructions:  <p>For creating provider-specific template –  <ul> <li> <p>Open in notepad </p> <li> <p>Change once: </p></li></ul> <p>- ProfileName=Hoster_name Exchange Hosting – something pretty to represent provider  <ul> <li> <p>Change twice: </p></li></ul> <p>- HomeServer=exch01.provider.local – internal name of Mailbox server  <p>- RPCProxyServer=exchange.provider.com – external Client Access Server URL  <p> For creating end-user-specific template –  <ul> <li> <p>Open in notepad </p> <li> <p>Change twice: </p></li></ul> <p>- MailboxName= <a href="mailto:user@customer_domain.com">user@customer_domain.com</a> – end user primary e-mail address  <p>Run this file on end-user machine. In case use with Outlook 2007 (may be you can not use Autodiscover for some reason) not simple run but use outlook.exe /importprf with appropriate path to prf file. Run this from folder where outlook.exe located.  <p>Note that Outlook should be closed before running PRF file on client machine. Instruct your customers to check it by looking to Outlook.exe process in Task Manager.  <p>Note that you can use Mailbox Setup Instructions letter to send users link to upload prf file. </p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnaa56.html?ReturnUrl=%2Fexchange-2007-2010-module%2Ftuning-Outlook-2003-in-WSP-HES-environment">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/tuning-Outlook-2003-in-WSP-HES-environment by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:11:34 GMT -->
+</html>

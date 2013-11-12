@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/installation-guide/how-does-websitepanel-work by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:44:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>How WebsitePanel Works - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Installation Guide" href="../rss1e35?containerid=110" />
+
+<link rel="alternate" type="application/rss+xml" title="Installation Guide - Comments" href="../rssaaeb?commentedoncontainer=110" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Installation Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>How WebsitePanel Works</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="how-does-websitepanel-work-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>WebsitePanel is a control panel for Windows hosting that allows to manage web sites, FTP accounts, databases and other hosting resources that could be setup on multiple servers. WebsitePanel also provides white label solution for resellers and self-service control panel for end-users.</p> <h2>WSP Architecture</h2> <p>WebsitePanel is a distributed web-based application. It consists of three components:</p> <ul> <li>WSP Portal  <li>WSP Enterprise Server  <li>WSP Server </li></ul> <p><img alt="" src="../Media/WindowsLiveWriter/HowDoesWebsitePanelWork_9250/clip_image002_2.png"></p> <p>All three components are web applications that must be hosted using either IIS version 6 or IIS version 7.</p> <h2>WSP Portal</h2> <p>WSP Portal is the user interface (presentation layer) part of WebsitePanel. It is ASP.NET application that does not contain any business logic. Instead, it communicates with WSP Enterprise Server using SOAP in order to perform various operations. The presentation layer contains all UI elements. User gestures such as button clicks invoke web service methods in the WSP Enterprise Server.</p> <p>The WSP Portal web application is accessible to external consumers. It works within an IIS application pool that is associated with an account that has limited privileges.</p> <h2>WSP Enterprise Server</h2> <p>WSP Enterprise Server is the primary WSP component that comprises the business logic of the application. WSP Enterprise Server uses a SQL Server database to store its internal data, including user accounts, hosting plans, information about hosted resources, and service settings.</p> <p>Every operation in WebsitePanel is available as an XML web service that can be accessed from any programming environment, including the .NET Framework, PHP, Java, and Perl. Because of this, WebsitePanel web services can be used for integration by third-party applications.</p> <p>To manage the hosting environment (such as creating web sites, FTP and mail accounts, databases, etc.), WSP Enterprise Server communicates with WSP Server using XML web services.</p> <p>WSP Enterprise Server does not expose any UI, just web services. Typically is available only to computers in your hosting environment; the application listens only for internal IP addresses or the internal loopback address 127.0.0.1. WSP Enterprise Server runs in an application pool that is associated with an account that has limited privileges.</p> <h2>WSP Server</h2> <p>WSP Server is web application that performs low-level management operations on the target server(s), such as working with files and folder and their permissions, email, databases, IIS, etc.</p> <p>WSP Server can be considered a remote server agent and must be installed on every server in the hosting environment that should be managed in the WSP control panel. WSP Server runs in an application pool that has administrative privileges -- that is, its application pool’s identity must be a member of the local Administrators group or of the Domain Admins group if AD must be managed as well.</p> <h2>Common Deployment Scenarios</h2> <p>The following diagrams illustrate typical setups for configuring WebSitePanel.</p> <h3 id="Standalone Setup">Standalone Setup</h3> <p><img alt="" src="../Media/WindowsLiveWriter/HowDoesWebsitePanelWork_9250/clip_image002%5b1%5d.png"></p> <h3 id="Multi-Server Setup">Multi-Server Setup</h3> <p>&nbsp; </p> <p><img alt="" src="../Media/WindowsLiveWriter/HowDoesWebsitePanelWork_9250/clip_image004_2.png"></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn6771.html?ReturnUrl=%2Finstallation-guide%2Fhow-does-websitepanel-work">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/installation-guide/how-does-websitepanel-work by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:44:08 GMT -->
+</html>

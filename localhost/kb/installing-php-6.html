@@ -1,0 +1,151 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/installing-php-5.x-with-fastcgi-on-windows-server-2008-with-iis7-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>FastCGI ile Windows Server 2008 ve IIS7 &#252;zerine PHP 5.x kurma - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>FastCGI ile Windows Server 2008 ve IIS7 &#252;zerine PHP 5.x kurma</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="installing-php-5.html">en-US</a></li></ul>
+    </div>
+</div>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><a href="http://www.websitepanel.net/documentation"><span style="color: black;">Belgeler</span></a> &gt;<a href="http://www.websitepanel.net/kb/index"><span style="color: black;">Bilgi Bankası</span></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 1;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 17pt; mso-font-kerning: 18.0pt;" lang="TR">FastCGI ile Windows Server 2008 ve IIS7 &uuml;zerine PHP 5.x kurma<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">FastCGI uygulamasını IIS 7.0'da etkinleştirmek i&ccedil;in Sunucu Y&ouml;neticisi -&gt; Roller -&gt; Rol Hizmetleri Ekle &ouml;ğesine giderek CGI rol&uuml; hizmetini ayarlayın. Bu, CGI ve FastCGI hizmetlerini devreye alır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l5 level1 lfo2;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">1.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">En yeni PHP par&ccedil;acıksız g&uuml;venli ikililerini <a href="http://www.php.net/downloads.php"><span style="color: black;">http://www.php.net/downloads.php</span></a> adresinden y&uuml;kleyin. <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l5 level1 lfo2;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">2.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Dosyaları istediğiniz bir dizine &ccedil;ıkarın (&ouml;rn. C:\PHP). php.ini-recommended dosyasının adını php-cgi-fcgi.ini olarak değiştirin. <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l5 level1 lfo2;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">3.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">php-cgi-fcgi.ini dosyasını a&ccedil;ın ve yorumu kaldırarak ayarları aşağıdaki şekilde değiştirin: <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><i><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">a. Ayarla: fastcgi.impersonate = 1; <o:p></o:p></span></i></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><i><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">b. Ayarla: cgi.fix_pathinfo=1. cgi.fix_pathinfo; <o:p></o:p></span></i></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><i><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">c. Ayarla: cgi.force_redirect = 0; <o:p></o:p></span></i></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><i><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">d. short_open_tag = On; <o:p></o:p></span></i></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><i><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">e. extension_dir = "c:\php5\ext\"; <o:p></o:p></span></i></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><i><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">f. uncomment extension=php_mysql.dll; <o:p></o:p></span></i></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">IIS Y&ouml;neticisini a&ccedil;ın ve sunucu seviyesinde &ldquo;Y&ouml;netici Eşlemeleri&rdquo; &ouml;ğesini se&ccedil;in ve a&ccedil;ın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l6 level1 lfo3;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">İstek yolu: <b>*.php</b> <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l6 level1 lfo3;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Mod&uuml;l: <b>FastCgiModule</b><o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l6 level1 lfo3;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Y&uuml;r&uuml;t&uuml;lebilir dosya: <b>C:\[Path to your PHP installation]\php-cgi.exe</b><o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l6 level1 lfo3;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Ad: <b>PHP via FastCGI</b><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Tamam &ouml;ğesini tıklatın. Bu y&uuml;r&uuml;tme dosyası i&ccedil;in FastCGI uygulaması oluşturmak isteyip istemediğinizi soran bir iletişim kutusu g&ouml;r&uuml;nt&uuml;lenir. Evet &ouml;ğesini tıklatın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">WSP_IUSRS izinlerini "Okuma ve y&uuml;r&uuml;tme" izinleriyle PHP klas&ouml;r&uuml;ne ekleyin. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 3;" class="MsoNormal"><a name="Section1"></a><span style="font-family: 'Times New Roman','serif'; color: black;" lang="TR"><span style="font-size: small;" size="3">PHP G&uuml;venlik Tavsiyeleri<o:p></o:p></span></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Aşağıdaki tavsiyelerde, paylaşımlı barındırma ortamında PHP g&uuml;venliğinin sıkılaştırılması anlatılmaktadır. Tavsiye edilen değişiklikleri yapmak i&ccedil;in php-cgi-fcgi.ini dosyasını bulun ve a&ccedil;ın, ardından aşağıda anlatılan şekilde d&uuml;zenleyin: <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l1 level1 lfo4;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">1.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Dosya y&ouml;netimi işlevleri i&ccedil;in uzak URL'leri devre dışı bırakın: <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 35pt; mso-list: l0 level1 lfo5;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Ayarla: allow_url_fopen=Off <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 35pt; mso-list: l0 level1 lfo5;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Ayarla: allow_url_include=Off<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l1 level1 lfo4;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">2.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Devre dışı bırak: register_globals: <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 31.5pt; mso-list: l3 level1 lfo6;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">register_globals=Off<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l1 level1 lfo4;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">3.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">PHP'nin dosya sisteminde okuma ve yazma izinlerini kısıtlayın; &ouml;rn.: <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 27.3pt; mso-list: l3 level1 lfo6;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">open_basedir="c:\hostingspaces\" veya barındırma alanı klas&ouml;r&uuml;n&uuml;n yolu<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l1 level1 lfo4;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">4.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">G&uuml;venli modu devre dışı bırakın: <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 26.6pt; mso-list: l3 level1 lfo6;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">safe_mode=Off <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 26.6pt; mso-list: l3 level1 lfo6;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">safe_mode_gid=Off<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l1 level1 lfo4;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">5.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Komut satırı y&uuml;r&uuml;tme s&uuml;resini sınırlayın: <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28pt; mso-list: l2 level1 lfo7;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">max_execution_time=30 <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28pt; mso-list: l2 level1 lfo7;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">max_input_time=60<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l1 level1 lfo4;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><span style="mso-list: Ignore;">6.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Bellek kullanımı ve dosya boyutlarını sınırlayın: <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28.35pt; mso-list: l4 level2 lfo1; tab-stops: list 1.0in;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 10pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">memory_limit=16M <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28.35pt; mso-list: l4 level2 lfo1; tab-stops: list 1.0in;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 10pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">upload_max_filesize=2M <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28.35pt; mso-list: l4 level2 lfo1; tab-stops: list 1.0in;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 10pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">post_max_size=8M <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28.35pt; mso-list: l4 level2 lfo1; tab-stops: list 1.0in;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 10pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">max_input_nesting_levels=64<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">PHP ve IIS7 hakkında daha fazla bilgi almak i&ccedil;in şu adrese bakın: <a href="http://learn.iis.net/page.aspx/208/fastcgi-with-php/"><span style="color: black;">http://learn.iis.net/page.aspx/208/fastcgi-with-php/</span></a> <o:p></o:p></span></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnfe7a.html?ReturnUrl=%2Fkb%2Finstalling-php-5.x-with-fastcgi-on-windows-server-2008-with-iis7-tr-TR">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/installing-php-5.x-with-fastcgi-on-windows-server-2008-with-iis7-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:25 GMT -->
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/administrator-guide/configuring-ecommerce-scheduled-tasks by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:09:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Configuring Ecommerce Scheduled Tasks - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide" href="../rssa280?containerid=13" />
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide - Comments" href="../rss3e15?commentedoncontainer=13" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt; <a href="index.html">Administrator Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Configuring Ecommerce Scheduled Tasks</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="configuring-ecommerce-scheduled-tasks-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>Ecommerce module automation can be rendered with 5 <a href="scheduled-tasks.html">scheduled tasks</a> that apply to the corresponding hosting space, e.q. serveradmin&rsquo;s or sub-reseller&rsquo;s one. These tasks are:&nbsp; Activate Paid Invoices, Cancel Overdue Invoices, Generate Invoices, Run Payment Queue and Suspend Overdue Invoices. As you may see tasks have self-describing names but some tip-offs should be considered in order to get your ecommerce surface operating in a most convenient and appropriate way.</p>
+<p>To access the Scheduled Tasks, do the following:</p>
+<ol>
+<li>Select <strong>Spaces</strong> in the Account menu. </li>
+<li>Select the <strong>System</strong> space. (If configuring for a reseller, select that reseller's space.) </li>
+<li>Select <strong>Scheduled Tasks</strong> from the Hosting Space menu.</li>
+</ol>
+<p><a name="Section1"></a></p>
+<h4>Activate Paid Invoices Scheduled Task<a name="Activate Paid Invoices"></a></h4>
+<p><a href="../Media/WindowsLiveWriter/ConfiguringEcommerceScheduledTasks_E763/image_2.png"><img style="display: inline; border: 0px;" title="image" src="../Media/WindowsLiveWriter/ConfiguringEcommerceScheduledTasks_E763/image_thumb.png" border="0" alt="image" width="640" height="324" /></a></p>
+<p>This task query ecommerce surface against paid invoices in order to get corresponding services activated, prolonged or renewed. The only single tip-off that should be considered is the recommended schedule for this task: we recommend running this task in the Interval mode for 15 or 20 minutes but you see interval mentioned depends on your hosting business needs though.</p>
+<p><a name="Section2"></a></p>
+<h4>Cancel Overdue Invoices Scheduled Task<a name="Cancel Overdue Invoices"></a></h4>
+<p><a href="../Media/WindowsLiveWriter/ConfiguringEcommerceScheduledTasks_E763/image_6.png"><img style="display: inline; border: 0px;" title="image" src="../Media/WindowsLiveWriter/ConfiguringEcommerceScheduledTasks_E763/image_thumb_2.png" border="0" alt="image" width="640" height="322" /></a></p>
+<p>This task query ecommerce surface against overdue invoices in order to put corresponding services into the Cancelled state. There are some tip-offs you should get into account before schedule this task: Service Cancel Threshold setting value (can be found at Ecommerce Settings -&gt; Currency/Invoice Format/SSL/Automation page) and Invoice Grace Period setting value (can be found at the same page as the previous one). Invoice cancellation date calculates using the following formula: Invoice Overdue Date + Service Cancel Threshold = Invoice Cancellation Date. Recommended schedule for this task is Daily mode. <br />For example: 11/12/2006 + 3 days = 14/12/2006<br />So in the example above all invoices that match 11/12/2006 expire date are cancelled in the meantime (14/12/2006) and corresponding notification will be sent via e-mail.</p>
+<p><a name="Section3"></a></p>
+<h4>Generate Invoices Scheduled Task<a name="Generate Invoices Task"></a></h4>
+<p><a href="../Media/WindowsLiveWriter/ConfiguringEcommerceScheduledTasks_E763/image_8.png"><img style="display: inline; border: 0px;" title="image" src="../Media/WindowsLiveWriter/ConfiguringEcommerceScheduledTasks_E763/image_thumb_3.png" border="0" alt="image" width="640" height="323" /></a></p>
+<p>This task query ecommerce surface against services are about to expire in order to create corresponding invoices for them. There are some tip-offs you should get into account before schedule this task: Service Invoice Threshold setting value (can be found at Ecommerce Settings -&gt; Currency/Invoice Format/SSL/Automation page) and Daily schedule mode. Service expire date calculates using the following formula: Service End Date - Service Invoice Threshold = Date to Invoice the Service. <br />For example: 11/12/2006 - 7 days = 04/12/2006<br />So in the example above all of customer&rsquo;s services that match 11/12/2006 expire date are invoiced in the meantime (04/12/2006) and corresponding notification will be sent via e-mail.</p>
+<p><a name="Section4"></a></p>
+<h4>Run Payment Queue Scheduled Task<a name="Run Payment Queue"></a></h4>
+<p><a href="../Media/WindowsLiveWriter/ConfiguringEcommerceScheduledTasks_E763/image_10.png"><img style="display: inline; border: 0px;" title="image" src="../Media/WindowsLiveWriter/ConfiguringEcommerceScheduledTasks_E763/image_thumb_4.png" border="0" alt="image" width="640" height="326" /></a></p>
+<p>This task query ecommerce surface against unpaid and viable invoices in order to submit a corresponding payment automatically via Credit Card provider configured if customer&rsquo;s CC payment details are available (stored later during checkout via CC).&nbsp; The only single tip-off that should be considered is the recommended schedule for this task: we recommend running this task in the Daily mode but you see schedule mode mentioned depends on your hosting business needs though.</p>
+<p><a name="Section5"></a></p>
+<h4>Suspend Overdue Invoices Scheduled Task<a name="Suspend Overdue Invoices"></a></h4>
+<p><a href="../Media/WindowsLiveWriter/ConfiguringEcommerceScheduledTasks_E763/image_12.png"><img style="display: inline; border: 0px;" title="image" src="../Media/WindowsLiveWriter/ConfiguringEcommerceScheduledTasks_E763/image_thumb_5.png" border="0" alt="image" width="640" height="320" /></a></p>
+<p>This task query ecommerce surface against overdue invoices in order to put corresponding services into the Suspended state. There are some tip-offs you should get into account before schedule this task: Invoice Grace Period setting value (can be found at Ecommerce Settings -&gt; Currency/Invoice Format/SSL/Automation page) and Daily schedule mode. Invoice overdue date calculates using the following formula: Max Invoice Items End Date + Invoice Grace Period = Invoice Overdue Date. Recommended schedule for this task is Daily mode. <br />For example: 11/12/2006 6:52:00 AM (Max Invoice Items End Date) + 3 days = 14/12/2006 6:52:00 PM<br />So in the example above all invoices that match 14/12/2006 6:52:00 PM or about are suspended in the meantime (14/12/2006 6:52:00 PM) and corresponding notification will be sent via e-mail.</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn3cb8.html?ReturnUrl=%2Fadministrator-guide%2Fconfiguring-ecommerce-scheduled-tasks">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/administrator-guide/configuring-ecommerce-scheduled-tasks by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:09:58 GMT -->
+</html>

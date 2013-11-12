@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/iis-6.0-web-server-installation-and-configuration by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:05:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>IIS 6.0 Web Server Installation and Configuration - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>IIS 6.0 Web Server Installation and Configuration</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="iis-8.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h2>Installing Internet Information Services</h2> <p>From IIS distribution you should install at least Web Server, because all WebsitePanel applications are ASP.NET web applications and require IIS to run.  <p>To install Internet Information Services components:  <ul> <li>Open "Control Panel -&gt; Add or Remove Programs"  <li>Click "Add/Remove Windows Components" button  <li>Tick "Application Server" checkbox<br><img src="../Media/Images/iis_206_0_20web_20server_20installation_20and_20configuration/screen1.png" width="344" height="279"> <li>Click "Details..." button  <li>Make sure "ASP.NET" checkbox is ticked.<br><img src="../Media/Images/iis_206_0_20web_20server_20installation_20and_20configuration/screen2.png" width="345" height="264"> <li>Tick "Internet Information Services (IIS)" checkbox and click "Details..." button.  <li>Make sure "Common Files" is selected.<br><img src="../Media/Images/iis_206_0_20web_20server_20installation_20and_20configuration/screen3.png" width="346" height="265"> <li>If you are planning to use Microsoft FTP Server, tick "File Transfer Protocol (FTP) Service" checkbox.  <li>If you are planning to allow your customer use FrontPage Server Extensions (FPSE) make sure "FrontPage 2002 Server Extensions" checkbox is selected.  <li>Tick "Internet Information Services Manager" checkbox. It will allow you managing IIS through MMC snap-in.  <li>If you are planning to allow your customers sending e-mail messages from their scripts tick "SMTP Service" checkbox.  <li>Tick "World Wide Web Service" checkbox and click "Details..." button.<br><img src="../Media/Images/iis_206_0_20web_20server_20installation_20and_20configuration/screen4.png" width="348" height="267"> <li>If you are planning to allow your customers running ASP 3.0 application tick "Active Server Pages" checkbox. Note: ASP 3.0 is not obligatory for WebsitePanel operation.  <li>The most of ASP 3.0 pages use "Server Side Includes" to include code snippets, so it makes sense to tick this checkbox too.  <li>Tick "World Wide Web Service" checkbox.  <li>Click "OK" buttons and return to the root list.</li></ul><a name="Section2"></a> <h2>Configuring IIS Web Services</h2> <ul> <li>Open "Internet Information Services (IIS) Manager" snap-in (Click "Start -&gt; Administrative Tools -&gt; Internet Information Services (IIS) Manager").  <li>Click on "Web Service Extensions" node and ensure that at least "ASP.NET v1.1.4322" is "Allowed". You might also allow "Active Server Pages", "FrontPage Server Extensions 2002" and "Server Side Includes"<br><img alt="screen5.PNG" src="../Media/Images/iis_6_0_web_server_installation_and_configuration/screen5.png" width="459" height="348"> <li>Right-click on "Web Sites" node and select "Properties". This dialog allows specifying properties that will be applied by default for all newly created web sites. Of course, they can be overridden later at any time for individual web sites<br><img src="../Media/Images/iis_206_0_20web_20server_20installation_20and_20configuration/screen6.png" width="324" height="322"> <li>Tick "Enable logging" checkbox and make sure "W3C Extended Log File Format" is selected. Enabling of logging in Web server will provide you with detailed Web bandwidth statistics in WebsitePanel and advanced web statistics in AWStats (see below).  <li>Click "Properties..." button.<br><img src="../Media/Images/iis_206_0_20web_20server_20installation_20and_20configuration/screen7.png" width="324" height="307"> <li>Make sure your "General" settings selection is as on the picture above.  <li>Click "Advanced" tab<br><img src="../Media/Images/iis_206_0_20web_20server_20installation_20and_20configuration/screen8.png" width="324" height="307"> <li>Tick all the checkboxes. Eventually, it will increase the overall size of the produced logs, but it will also give you more detailed advanced reports.  <li>Click "OK" to save settings and close the dialog.  <li>On "Web Sites Properties" dialog you may also click "Documents" tab to specify additional or change existing default documents. If you are planning to provide PHP hosting it makes sense to expand the list with such documents as "index.php", "index.html" and others.  <li>Click "OK" button to save your changes and close "Web Sites Properties" dialog.</li></ul>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnf130.html?ReturnUrl=%2Fkb%2Fiis-6.0-web-server-installation-and-configuration">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/iis-6.0-web-server-installation-and-configuration by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:05:51 GMT -->
+</html>

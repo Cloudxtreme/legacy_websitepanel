@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/preparing-VPS-templates/creating-answer-file-for-sysprep by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:12:45 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Creating Answer File for Sysprep - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Preparing WebsitePanel VPS Templates with Windows Server 2008 " href="../rssef5c?containerid=232" />
+
+<link rel="alternate" type="application/rss+xml" title="Preparing WebsitePanel VPS Templates with Windows Server 2008  - Comments" href="../rss6db5?commentedoncontainer=232" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Preparing VPS Templates</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Creating Answer File for Sysprep</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="creating-answer-file-for-sysprep-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>After running Sysprep utility on Master VPS all user- and computer-specific information will be deleted from the operating system. On the next VPS restart operating system will behave much like a fresh OS in the middle of setup process, i.e. it will run “specialize” and then “oobeSystem” (OOBE – out-of-the-box experience) passes. User will be asked to select computer locale and regional settings, specify computer name and set administrator password. But our goal is to hide this process from VPS customers and specify (“answer”) all these parameters on their behalf. <p>More information about how Windows Setup configuration passes work:<br><a href="http://technet.microsoft.com/en-us/library/cc749307.aspx">http://technet.microsoft.com/en-us/library/cc749307.aspx</a> <p>To automate Windows Setup we provide Sysprep utility with an “answer file” to configure unattended Setup settings for various passes. Answer file represents an XML file with clear and well-documented structure. This file could be conveniently edited in <b>Windows System Image Manager</b> (WSIM) tool that is a part of <b>Windows Automated Installation Kit</b> (WAIK). <p>You can download WAIK from Microsoft Downloads or MSDN Subscription Downloads. We recommend downloading WAIK from MSDN as it perfectly works on 64-bit systems. <p>WAIK ISO from Microsoft Downloads is available at: <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=94bb6e34-d890-4932-81a5-5b50c657de08&amp;DisplayLang=en">http://www.microsoft.com/downloads/details.aspx?FamilyID=94bb6e34-d890-4932-81a5-5b50c657de08&amp;DisplayLang=en</a> <p>WAIK could be installed on both Windows Vista and Windows Server 2008. <p>To unpack ISO file without burning it onto DVD you may use “7Zip” file archiver that is free and available for download here: <a href="http://www.7-zip.org/">http://www.7-zip.org/</a> <p>In order to create an answer file you will also need a copy of install.wim file that is available in “Sources” folder of Windows Server 2008 installation DVD. In order to create a catalog from install.wim image file WSIM must have a write access to the folder where it is located, so copy this file from DVD to some folder on the hard drive (say, “c:\WSIM\Windows Server 2008 x64”). <p>When you start WSIM toll you will see its main window with several panes: <p><a href="../Media/WindowsLiveWriter/CreatingAnswerFileforSysprep_DB40/image_2.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/CreatingAnswerFileforSysprep_DB40/image_thumb.png" width="472" height="376"></a>  <p>The first step is to create a catalog from image file. Select “Tools -&gt; Create Catalog” from the top menu. Select install.wim file and select image to catalog. In our case it is the first option (Windows Server 2008 Standard edition): <p><a href="../Media/WindowsLiveWriter/CreatingAnswerFileforSysprep_DB40/image_4.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/CreatingAnswerFileforSysprep_DB40/image_thumb_1.png" width="254" height="151"></a>  <p>All possible settings that could be included in the answer file are in the tree in “Windows Image” pane: <p><a href="../Media/WindowsLiveWriter/CreatingAnswerFileforSysprep_DB40/image_6.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/CreatingAnswerFileforSysprep_DB40/image_thumb_2.png" width="314" height="305"></a>  <p>The full documentation for Windows Setup configuration settings could be found here: <a href="http://technet.microsoft.com/en-us/library/cc749204.aspx">http://technet.microsoft.com/en-us/library/cc749204.aspx</a> <p>All settings can be applied during various passes of the Windows Setup process. More information about Windows Setup configuration passes:<br><a href="http://technet.microsoft.com/en-us/library/cc766245.aspx">http://technet.microsoft.com/en-us/library/cc766245.aspx</a> <p>Strictly speaking, WSIM tool is just a visual editor for editing XML files with tree-view representation. For instance, sample XML answer file that can be downloaded from here [link TBD]. Specifying settings for computer name, administrator password and three network adapters looks in WSIM as following: <p><a href="../Media/WindowsLiveWriter/CreatingAnswerFileforSysprep_DB40/image_8.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/CreatingAnswerFileforSysprep_DB40/image_thumb_3.png" width="469" height="316"></a>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn8358.html?ReturnUrl=%2Fpreparing-VPS-templates%2Fcreating-answer-file-for-sysprep">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/preparing-VPS-templates/creating-answer-file-for-sysprep by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:08 GMT -->
+</html>

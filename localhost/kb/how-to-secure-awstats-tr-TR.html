@@ -1,0 +1,184 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/how-to-secure-awstats-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>AWStats uygulamasını g&#252;venceye alma - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>AWStats uygulamasını g&#252;venceye alma</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="how-to-secure-awstats.html">en-US</a></li></ul>
+    </div>
+</div>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><a href="http://www.websitepanel.net/documentation"><span style="color: black;">Belgeler</span></a> &gt;<a href="http://www.websitepanel.net/kb/index"><span style="color: black;">Bilgi Bankası</span></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 1;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 17pt; mso-font-kerning: 18.0pt;" lang="TR">AWStats uygulamasını g&uuml;venceye alma<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">AWStats.Viewer</span></b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">, AWStats CGI komut dizisine g&uuml;venli erişim sağlayan bir ara&ccedil;tır. AWStats Viewer kaynak koduyla birlikte gelir ve diğer şirketlere ait bir programın WebsitePanel Enterprise Server ile nasıl entegre edileceğine iyi bir &ouml;rnektir.<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">AWStats Viewer, "WebsitePanelAuthenticationProvider" ve "ConfigFileAuthenticationProvider" hazır uygulamaları ile birlikte verilir. Diğer kullanıcı kimlik denetimi mekanizmaları, &ouml;zel AuthenticationProvider sınıfları uygulanarak eklenebilir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section1"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">Sistem Gereksinimleri<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l0 level1 lfo1;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Internet Information Services 6.0 <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l0 level1 lfo1;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">AWStats 6.x kurulu ve yapılandırılmış <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.25in; mso-list: l0 level1 lfo1;" class="MsoNormal"><span style="font-family: Symbol; color: black; font-size: 9.5pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol;" lang="TR"><span style="mso-list: Ignore;">&middot;<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Microsoft.NET Framework 2.0 <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section2"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">Kurulum ve Ayarlar<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">1. AWStats.Viewer 2.0.1 dağıtım dosyasını SourceForge sitesinden y&uuml;kleyin: <a title="http://sourceforge.net/projects/websitepanel/files/Releases/WebsitePanel/" href="http://sourceforge.net/projects/websitepanel/files/Releases/WebsitePanel/"><span style="color: black;">http://sourceforge.net/projects/websitepanel/files/Releases/WebsitePanel/</span></a>. T&uuml;m WSP s&uuml;r&uuml;mlerinde Ara&ccedil;lar klas&ouml;r&uuml;nde yer alır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">2. "Oluştur" klas&ouml;r&uuml;n&uuml; AWStats "wwwroot" klas&ouml;r&uuml;ne &ccedil;ıkarın, b&ouml;ylece uygulama "default.aspx" sayfası ve "bin" klas&ouml;r&uuml; "wwwroot" klas&ouml;r&uuml;nde yer alır. &Ouml;rneğin, AWStats uygulaması "c:\AWStats" klas&ouml;r&uuml;nde kurulu ve "wwwroot" yolu "c:\AWStats\wwwroot" şeklindeyse, "default.aspx" yolu "c:\AWStats\wwwroot\default.aspx" şeklinde olacaktır <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">3. IIS Y&ouml;neticisi eklentisini ve AWStats web sitesi &ouml;zellikler penceresini a&ccedil;ın (veya sanal dizin). <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">4. "ASP.NET" sekmesinde .NET Framework "2.0.50727" s&uuml;r&uuml;m&uuml;n&uuml; se&ccedil;in ve "Ana Dizin" (veya "Sanal Dizin") sekmesinde ASP.NET 2.0 uygulamaları i&ccedil;in doğru Uygulama Havuzunu belirleyin (DefaultAppPool &ouml;ğesinden farklı). Değişiklikleri kaydetmek i&ccedil;in "Tamam" d&uuml;ğmesini tıklatın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">5. "web.config" uygulamasını a&ccedil;ın ve doğru uygulama ayarlarını belirleyin ("&lt;appSettings&gt;" &ouml;ğesi i&ccedil;indeki &ouml;ğeler): <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">AWStats.URL - "awstats.pl" Perl komut dizisi URL'si. Mutlak veya g&ouml;reli URL olabilir.<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">AWStats.Username - Windows Entegre G&uuml;venlik devrede iken oturum a&ccedil;mak i&ccedil;in kullanılan Windows hesabı kullanıcı adı. Eğer awstats.pl anonim ziyaret&ccedil;iye a&ccedil;ıksa ve Windows kimlik denetimi gerektirmiyorsa, bu ayarı boş bırakabilirsiniz.<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">AWStats.Password - Yukarıdaki hesabın şifresi.<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">AWStats.AuthenticationProvider - Kullanıcı kimlik denetimini ger&ccedil;ekleştiren tam yetkili t&uuml;r adı (Smbsaas.AWStats.Viewer.AuthenticationProvider &ouml;ğesinden alınan sınır). <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section3"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">Kimlik Denetimi Sağlayıcılar<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">AWStats Viewer, iki hazır sağlayıcı ile birlikte gelir: <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 3;" class="MsoNormal"><a name="Section4"></a><span style="font-family: 'Times New Roman','serif'; color: black;" lang="TR"><span style="font-size: small;" size="3">1. "WebsitePanelAuthenticationProvider" sağlayıcı<o:p></o:p></span></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">A&ccedil;ıklama:</span></b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"> <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Sağlayıcı, WSP Enterprise Server ile kullanıcı adı/şifre kullanıcı kimlik denetimini m&uuml;mk&uuml;n kılar.<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Yetkili adı:</span></b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"> <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">"Smbsaas.AWStats.Viewer.WebsitePanelAuthenticationProvider, AWStats.Viewer"<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Ayarlar:</span></b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"> <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">"AWStats.WebsitePanelAuthenticationProvider.EnterpriseServer" - WSP Enterprise Server URL'si, &ouml;rneğin "<a href="../EnterpriseServer.html"><span style="color: black;">http://localhost/EnterpriseServer</span></a>" <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">web.config dosyasına Enterprise Server adresini koyduğunuzda, eğer varsayılan 80 değerini kullanmıyorsanız port numarasını koyduğunuzdan emin olun. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">&Ouml;rnek: <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">&lt;add key="AWStats.DotNetPanelAuthenticationProvider.EnterpriseServer" value="http://1.2.3.4:9002"/&gt;<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 3;" class="MsoNormal"><a name="Section5"></a><span style="font-family: 'Times New Roman','serif'; color: black;" lang="TR"><span style="font-size: small;" size="3">2. "ConfigFileAuthenticationProvider" sağlayıcı<o:p></o:p></span></span></p>
+<p><b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: TR; mso-fareast-language: TR; mso-bidi-language: AR-SA;" lang="TR"><br style="page-break-before: always;" clear="all" /></span></b></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">A&ccedil;ıklama:</span></b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"> <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Sağlayıcı, ilgili etki alanı awstats.&lt;some-site&gt;.conf dosyasında saklanan kullanıcı adı/şifreler ile kullanıcı kimlik denetimi yapar. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Sağlayıcı, uygun .conf dosyasında aşağıdaki yapılandırma ayarını arar: <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">SiteUsers=user1=psw1;user2=psw2;... <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">burada "user1=psw1;user2=psw2", etki alanı istatistiklerine erişim izni verilen kullanıcı/şifre &ccedil;iftleridir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Yetkili adı:</span></b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"> <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">"Smbsaas.AWStats.Viewer.ConfigFileAuthenticationProvider, AWStats.Viewer"<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Ayarlar:</span></b><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"> <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">"AWStats.ConfigFileAuthenticationProvider.DataFolder" - etki alanı awstats.&lt;some-site&gt;.conf dosyalarının saklandığı klas&ouml;r&uuml;n yolu. Başlangı&ccedil;ta "~" bulunan bir g&ouml;reli yol veya disk &uuml;zerindeki mutlak yol olabilir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section6"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">AWStats Uygulamasını G&uuml;vene Alma<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Bu noktada t&uuml;m "awstats.pl" Perl komut satırı istekleri AWStats.Viewer uygulamasından ge&ccedil;er<br />"awstats.pl" komut dosyasına doğrudan erişim reddedilmelidir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">"awstats.pl" g&uuml;vene alma i&ccedil;in iki y&ouml;ntem tavsiye edilir: <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">1. "Anonim Erişim" &ouml;ğesini devre dışı bırakın ve "Windows Entegre G&uuml;venlik" &ouml;ğesini etkinleştirin. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Bunun i&ccedil;in IIS Y&ouml;neticisi eklentisini a&ccedil;ın ve "awstats.pl" dosyası &ouml;zellikler penceresini a&ccedil;ın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">"Dosya G&uuml;venliği" sekmesinde "D&uuml;zenle..." d&uuml;ğmesini "Kimlik Denetimi ve Erişim Kontrol&uuml;" grubunda tıklatın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">"Anonim Erişimi Etkinleştir" onay kutusunun işaretini kaldırın ve "Windows Entegre G&uuml;venlik" &ouml;ğesini işaretleyin. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Değişiklikleri kaydetmek i&ccedil;in "Tamam" d&uuml;ğmesini tıklatın.<br />Anonim erişim devre dışı bırakıldıktan sonra tarayıcı penceresinde "awstats.pl" a&ccedil;ıldığında, Windows hesabı kimlik bilgileri istenecektir. AWStats web sitesinin (veya sanal dizin) &ccedil;alıştığı anonim kullanıcı kimlik bilgileri sağlanmalıdır.<br />Eğer "awstats.pl" komut satırı anonim ziyaret&ccedil;iler tarafından kullanılamıyorsa, "AWStats.Username" ve "AWStats.Password" ayarları (yukarıya bakın) uygulama web.config uygulamasında belirtilmelidir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">2. Yalnızca yerel IP adreslerinden "awstats.pl" erişimi verin. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Bunun i&ccedil;in IIS Y&ouml;neticisi eklentisini a&ccedil;ın ve "awstats.pl" dosyası &ouml;zellikler penceresini a&ccedil;ın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">"Dosya G&uuml;venliği" sekmesinde "D&uuml;zenle..." d&uuml;ğmesini "IP adresi ve etki alanı kısıtlamaları" grubunda tıklatın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">"Reddedilen erişim" radyo butonunu işaretleyin ve "127.0.0.1" (veya başka yerel IP) &ouml;ğesini izin verilen IP adresleri listesine ekleyin. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section7"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">Otomatik Oturum A&ccedil;ma Modu<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">AWStats.Viewer, WSP entegrasyonunda son derece uygun olan otomatik oturum a&ccedil;ma modunu destekler. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Otomatik oturum a&ccedil;ma modunu kullanmak i&ccedil;in etki alanı, kullanıcı adı ve şifreyi istek URL'sinde sağlayın: <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">http://stats-web-site.com/default.aspx?domain=&lt;domain&gt;&amp;username=&lt;username&gt;&amp;password=&lt;password&gt; <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">burada: <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">default.aspx - AWStats.Viewer varsayılan sayfası <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">&lt;domain&gt; - istatistiklerine bakmak istediğiniz etki alanı <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">&lt;username&gt; - kullanıcı adı <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">&lt;password&gt; - şifre <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section8"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">S&uuml;r&uuml;m A&ccedil;ıklamaları<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">1. "awstats.csproj" projesini a&ccedil;mak ve &ccedil;alışmak i&ccedil;in Microsoft Visual Studio.NET 2005 ve "Web Uygulama Projeleri" eklentisi kurulu olmalıdır (<a href="http://msdn.microsoft.com/asp.net/reference/infrastructure/wap/default.aspx"><span style="color: black;">http://msdn.microsoft.com/asp.net/reference/infrastructure/wap/default.aspx</span></a>) <o:p></o:p></span></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOne0ed.html?ReturnUrl=%2Fkb%2Fhow-to-secure-awstats-tr-TR">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/how-to-secure-awstats-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:24 GMT -->
+</html>

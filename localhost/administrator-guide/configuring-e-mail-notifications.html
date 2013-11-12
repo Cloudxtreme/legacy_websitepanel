@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/administrator-guide/configuring-e-mail-notifications by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:10:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Configuring E-mail Notifications - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide" href="../rssa280?containerid=13" />
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide - Comments" href="../rss3e15?commentedoncontainer=13" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt; <a href="index.html">Administrator Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Configuring E-mail Notifications</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="configuring-e-mail-notifications-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>Mail templates are specified on storefront settings level. They will be applied to all reseller's storefront notifications unless explicitly overridden.<br>The following templates can be customized in Ecommerce:  <ul> <li>Activate Service Notification  <li>Suspend Service Notification  <li>Cancel Service Notification  <li>Payment Received Notification  <li>New Invoice Notification</li></ul> <p><u>Common Template Engine Notes</u>  <ul> <li>WSP uses syntax of Ader Template engine to render Activate Service, Suspend Service, Cancel Service, Payment Received and Invoice Summary templates. <li>If you need to render # (sharp) symbol, for example HTML color value, it should be written as ## (double sharp), because # is reserved symbol in template engine.  <li>All template engine processing tags ("ad:if", "ad:foreach", etc.) should be well-formed:  <ul> <li>Have closing tag for each corresponding opening tag  <li>All tag attributes should be surrounded with double quotes.  <li>All tag names should be written in lower case.</li></ul> <li>More information about Ader Template engine syntax can be found at: <a href="http://www.adersoftware.com/index.cfm?page=templateEngine2">http://www.adersoftware.com/index.cfm?page=templateEngine2</a></li></ul><a name="Section1"></a> <h3>New Invoice Notification<a name="New Invoice Notification"></a></h3> <p><a href="../Media/WindowsLiveWriter/ConfiguringEmailNotifications_E9F8/image_2.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/ConfiguringEmailNotifications_E9F8/image_thumb.png" width="451" height="480"></a>  <p>Set or update “From”, “CC”, “Subject” and both HTML and Plain Text templates and then click “Save” button.  <p><em>Template Variables<br></em><u>#Customer#</u> - service customer account. It is a <em>&lt;key field&gt;=&lt;field value&gt;</em> dictionary with the following key fields available:  <ul> <li> <p>Username (string) </p> <li> <p>Password (string) </p> <li> <p>Email (string) </p> <li> <p>SecondaryEmail (string) </p> <li> <p>FirstName (string) </p> <li> <p>LastName (string) </p> <li> <p>CompanyName (string) </p> <li> <p>Address (string) </p> <li> <p>City (string) </p> <li> <p>Country (string) </p> <li> <p>State (string) </p> <li> <p>Zip (string) </p> <li> <p>PrimaryPhone (string) </p> <li> <p>SecondaryPhone (string) </p> <li> <p>Fax (string) </p> <li> <p>InstantMessenger (string)&nbsp; </p></li></ul> <p>In templates it can be used as following:  <p>Hello, #Customer["FirstName"]#<br>Your registered e-mail address is: #Customer["Email"]#  <p><u>#Tax#</u> - invoice tax if applicable. It is a complex structure with the following available fields:  <ul> <li> <p>TaxationId (int) </p> <li> <p>ResellerId (int) </p> <li> <p>Country (string) </p> <li> <p>State (string) </p> <li> <p>Description (string) </p> <li> <p>Type (TaxationType enum) can be Fixed = 1 or Percentage = 2 </p> <li> <p>Amount (decimal) </p> <li> <p>Active (bool) </p></li></ul> <p>In templates it can be used as following:  <p>#Tax.Description#: #Tax.Amount.ToString("0.00")#&nbsp; <p><u>#Invoice#</u> - customer's invoice. It is a complex structure with the following fields available:  <ul> <li> <p>InvoiceId (int) </p> <li> <p>UserId (int) </p> <li> <p>Username (string) </p> <li> <p>ResellerId (int) </p> <li> <p>Created (DateTime) </p> <li> <p>DueDate (DateTime) </p> <li> <p>InvoiceNumber (string) </p> <li> <p>Total (decimal) </p> <li> <p>SubTotal (decimal) </p> <li> <p>TaxationId (int) </p> <li> <p>TaxAmount (decimal) </p> <li> <p>Currency (string) </p> <li> <p>Paid (bool) </p></li></ul> <p>In templates it can be used as following:  <p>Hello, #Invoice.Username#<br>Your invoice number is: Invoice ## #Invoice.InvoiceId# and total is: #Invoice.Total.ToString("0.00")#  <p><u>#InvoiceLines#</u> - the collection of invoice items for the invoice. Each item in the collection is a complex structure with the following fields:  <ul> <li> <p>ItemId (int) </p> <li> <p>InvoiceId (int) </p> <li> <p>ServiceId (int) </p> <li> <p>ItemName (string) </p> <li> <p>TypeName (string) </p> <li> <p>Quantity (int) </p> <li> <p>Total (decimal) </p> <li> <p>SubTotal (decimal) </p> <li> <p>UnitPrice (decimal) </p> <li> <p>Processed (bool) </p> <li> <p>TcoId (string) </p></li></ul> <p>In the templates collection can be iterated as following:  <p>You have the following invoice items:<br>&lt;ad:foreach collection="#InvoiceLines#" var="Line" index="i"&gt; <br>&nbsp;&nbsp; &lt;h2&gt;#Line.ItemName# - #Line.TypeName#&lt;/h2&gt; <br>&lt;/ad:foreach&gt;  <p><a name="Section2"></a> <h3>Payment Received Notification<a name="Payment Received Notification"></a></h3> <p><a href="../Media/WindowsLiveWriter/ConfiguringEmailNotifications_E9F8/image_4.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/ConfiguringEmailNotifications_E9F8/image_thumb_1.png" width="447" height="480"></a>  <p>Set or update “From”, “CC”, “Subject” and both HTML and Plain Text templates and then click “Save” button.<br><em>Template Variables<br></em><br><u>#Customer#</u> - service customer account. It is a <em>&lt;key field&gt;=&lt;field value&gt;</em> dictionary with the following key fields available:  <ul> <li> <p><u>Username (string) </u></p> <li> <p><u>Password (string) </u></p> <li> <p><u>Email (string) </u></p> <li> <p><u>SecondaryEmail (string) </u></p> <li> <p><u>FirstName (string) </u></p> <li> <p><u>LastName (string)</u></p> <li> <p><u>CompanyName (string) </u></p> <li> <p><u>Address (string) </u></p> <li> <p><u>City (string) </u></p> <li> <p><u>Country (string) </u></p> <li> <p><u>State (string) </u></p> <li> <p><u>Zip (string) </u></p> <li> <p><u>PrimaryPhone (string) </u></p> <li> <p><u>SecondaryPhone (string) </u></p> <li> <p><u>Fax (string) </u></p> <li> <p><u>InstantMessenger (string) </u></p></li></ul> <p>In templates it can be used as following:  <p>Hello, #Customer["FirstName"]#<br>Your registered e-mail address is: #Customer["Email"]#  <p><u>#Payment#</u> -&nbsp; customer's payment information. It is a complex structure with the following available fields:  <ul> <li> <p>PaymentId (int) </p> <li> <p>InvoiceId (int) </p> <li> <p>ResellerId (int) </p> <li> <p>UserId (int) </p> <li> <p>Username (string) </p> <li> <p>TransactionId (string) </p> <li> <p>Total (decimal) </p> <li> <p>Currency (string) </p> <li> <p>Created (DateTime) </p> <li> <p>MethodName (string) </p> <li> <p>PluginId (int) </p> <li> <p>ProviderName (string) </p> <li> <p>StatusId (int) </p> <li> <p>Status (TransactionStatus enum) can be Pending = 0, Approved = 1, Declined = 2 </p></li></ul> <p>In templates it can be used as following:  <p>Hello, #Payment.Username#,<br>Your payment transaction id is #Payment.TransactionId#. Please preserve it for future references.  <p><a name="Section3"></a> <h3>Activate / Suspend / Cancel Service Notification<a name="Service Notifications"></a></h3> <p><a href="../Media/WindowsLiveWriter/ConfiguringEmailNotifications_E9F8/image_6.png"><img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/ConfiguringEmailNotifications_E9F8/image_thumb_2.png" width="447" height="480"></a>  <p>Set or update “From”, “CC”, “Subject” and both HTML and Plain Text templates and then click “Save” button.<br><em>Template Variables<br></em><br><u>#Customer#</u> - service customer account. It is a <em>&lt;key field&gt;=&lt;field value&gt;</em> dictionary with the following key fields available:  <ul> <li> <p><u>Username (string) </u></p> <li> <p><u>Password (string) </u></p> <li> <p><u>Email (string) </u></p> <li> <p><u>SecondaryEmail (string) </u></p> <li> <p><u>FirstName (string) </u></p> <li> <p><u>LastName (string)</u></p> <li> <p><u>CompanyName (string) </u></p> <li> <p><u>Address (string) </u></p> <li> <p><u>City (string) </u></p> <li> <p><u>Country (string) </u></p> <li> <p><u>State (string) </u></p> <li> <p><u>Zip (string) </u></p> <li> <p><u>PrimaryPhone (string) </u></p> <li> <p><u>SecondaryPhone (string) </u></p> <li> <p><u>Fax (string) </u></p> <li> <p><u>InstantMessenger (string) </u></p></li></ul> <p>In templates it can be used as following:  <p>Hello, #Customer["FirstName"]#<br>Your registered e-mail address is: #Customer["Email"]#&nbsp;&nbsp; <p><u>#Service#</u> - customer's service. It is a complex structure with the following fields available:  <ul> <li> <p>ServiceId (int) </p> <li> <p>ResellerId (int) </p> <li> <p>ParentId (int) </p> <li> <p>ServiceName (string) </p> <li> <p>TypeId (int) </p> <li> <p>Username (string) </p> <li> <p>UserId (int) </p> <li> <p>Status (ServiceStatus enum) can be Ordered = 0, Active = 1, Suspended = 2, Cancelled = 3 </p> <li> <p>Created (DateTime) </p> <li> <p>Modified (DateTime) </p></li></ul> <p>In templates it can be used as following:  <p>Hello, #Service.Username#<br>Your service #Service.ServiceName # status is #Service.Status.ToString()#  
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOncbe0.html?ReturnUrl=%2Fadministrator-guide%2Fconfiguring-e-mail-notifications">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/administrator-guide/configuring-e-mail-notifications by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:10:59 GMT -->
+</html>

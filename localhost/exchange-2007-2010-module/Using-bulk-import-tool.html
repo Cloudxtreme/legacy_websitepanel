@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/Using-bulk-import-tool by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:11:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Using bulk import tool - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module" href="../rss68ec?containerid=101" />
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module - Comments" href="../rssba67?commentedoncontainer=101" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Exchange 2007/2010 Modules</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Using bulk import tool</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="using-bulk-import-tool-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>Bulk Import Tool helps you to create Exchange mailboxes, Exchange contacts and AD users from the input CSV file. This tool creates objects in Active Directory, Exchange and WSP.  <p>Note that bulk import tool's behaviour is connected to the internal WSP Enterprise Server SQL database structure. While Enterprise Server database structure may be changed from version to version, ensure you get tool version compatible with your current WSP version.  <p><strong>Setup instructions:</strong> <p>1. Create new folder on the server with Enterprise Server component installed (e.g. "BulkImport")  <p>2. Unpack attached zip to the new folder.  <p>3. Open "WSP.EnterpriseBulkImport.exe.config" using notepad and edit the following settings:  <p>&nbsp;&nbsp; a. ES.WebService - url of the Enterprise Server web service (e.g. "<a href="http://127.0.0.1:9002/">http://127.0.0.1:9002/</a>"). Try to open this url in the browser before to avoid errors.  <p>&nbsp;&nbsp; b. ES.Username - username of the administrator account (e.g. "serveradmin")  <p>&nbsp;&nbsp; c. ES.Password - password of the administrator account (e.g. "password")  <p>&nbsp;&nbsp; d. ConnectionString - ES database connection string. You can copy connection string from "installer.exe.config" located in the "c:\Program Files\SMB SAAS Systems\WebsitePanel Installer\" folder:  <p>&lt;?xml version="1.0" encoding="utf-8" ?&gt;  <p>&lt;installer&gt;&nbsp;&nbsp; <p>&lt;components&gt;  <p>&lt;component id="xxx"&gt;  <p>&nbsp;&nbsp; &lt;settings&gt;  <p>&nbsp;&nbsp; ...  <p>&nbsp;&nbsp; &lt;add key="ComponentName" value="Enterprise Server" /&gt;  <p>&nbsp;&nbsp; &lt;add key="ConnectionString" value="server=(local)\SQLExpress;database=WSPEnterpriseServer;uid=WSPEnterpriseServer;pwd=nfwfakmn0z7yl4hlrctm;" /  <p>...  <p>&nbsp;&nbsp; &lt;/settings&gt;  <p>&lt;/component&gt;  <p>&lt;/components&gt;  <p>&lt;/installer&gt;  <p><strong>Import instructions:</strong> <p>1. Create new Hosted organization where new mailboxes and contacts to be created (e.g. organization name "Test Organization", organization id "test")  <p>2. Open "WSP.EnterpriseBulkImport.exe.config" using notepad and edit the following settings:  <p>&nbsp;&nbsp; a. InputFile - name of the csv file (e.g. "test.csv"). Csv file format should be the same as "test.csv" in the attached zip!!!  <p>&nbsp;&nbsp; b.TargetOrganization - id of the organization where new mailboxes to be created (e.g. "test")  <p>3. <strong>Make full backup of WSP Enterprise Server database!</strong> <p>4. Run "WSP.EnterpriseBulkImport.exe" tool  <p>5. Check is imported objects appear in WSP  <p>6. Repeat 2-5 for each organization.  <p>Link to download bulk import tool: <a href="https://www.dotnetpanel.com/downloads/?CategoryID=13">https://www.dotnetpanel.com/downloads/?CategoryID=13</a> [TBD]</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn91ed.html?ReturnUrl=%2Fexchange-2007-2010-module%2FUsing-bulk-import-tool">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/Using-bulk-import-tool by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:11:41 GMT -->
+</html>

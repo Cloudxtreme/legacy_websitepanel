@@ -1,0 +1,120 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/blackberry-module/wsp-hosted-blackberry-solution-installation-tasks by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:00:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>WSP Hosted BlackBerry Solution Installation Tasks - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="BlackBerry Module" href="../rss60c1?containerid=92" />
+
+<link rel="alternate" type="application/rss+xml" title="BlackBerry Module - Comments" href="../rss5d4b?commentedoncontainer=92" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">BlackBerry Module</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>WSP Hosted BlackBerry Solution Installation Tasks</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="wsp-hosted-blackberry-solution-installation-tasks-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h2>BES versions</h2> <p>Note that some subsections are applicable only specific BES version provider. In this case it is marked, for example - "Adding permissions at BlackBerry level (applicable to BES 4.1 provider)". Other subsections are applicable to every BES version provider.  <p><a name="Section2"></a> <h2>WSP Server account requirements</h2> <p>WSP Server component for BlackBerry provisioning should be deployed on the same server where BlackBerry Enterprise Server User Administration Tool <strong>client</strong> is deployed.  <p>WSP Server account must be the <strong>domain</strong> <strong>and not local</strong> computer account.  <p><strong>Adding permissions at BlackBerry level (applicable to BES 4.1 provider).</strong>  <p>Open BlackBerry manager &gt; BlackBerry Domain &gt; Role Administration &gt; rim_db_admin_enterprise &gt; then right-click &gt; press "Add Administrators" &gt; center WSP Server account&nbsp; in DOMAIN\username form. Finally WSP Server account permissions at BlackBerry level should look like on this picture:  <p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image006.jpg" src="../Media/Images/dnp_hosted_blackberry_solution_installation_tasks/image006.png" width="623" height="181">  <p><a name="Section3"></a> <h2>Setting up Active Directory Settings</h2> <p>Active Directory Settings for server with Hosted BlackBerry module should be the same as for the server with Hosted Organizations module.  <p><strong>Security mode.</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Create Active Directory Accounts  <p><strong>Authentication Type.</strong>&nbsp;&nbsp;&nbsp; None  <p><strong>Root domain.</strong>&nbsp;&nbsp;&nbsp; Your AD domain DNS name.  <p><strong>Username and password.</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Stay those fields empty.  <p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image001.jpg" src="../Media/Images/dnp_hosted_blackberry_solution_installation_tasks/image001.png" width="459" height="252">  <p><a name="Section4"></a> <p><a name="Section5"></a> <h2>Setting up Hosted BlackBerry Service</h2> <p>Add BlackBerry service.  <p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image002.jpg" src="../Media/Images/dnp_hosted_blackberry_solution_installation_tasks/image002.png" width="379" height="765">  <p><strong>Specify the following service settings (applicable to BES 4.1 provider):</strong>  <ul> <li><strong>BESUserAdminClient.exe utility path.</strong> Path to BlackBerry Enterprise Server User Administration Tool client (BESUserAdminClient.exe) file.</li></ul> <ul> <li><strong>Password.</strong> Password that the BlackBerry Enterprise Server User Administration Tool client uses to authenticate with the BlackBerry Enterprise Server User Administration Tool service (entered during BESUserAdminService.exe deployment).</li></ul> <ul> <li><strong>BlackBerry Enterprise Server.</strong> BlackBerry Enterprise Server name (NETBIOS or hostname, not FQDN).</li></ul> <ul> <li><strong>Enterprise Server User Administration Tool service.</strong> BlackBerry Enterprise Server User Administration Tool service computer name (fill if the BlackBerry Enterprise Server User Administration Tool service and the BlackBerry Enterprise Server User Administration Tool client do not run on the same computer, otherwise leave blank). </li></ul> <p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image003.jpg" src="../Media/Images/dnp_hosted_blackberry_solution_installation_tasks/image003.png" width="437" height="301">  <p><strong>Specify the following service settings (applicable to BES 5.0 provider):</strong>  <ul> <li><strong>BESUserAdminClient.exe utility path.</strong> Path to BlackBerry Enterprise Server User Administration Tool client (BESUserAdminClient.exe) file.</li></ul> <ul> <li><strong>Authentication user name.</strong> Name of account in BlackBerry Administration Service used by WSP to call BlackBerry Administration Service with BESUserAdminClient.exe (currently tested only using BAS, not AD authantication).</li></ul> <ul> <li><strong>Authentication</strong> <strong>password.</strong> Password for account from previous field.</li></ul> <ul> <li><strong>BlackBerry Enterprise Server instance.</strong> BlackBerry Enterprise Server instance name (usually the same as BES server name you get from hostname command).</li></ul> <p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="bb5.jpg" src="../Media/Images/dnp_hosted_blackberry_solution_installation_tasks/bb5.png" width="450" height="350">  <p><a name="Section6"></a> <h2>Updating Virtual Server</h2> <p>Update Virtual Server that you are using for Exchange Hosting Plans by adding BlackBerry service.  <p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image004.jpg" src="../Media/Images/dnp_hosted_blackberry_solution_installation_tasks/image004.png" width="414" height="518">  <p><a name="Section7"></a> <h2>Create Hosting Plans or/and Hosting Add-ons</h2> <p><img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" border="0" alt="image005.jpg" src="../Media/Images/dnp_hosted_blackberry_solution_installation_tasks/image005.png" width="421" height="60">  <p><a name="Section8"></a> <h2>Testing BlackBerry module</h2> <ul> <li>Create a new Hosting Space with BlackBerry service or extend the existing Hosting Space by adding BlackBerry add-on. </li></ul> <ul> <li>Create a new Hosted Organization and a new mailbox in the new Hosting Space.</li></ul> <ul> <li>Create a new BlackBerry user and ensure that it appears in both Hosted Organization and BlackBerry Manager management tool on BlackBerry server.</li></ul><a name="Section9"></a> <h2>Importing existing BlackBerry users</h2> <p>To import existing Blackberry users into WebsitePanel one-by-one use the following SQL script. Just type primary email address of the account in the @Email variable and run the script against WSPEnterpriseServer database. Please note that account should be registered in WebsitePanel as Exchange mailbox. <pre class="csharpcode">DECLARE @Email nvarchar(400) 
+SET @Email = <span class="str"><a href="mailto:'test@test.com'">'test@test.com'</a></span>   
+DECLARE @AccountID <span class="kwrd">int</span> 
+SELECT @AccountId = AccountID FROM dbo.ExchangeAccounts WHERE LOWER(PrimaryEmailAddress) = LOWER(@Email) 
+INSERT INTO 
+      dbo.BlackBerryUsers 
+      (            
+       AccountID, 
+       CreatedDate, 
+       ModifiedDate) 
+VALUES 
+(           
+      @AccountID, 
+      getdate(), 
+      getdate() 
+)    </pre>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn1566.html?ReturnUrl=%2Fblackberry-module%2Fwsp-hosted-blackberry-solution-installation-tasks">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/blackberry-module/wsp-hosted-blackberry-solution-installation-tasks by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:00:57 GMT -->
+</html>

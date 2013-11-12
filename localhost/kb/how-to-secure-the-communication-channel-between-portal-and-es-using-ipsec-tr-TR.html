@@ -1,0 +1,137 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/how-to-secure-the-communication-channel-between-portal-and-es-using-ipsec-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>IPSec kullanarak Portal ile ES arasındaki iletişim kanalını g&#252;venceye alma - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>IPSec kullanarak Portal ile ES arasındaki iletişim kanalını g&#252;venceye alma</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="how-to-secure-the-communication-channel-between-portal-and-es-using-ipsec.html">en-US</a></li></ul>
+    </div>
+</div>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><a href="http://www.websitepanel.net/documentation"><span style="color: black;">Belgeler</span></a> &gt;<a href="http://www.websitepanel.net/kb/index"><span style="color: black;">Bilgi Bankası</span></a><o:p></o:p></span></p>
+<h1 style="margin: 0in 0in 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 17pt;" lang="TR">IPSec kullanarak Portal ile ES arasındaki iletişim kanalını g&uuml;venceye alma<o:p></o:p></span></h1>
+<p style="line-height: normal; margin-bottom: 0pt;"><span><strong>&Ouml;n Paylaşımlı Anahtar (PSK) Kimlik Denetimi Y&ouml;ntemiyle IPSec kullanarak Portal ile ES arasındaki iletişim kanalını g&uuml;venceye alma:</strong> <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28.7pt; mso-list: l0 level1 lfo1; tab-stops: list .5in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">1.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Yerel Bilgisayar IP G&uuml;venlik İlkeleri filtre listesine yeni filtre ekleyin: <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 56pt; mso-list: l0 level2 lfo1; tab-stops: list 57.4pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">1.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Aynalama = EVET <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 56pt; mso-list: l0 level2 lfo1; tab-stops: list 37.1pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">2.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Protokol = TCP <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 56pt; mso-list: l0 level2 lfo1; tab-stops: list 37.1pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">3.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Kaynak Port = T&Uuml;M&Uuml; <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 56pt; mso-list: l0 level2 lfo1; tab-stops: list 37.1pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">4.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Hedef Port = 9002 (veya ES'ye atanmış başka port) <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 56pt; mso-list: l0 level2 lfo1; tab-stops: list 37.1pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">5.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Kaynak Adres = T&Uuml;M&Uuml; (veya Portal IP Adresi veya ES IP Adresi) <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 56pt; mso-list: l0 level2 lfo1; tab-stops: list 37.1pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">6.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Hedef Adres = IP Adresim <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28.7pt; mso-list: l0 level1 lfo1; tab-stops: list .5in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">2.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Yerel Bilgisayar IP G&uuml;venlik İlkeleri işlem filtre listesine yeni filtre işlemi ekleyin: <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 51.8pt; mso-list: l0 level2 lfo1; tab-stops: list 53.9pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">1.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">G&uuml;venlik Y&ouml;ntemleri = G&uuml;venlik M&uuml;zakeresi <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 51.8pt; mso-list: l0 level2 lfo1; tab-stops: list 53.9pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">2.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">T&uuml;r = Şifreleme ve T&uuml;mleştirme <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 51.8pt; mso-list: l0 level2 lfo1; tab-stops: list 53.9pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">3.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">AH T&uuml;mleştirme = Yok <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 51.8pt; mso-list: l0 level2 lfo1; tab-stops: list 53.9pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">4.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">ESP Gizliliği = 3DES <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 51.8pt; mso-list: l0 level2 lfo1; tab-stops: list 53.9pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">5.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">ESP T&uuml;mleştirme = SHA1 <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 51.8pt; mso-list: l0 level2 lfo1; tab-stops: list 53.9pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">6.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Anahtar Kullanım &Ouml;mr&uuml; = 0/0<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt 33.8pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Not: Filtre İşlem Sihirbazı IP Trafik G&uuml;venliği panelinde G&uuml;venlik T&uuml;r&uuml; = Şifreleme ve T&uuml;mleştirme se&ccedil;ilmiş olması halinde parametre 2.1) - 2.6) varsayılan parametrelerdir.<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28.7pt; mso-list: l0 level1 lfo1; tab-stops: list .5in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">3.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Yeni IP G&uuml;venlik Kuralını Atanan İlke listesine ekleyin: <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 60.2pt; mso-list: l0 level2 lfo1; tab-stops: list 1.0in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">1.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">IP Filtre Listesi = adım 1'de oluşturulan filtre <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 60.2pt; mso-list: l0 level2 lfo1; tab-stops: list 1.0in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">2.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Filtre İşlemi = adım 2'de oluşturulan filtre işlemi <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 60.2pt; mso-list: l0 level2 lfo1; tab-stops: list 1.0in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">3.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Kimlik Denetimi Y&ouml;ntemi = &Ouml;n Paylaşımlı Anahtar <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 60.2pt; mso-list: l0 level2 lfo1; tab-stops: list 1.0in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">4.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">T&uuml;nel Ayarlama = Yok <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 60.2pt; mso-list: l0 level2 lfo1; tab-stops: list 1.0in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">5.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Bağlantı T&uuml;r&uuml; = T&uuml;m&uuml;<br />Not: Tavsiye edilen &Ouml;n Paylaşımlı Anahtar (PSK) uzunluğu en az 25 karakterdir.<o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28.7pt; mso-list: l0 level1 lfo1; tab-stops: list .5in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">4.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Kullanılan protokoller/G&uuml;venlik duvarı hususları: <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 1in; mso-list: l0 level2 lfo1; tab-stops: list 1.0in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">1.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">ISAKMP (Internet G&uuml;venlik İlişkisi ve Anahtar Y&ouml;netimi Protokol&uuml;), G&uuml;venlik İlişkileri kurma, m&uuml;zakere etme, değiştirme, değiştirme ve silme prosed&uuml;rlerini ve paket bi&ccedil;imlerini tanımlar. T&uuml;m uygulamalarda 500 portunda UDP kullanılarak ISAKMP i&ccedil;in g&ouml;nderme ve alma olanağını i&ccedil;ermelidir. <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 1in; mso-list: l0 level2 lfo1; tab-stops: list 1.0in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">2.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">ESP (Kapsama G&uuml;venlik Y&uuml;k&uuml;) gizlilik, veri kaynağı denetimi ve bağlantı t&uuml;mleştirme sağlamak i&ccedil;in kullanılabilir. <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 1in; mso-list: l0 level2 lfo1; tab-stops: list 1.0in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">3.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">İletişim kanalını test etme: <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 1in; mso-list: l0 level2 lfo1; tab-stops: list 1.0in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">4.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Tercih edilen ağ monit&ouml;r&uuml;n&uuml; kullanarak şifrelenmiş ESP &ccedil;er&ccedil;eveleri (şifrelenmiş SOAP mesajları) tarafından takip edilen ISAKMP &ccedil;er&ccedil;evelerini (g&uuml;venlik m&uuml;zakereleri) alabilmeniz gereklidir. <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 28.7pt; mso-list: l0 level1 lfo1; tab-stops: list .5in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">5.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Yapılandırmaya/ihtiya&ccedil;larınıza g&ouml;re başka şifreleme/karma/kimlik denetimi y&ouml;ntemlerini deneyebilirsiniz: <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.5in; mso-list: l1 level1 lfo2; tab-stops: list .5in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">1.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Şifreleme algoritması: Veri Şifreleme Standardı (DES), &Uuml;&ccedil;l&uuml; DES (3DES). <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.5in; mso-list: l1 level1 lfo2; tab-stops: list .5in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">2.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Karma algoritması: MD5 (Mesaj Alma işlevi 5) veya SHA1 (G&uuml;venli Karma Algoritması 1). <o:p></o:p></span></p>
+<p style="line-height: normal; text-indent: -0.25in; margin: 0in 0in 0pt 0.5in; mso-list: l1 level1 lfo2; tab-stops: list .5in;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: Arial;" lang="TR"><span style="mso-list: Ignore;">3.<span style="font: 7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Kimlik denetimi y&ouml;ntemi (Kerberos V5, Sertifika veya &ouml;n paylaşımlı anahtar kimlik denetimi). <o:p></o:p></span></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnd216.html?ReturnUrl=%2Fkb%2Fhow-to-secure-the-communication-channel-between-portal-and-es-using-ipsec-tr-TR">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/how-to-secure-the-communication-channel-between-portal-and-es-using-ipsec-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:24 GMT -->
+</html>

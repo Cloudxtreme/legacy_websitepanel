@@ -1,0 +1,193 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/administrator-guide/hosting-space-summary-letter by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:52:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Hosting Space Summary Letter - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide" href="../rssa280?containerid=13" />
+
+<link rel="alternate" type="application/rss+xml" title="Administrator Guide - Comments" href="../rss3e15?commentedoncontainer=13" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt; <a href="index.html">Administrator Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Hosting Space Summary Letter</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="hosting-space-summary-letter-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>To change this template login under "serveradmin" or other account with reseller privileges.</p>
+<p>On right panel of user account home page click "Mail Templates" link. Mail Templates settings page will appear.</p>
+<p>Click "Hosting Space Summary Letter" link:</p>
+<p><img src="../Media/WindowsLiveWriter/HostingSpaceSummaryLetter_DBF7/image_2.png" alt="" /></p>
+<p>Update "From", "CC", "Subject", both HTML and Text templates and click "Save" button to save changes.</p>
+<p><a name="Section5"></a></p>
+<h3>Space Summary Template Variables</h3>
+<p>The following variables and constructs are supported in "Subject", "HTML Body" and "Text Body" templates:</p>
+<p>#Signup# - is equal to "true" if the letter is sent during user account creation; otherwise when user re-sends the letter it is "false".</p>
+<p>Can be used in the template as following:</p>
+<p>&lt;ad:if test="#Signup#"&gt;<br />This content will be included in the summary during signup only. <br />&lt;/ad:if&gt;</p>
+<p>#user# - hosting space owner is a complex structure described in the section above.</p>
+<p>In templates it can be used as following:</p>
+<p>Hello, #user.FullName#<br />Your registered e-mail address is: #user.Email#</p>
+<p>#reseller# -&nbsp; host account. It is a complex structure with the same fields as "user" one.</p>
+<p>#space# - space context is a complex structure with fields described in the section above.</p>
+<p>#plan# - space hosting plan is a complex structure with fields described in the section above.</p>
+<p>#PackageRootFolder# - the physical location of hosting space home folder, for example:</p>
+<p>Your space is located here: #PackageRootFolder#</p>
+<p>#NameServers# - string array of name servers assigned to hosting space, for example:</p>
+<p>Your name servers: <br />&lt;ad:foreach collection="#NameServers#" var="NameServer"&gt;<br />&nbsp;&nbsp; #NameServer# <br />&lt;/ad:foreach&gt;</p>
+<p>#InstantAlias# - instant alias (temporary URL) assigned to hosting space, for example:</p>
+<p>&lt;ad:if test="#isnotempty(InstantAlias)#"&gt;<br />You can use the following Temporary URL for all your web sites: <br />http://YourDomain.com.#InstantAlias# <br />&lt;/ad:if&gt;</p>
+<p>#WebSites# - collection of web sites created in this hosting space. Each item in the collection is a complex structure with the following fields:</p>
+<ul>
+<li>
+<p>SiteId (string) - web site ID (e.g. W3SVC/1)</p>
+</li>
+<li>
+<p>Name (string) - web site description (e.g. mysite.com)</p>
+</li>
+<li>
+<p>SiteIPAddress - web site IP address (e.g. 23.32.20.1)&nbsp;</p>
+</li>
+</ul>
+<p>#Domains# - collection of domains created in this hosting space. Each item in the collection is a complex structure with the following fields:</p>
+<ul>
+<li>
+<p>DomainName (string) - the name of the domain</p>
+</li>
+<li>
+<p>WebSiteName (string) - the name of web site this domain points to</p>
+</li>
+<li>
+<p>MailDomainName (string) - the name of mail domain this domain points to</p>
+</li>
+<li>
+<p>ZoneName (string) - the name of DNS zone this domains points to</p>
+</li>
+<li>
+<p>IsSubDomain (bool)</p>
+</li>
+<li>
+<p>IsInstantAlias (bool)</p>
+</li>
+</ul>
+<p>#FtpIP# - IP address of FTP server</p>
+<p>#FtpAccounts# - collection of FTP accounts created in this hosting space. Each item in the collection is a complex structure with the following fields:</p>
+<ul>
+<li>
+<p>Name (string) - account name</p>
+</li>
+<li>
+<p>Folder (string) - root folder of this account</p>
+</li>
+<li>
+<p>Password (string)</p>
+</li>
+</ul>
+<p>#MailAccounts# - collection of mail accounts created in this hosting space. Each item in the collection is a complex structure with the following fields:</p>
+<ul>
+<li>
+<p>Name (string) - account name</p>
+</li>
+<li>
+<p>Password (string)</p>
+</li>
+</ul>
+<p>#MailIP# - IP address of mail server</p>
+<p>#MsSQL2000ExternalAddress# or #MsSQL2000Address# - "External Address" of MS SQL 2000 service</p>
+<p>#MsSQL2000InternalAddress# - "Internal Address" of MS SQL 2000 service</p>
+<p>#MsSQL2005ExternalAddress# or #MsSQL2005Address# - "External Address" of MS SQL 2005 service</p>
+<p>#MsSQL2005InternalAddress# - "Internal Address" of MS SQL 2005 service</p>
+<p>#MsSQL2008ExternalAddress# or #MsSQL2008Address# - "External Address" of MS SQL 2008 service</p>
+<p>#MsSQL2008InternalAddress# - "Internal Address" of MS SQL 2008 service</p>
+<p>#MySQL4ExternalAddress# or #MySQL4Address# - "External Address" of MySQL 4 service</p>
+<p>#MySQL4InternalAddress# - "Internal Address" of MySQL 4 service</p>
+<p>#MySQL5ExternalAddress# or #MySQL5Address# - "External Address" of MySQL 5 service</p>
+<p>#MySQL5InternalAddress# - "Internal Address" of MySQL 5 service</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnf64a.html?ReturnUrl=%2Fadministrator-guide%2Fhosting-space-summary-letter">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/administrator-guide/hosting-space-summary-letter by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:52:46 GMT -->
+</html>

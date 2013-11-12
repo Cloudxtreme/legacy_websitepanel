@@ -1,0 +1,143 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/ics-bind-dns-server-installation-and-configuration-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>ICS BIND DNS Sunucusu Kurulum ve Yapılandırma - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>ICS BIND DNS Sunucusu Kurulum ve Yapılandırma</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="ics-bind-dns-server-installation-and-configuration.html">en-US</a></li></ul>
+    </div>
+</div>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><a href="http://www.websitepanel.net/documentation"><span style="color: black;">Belgeler</span></a> &gt; <a href="http://www.websitepanel.net/installation-guide/index"><span style="color: black;">Kurulum Kılavuzu</span></a><o:p></o:p></span></p>
+<h1 style="margin: 0in 0in 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 17pt;" lang="TR">ICS BIND DNS Sunucusu Kurulum ve Yapılandırma<o:p></o:p></span></h1>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">1. L&uuml;tfen BIND9.x.zip kurulum paketini <a href="http://www.isc.org/index.pl?/sw/bind/index.php"><span style="color: black;">http://www.isc.org/index.pl?/sw/bind/index.php adresinden y&uuml;kleyin ve &ccedil;ıkarın</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">2. Sisteminizde veya diğer s&uuml;r&uuml;c&uuml;de C:\BIND şeklinde "BIND" klas&ouml;r&uuml; oluşturun <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">3. "BINDInstall.exe" kurulum paketini &ccedil;alıştırın <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">L&uuml;tfen dikkat edin: (C:\BIND\dns\bin\readme1st.txt klas&ouml;r&uuml;nden kopyalanmış)<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Kurulum aracı bir hesap adı isteyecektir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Varsayılan ad "named" şeklindedir ve hesap şifresi boştur. Aynı zamanda bu hesabın olup olmadığı<br />kontrol edilebilir. Eğer yoksa, yalnızca BIND &ccedil;alıştırmak i&ccedil;in gerekli izinlerle oluşturacaktır. Eğer hesap yoksa, gerekli bir iznin olup olmadığı kontrol edilecektir: "Hizmet olarak oturum a&ccedil;". Eğer &ccedil;ok fazla izin varsa devam etmek isteyip istemediğinizi soracaktır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">BIND DNS Sunucusu yapılandırma ile ilgili daha fazla bilgi almak i&ccedil;in l&uuml;tfen C:\BIND\dns\bin\readme1st.txt dosyasını veya <a href="http://www.isc.org/index.pl?/sw/bind/index.php"><span style="color: black;">http://www.isc.org/index.pl?/sw/bind/index.php sayfasını a&ccedil;ın</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">4. Kurulum dizinini belirleyin. BIND Sunucusu &ccedil;alıştırmak i&ccedil;in gereken hesap adı ve şifresi <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">&Ouml;rneğin "Bind_ServiceAccount" ISC BIND Hizmet Hesabı <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">5. Kur d&uuml;ğmesine basın <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">6. BIND Yapılandırma Dosyası Oluştur: <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">"c:\BIND\dns\etc\" klas&ouml;r&uuml;nde l&uuml;tfen "named.conf" yapılandırma dosyasını oluşturun <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">7. BIND Anahtar Dosyası Oluşturma <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Komut satırında: <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">&gt;&gt;cd C:\BIND\dns\bin <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">&gt;&gt; rndc-confgen -a <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">L&uuml;tfen dikkat edin: (C:\BIND\dns\bin\readme1st.txt klas&ouml;r&uuml;nden kopyalanmış) <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Bu, rndc.key dosyasını dns/etc dizininde oluştur. Bu, belirli bir mdc.conf dosyası veya anahtarı olmadan rndc &ccedil;alıştırabilmenizi m&uuml;mk&uuml;n kılar; kontrol dosyası adı named.conf şeklindedir <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">8. "ISC BIND" hizmetini başlatın <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">9. ISC BIND Hizmet Hesabı &uuml;yeliğini ve iznini kontrol edin <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Bind Hizmet Hesabı varsayılan olarak "Etki Alanı Kullanıcıları" veya "Kullanıcılar" grubu &uuml;yesi olacaktır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">L&uuml;tfen dikkat edin: (Bazı bilgiler C:\BIND\dns\bin\readme1st.txt dosyasından kopyalanmıştır) <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">Ardından l&uuml;tfen hesabın C:\BIND klas&ouml;r&uuml;ne tam erişimi olup olmadığını kontrol edin; burada pid dosyası ve dinamik g&uuml;ncellemelerini destekleyen slave b&ouml;lgeler ve master b&ouml;lgeler i&ccedil;in saklanan diğer dosyalar bulunur. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">10. BIND DNS Sunucusunda eklenen b&ouml;lgeler hakkındaki bilgilerin saklanacağı "B&ouml;lgeler" klas&ouml;r&uuml;n&uuml; oluşturun: "C:\BIND\dns\zones" <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">11. WSP Denetim Panosu BIND Yapılandırması <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">"BindDNS" Hizmet yapılandırmasındaki panodan: <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">11.1. B&ouml;lge Dosyası Ad Şablonunu b&ouml;lge dosyası tam yolunu g&ouml;sterecek şekilde değiştirin; &ouml;rn. "C:\BIND\dns\zones\db.[domain_name].txt" <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">11.2. Oluşturulan dosya C:\BIND\dns\bin\zonereload.bat ve i&ccedil;inde "c:/BIND/dns/bin/rndc.exe reload" komutu. WSP'de "Bind Tekrar Y&uuml;kleme Toplu İşi" dosya seti Windows G&ouml;rev Planlayıcısında 10 dakikada &ccedil;alışacak şekilde programlanmıştır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR">12. BIND DNS Sunucusu yapılandırma ile ilgili daha fazla bilgi almak i&ccedil;in l&uuml;tfen C:\BIND\dns\bin\readme1st.txt dosyasını veya <a href="http://www.isc.org/index.pl?/sw/bind/index.php"><span style="color: black;">http://www.isc.org/index.pl?/sw/bind/index.php sayfasını a&ccedil;ın</span></a> <o:p></o:p></span></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn7bcb.html?ReturnUrl=%2Fkb%2Fics-bind-dns-server-installation-and-configuration-tr-TR">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/ics-bind-dns-server-installation-and-configuration-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:28 GMT -->
+</html>

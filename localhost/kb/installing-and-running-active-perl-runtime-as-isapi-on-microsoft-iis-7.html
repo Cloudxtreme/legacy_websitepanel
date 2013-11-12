@@ -1,0 +1,142 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/installing-and-running-active-perl-runtime-as-isapi-on-microsoft-iis-7.0 by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:04:26 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Installing and running Active Perl runtime as ISAPI on Microsoft IIS 7.0 - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Installing and running Active Perl runtime as ISAPI on Microsoft IIS 7.0</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="installing-and-running-active-perl-runtime-as-isapi-on-microsoft-iis-8.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h2>Summary</h2> <p>To provide Active Perl runtime support on Microsoft Internet Information Services 7.0 (x86 and x64), you install Active Perl through an MSI distributive on a server, update Internet Information Services 7.0 service provider settings in WebsitePanel and setup a new hosting plan or update an existing one making Active Perl runtime is available to the customers. <h2>Install Active Perl</h2> <p>To install Active Perl runtime, please visit the following link <a href="http://www.activestate.com/activeperl/downloads/">http://www.activestate.com/activeperl/downloads/</a> and download the most recent version from the list. Despite of the platform bitness either x86 or x64 you are going to install Active Perl on, only x86 distributive of Active Perl must be used on both platforms.  <p>1. Run installation by opening the distributive downloaded  <p><img src="../Media/Images/installing_and_running_active_perl_runtime_as_isapi_on_microsoft_iis_7_0/step_1.png"/> <p><em>Hint: you can enable PPM component in order to streamline Perl modules and libraries update process as the component does that job.</em> <p>2.&nbsp; Uncheck all of the options prompted (as WebsitePanel handles scripting extensions mapping on its own) and click Next button  <p><img src="../Media/Images/installing_and_running_active_perl_runtime_as_isapi_on_microsoft_iis_7_0/step_2.png"/> <p>3. As soon as the installation process has been finished Perl runtime should be tested if it works as expected. First of all web server role services should be verified whether CGI role service is installed (<em>see the screenshot accompanying</em>)  <p><img src="../Media/Images/installing_and_running_active_perl_runtime_as_isapi_on_microsoft_iis_7_0/step_3.png"/> <p>4. Then create a demo web site to test Active Perl runtime work (<em>localhost &gt; Sites &gt; Add Web Site</em>)  <p><img src="../Media/Images/installing_and_running_active_perl_runtime_as_isapi_on_microsoft_iis_7_0/step_4.png"/> <p>5.&nbsp; Register an allowance rule for PerlEx30.dll file in IIS (<em>localhost &gt; IIS &gt; ISAPI and CGI Restrictions</em>) to allow Active Perl scripting runtime being used for a web site when .pl or .cgi page is requested  <p><img src="../Media/Images/installing_and_running_active_perl_runtime_as_isapi_on_microsoft_iis_7_0/step_5.png"/> <p>6.&nbsp; Register .pl file extension mapping for perlex30-demo.org web site (<em>localhost &gt; Sites &gt; perlex30-demo.org &gt; IIS &gt; Handler Mappings</em>)  <p><img src="../Media/Images/installing_and_running_active_perl_runtime_as_isapi_on_microsoft_iis_7_0/step_6.png"/> <p>7. Register .cgi file extension mapping for perlex30-demo.org web site (localhost &gt; Sites &gt; perlex30-demo.org &gt; IIS &gt; Handler Mappings) <p><img src="../Media/Images/installing_and_running_active_perl_runtime_as_isapi_on_microsoft_iis_7_0/step_7.png"/> <p>8. Open Notepad.exe, paste the content that follows and save the file as perltest.pl in perlex30-demo.org's root folder  <div class="csharpcode"><pre class="alt">$url = "http://$env%7bserver_name%7d$env%7burl%7d/"; </pre><pre>$ip = "$ENV{REMOTE_ADDR}"; </pre><pre class="alt">print <span class="kwrd">&lt;&lt;</span><span class="html">ENDOFTEXT</span>; </pre><pre><span class="attr">HTTP</span>/<span class="attr">1</span>.<span class="attr">0</span> <span class="attr">200</span> <span class="attr">OK</span> </pre><pre class="alt"><span class="attr">Content-Type:</span> <span class="attr">text</span>/<span class="attr">html</span> </pre><pre>&amp;<span class="attr">lt</span>;<span class="attr">HTML</span><span class="kwrd">&gt;</span> </pre><pre class="alt"><span class="kwrd">&lt;</span><span class="html">HEAD</span><span class="kwrd">&gt;&lt;</span><span class="html">TITLE</span><span class="kwrd">&gt;</span>Hello World!<span class="kwrd">&lt;/</span><span class="html">TITLE</span><span class="kwrd">&gt;&lt;/</span><span class="html">HEAD</span><span class="kwrd">&gt;</span> </pre><pre><span class="kwrd">&lt;</span><span class="html">BODY</span><span class="kwrd">&gt;</span> </pre><pre class="alt"><span class="kwrd">&lt;</span><span class="html">H4</span><span class="kwrd">&gt;</span>Hello World!<span class="kwrd">&lt;/</span><span class="html">H4</span><span class="kwrd">&gt;</span> </pre><pre><span class="kwrd">&lt;</span><span class="html">P</span><span class="kwrd">&gt;</span>You have reached <span class="kwrd">&lt;</span><span class="html">a</span> <span class="attr">href</span><span class="kwrd">="$url"</span><span class="kwrd">&gt;</span>$url<span class="kwrd">&lt;/</span><span class="html">a</span><span class="kwrd">&gt;&lt;/</span><span class="html">P</span><span class="kwrd">&gt;</span> </pre><pre class="alt"><span class="kwrd">&lt;</span><span class="html">p</span><span class="kwrd">&gt;</span>Your IP address is $ip<span class="kwrd">&lt;/</span><span class="html">P</span><span class="kwrd">&gt;</span> </pre><pre><span class="kwrd">&lt;</span><span class="html">H5</span><span class="kwrd">&gt;</span>Have a nice day!<span class="kwrd">&lt;/</span><span class="html">H5</span><span class="kwrd">&gt;</span> </pre><pre class="alt"><span class="kwrd">&lt;/</span><span class="html">BODY</span><span class="kwrd">&gt;</span> </pre><pre><span class="kwrd">&lt;/</span><span class="html">HTML</span><span class="kwrd">&gt;</span> </pre><pre class="alt">ENDOFTEXT </pre><pre>exit(0); </pre></div>
+<style type="text/css">.csharpcode, .csharpcode pre
+{
+ font-size: small;
+ color: black;
+ font-family: consolas, "Courier New", courier, monospace;
+ background-color: #ffffff;
+ /*white-space: pre;*/
+}
+.csharpcode pre { margin: 0em; }
+.csharpcode .rem { color: #008000; }
+.csharpcode .kwrd { color: #0000ff; }
+.csharpcode .str { color: #006080; }
+.csharpcode .op { color: #0000c0; }
+.csharpcode .preproc { color: #cc6633; }
+.csharpcode .asp { background-color: #ffff00; }
+.csharpcode .html { color: #800000; }
+.csharpcode .attr { color: #ff0000; }
+.csharpcode .alt 
+{
+ background-color: #f4f4f4;
+ width: 100%;
+ margin: 0em;
+}
+.csharpcode .lnum { color: #606060; }
+</style>
+
+<p><img src="../Media/Images/installing_and_running_active_perl_runtime_as_isapi_on_microsoft_iis_7_0/step_208.png"/>
+<p>9.&nbsp; Open a web browser, type the web site's url and if everything is configured correct the following page should appear 
+<p><img src="../Media/Images/installing_and_running_active_perl_runtime_as_isapi_on_microsoft_iis_7_0/step_9.png"/>
+<h2>Update WebsitePanel settings</h2>
+<p>To update Internet Information Services 7.0 service provider settings open your control panel portal in the browser and login as <strong>serveradmin</strong>. As soon as you've logged in navigate to <em>Configuration &gt; Servers &gt; Web Server &gt; IIS 7.0 provider settings</em>. 
+<p>1. By default Perl executable path setting (<em>Web Extensions section</em>) assumes that you use default Perl installation path, however if you changed default Perl installation path update this setting correspondingly 
+<p><img src="../Media/Images/installing_and_running_active_perl_runtime_as_isapi_on_microsoft_iis_7_0/step_10.png"/>
+<p>2. Once the service provider settings have been updated, update an existing hosting plan quotas or create a new plan with Perl feature enabled 
+<p><img src="../Media/Images/installing_and_running_active_perl_runtime_as_isapi_on_microsoft_iis_7_0/step_11.png"/>
+<p>3. Now your customers can utilize Active Perl runtime capabilities right from the control panel's interface by enabling or disabling Perl scripting for a web site 
+<p><img src="../Media/Images/installing_and_running_active_perl_runtime_as_isapi_on_microsoft_iis_7_0/step_12.png"/></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn6825.html?ReturnUrl=%2Fkb%2Finstalling-and-running-active-perl-runtime-as-isapi-on-microsoft-iis-7.0">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/installing-and-running-active-perl-runtime-as-isapi-on-microsoft-iis-7.0 by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:04:54 GMT -->
+</html>

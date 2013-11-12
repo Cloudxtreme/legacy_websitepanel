@@ -1,0 +1,138 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/preparing-VPS-templates/creating-answer-file-for-sysprep-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Sysprep i&#231;in Yanıt Dosyası Oluşturma - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Preparing WebsitePanel VPS Templates with Windows Server 2008 " href="../rssef5c?containerid=232" />
+
+<link rel="alternate" type="application/rss+xml" title="Preparing WebsitePanel VPS Templates with Windows Server 2008  - Comments" href="../rss6db5?commentedoncontainer=232" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Preparing VPS Templates</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Sysprep i&#231;in Yanıt Dosyası Oluşturma</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="creating-answer-file-for-sysprep.html">en-US</a></li></ul>
+    </div>
+</div>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR"><a href="http://www.websitepanel.net/documentation"><span style="color: #000000;" color="#000000">Belgeler</span></a> &gt; <a href="http://www.websitepanel.net/preparing-VPS-templates/index"><span style="color: #000000;" color="#000000">VPS Şablonları Hazırlama</span></a><o:p></o:p></span></p>
+<h1 style="margin: 0in 0in 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 17pt;" lang="TR">Sysprep i&ccedil;in Yanıt Dosyası Oluşturma<o:p></o:p></span></h1>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Sysprep yardımcı programı Ana VPS &uuml;zerinde &ccedil;alıştırıldıktan sonra, t&uuml;m kullanıcıya ve bilgisayara &ouml;zel bilgiler işletim sisteminden silinecektir. VPS yeniden başlatıldığında işletim sistemi, kurulum işleminin ortasında yeni bir OS gibi davranacaktır; yani &ldquo;&ouml;zelleştir&rdquo; ve &ldquo;oobeSystem&rdquo; (OOBE &ndash; kullanıma hazır deneyimi) ge&ccedil;işlerini &ccedil;alıştıracaktır. Kullanıcıdan bilgisayar yerel ve b&ouml;lgesel ayarlarını se&ccedil;mesi, bilgisayar adını belirlemesi ve y&ouml;netici şifresi ayarlaması istenecektir. Ancak amacımız, bu işlemi VPS m&uuml;şterilerinden gizlemek ve t&uuml;m bu parametreleri onların adına belirlemektir (&ldquo;yanıtlamak&rdquo;). <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Windows Ayarları yapılandırma ge&ccedil;işleri hakkında şuradan daha fazla bilgi alınabilir:<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><a href="http://technet.microsoft.com/en-us/library/cc749307.aspx"><span style="color: #000000;" color="#000000">http://technet.microsoft.com/en-us/library/cc749307.aspx</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Windows Ayarlarının otomatikleştirilmesi i&ccedil;in, &ccedil;eşitli ge&ccedil;işler i&ccedil;in m&uuml;dahale gerektirmeyen Ayarları yapılandırma ama&ccedil;lı bir "yanıt dosyası" i&ccedil;eren Sysprep yardımcı programı sağlanmıştır. Yanıt dosyası, a&ccedil;ık ve iyi belgelenmiş yapıda bir XML dosyasıdır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Bu dosya, <b>Windows Otomatik Kurulum Kitinin</b> (WAIK) bir par&ccedil;ası olan <b>Windows Sistem G&ouml;r&uuml;nt&uuml;s&uuml; Y&ouml;neticisi</b> (WSIM) aracıyla kolayca d&uuml;zenlenebilir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">WAIK'i Microsoft Y&uuml;klemeleri veya MSDN Abonelik Y&uuml;klemelerinden y&uuml;kleyebilirsiniz. WAIK'i, 64-bit sistemlerde m&uuml;kemmel &ccedil;alışan MSDN'den y&uuml;klemenizi tavsiye ederiz. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Microsoft Y&uuml;klemelerinden WAIK ISO şu adreste bulunabilir: <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=94bb6e34-d890-4932-81a5-5b50c657de08&amp;DisplayLang=en"><span style="color: #000000;" color="#000000">http://www.microsoft.com/downloads/details.aspx?FamilyID=94bb6e34-d890-4932-81a5-5b50c657de08&amp;DisplayLang=en</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">WAIK, Windows Vista ve Windows Server 2008'e kurulabilir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">ISO dosyasını DVD'ye yazmadan &ccedil;ıkarmak i&ccedil;in &uuml;cretsiz &ldquo;7Zip&rdquo; dosya arşivleyicisini şuradan y&uuml;kleyerek kullanabilirsiniz: <a href="http://www.7-zip.org/"><span style="color: #000000;" color="#000000">http://www.7-zip.org/</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Yanıt dosyası oluşturmak i&ccedil;in, Windows Server 2008 kurulum DVD'si &ldquo;Kaynaklar&rdquo; klas&ouml;r&uuml;ndeki install.wim dosyasının bir kopyası da gerekli olacaktır. install.wim g&ouml;r&uuml;nt&uuml; dosyasından katalog oluşturulabilmesi i&ccedil;in WSIM, bulunduğu klas&ouml;re yazma erişimine sahip olmalıdır; bu nedenle bu dosyayı DVD'den sabit s&uuml;r&uuml;c&uuml;deki bir klas&ouml;re kopyalayın (&ouml;rneğin &ldquo;c:\WSIM\Windows Server 2008 x64&rdquo;). <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">WSIM başlatıldığında &ccedil;eşitli panoların bulunduğu ana pencere g&ouml;r&uuml;nt&uuml;lenecektir: <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">İlk adım, g&ouml;r&uuml;nt&uuml; dosyasından katalog oluşturmaktır. &Uuml;st men&uuml;den &ldquo;Ara&ccedil;lar -&gt; Katalog Oluştur&rdquo; &ouml;ğesini se&ccedil;in. install.wim dosyasını se&ccedil;in ve g&ouml;r&uuml;nt&uuml;y&uuml; katalogla &ouml;ğesini se&ccedil;in. Bu durumda, ilk se&ccedil;enektir (Windows Server 2008 Standard s&uuml;r&uuml;m): <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Yanıt dosyasına dahil olabilecek t&uuml;m muhtemel ayarlar &ldquo;Windows G&ouml;r&uuml;nt&uuml;s&uuml;&rdquo; panosundadır: <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Windows Ayarları yapılandırma ayarları ile ilgili belgelerin tamamına şuradan ulaşılabilir: <a href="http://technet.microsoft.com/en-us/library/cc749204.aspx"><span style="color: #000000;" color="#000000">http://technet.microsoft.com/en-us/library/cc749204.aspx</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">T&uuml;m ayarlar, Windows Ayarları işleminin &ccedil;eşitli ge&ccedil;işleri sırasında uygulanabilir. Windows Ayarları yapılandırma ge&ccedil;işleri hakkında şuradan daha fazla bilgi alınabilir:<o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><a href="http://technet.microsoft.com/en-us/library/cc766245.aspx"><span style="color: #000000;" color="#000000">http://technet.microsoft.com/en-us/library/cc766245.aspx</span></a> <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR">Net bir ifadeyle WSIM aracı, ağa&ccedil; g&ouml;r&uuml;n&uuml;m&uuml;ne sahip XML dosyalarının d&uuml;zenlenmesine y&ouml;nelik bir g&ouml;rsel d&uuml;zenleyicidir. &Ouml;rneğin, &ouml;rnek XML yanıt dosyası şuradan [bağlantı sağlanacak] y&uuml;klenebilir. WSIM ile bilgisayar adı, y&ouml;netici şifresi ve ağ adapt&ouml;r&uuml; g&ouml;r&uuml;n&uuml;mleri şu şekildedir: <o:p></o:p></span></p>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn6d23.html?ReturnUrl=%2Fpreparing-VPS-templates%2Fcreating-answer-file-for-sysprep-tr-TR">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/preparing-VPS-templates/creating-answer-file-for-sysprep-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:50 GMT -->
+</html>

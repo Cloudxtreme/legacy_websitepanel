@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/CRM-module/troubleshooting by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:01:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Troubleshooting - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="CRM Module" href="../rssacfa?containerid=93" />
+
+<link rel="alternate" type="application/rss+xml" title="CRM Module - Comments" href="../rss7286?commentedoncontainer=93" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">CRM Module</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Troubleshooting</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="troubleshooting-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h2>Basic troubleshooting</h2> <p>1. Make sure all WebsitePanel applications (WSP Portal, WSP Enterprise Server and WSP Servers) are of the same version.  <p>2. Make sure all WSP applications have been upgraded to the latest WSP release.  <p>3. Make sure you are able to open all WebsitePanel applications (WSP Portal, WSP Enterprise Server and WSP Servers) URLs in web browser.  <p>4. Make sure WSP Servers are able to manage systems where they deployed. For this, for example, from the panel open Windows Services (Configuration &gt; Servers &gt; Server name &gt; Windows Services).  <p>5. Those error messages can contain useful information for troubleshooting:  <p>&nbsp;&nbsp; a. Error message (if exists) with stack trace from WebsitePanel Audit Log (Serveradmin account home page -&gt; Audit Log).  <p>&nbsp;&nbsp; b. Errors and warnings from WebsitePanel event log in the Windows Event Viewer (on Exchange mailbox server or server which manage mailbox server remotely/on SharePoint Server with WSP SharePoint module deployed/on CRM Server with WSP CRM module deployed).  <p>To increase level of WebsitePanel event log you need to go to C:\WebsitePanel\Server (or another directory if you install WSP components to non-default paths) end edit web.config file with notepad. Find &lt;add name="Log" value="1"/&gt; and set value to 3. After this please check that WebsitePanel event log is set to "Override events as needed".  <p>*Please note: The most important is first error or warning appeared in this log during error reproduction.  <p><a name="Section2"></a> <h2>"Unable to get CRM business units" error after creating CRM organization</h2> <p>Please open IFD deployment tool and do the following:  <p>1.&nbsp; Check that correct internal CRM machine IP address and network mask entered in "IFD Internal network Address and subnet mask" and there are no other addresses and masks there.  <p>2. Copy "AD App Root Domain" value and paste to "AD Application Root Domain" field in WSP CRM module settings  <p>3. Ensure that "AD Domain Scheme" is HTTP and not HTTPS  <p>4. Save changes in IFD deployment tool and WSP CRM module and try to create new CRM organization or delete incorrectly created organization and create it again.  <p>*Please note:&nbsp; <p>&nbsp;&nbsp; a. In order to completely delete CRM organization (that may be needed for creating new CRM organization under the same Organization in WSP) you need to force MSCRM_CONFIG.HardDelete and MSCRM_CONFIG.SiteWideCleanup jobs on CRM SQL Server, then backup customer_ID_MSCRM database and then delete it.  <p>&nbsp;&nbsp; b. You need to wait about 10 minutes for internal CRM structure synchronization before creating new CRM organization with the same name. </p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn66bc.html?ReturnUrl=%2FCRM-module%2Ftroubleshooting">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/CRM-module/troubleshooting by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:01:37 GMT -->
+</html>

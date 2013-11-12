@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/enabling-and-tuning-pop-smtp-and-imap-smtp-client-access by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:59:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Enabling and tuning POP/SMTP and IMAP/SMTP client access - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module" href="../rss68ec?containerid=101" />
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module - Comments" href="../rssba67?commentedoncontainer=101" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Exchange 2007/2010 Modules</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Enabling and tuning POP/SMTP and IMAP/SMTP client access</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="enabling-and-tuning-pop-smtp-and-imap-smtp-client-access-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p><a name="Section1"></a> <h2>WARNING!</h2> <p>Default Exchange 2007 settings are locked down to only accept SSL/TLS connections on secure ports (995 for POP3 or 993 for IMAP4). In case you prefer to accept those default secure settings, <a href="http://msexchangeteam.com/archive/2007/05/16/439093.aspx">please look at this great article</a>.  <p>This article assumes that you need to deploy simplest POP/SMTP and IMAP/SMTP connection with traditional port numbers and clear text data transfer. It is obviously not secure. But in hosting business we can meet clients with old-school end users that dictate us to have those options. <p>Anyway the best practice for Exchange 2007 Hosting is to avoid POP3/SMTP and IMAP4/SMTP clients and provide users only with native client access - Outlook Anywhere, OWA and ActiveSync.  <p><a name="Section2"></a> <h3>Deploying unsecured POP3/SMTP and IMAP4/SMTP configuration.</h3> <p>1. Enabling POP3<br>&nbsp;&nbsp; a. Go to Client Access Server Services. Start "Microsoft Exchange POP3" service and set its Startup Type to Automatic. For more detailed instructions how to perform this see here <a href="http://technet.microsoft.com/en-us/library/bb124934.aspx">http://technet.microsoft.com/en-us/library/bb124934.aspx</a><br>&nbsp;&nbsp; b. Run the following command in the Exchange Management Shell:<br><em>Set-PopSettings -LoginType PlainTextLogin<br></em><em></em>c. Restart "Microsoft Exchange POP3" service  <p>2. Enabling IMAP4<br>&nbsp;&nbsp; a. Go to Client Access Server Services. Start "Microsoft Exchange IMAP4" service and set its Startup Type to Automatic. For more detailed instructions how to perform this see here <a href="http://technet.microsoft.com/en-us/library/bb124489.aspx">http://technet.microsoft.com/en-us/library/bb124489.aspx</a><br>&nbsp;&nbsp; b. Run the following command in the Exchange Management Shell:<br><em>Set-ImapSettings -LoginType PlainTextLogin</em><br><em></em>c. Restart "Microsoft Exchange IMAP4" service  <p>3. Creating SMTP Relay connector<br>&nbsp;&nbsp; a. Get additional External (or Client Access Network, if you use NAT-based network) IP address for Hub Transport Server. If your Hub Transport Server coexists with Client Access Server on one machine and you already created OWA and/or Autodiscover redirect sites - you may have additional IP address already added to it.<br>&nbsp;&nbsp; b. Bind Default SERVERNAME receive connector to only one IP address. Open Exchange Management Console &gt; Server Configuration &gt; Hub Transport &gt; and tick your Hub Transport server. Open Default SERVERNAME receive connector properties, go to Network tab and change receiving IP address from Any Available to first IP address of External (or Client Access Network, if you use NAT-based network) NIC of your Hub Transport Server. It should be the same IP address which is already used for A records of MX servers in clients DNS zones. 10.0.0.1 in our example.  <p><img alt="image001.png" src="../Media/Images/smtp_client_access/image001.png" width="443" height="489"> <p>&nbsp;&nbsp; c. Create new receive connector, name it Relay, choose Custom type in create connection wizard.  <p><img alt="image003.png" src="../Media/Images/smtp_client_access/image003.png" width="637" height="556"> <p>&nbsp;&nbsp; d. Bind this connector to second Hub Transport Server IP address (10.0.0.2 in our example), port 25.  <p><img alt="image005.png" src="../Media/Images/smtp_client_access/image005.png" width="637" height="556"> <p>&nbsp;&nbsp; e. Go to Authentication tab of new Relay connector and allow only Basic Authentication<br><img alt="image007.png" src="../Media/Images/smtp_client_access/image007.png" width="443" height="489"> <p>f. Go to Permission Groups tab of new Relay connector and allow only Exchange Users.<br><img alt="image009.png" src="../Media/Images/smtp_client_access/image009.png" width="443" height="489"> <p>4. Creating DNS template. If you use WSP provisioning with HES, create the following or similar records in HES DNS template. We assume that Client Access and Hub Transport Server are collocated on the same machine in this example. All records connected to OWA and Autodiscover was removed from this example to concentrate attention to POP/IMAP/SMTP things.  <p><img alt="image011.png" src="../Media/Images/smtp_client_access/image011.png" width="448" height="159"> <p>Such a records can not exist in real internet DNS. It is just example. Use real IP addresses of HUB/CAS Server Internet faced NIC if your HUB/CAS Server is directly connected to the Internet, or external IP addresses of NAT device which maps TCP 25, 110, 143 to appropriate private HUB/CAS Server IP addresses.  <p>5. Instructing POP3/SMTP and IMAP4/SMTP users. Instruct your clients to tune client POP3/IMAP/SMTP application as follows:<br>&nbsp;&nbsp; a. Incoming Mail Server - pop.customerdomian.com for POP3 or imap.customerdomian.com for IMAP4<br>&nbsp;&nbsp; b. Outgoing Mail Server - relay.customerdomian.com<br>&nbsp;&nbsp; c. Outgoing Mail Server requires authentication, use the same authentication settings as Incoming Mail Server.<br>Here is example of Outlook Express POP3 client settings:  <p><img alt="image013.png" src="../Media/Images/smtp_client_access/image013.png" width="367" height="443">
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnb567.html?ReturnUrl=%2Fexchange-2007-2010-module%2Fenabling-and-tuning-pop-smtp-and-imap-smtp-client-access">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/enabling-and-tuning-pop-smtp-and-imap-smtp-client-access by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:59:40 GMT -->
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/CRM-module/wsp-hosted-crm-solution-pre-deployment-tasks by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:01:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>WSP Hosted CRM Solution Pre-Deployment Tasks - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="CRM Module" href="../rssacfa?containerid=93" />
+
+<link rel="alternate" type="application/rss+xml" title="CRM Module - Comments" href="../rss7286?commentedoncontainer=93" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">CRM Module</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>WSP Hosted CRM Solution Pre-Deployment Tasks</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="wsp-hosted-crm-solution-pre-deployment-tasks-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h2>Assumptions </h2> <p>This document assumes that background infrastructure (Windows Servers, Active Directory, CRM, DNS, etc) is configured correctly without errors. As a minimum Windows event logs, Support tools utilities (such as dcdiag and netdiag) now show critical errors. As a maximum - all services are deployed according to Microsoft guides, are carefully documented, there are no errors and warnings. CRM 4.0 is deployed according to "Microsoft Dynamics<sup>TM</sup> CRM 4.0 Deployment Walkthrough Guide for Service Providers", subsection 3.2 (pages 70 - 91). Internet Facing Deployment settings are tuned and verified.  <p><a name="Section2"></a> <h2>General ideas</h2> <p>WSP Hosted CRM service allows to create and delete one CRM organization for every customer's organization. Website URL for every customer's CRM organization automatically forms in the following way: https://organization_id.crm.provider.com where "organization_id" is WSP customer's organization identifier and "crm.provider.com" - IFD Web Application Root Domain.  <p><a name="Section3"></a> <h2>Deploying the Hosted Organizations module </h2> <p>In case it is already deployed (for example - for Exchange or SharePoint WSP solutions) - skip this step. In case it is not deployed - <a href="../exchange-2007-2010-module/deploying-hosted-organizations-module.html">run steps described in this article</a>. You can deploy this module either on the same computer as CRM server or another domain server that has WSP Server installed and connected to the same Enterprise server. Most likely Visio diagram describing solution components distribution is already created, use it to choose which server will host Organizations module.  <p><a name="Section4"></a> <h2>Deploying the System (OS) service </h2> <p>If it is already deployed (for example - for Exchange, SharePoint WSP or classic webhosting solutions) - skip this step. You can deploy this service either on the same computer as CRM server or another server that has WSP Server installed and connected to the same Enterprise server. Most likely you (in case CRM is not the first server in your WSP environment) System (OS) service is already deployed. In case you have classic webhosting in your system and you are going to create mixed Webhosting/CRM plans - use System (OS) service from Webhosting server, not from CRM (or Exchange or WSS) server.  <p><img style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px" border="0" alt="image001.png" src="../Media/Images/dnp_hosted_crm_solution_pre_deployment_tasks/image001.png" width="738" height="363"></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn5011.html?ReturnUrl=%2FCRM-module%2Fwsp-hosted-crm-solution-pre-deployment-tasks">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/CRM-module/wsp-hosted-crm-solution-pre-deployment-tasks by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:01:29 GMT -->
+</html>

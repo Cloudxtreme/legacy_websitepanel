@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/sharepoint-module/wsp-hosted-sharepoint-solution-installation-tasks by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>WSP Hosted SharePoint Solution Installation Tasks - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="SharePoint Module" href="../rss267a?containerid=134" />
+
+<link rel="alternate" type="application/rss+xml" title="SharePoint Module - Comments" href="../rss5ffb?commentedoncontainer=134" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">SharePoint Module</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>WSP Hosted SharePoint Solution Installation Tasks</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="wsp-hosted-sharepoint-solution-installation-tasks-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h2>WSP Server account requirements</h2> <p><strong>Group membership</strong> requirements for WSP Server Web site anonymous access and WSP Server application pool identity are the same as for <a href="../exchange-2007-2010-module/deploying-hosted-organizations-module.html">WSP Server where Hosted Organizations module will be deployed</a> (membership in "Domain Admins" AD group and "IIS_WPG" and "Administrators" local ones).  <p>Membership in "Exchange Organization Administrators" is not needed. However in case you decide to reset all WSP Servers for HES, HSS and HO modules to the single account - it should be the member of "Exchange Organization Administrators" too.  <p><strong>Root Web Application level permissions</strong> should be added to this account too.  <ul> <li>On WSS front-end server you are going to manage with WSP open Administrative tools &gt; SharePoint 3.0 Central Administration &gt; Application Management &gt; Application Security &gt; Policy for Web application.</li></ul> <p><img src="../Media/Images/dnp_hosted_sharepoint_solution_installation_tasks/image019.png"/> <ul> <li>Choose root Web Application you created previously from available Web Applications  <li>Press "Add Users"</li></ul> <p><img src="../Media/Images/dnp_hosted_sharepoint_solution_installation_tasks/image021.png"/> <ul> <li>Press Next  <li>Add WSP Server account with Full Control permissions</li> <li>Press Finish</li></ul> <p>Please do not forget to restart WebsitePanel Server pool and web site after you added WSP Server account to appropriate groups and check pool identity and web site anonymous assess. Or you can simple run iisreset on this server if it is not in production.&nbsp; <p><a name="Section2"></a> <h2>Setting up "Active Directory Settings"</h2> <p>Requirements for "Active Directory Settings" for all WSP Servers where Hosted SharePoint module will be deployed are the same as for <a href="../exchange-2007-2010-module/deploying-hosted-organizations-module.html">WSP Server where Hosted Organizations module will be deployed</a>.  <p><img alt="ADsettings.png" src="../Media/Images/dnp_hosted_sharepoint_solution_installation_tasks/adsettings.png" width="462" height="254"> <p><a name="Section3"></a> <h2>Setting up Hosted SharePoint Service</h2> <ul> <li>Add External IP to server. It should be public IP external clients will connect to. In case if NAT-based infrastructure - add external IP of NAT server on which SharePoint will be published. This will be used for creating DNS records for Site Collections. Please add this address even you are not going to manage DNS with WSP.</li></ul> <p><img alt="image038.png" src="../Media/Images/dnp_hosted_sharepoint_solution_installation_tasks/image038.png" width="459" height="82"> <ul> <li>Add "OS" service to at least one server. If you are going to create Virtual Server and Hosting plan mixed with classic Web hosting - add "OS" service from WSP Server that will host websites. In case of pure WSS or mixed WSS/Exchange environment - use any server. Your customers may use their Hosting Space folders for Site collection's backup. So choose "Hosting Spaces Folder" path carefully (it should have enough free space, for example - point to physical disk where data files, not programs are located).  <li>Ensure that "Hosted Organizations" module is deployed on one of the WSP Servers.</li></ul> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On " Hosted SharePoint" service specify service settings:  <ul> <li>SharePoint Web Application Url. Enter "Root Web Application URL" you wrote down previously, "https://wspwssdemolab01/" in our example. Port number is omitted in this URL because it is standard for https. Please do not forget to enter port number in URL in case you use non-standard (not 80 or 443) port.  <li>SharePoint Web Application IP. Select server IP from drop-down.</li></ul> <p><img alt="image042.png" src="../Media/Images/dnp_hosted_sharepoint_solution_installation_tasks/image042.png" width="504" height="242"> <ul> <li>No need to adjust service DNS Zone Records. "SharePoint Web Application IP" setting do this job.</li></ul><a name="Section4"></a> <h2>Creating Virtual Server</h2> <p>It is strongly recommended to use Virtual Servers, but not Servers for Hosting plans. This greatly increases flexibility and help you avoid many problems during adding services or resources to existing customers  <ul> <li>Select "Hosted SharePoint" server from WSS server you previously configured.  <li>Select "Hosted Organizations" service from server where you deployed it.  <li>Select "OS" service from any server. If you are going to create Virtual Server and Hosting plan mixed with classic Web hosting - use "OS" service only from Web server.  <li>Select"Exchange 2007" services from Exchange 2007 server with Mailbox role in case (more likely) you are going to use Hosted SharePoint and Exchange in one Hosting Plan or add Exchange features to customers later with Add-Ons.  <li>Optionally select other services like "Hosted CRM" or "Web" if you are going to use Hosted SharePoint and other services in one Hosting Plan or add other services to customers later with Add-Ons.  <li>Optionally select "DNS" service from appropriate server if you use WSP-managed DNS server.This service is not mandatory.</li></ul> <p><img src="../Media/Images/dnp_hosted_sharepoint_solution_installation_tasks/image046.png"/> <p><a name="Section5"></a> <h2>Creating Hosting Plan</h2> <p>In case you are creating mixed SharePoint/Exchange Hosting Plan, create plan according to <a href="../exchange-2007-2010-module/hosted-exchange-solution-installation-tasks.html">this document</a> and then add "Hosted SharePoint" component.  <p>In case you are creating pure SharePoint Hosting Plan, anyway create plan according to <a href="../exchange-2007-2010-module/hosted-exchange-solution-installation-tasks.html">this document</a>, just do not add "Exchange 2007" component and add "Hosted SharePoint" component.  <p><img alt="image044.png" src="../Media/Images/dnp_hosted_sharepoint_solution_installation_tasks/image044.png" width="702" height="91"> <p>Additionally, adding "File Manager" option may make sense for Hosting Plan contained "Hosted SharePoint" component - it will allow customers to manipulate Site Collection's backup files.  <p><a name="Section6"></a> <h2>Creating Site Collection</h2> <p>Here we assume that those steps are already done after creating Hosting Plan:  <ul> <li>WSP User created by hosting provider  <li>Hosting Space (based on previously created Hosting Plan) for this WSP User is created by hosting provider  <li>Hosted Organization inside this Hosting Space is created by hosting provider or by hosting customer  <li>At least one user (future SharePoint Site Collection owner) is created in Hosted Organization by hosting provider or by hosting customer</li></ul> <p>Here are steps hosting customers have to do to create SharePoint Site Collection:  <ul> <li>Decide what will be SharePoint Site Collection URL  <li>Create Domain Name the same as future SharePoint Site Collection URL, team.customer.com in our example.</li></ul> <p><img src="../Media/Images/dnp_hosted_sharepoint_solution_installation_tasks/image045.png"/> <ul> <li>Go to SharePoint &gt; Site Collections and press "Create New Site Collection" button. </li></ul> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On SharePoint Site Collection creation page specify the following settings:  <ul> <li>Url. Choose from drop-down. Temporary Hosted Organization domain name by default. We use previously created team.customer.com in our example.  <li>Owner. Choose who will be SharePoint Site Collection owner. Use Hosted Organization users list.  <li>Locale ID. Choose from drop-down. WSP reads available LCIDs (depends on language packs you deployed).  <li>Title. Fill the title.  <li>Description. Fill site description.</li></ul> <p><img src="../Media/Images/dnp_hosted_sharepoint_solution_installation_tasks/image048.png"/> <ul> <li>Press "Add site collection".</li></ul> <p>Try to open Site Collection in browser. </p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn4e08.html?ReturnUrl=%2Fsharepoint-module%2Fwsp-hosted-sharepoint-solution-installation-tasks">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/sharepoint-module/wsp-hosted-sharepoint-solution-installation-tasks by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:40 GMT -->
+</html>

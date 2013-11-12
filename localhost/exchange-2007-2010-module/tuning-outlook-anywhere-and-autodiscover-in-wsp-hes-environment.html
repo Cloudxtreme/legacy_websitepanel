@@ -1,0 +1,312 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/tuning-outlook-anywhere-and-autodiscover-in-wsp-hes-environment by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:11:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Tuning Outlook Anywhere and Autodiscover in WSP HES environment - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module" href="../rss68ec?containerid=101" />
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module - Comments" href="../rssba67?commentedoncontainer=101" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Exchange 2007/2010 Modules</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Tuning Outlook Anywhere and Autodiscover in WSP HES environment</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="tuning-outlook-anywhere-and-autodiscover-in-wsp-hes-environment-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p><strong>ASSUMPTIONS.</strong></p>
+<p>Here we will add examples assuming that</p>
+<p>&nbsp;&nbsp; - Our example hosting company DNS domain "hosterdomain.com"</p>
+<p>&nbsp;&nbsp; - Example hosting company name is "New Hosting LLC"</p>
+<p>&nbsp;&nbsp; - Hosting company is located</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - in country with country code "ZZ"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - in state or province "Hosting state"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - in town or city "Hosterland"</p>
+<p>&nbsp;&nbsp; - Hosted Exchange Project is deployed by organizational unit "Hosted Exchange dept"&nbsp;</p>
+<p>&nbsp;&nbsp; - We use single SSL certificate for all Exchange services and use one common name - "exchange.hosterdomain.com"</p>
+<p>&nbsp;&nbsp; - Client Access Server hostname - exch01</p>
+<p>&nbsp;&nbsp; - Special IP for Autodiscover redirect site - 10.0.0.3.</p>
+<p>&nbsp;&nbsp; - Also we assume that it is default Exchange 2007 installation and all web-based Exchange services (Autodiscover, OA, OWA, OAB distribution, etc) are deployed under Default Web Site.</p>
+<p>We add example Shell commands in <em>black italics</em> mark in <em>green italics</em> all parts of Shell commands that you need replace with your specific data.</p>
+<p>All links to Microsoft documentation was done only for information, you can use this article as is, without go to those links. However they are very useful for understanding how to tune non-standard environments.</p>
+<p>1. Get additional External (or Client Access Network, if you use NAT-based network) IP address for Client Access Server. It should be dedicated IP address, not the same used for OWA redirect site.</p>
+<p>2. Check that "RPC over HTTP Proxy" component is installed.</p>
+<p><em>&nbsp;&nbsp; 2.1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Windows Server 2003:</p>
+<p>Go to Control Panel &gt; Add or Remove Programs &gt; Add/Remove Windows Components &gt; Networking Services &gt; tick "RPC over HTTP Proxy" checkbox if it is empty.</p>
+<p>Below our examples to those steps:
+<p><em>&nbsp;&nbsp; 3.1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Configure a valid SSL certificate.
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1.1.&nbsp;&nbsp;&nbsp; </em>Request SSL certificate according to <a href="http://technet.microsoft.com/en-us/library/bb310781.aspx">http://technet.microsoft.com/en-us/library/bb310781.aspx</a>
+<p><em>New-ExchangeCertificate -generaterequest -Keysize 1024 -subjectname "C=</em><em>ZZ</em><em>, S=</em><em>Hosting state</em><em>, L=</em><em>Hosterland</em><em>, O=</em><em>New Hosting LLC</em><em>, OU=</em><em>Hosted Exchange dept</em><em>, CN=</em><em>exchange.hosterdomain.com</em><em>" -domainname </em><em>exchange.hosterdomain.com</em><em> -PrivateKeyExportable $true</em>
+<p>This sample request lightly different from example in Microsoft article. It was tuned by us and our customers while trying to get real certificate from real certificate vendor.
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1.2.&nbsp;&nbsp;&nbsp; </em>Get SSL certificate from trusted third-party authority, save as file c:\sslcert.cer
+<p>Use this link <a href="http://support.microsoft.com/kb/915840/en-us">http://support.microsoft.com/kb/915840/en-us</a> to choose SSL vendor which will be supported by Windows Mobile devices for sure.
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1.3.&nbsp;&nbsp;&nbsp; </em><em></em>Install SSL certificate according to <a href="http://technet.microsoft.com/en-us/library/bb310769.aspx">http://technet.microsoft.com/en-us/library/bb310769.aspx</a>
+<p>Exchange 2007:
+<p><em>Import-ExchangeCertificate -Path c:\sslcert.cer -friendlyname "</em><em>exchange.hosterdomain.com</em><em>"</em>
+<p>Exchange 2010:
+<p><em>Import-ExchangeCertificate -FileData ([Byte[]]$(Get-Content -Path C:\Cert.pfx -Encoding byte -ReadCount 0)) -friendlyname "exchange.hosterdomain.com"</em>
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1.4.&nbsp;&nbsp;&nbsp; </em>Use the Get-ExchangeCertificate command let to view certificates that are in the local certificate store.
+<p><em>Get-ExchangeCertificate</em>
+<p><img src="../Media/Images/tuning_outlook_anywhere_and_autodiscover_in_dnp_hes_environment/image005.png" alt="image005.gif" width="668" height="331" />
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1.5.&nbsp;&nbsp;&nbsp; </em>Find your newly imported certificate. In our example it's a certificate with "exchange.hosterdomain.com" friendly name and "<em>86C986443503872AAF2629EFE9AEDB9AB8D78C8D</em>" thumbprint" value.
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1.6.&nbsp;&nbsp;&nbsp; </em>Replace existing self-signed certificate for Default Web Site with new commercial certificate using Exchange Management Shell
+<p>Perform it according to <a href="http://technet.microsoft.com/en-us/library/aa997231.aspx"><em>http://technet.microsoft.com/en-us/library/aa997231.aspx</em></a><em> article</em>
+<p><em>Enable-ExchangeCertificate -Thumbprint '</em><em>86C986443503872AAF2629EFE9AEDB9AB8D78C8D</em><em>' -Services IIS</em>
+<p>Please note that via "command-let" you should enable only "IIS" service and it will be enough for replacing of existing self-signed certificate. Enabling of IMAP, POP, SMTP services is optional and depends on your current configuration.&nbsp;&nbsp;
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.1.7.&nbsp;&nbsp;&nbsp; </em>On Windows 2003 Server: Open Internet Information Services (IIS) Manager &gt; Web Sites &gt; Default Web Site properties &gt; Directory Security &gt; View Certificate and ensure that new certificate was successfully installed
+<p>On Windows 2008 Server: Open Internet Information Services (IIS) Manager &gt; Sites &gt; Default Web Site properties &gt; Actions pane &gt; Bindings &gt; Press edit HTTPS Binding and ensure that new certificate was successfully installed
+<p><em>&nbsp;&nbsp; 3.2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Configure the URLs for Exchange services according to <a href="http://technet.microsoft.com/en-us/library/bb201695.aspx">http://technet.microsoft.com/en-us/library/bb201695.aspx</a>
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.2.1.&nbsp;&nbsp;&nbsp; </em>To use the Exchange Management Shell to configure the external host name for Outlook Anywhere for the Autodiscover service.
+<p><em>Exchange 2007:&nbsp; </em>
+<p><em>
+<p><em>Enable-OutlookAnywhere -Server </em><em>exch01</em><em> -ExternalHostname "</em><em>exchange.hosterdomain.com</em><em>" -ExternalAuthenticationMethod "Basic" -SSLOffloading:$False</em>
+<p>
+<p><em>Exchange 2007 SP1 and Exchange 2010: </em>
+<p><em>Enable-OutlookAnywhere -Server exch01 -ExternalHostname "exchange.hosterdomain.com" -DefaultAuthenticationMethod "Basic" -SSLOffloading:$False</em>
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.2.2.&nbsp;&nbsp;&nbsp; </em>To use the Exchange Management Shell to configure the external URL for the offline address book for the Autodiscover service.
+<p>No need to run this cmdlet in case you specify correct external FQDN on "Configure Client Access Server external domain" page when you deploy Exchange 2010 on this server.
+<p><em>Set-OABVirtualDirectory -identity "</em><em>exch01</em><em>\OAB (Default Web Site)" -externalurl https://</em><em>exchange.hosterdomain.com</em><em>/OAB -RequireSSL:$true</em>
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.2.3.&nbsp;&nbsp;&nbsp; </em>To use the Exchange Management Shell to configure the external URL for Exchange Web Services for the Autodiscover service.
+<p>No need to run this cmdlet in case you specify correct external FQDN on "Configure Client Access Server external domain" page when you deploy Exchange 2010 on this server.
+<p><em>Set-WebServicesVirtualDirectory -identity "</em><em>exch01</em><em>\EWS (Default Web Site)" -externalurl https://</em><em>exchange.hosterdomain.com</em><em>/EWS/Exchange.asmx -BasicAuthentication:$True</em>
+<p><em>&nbsp;&nbsp; 3.3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Configure the service connection point object
+<p><em>Set-ClientAccessServer -id </em><em>exch01</em><em> -AutoDiscoverServiceInternalUri </em><a href="https://exchange.hosterdomain.com/autodiscover/autodiscover.xml"><em>https://exchange.hosterdomain.com/autodiscover/autodiscover.xml</em></a>
+<p><em>&nbsp;&nbsp; 3.4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Configure Exchange ActiveSync Autodiscover Settings according to <a href="http://technet.microsoft.com/en-us/library/aa998277(EXCHG.80).aspx">http://technet.microsoft.com/en-us/library/aa998277(EXCHG.80).aspx</a>&nbsp; or <a href="http://technet.microsoft.com/en-us/library/aa998277.aspx">http://technet.microsoft.com/en-us/library/aa998277.aspx</a>
+<p>No need to run this cmdlet in case you specify correct external FQDN on "Configure Client Access Server external domain" page when you deploy Exchange 2010 on this server.
+<p><em>Set-ActiveSyncVirtualDirectory -Identity "</em><em>exch01</em><em>\Microsoft-Server-ActiveSync (Default Web Site)" -ExternalURL "</em><a href="https://exchange.hosterdomain.com/"><em></em><a href="https://exchange.hosterdomain.com/Microsoft-Server-ActiveSync">https://exchange.hosterdomain.com/</a><em>Microsoft-Server-ActiveSync</em><em>"</em>
+<p><em>&nbsp;&nbsp; 3.5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Configure the IP address for the default Web site. Configure Default Web Site to use one IP address, not "all Unassigned". This address should not be used nether by OWA redirect site, no by Autodiscover redirect site which we will create in next steps.
+<p>Note that after this step you may have problems with opening EMC/EMS. Please check it and in case this issue appear, add the following records to hosts file:
+<p><em>10.0.0.1 exch01.hosterdomain.local</em>
+<p><em>10.0.0.1 exch01</em>
+<p>Where:
+<p>exch01.hosterdomain.local - internal FQDN of this server
+<p>10.0.0.1 - IP address you set for Default Website Bindings.
+<p>Alternative way may be deploring Autodiscover redirect website on some another, non-Exchange server. It is not mandatory to be deployed on Exchange server, as it is just HTTP redirect. However this site should have dedicated IP and does not use host headers anyway.
+<p><em>&nbsp;&nbsp; 3.6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Create a new Web site in IIS and Autodiscover redirect and configure the new Web site
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.6.1.&nbsp;&nbsp;&nbsp; </em>Windows Server 2003:
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.6.1.1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Create new website, name it "Autodiscover redirect"
+<p><img src="../Media/Images/tuning_outlook_anywhere_and_autodiscover_in_dnp_hes_environment/image006.png" alt="image006.png" width="482" height="374" />
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.6.1.2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Use IP address you got in step 1 (which does not used for Default Web Site and OWA redirect site), port 80. Don't use host headers
+<p><img src="../Media/Images/tuning_outlook_anywhere_and_autodiscover_in_dnp_hes_environment/image008.png" alt="image008.png" width="482" height="374" />
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.6.1.3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Create C:\Inetpub\ Autodiscover_redirect directory and use it for this site home directory
+<p><img src="../Media/Images/tuning_outlook_anywhere_and_autodiscover_in_dnp_hes_environment/image010.png" alt="image010.png" width="482" height="374" />
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.6.1.4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Accept all other default setting of new web site creation wizard
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.6.1.5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Open HTTP (TCP port 80) to this IP from outside, if you use NAT-based port mapping/publishing
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.6.1.6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Create the Autodiscover redirect. Do steps according to Microsoft documentation: "Use Windows Explorer to locate the folder that you created named Autodiscover_redirect. Create a new folder named Autodiscover in the Autodiscover redirect folder, and then use a text editor to create a new blank text file that has the name Autodiscover.xml in the Autodiscover folder."
+<p><img src="../Media/Images/tuning_outlook_anywhere_and_autodiscover_in_dnp_hes_environment/image012.png" alt="image012.png" width="500" height="375" />
+<p>
+<p>Just change mail.contoso.com to your URL, <a href="https://exchange.hosterdomain.com/autodiscover/autodiscover.xml">https://exchange.hosterdomain.com/autodiscover/autodiscover.xml</a> in our example.
+<p><img src="../Media/Images/tuning_outlook_anywhere_and_autodiscover_in_dnp_hes_environment/image014.png" alt="image014.gif" width="472" height="440" />
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.6.2.&nbsp;&nbsp;&nbsp; </em>Windows Server 2008:
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.6.2.1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Create C:\Inetpub\Autodiscover_redirect directory and use it for this site home directory. Use IP address you got in step 1 (which does not used for Default Web Site and OWA redirect site), port 80. Don't use host headers
+<p><img src="../Media/Images/tuning_outlook_anywhere_and_autodiscover_in_dnp_hes_environment/image015.png" alt="image015.png" width="448" height="440" />
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.6.2.2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Create the Autodiscover redirect. Do steps according to Microsoft documentation: "Use Windows Explorer to locate the folder that you created named Autodiscover_redirect. Create a new folder named Autodiscover in the Autodiscover redirect folder, and then use a text editor to create a new blank text file that has the name Autodiscover.xml in the Autodiscover folder."&nbsp;&nbsp;
+<p><img src="../Media/Images/tuning_outlook_anywhere_and_autodiscover_in_dnp_hes_environment/image012.png" alt="image012.png" width="500" height="375" />
+<p><em></em><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.6.2.3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>In IIS Manager, under "Autodiscover redirect" website &gt; Autodiscover folder that you created, click on autodiscover.xml file .
+<p><img src="../Media/Images/tuning_outlook_anywhere_and_autodiscover_in_dnp_hes_environment/redirect.png" alt="redirect.png" />
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.6.2.4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Then click HTTP Features &gt; HTTP Redirect feature settings.
+<p><img src="../Media/Images/tuning_outlook_anywhere_and_autodiscover_in_dnp_hes_environment/image021.png" alt="image021.png" width="298" height="170" />
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.6.2.5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>On the Properties page, select "Redirect request to this destination", and then enter the same information that you used to configure the SCP object. For example, https://mail.contoso.com/autodiscover/autodiscover.xml." Just change mail.contoso.com to your URL, <a href="https://exchange.hosterdomain.com/autodiscover/autodiscover.xml">https://exchange.hosterdomain.com/autodiscover/autodiscover.xml</a> in our example.
+<p><img src="../Media/Images/tuning_outlook_anywhere_and_autodiscover_in_dnp_hes_environment/image023.png" alt="image023.png" width="429" height="312" />
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.6.2.6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Open HTTP (TCP port 80) to this IP from outside, if you use NAT-based port mapping/publishing
+<p>4. DNS configuration and CNAME records creation automation in WSP.
+<p><em>&nbsp;&nbsp; 4.1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Create A record for autodiscoverredirect in your hosting company DNS zone.
+<p>autodiscoverredirect.hosterdomain.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10.0.0.3.
+<p>Such a record cannot exist in real internet DNS. It is just example. Use IP address of "Autodiscover redirect" site if your Exchange Client Access Server is directly connected to the Internet, or external IP address of NAT device which maps TCP 80 to "Autodiscover redirect" site IP.
+<p><em>&nbsp;&nbsp; 4.2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Add CNANE record to Exchange 2007 service DNS template in WSP.
+<p><img src="../Media/Images/tuning_outlook_anywhere_and_autodiscover_in_dnp_hes_environment/image025.png" alt="image025.png" width="568" height="82" />
+<p>5. Test creation DNS records and Autodiscover redirect work.
+<p><em>&nbsp;&nbsp; 5.1.&nbsp;&nbsp;&nbsp; </em>Create new Exchange organization with WSP
+<p><em>&nbsp;&nbsp; 5.2.&nbsp;&nbsp;&nbsp; </em>Ensure that Autodiscover CNAME created
+<p><em>&nbsp;&nbsp; 5.3.&nbsp;&nbsp;&nbsp; </em>Create user in new Exchange organization
+<p><em>&nbsp;&nbsp; 5.4.&nbsp;&nbsp;&nbsp; </em>Try to connect to Exchange server using Outlook 2007 with Autodiscover.
+<p>6. Additional notes:
+<p><em>&nbsp;&nbsp; 6.1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>You may get error while trying to connect to Exchange server using Outlook 2007 with Autodiscover:
+<p><em>The action cannot be completed. The connection to Microsoft Exchange is unavailable. Outlook must be online or connected to complete this action</em>
+<p>In this case run iisreset in command prompt and Restart Exchange services on Client Access Server or even reboot Client Access Server and then try to connect to Exchange server using Outlook 2007 with Autodiscover again.
+<p><em>&nbsp;&nbsp;&nbsp; 6.2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>If you do not host clients DNS zones and do not manage them by WSP - instruct your clients how to create appropriate records manually.
+<p><em></em><em>&nbsp;&nbsp; 6.3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>You can use anything you want instead of "exchange" in URLs, shell commands and SSL certificate. For example - mail, webmail, etc.
+<p><em>&nbsp;&nbsp; 6.4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Very useful link to test those things <a href="https://www.testexchangeconnectivity.com/">https://www.testexchangeconnectivity.com/</a> <em></em>
+<p><em>&nbsp;&nbsp; 6.5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Very useful link for troubleshooting <a href="http://technet.microsoft.com/en-us/library/cc411322(EXCHG.80).aspx">http://technet.microsoft.com/en-us/library/cc411322(EXCHG.80).aspx</a>
+<p><em>&nbsp;&nbsp; 6.6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </em>Very useful link for in-depth understanding&nbsp; <a href="http://msexchangeteam.com/archive/2008/06/20/449053.aspx">http://msexchangeteam.com/archive/2008/06/20/449053.aspx</a></p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</a></p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</em></p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnea08.html?ReturnUrl=%2Fexchange-2007-2010-module%2Ftuning-outlook-anywhere-and-autodiscover-in-wsp-hes-environment">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/tuning-outlook-anywhere-and-autodiscover-in-wsp-hes-environment by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:11:32 GMT -->
+</html>

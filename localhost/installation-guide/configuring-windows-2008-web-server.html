@@ -1,0 +1,134 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/installation-guide/configuring-windows-2008-web-server by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:45:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Configuring Windows 2008 Web Server - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Installation Guide" href="../rss1e35?containerid=110" />
+
+<link rel="alternate" type="application/rss+xml" title="Installation Guide - Comments" href="../rssaaeb?commentedoncontainer=110" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Installation Guide</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Configuring Windows 2008 Web Server</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="configuring-windows-2008-web-server-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<h2>Configuring IIS 7 Logging</h2>
+<p>In order to collect and analyze website traffic in WebsitePanel, you must enable logging in IIS. By default, logging in the correct format is already enabled, but some important options are not enabled.</p>
+<p>In IIS Manager, click the server name node.</p>
+<p><img src="../Media/WindowsLiveWriter/WindowsServer2008_A8BB/clip_image016_2.png" alt="" /></p>
+<p>In the <strong>IIS</strong> section, click <strong>Logging</strong> and then click <strong>Select Fields</strong>.</p>
+<p><img src="../Media/WindowsLiveWriter/WindowsServer2008_A8BB/clip_image018_2.png" alt="" /></p>
+<p>Select the <strong>Bytes sent</strong> and <strong>Bytes received</strong> options and then click <strong>OK</strong>.</p>
+<p><img src="../Media/WindowsLiveWriter/WindowsServer2008_A8BB/clip_image020_2.png" alt="" /></p>
+<h2>Creating a Default FTP Site</h2>
+<p>In order to manage files and folders on your server from a FTP client, you must configure a default FTP site. All FTP accounts will then be created under this FTP site. (This procedures assumes that FTP Services 7.5 were installed earlier using the Web Platform Installer.)</p>
+<p>In Windows, open <strong>Administrative Tools</strong> &gt; <strong>Computer Management</strong>, click <strong>Local Users and Groups</strong>, and then select the <strong>Groups</strong> node.</p>
+<p><img src="../Media/WindowsLiveWriter/WindowsServer2008_A8BB/clip_image022_2.png" alt="" /></p>
+<p>Add a new group named <em>WSPFtpUsers</em>.</p>
+<p>In Windows Explorer, navigate to the <em>c:\inetpub</em> folder. Create a new subfolder named <em>ftproot</em>. For this folder, grant Read permissions to the <em>WSPFtpUsers</em> group.</p>
+<p>Open IIS Manager and expand the <strong>Sites</strong> node.</p>
+<p>In the <strong>Actions</strong> pane, click <strong>Add FTP Site</strong>.&nbsp;</p>
+<p><img src="../Media/WindowsLiveWriter/WindowsServer2008_A8BB/clip_image024_2.png" alt="" /></p>
+<p>Specify the FTP site name and root folder path, then click <strong>Next</strong>.</p>
+<p><img src="../Media/WindowsLiveWriter/WindowsServer2008_A8BB/clip_image026_2.png" alt="" /></p>
+<p>Specify FTP site bindings and select <strong>No SSL</strong> so that clients can use FTP protocol rather than FTPS. If you decide to set up an SSL certificate and use FTPS protocol, you can change this&nbsp;setting.</p>
+<p><img src="../Media/WindowsLiveWriter/WindowsServer2008_A8BB/clip_image028_2.png" alt="" /></p>
+<p>Click <strong>Next</strong>.</p>
+<p>Select <strong>Basic</strong> for authentication and grant Read access to the <em>WSPFtpUsers</em> group. Click <strong>Finish</strong> to create the FTP site.</p>
+<p>Select the <strong>Default FTP Site</strong> node and then click the <strong>FTP User Isolation</strong> icon.</p>
+<p><img src="../Media/WindowsLiveWriter/WindowsServer2008_A8BB/clip_image030_2.png" alt="" /></p>
+<p>Switch isolation mode to <strong>User name directory</strong> and then click <strong>Apply</strong>.</p>
+<h2>Disabling Password Complexity Policy</h2>
+<p>To disable password complexity policy, open the <strong>Local Security Settings</strong> manager (<strong>Start</strong> &gt; <strong>Administrative Tools</strong>), expand <strong>Account Policies</strong>, and then expand <strong>Password Policy</strong>. Set the <strong>Set Password must meet complexity requirements</strong> policy to <strong>Disabled</strong>.</p>
+<p><img src="../Media/WindowsLiveWriter/WindowsServer2008_A8BB/clip_image032_2.png" alt="" /></p>
+<p>&nbsp;</p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOnf228.html?ReturnUrl=%2Finstallation-guide%2Fconfiguring-windows-2008-web-server">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/installation-guide/configuring-windows-2008-web-server by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:46:08 GMT -->
+</html>

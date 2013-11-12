@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/tuning-owa-redirection-in-wsp-hes-environment by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Tuning OWA redirection in WSP HES environment - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module" href="../rss68ec?containerid=101" />
+
+<link rel="alternate" type="application/rss+xml" title="Exchange 2007/2010 Module - Comments" href="../rssba67?commentedoncontainer=101" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Exchange 2007/2010 Modules</a></p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Tuning OWA redirection in WSP HES environment</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="tuning-owa-redirection-in-wsp-hes-environment-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p><strong>ASSUMPTIONS.</strong> <p>Here we will add examples assuming that:  <ul> <li>Our example hosting company DNS domain "hosterdomain.com".  <li>We use single SSL certificate for all Exchange services and use one common name - "mail.hosterdomain.com".  <li>Special IP for OWA redirect site - 10.0.0.2.  <li>Also we assume that it is default Exchange installation and all web-based Exchange services (Autodiscover, OA, OWA, OAB distribution, etc) are deployed under Default Web Site. </li></ul> <p>Steps to deploy OWA redirection:  <ul> <li> <p>Get additional Internet (or Client Access Network, if you use NAT-based network) IP address for Client Access Server. It should be dedicated IP address, not the same used for Autodiscover redirect site. </p> <li> <p>Configure the IP address for the default Web site. Configure Default Web Site to use one IP address, not "all Unassigned". This address should not be used nether by Autodiscover redirect site, no by OWA redirect site which we will create in next steps. </p> <li> <p>Create new web site, name it OWA Redirect. Use separate IP address (which does not used for Default Web Site and for Autodiscover redirect site), port 80. Don't use host headers. Create C:\Inetpub\OWA_redirect directory and use it for this site home directory. Accept all other default setting of new web site creation wizard </p> <li> <p>Go to "OWA Redirect" website properties and set redirection to your OWA site (<a href="https://mail.your_hosting_comany_domain.com/owa">https://mail.your_hosting_comany_domain.com/owa</a>) URL&nbsp; </p> <li> <p>Create A record for owaredirect in your hosting company DNS zone like <strong><em>owaredirect.hosterdomain.com A 10.0.0.2</em></strong>. Such a record can not exist in real internet DNS. It is just example. Use IP address of "OWA redirect" site if your Exchange Client Access Server is directly connected to the Internet, or external IP address of NAT device which maps TCP 80 to "Autodiscover redirect" site IP.&nbsp; </p> <li> <p>Add CNANE record to Exchange service DNS template as on picture. </p></li></ul> <p><img alt="image009.png" src="../Media/Images/tuning_owa_redirection_in_dnp_hes_environment/image009.png" width="516" height="116"> <ul> <li> <p>After this in every WSP-managed clients zone, it will be will be created with this CNAME during creating Exchange organization. Then your clients will type owa.customer_domain.com and will open owaredirect.your_hosting_comany_domain.com, and then redirected to <a href="https://mail.your_hosting_comany_domain.com/owa">https://mail.your_hosting_comany_domain.com/owa</a>. Note that you can use anything you want instead of "owa" in URLs. For example - mail, webmail, etc. </p></li></ul>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn2a37.html?ReturnUrl=%2Fexchange-2007-2010-module%2Ftuning-owa-redirection-in-wsp-hes-environment">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/exchange-2007-2010-module/tuning-owa-redirection-in-wsp-hes-environment by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:51 GMT -->
+</html>

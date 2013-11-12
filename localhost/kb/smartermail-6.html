@@ -1,0 +1,222 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/smartermail-5.x-installation-and-configuration-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>SmarterMail 5.x Kurulum ve Yapılandırma - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>SmarterMail 5.x Kurulum ve Yapılandırma</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="smartermail-5.html">en-US</a></li></ul>
+    </div>
+</div>
+<p style="line-height: normal; margin-bottom: 0pt;"><span style="font-family: 'Arial','sans-serif'; color: black; font-size: 9.5pt;" lang="TR"><a href="http://www.websitepanel.net/documentation"><span style="color: black;">Belgeler</span></a> &gt;<a href="http://www.websitepanel.net/kb/index"><span style="color: black;">Bilgi Bankası</span></a><o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 1;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 17pt; mso-font-kerning: 18.0pt;" lang="TR">SmarterMail 5.x Kurulum ve Yapılandırma<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Harici bağlantılar: <o:p></o:p></span></p>
+<ul style="margin-top: 0in;" type="disc">
+<li style="line-height: normal; margin: 0in 0in 0pt; color: black; mso-list: l0 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">SmarterMail Kurulumu <a href="http://help.smartertools.com/SmarterMail/v5/"><span style="color: black;">http://help.smartertools.com/SmarterMail/v5/</span></a> <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0in 0pt; color: black; mso-list: l0 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">IIS Sitesi olarak SmarterMail Kurulumu <a href="http://help.smartertools.com/SmarterMail/v5/"><span style="color: black;">http://help.smartertools.com/SmarterMail/v5/</span></a> <o:p></o:p></span></li>
+<li style="line-height: normal; margin: 0in 0in 0pt; color: black; mso-list: l0 level1 lfo1; tab-stops: list .5in;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; font-size: 9.5pt;" lang="TR">IIS Sanal Dizini olarak SmarterMail Kurulumu <a href="http://help.smartertools.com/SmarterMail/v5/"><span style="color: black;">http://help.smartertools.com/SmarterMail/v5/</span></a><o:p></o:p></span></li>
+</ul>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 3;" class="MsoNormal"><a name="Section1"></a><span style="font-family: 'Times New Roman','serif'; color: black;" lang="TR"><o:p><span style="font-size: small;" size="3">&nbsp;</span></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 3;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black;" lang="TR"><span style="font-size: small;" size="3">Kurulum<o:p></o:p></span></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">SmarterMail, &uuml;r&uuml;n&uuml; &ccedil;alıştırmak i&ccedil;in gereken her şeyi i&ccedil;eren tek bir kurulum dosyası olarak gelir. SmarterMail kurulum aracı <a href="http://www.smartertools.com/"><span style="color: black;">http://www.smartertools.com</span></a> adresinden y&uuml;klenebilir. SmarterMail &uuml;cretsiz ve lisanslı s&uuml;r&uuml;m&uuml; bu kurulum dosyasında bulunur, bu nedenle &uuml;cretsiz s&uuml;r&uuml;m&uuml; denedikten ve satın almaya karar verdikten sonra dosyanın tekrar y&uuml;klenmesi veya kurulması gerekli olmayacaktır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><i><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Not: Windows 2003 Advanced Server kullanıcılarının, dosya izinlerinin uygun şekilde ayarlanabilmesi i&ccedil;in SmarterMail uygulamasını denetim masasında Program Ekle/Kaldır &ouml;ğesinden kurması gereklidir.</span></i><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"> <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">IIS 6.0 veya daha yeni bir s&uuml;r&uuml;m varsa, performans nedenleriyle SmarterMail web arabiriminin dahili web sunucusu yerine IIS ile &ccedil;alıştırılması tavsiye edilir. Daha fazla bilgi almak i&ccedil;in <a href="http://help.smartertools.com/SmarterMail/v5/Topics/SystemAdmin/Installation/ConvertingToIIS.aspx"><span style="color: black;">IIS sitesi olarak &ccedil;alıştırma başlığına bakın</span></a>. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 3;" class="MsoNormal"><a name="Section2"></a><span style="font-family: 'Times New Roman','serif'; color: black;" lang="TR"><span style="font-size: small;" size="3">IIS ile Web Arabirimini &Ccedil;alıştırma<o:p></o:p></span></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Varsayılan olarak SmarterMail, kurulum sonrasında programı hemen kullanmanızı m&uuml;mk&uuml;n kılan temel bir web sunucusu kuracaktır. Ancak SmarterMail uygulamasını, Microsoft Internet Bilgi Sunucusu (IIS) gibi daha sağlam ve g&uuml;venli bir web sunucusuna taşımanız tavsiye edilir. SmarterMail programını IIS 5.0 veya daha &uuml;zeri ile &ccedil;alışacak şekilde yapılandırmak i&ccedil;in, aşağıdaki adım adım talimatları uygulayın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Bu b&ouml;l&uuml;mde SmarterMail programının kendi IIS sitesi olarak kurulması anlatılmaktadır (tavsiye edilen y&ouml;ntem). SmarterMail programını mevcut bir IIS sitesinde sanal dizin olarak &ccedil;alıştırmak istiyorsanız <a href="http://help.smartertools.com/SmarterMail/v5/Topics/SystemAdmin/Installation/ConvertingToIISVirt.aspx"><span style="color: black;">burayı tıklatın</span></a>. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><i><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Not: Bu başlıkta, IIS ve nasıl &ccedil;alıştığı konusunda bilgi sahibi olduğunuz varsayılmaktadır. SmarterTools, IIS kullanmak istememeniz halinde SmarterMail ile birlikte verilen web sunucusunu kullanmanız tavsiye edilir.</span></i><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"> <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section3"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">SmarterMail Web Sunucusunu Devre Dışı Bırakma<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Kesinlikle gerekli olmamakla birlikte bu adım, sunucunun g&uuml;venliğini ve performansını artırır ve tavsiye edilir. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Bu adımlar SmarterMail ile birlikte verilen Web Sunucusunu durduracak ve devre dışı bırakacaktır. Yeni SmarterMail URL'sini g&uuml;ncelleyene kadar masa&uuml;st&uuml;ndeki SmarterMail kısayolunun devre dışı kalması şeklinde bir yan etki de s&ouml;z konusu olacaktır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Başlat -&gt; Program Dosyaları -&gt; SmarterTools -&gt; SmarterMail -&gt; SmarterMail Web Sunucusunu Yapılandır &ouml;ğesini tıklatın <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Durdur d&uuml;ğmesini tıklatın <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">&Ccedil;alıştırma Modunu Devre Dışı olarak değiştirin ve Uygula d&uuml;ğmesini tıklatın <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Kapat d&uuml;ğmesini tıklatın <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section4"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">Bir Uygulama Havuzu ekleyin (yalnızca Windows 2003)<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Başlat &gt; Denetim Masası &gt; Y&ouml;netim Ara&ccedil;ları &gt; Internet Bilgi Hizmetleri (IIS) &ouml;ğesini tıklatın <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Uygulama Havuzu &ouml;ğesini sağ tıklatın ve Yeni -&gt; Uygulama Havuzu &ouml;ğesini se&ccedil;in <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">pool SmarterMail (veya eşdeğeri) &ouml;ğesini adlandırın ve Tamam &ouml;ğesini tıklatın <o:p></o:p></span></p>
+<p><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: TR; mso-fareast-language: TR; mso-bidi-language: AR-SA;" lang="TR"><br style="page-break-before: always;" clear="all" /></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><a name="Section5"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">SmarterMail uygulamasını IIS'ye ekleyin<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Başlat &gt; Denetim Masası &gt; Y&ouml;netim Ara&ccedil;ları &gt; Internet Bilgi Hizmetleri (IIS) &ouml;ğesini tıklatın <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Sayfanın sol tarafındaki web siteleri ağa&ccedil; g&ouml;r&uuml;n&uuml;m&uuml;n&uuml; sağ tıklatın ve Yeni -&gt; Web Sitesi &ouml;ğesini se&ccedil;in <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">A&ccedil;ıklama istendiğinde SmarterMail girin <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Webmail i&ccedil;in kullanılacak IP adresini girin. Eğer bu IP adresi başka bir web sitesi ile paylaşılıyorsa, farklı bir port veya Ana Bilgisayar Başlığı kullanmanız gerekecektir. Ana Bilgisayar Başlığı hakkında daha fazla bilgi sahibi olmak i&ccedil;in IIS belgelerine bakın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Yol i&ccedil;in "C:\Program Files\SmarterTools\SmarterMail\MRS" kullanın (veya SmarterMail kurduğunuz konumu kullanın). <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">"Bu web sitesine anonim erişime izin ver" onay kutusunu işaretli olarak bırakın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Hangi izinlerin verileceği sorulduğunda yalnızca Okuma ve &Ccedil;alıştırma Komut Dizilerini se&ccedil;in. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Sihirbazı bitirin <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Yeni IIS sitesinin web sitesi ağa&ccedil; g&ouml;r&uuml;n&uuml;m&uuml;n&uuml; a&ccedil;ın ve posta işleme dizinini sağ tıklatın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">A&ccedil;ılır men&uuml;den &Ouml;zellikler &ouml;ğesini se&ccedil;in. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">İzinleri Y&uuml;r&uuml;t a&ccedil;ılır listesinde "Hi&ccedil;biri" &ouml;ğesini se&ccedil;in ve Tamam &ouml;ğesini tıklatın <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">(Yalnızca Windows 2003) Site adını sağ tıklatın ve &ouml;zellikleri se&ccedil;in <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">(Yalnızca Windows 2003) Ana dizin sekmesinde SmarterMail uygulama havuzunu se&ccedil;in <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section6"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">IIS Ayarlarını Doğrulama<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Eğer Windows 2003 kullanıyorsanız, ASP.NET v2.0.50727 Web Hizmeti Uzantısında IIS i&ccedil;in izin Verilmiş olarak ayarlandığını doğrulayın. Eğer ASP.NET &ouml;ğesi Web Hizmeti Uzantıları altında g&ouml;r&uuml;lm&uuml;yorsa, ASP.NET &ouml;ğesinin Uygulama Sunucusunda kurulu olduğundan emin olun. (Denetim Masası -&gt; Program Ekle/Kaldır -&gt; Windows Bileşenleri -&gt; Uygulama Sunucusu -&gt; Ayrıntılar) <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Site varsayılan belgesinin Default.aspx olduğundan emin olun (Belgeler sekmesinde) <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Daha y&uuml;ksek performans i&ccedil;in, yeni skin oluşturmuyorsanız HTTP i&ccedil;eriği kullanma s&uuml;resini App_Themes klas&ouml;r&uuml;nde 7 g&uuml;n olarak ayarlayın <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Windows 2003 uygulamasında, uygulama havuzu performans sekmesini "Şu s&uuml;re boşta kaldığında &ccedil;alışma işlemini kapat" &ouml;ğesini devre dışı bırakacak şekilde değiştirin veya 240 gibi y&uuml;ksek bir değer ayarlayın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section7"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">DNS G&uuml;ncelleme<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">SmarterMail ile herhangi bir etki alanı ayarlanmışsa, webmail DNS kayıtlarını yeni IP adresini g&ouml;sterecek şekilde g&uuml;ncelleyin. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section8"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">Siteyi Test Etme<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Bir web tarayıcı a&ccedil;ın ve eklediğiniz sitenin IP adresini girin. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 3;" class="MsoNormal"><a name="Section9"></a><span style="font-family: 'Times New Roman','serif'; color: black;" lang="TR"><span style="font-size: small;" size="3">Mevcut IIS Sitesi ile Web Arabirimini &Ccedil;alıştırma<o:p></o:p></span></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Varsayılan olarak SmarterMail, kurulum sonrasında programı hemen kullanmanızı m&uuml;mk&uuml;n kılan temel bir web sunucusu kuracaktır. Ancak SmarterMail uygulamasını, Microsoft Internet Bilgi Sunucusu (IIS) gibi daha sağlam ve g&uuml;venli bir web sunucusuna taşımanız tavsiye edilir. SmarterMail programını IIS 5.0 veya daha &uuml;zeri ile mevcut web sitesinde &ccedil;alışacak şekilde yapılandırmak i&ccedil;in, aşağıdaki adım adım talimatları uygulayın. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Bu b&ouml;l&uuml;mde SmarterMail programını mevcut bir IIS sitesinde sanal dizin olarak ayarlama anlatılmaktadır. <b><i>Bu, tavsiye edilen y&ouml;ntem değildir.</i></b> Uygun şekilde &ccedil;alışacaktır, ancak SmarterMail programını kendi ISS sitesi olarak ayarlamanız tavsiye edilir. SmarterMail programını kendi ISS sitesinde nasıl ayarlanacağını &ouml;ğrenmek i&ccedil;in <a href="http://help.smartertools.com/SmarterMail/v5/Topics/SystemAdmin/Installation/ConvertingToIIS.aspx"><span style="color: black;">burayı tıklatın</span></a>. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><i><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Not: Bu başlıkta, IIS ve nasıl &ccedil;alıştığı konusunda bilgi sahibi olduğunuz varsayılmaktadır. SmarterTools, IIS kullanmak istememeniz halinde SmarterMail ile birlikte verilen web sunucusunu kullanmanız tavsiye edilir.</span></i><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"> <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><i><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Not: SmarterMail 1.x i&ccedil;in gerekli olan bazı adımlar artık gerekli değildir ve bu başlıktan &ccedil;ıkarılmıştır.</span></i><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"> <o:p></o:p></span></p>
+<p><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: TR; mso-fareast-language: TR; mso-bidi-language: AR-SA;" lang="TR"><br style="page-break-before: always;" clear="all" /></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><a name="Section10"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">SmarterMail Web Sunucusunu Devre Dışı Bırakma<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Kesinlikle gerekli olmamakla birlikte bu adım, sunucunun g&uuml;venliğini artıracaktır. Sonu&ccedil; olarak bu adım, zorunlu olmamakla birlikte şiddetle tavsiye edilir. ,<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Bu adımlar SmarterMail ile birlikte verilen Web Sunucusunu durduracak ve devre dışı bırakacaktır. Yeni SmarterMail URL'sini g&uuml;ncelleyene kadar masa&uuml;st&uuml;ndeki SmarterMail kısayolunun devre dışı kalması şeklinde bir yan etki de s&ouml;z konusu olacaktır. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Başlat -&gt; Program Dosyaları -&gt; SmarterTools -&gt; SmarterMail -&gt; SmarterMail Web Sunucusunu Yapılandır &ouml;ğesini tıklatın <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Durdur d&uuml;ğmesini tıklatın <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">&Ccedil;alıştırma Modunu Devre Dışı olarak değiştirin ve Uygula d&uuml;ğmesini tıklatın <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Kapat d&uuml;ğmesini tıklatın <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section11"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">SmarterMail Uygulamasını IIS Sitesine Ekleme<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Başlat &gt; Denetim Masası &gt; Y&ouml;netim Ara&ccedil;ları &gt; Internet Bilgi Hizmetleri (IIS) &ouml;ğesini tıklatın <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Web Siteleri ağacını a&ccedil;ın ve SmarterMail programını yerleştirmek i&ccedil;in siteyi bulun <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Web sitesini sağ tıklatın ve Yeni -&gt; Sanal Dizin &ouml;ğesini se&ccedil;in <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Takma Ad istendiğinde "SmarterMail", "Mail" veya başka bir ad girin. Bu, web postası almak i&ccedil;in URL'de kullanılacaktır; &ouml;rn. http://www.example.com/smartermail. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Yol i&ccedil;in "C:\Program Files\SmarterTools\SmarterMail\MRS" kullanın (veya SmarterMail kurduğunuz konumu kullanın). <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Hangi izinlerin verileceği sorulduğunda yalnızca Okuma ve &Ccedil;alıştırma Komut Dizilerini se&ccedil;in. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Sihirbazı bitirin <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Yeni IIS sitesinin web sitesi ağa&ccedil; g&ouml;r&uuml;n&uuml;m&uuml;n&uuml; a&ccedil;ın ve posta işleme dizinini sağ tıklatın. A&ccedil;ılır men&uuml;den &Ouml;zellikler &ouml;ğesini se&ccedil;in. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">İzinleri Y&uuml;r&uuml;t a&ccedil;ılır listesinde "Hi&ccedil;biri" &ouml;ğesini se&ccedil;in <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Ayarları kaydetmek i&ccedil;in Tamam &ouml;ğesini tıklatın <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section12"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">IIS Ayarlarını Doğrulama<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Eğer Windows 2003 kullanıyorsanız, ASP.NET v2.0.50727 Web Hizmeti Uzantısında IIS i&ccedil;in izin Verilmiş olarak ayarlandığını doğrulayın. Eğer ASP.NET &ouml;ğesi Web Hizmeti Uzantıları altında g&ouml;r&uuml;lm&uuml;yorsa, ASP.NET &ouml;ğesinin Uygulama Sunucusunda kurulu olduğundan emin olun. (Denetim Masası -&gt; Program Ekle/Kaldır -&gt; Windows Bileşenleri -&gt; Uygulama Sunucusu -&gt; Ayrıntılar) <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Site varsayılan belgesinin Default.aspx olduğundan emin olun (Belgeler sekmesinde)<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section13"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">DNS G&uuml;ncelleme<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">SmarterMail ile herhangi bir etki alanı ayarlanmışsa, webmail DNS kayıtlarını yeni siteyi g&ouml;sterecek şekilde g&uuml;ncelleyin. <o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR"><o:p>&nbsp;</o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt; mso-outline-level: 2;" class="MsoNormal"><a name="Section14"></a><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 13.5pt;" lang="TR">Siteyi Test Etme<o:p></o:p></span></p>
+<p style="line-height: normal; margin: 0in 0in 0pt;" class="MsoNormal"><span style="font-family: 'Times New Roman','serif'; color: black; font-size: 9.5pt;" lang="TR">Bir web tarayıcı a&ccedil;ın ve sanal dizinin URL'sini yazın (&ouml;rn. http://www.example.com/virtualdirectory). <o:p></o:p></span></p>
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn707e.html?ReturnUrl=%2Fkb%2Fsmartermail-5.x-installation-and-configuration-tr-TR">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/smartermail-5.x-installation-and-configuration-tr-TR by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:28 GMT -->
+</html>

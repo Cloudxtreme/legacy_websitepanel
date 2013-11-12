@@ -1,0 +1,111 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/preparing-VPS-templates/generalize-master-image by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Generalize Master Image - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Preparing WebsitePanel VPS Templates with Windows Server 2008 " href="../rssef5c?containerid=232" />
+
+<link rel="alternate" type="application/rss+xml" title="Preparing WebsitePanel VPS Templates with Windows Server 2008  - Comments" href="../rss6db5?commentedoncontainer=232" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Preparing VPS Templates</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Generalize Master Image</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="generalize-master-image-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>We are going to prepare a very basic answer file just for “generalize” pass which is initiated in the time of Sysprep execution. Later, we will create another answer file with settings for “specialize” and “oobeSystem” phases that will be used by Windows Setup on the first run of new customer VPS.  <p>For “generalize” phase we are disabling auto-starting “Server Manager” application and disabling “Initial Configuration Tasks” dialog:  <p><a href="../Media/WindowsLiveWriter/GeneralizeMasterImage_DC29/image_2.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/GeneralizeMasterImage_DC29/image_thumb.png" width="469" height="316"></a>  <p>Save answer file as “unattend-generalize.xml” in “c:\WSIM\Windows Server 2008 x64” folder (where install.wim is located).  <p>You can download this file here [link TBD].  <p>In downloaded answer files change all “processorArchitecture” attributes to “amd64” if the file is used with 64-bit editions of Windows and to “x86” if it is used with 32-bit editions.  <p>Also, in “cpi:source” attribute change &lt;EDITION&gt; in “Windows Longhorn SERVER&lt;EDITION&gt;” value to the correct Windows edition value.  <p>Connect to “master” VPS using Remote Desktop or Hyper-V Virtual Machine Connection and copy “unattend-generalize.xml” file to “%windir%\system32\sysprep” folder of guest OS as “unattend.xml”:  <p><a href="../Media/WindowsLiveWriter/GeneralizeMasterImage_DC29/image_4.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/GeneralizeMasterImage_DC29/image_thumb_1.png" width="404" height="348"></a>  <p>Before running sysprep please switch all network adapters of master VM to “Obtain an IP address automatically”.  <p>Open command line interface: <pre class="csharpcode">Start -&gt; Run... -&gt; cmd + Enter</pre>
+<p>Switch to c:\Windows\System32\sysprep directory: <pre class="csharpcode">cd c:\Windows\System32\sysprep</pre>
+<p>Run sysprep with the following parameters: <pre class="csharpcode">sysprep /generalize /oobe /shutdown /unattend:unattend.xml</pre>
+<p><a href="../Media/WindowsLiveWriter/GeneralizeMasterImage_DC29/image_6.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="image" border="0" alt="image" src="../Media/WindowsLiveWriter/GeneralizeMasterImage_DC29/image_thumb_2.png" width="404" height="348"></a> 
+<p>When “master” virtual machine is shut down VPS template is almost ready. 
+<p>Do not start “master” virtual machine yet! 
+
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn4030.html?ReturnUrl=%2Fpreparing-VPS-templates%2Fgeneralize-master-image">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/preparing-VPS-templates/generalize-master-image by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 19:13:22 GMT -->
+</html>

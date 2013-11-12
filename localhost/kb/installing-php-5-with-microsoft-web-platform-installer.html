@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html lang="en" class="static orchard-blogs"> 
+
+<!-- Mirrored from localhost/kb/installing-php-5-with-microsoft-web-platform-installer by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:40:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head> 
+    <meta charset="utf-8" />
+    <title>Installing PHP 5 with Microsoft Web Platform Installer - WebsitePanel</title> 
+    <link href="../Modules/Orchard.Localization/Styles/orchard-localization-base.css" rel="stylesheet" type="text/css" />
+<link href="../Themes/WebsitePanel/Styles/Site.css" rel="stylesheet" type="text/css" />
+<meta content="Orchard" name="generator" />
+<link href="../modules/orchard.themes/Content/orchard.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin" rel="stylesheet" type="text/css" />
+<script src="../Core/Shapes/scripts/html5.js" type="text/javascript"></script>
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base" href="../rss5716?containerid=127" />
+
+<link rel="alternate" type="application/rss+xml" title="Knowledge Base - Comments" href="../rss537e?commentedoncontainer=127" />
+
+    <script>(function(d){d.className="dyn"+d.className.substring(6,d.className.length);})(document.documentElement);</script> 
+</head> 
+<body>
+
+
+<div class="split-4" id="layout-wrapper">
+<header id="layout-header" class="group">
+    <div id="header">
+        <div class="zone zone-header"><h1 id="branding"><a href="../index.html" title="WebsitePanel"></a></h1>
+
+<div id="search">
+    <form action="http://localhost/search">
+        <input type="text" name="q" />
+        <input type="submit" id="search" value="Search" />
+    </form>
+</div></div>
+    </div>
+</header>
+<div id="layout-navigation" class="group">
+    <div class="zone zone-navigation"><nav>
+    <ul class="menu menu-main">
+        
+        <li>    <a href="../index.html">Home</a>
+</li><li>    <a href="../whatsnew.html">What&#39;s new?</a>
+</li><li>    <a href="../license.html">License</a>
+</li><li>    <a href="../downloads.html">Downloads</a>
+</li><li>    <a href="../demo.html">Demo</a>
+</li><li>    <a href="../documentation.html">Documentation</a>
+</li><li>    <a href="../works-with.html">Works With</a>
+</li><li>    <a href="../contact-us.html">Contact Us</a>
+</li>
+    </ul>
+</nav></div>
+</div>
+<div id="layout-before-main" class="group">
+    <div class="zone zone-before-main"><article class="widget-html-widget widget">
+    <p><a href="../documentation.html">Documentation</a> &gt;&nbsp;<a href="index.html">Knowledge Base</a>&nbsp;</p>
+</article></div>
+</div>
+<div id="layout-main-container">
+<div id="layout-main" class="group">
+    <div id="layout-content" class="group">
+        <div id="content" class="group">
+            <div class="zone zone-content"><article class="content-item blog-post">
+    <header>
+        <h1>Installing PHP 5 with Microsoft Web Platform Installer</h1>
+
+        <div class="metadata">
+            
+        </div>
+    </header>
+    <div class="content-localization">
+    <div class="content-localizations">
+        <h4>Translations:</h4>
+        <ul class="localizations"><li class="first last"><a href="installing-php-5-with-microsoft-web-platform-installer-tr-TR.html">tr-TR</a></li></ul>
+    </div>
+</div>
+<p>This article explains how to install PHP5 with Microsoft Web Platform Installer for IIS 7.x  <p>1. Download and install Microsoft Web Platform Installer from <a href="http://www.microsoft.com/web/downloads/platform.aspx">http://www.microsoft.com/web/downloads/platform.aspx</a> <p>2. Open Start &gt; All Programs &gt; Microsoft Web Platform Installer;  <p>3. Select Web Platform &gt; PHP 5.x.x, click install, click I Accept button, click Finish, click Exit;  <p>It is recommended to also select and install Windows Cache Extensions for PHP.  <p>More information about Windows Cache Extensions you can read at <a href="http://www.iis.net/download/WinCacheForPhp">http://www.iis.net/download/WinCacheForPhp</a> <p><img src="../Media/Images/installing_php_5_with_microsoft_web_platform_installer/web_platform_installer_2_0.png"/></p> <p><img src="../Media/Images/installing_php_5_with_microsoft_web_platform_installer/web_platform_installation.png"/></p> <p><img src="../Media/Images/installing_php_5_with_microsoft_web_platform_installer/web_platform_installation_status.png"/> <p>4. For much easier php settings management you can install <a href="http://phpmanager.codeplex.com/">PHP Manager for IIS</a> which can be downloaded from <a href="http://phpmanager.codeplex.com/releases/">http://phpmanager.codeplex.com/releases/</a> <p>5. Open IIS Manager, select main node, search and open PHP Manager.  <p><img src="../Media/Images/installing_php_5_with_microsoft_web_platform_installer/iis_php_manager_icon.png"/> <p><img src="../Media/Images/installing_php_5_with_microsoft_web_platform_installer/iis_php_manager.png"/> <p> 6. Click on View recommendations link, select all options, click OK;  <p><img src="../Media/Images/installing_php_5_with_microsoft_web_platform_installer/iis_php_manager_recommendations.png"/> <p>7. Select configure error reportiong, select production machine, click apply;  <p><img src="../Media/Images/installing_php_5_with_microsoft_web_platform_installer/iis_php_manager_php_error_reporting.png"/> <p>8. Please read this article <a href="http://learn.iis.net/page.aspx/246/using-fastcgi-to-host-php-applications-on-iis-7/">http://learn.iis.net/page.aspx/246/using-fastcgi-to-host-php-applications-on-iis-7/</a> and make any other customizations as needed.  <p>9. Go to WebsitePanel &gt; Web Service Properties Page on your WebsitePanel Server and make sure PHP 5.x Executable Path is set correctly and FastCGI is selected as described in the image below.  <p><img src="../Media/Images/installing_php_5_with_microsoft_web_platform_installer/websitepanel_web_service_properties_page.png"/> <p>10. Make sure that Read &amp; Execute permissions are set for NETWORK SERVICE and WSPWebUsers on you PHP instalation Folder (C:\Program Files (x86)\PHP)  <p>With PHP Manager module for IIS it is also possible to change or register other PHP versions. 
+</article></div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="layout-footer" class="group">
+    <footer id="footer">
+        <div id="footer-quad" class="group">
+            <div id="footer-quad-fourth">
+                <div class="zone zone-footer-quad-fourth"><article class="widget-html-widget widget">
+    <center><span style="font-family: arial;" face="arial"><a href="../index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../license.html">License</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../whatsnew.html">What's new?</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../contact-us.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../privacy-policy/privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="../terms-of-use/terms-of-use.html">Terms of Use</a> </span></center>
+</article></div>
+            </div>
+        </div>
+        <div id="footer-sig" class="group">
+            <div class="zone zone-footer">    <div class="credits"><span class="poweredby">Powered by <a href="http://www.orchardproject.net/" target="_blank">Orchard</a></span> <span class="copyright">&#169; 2011 Outercurve Foundation</span></div>
+<div class="user-display">
+        <span class="user-actions"><a href="../Users/Account/LogOn4211.html?ReturnUrl=%2Fkb%2Finstalling-php-5-with-microsoft-web-platform-installer">Sign In</a></span>
+</div></div>
+        </div>
+    </footer>
+</div>
+</div>
+
+</body>
+
+<!-- Mirrored from localhost/kb/installing-php-5-with-microsoft-web-platform-installer by HTTrack Website Copier/3.x [XR&CO'2013], Tue, 12 Nov 2013 18:42:43 GMT -->
+</html>
